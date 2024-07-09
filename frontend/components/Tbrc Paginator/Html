@@ -1,0 +1,14 @@
+<div class="pager {{s.p("Dash Name")}}" {{s.p("Locator Tag")}}>
+    {{"{%if "+l.paginator_prev[0].p("Python Getter")+" not in ['None','',' ', None] %}"}} 
+    <a class="page-link" href="{{l.paginator_prev[0].p("Data Getter")}}" aria-label="Previous">
+      <span aria-hidden="true">&lt;</span>
+    </a>
+    {{"{%endif%}"}}
+    <a class="page-link current" href="#" aria-label="Current">{{l.paginator_current[0].p("Data Getter")}}</a>
+    <span>of {{l.paginator_total[0].p("Data Getter")}}</span>
+    {{"{%if "+l.paginator_next[0].p("Python Getter")+" not in ['None','',' ', None] %}"}} 
+    <a class="page-link" href="{{l.paginator_next[0].p("Data Getter")}}" aria-label="Next">
+      <span aria-hidden="true">&gt;</span>
+    </a>
+    {{"{%endif%}"}}
+</div>

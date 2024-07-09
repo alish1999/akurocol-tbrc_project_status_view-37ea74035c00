@@ -1,0 +1,18 @@
+{
+    "generate_files": {},
+    "parent_type": "Span Element",
+    "links": {
+        "Parts": [
+            "Page Component"
+        ],
+        "Colspan": [
+            "Data Field"
+        ],
+        "Rowspan": [
+            "Data Field"
+        ],
+        "Mixins": [
+            "Mixin"
+        ]
+    }
+}

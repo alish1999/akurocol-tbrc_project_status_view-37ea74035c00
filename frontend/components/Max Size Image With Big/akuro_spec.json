@@ -1,0 +1,12 @@
+{
+    "generate_files": {},
+    "parent_type": "Max Size Image",
+    "links": {
+        "Image": [
+            "Data Field"
+        ],
+        "Big Image": [
+            "Data Field"
+        ]
+    }
+}

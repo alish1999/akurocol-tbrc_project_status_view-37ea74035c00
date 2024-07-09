@@ -1,0 +1,561 @@
+
+
+.s100395{
+    
+    @include background-color-four-lightest;
+    
+    @include padding-t4;
+    
+    @include full-height;
+    
+    
+    .s100396{
+    
+    
+    .s100397{
+    
+    @include margin-b2;
+    
+    
+    .s100398{
+        
+        
+        .s100399{
+            
+            @include font-size-xxxlarge;
+            
+            @include font-family-one;
+            
+            
+            
+            
+        }
+        
+    }
+    
+}
+    
+    .s100401{
+    
+    @include margin-b4;
+    
+    
+    .s100402{
+        
+        
+        .s100403{
+            border-collapse: collapse;
+            width: 100%;
+
+            
+            .s100404{
+                
+                @include font-color-white;
+                
+                @include borders-top-round4;
+                
+                
+                
+            .s100406{
+                
+                @include background-color-four-normal;
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+
+                
+                .s100408{
+                
+                
+            }
+                
+                .s100409{
+                
+                
+            }
+                
+            }
+            
+            
+            .s100411{
+                
+                
+                .s100412{
+                
+                @include cell-style;
+                
+                @include cell-left-style;
+                
+                @include light-bg;
+                
+                
+                .s100413{
+                
+                @include bold-text;
+                
+            }
+                
+            }
+                
+                .s100414{
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+                
+                .s100416{
+                
+                @include cell-style;
+                
+                @include light-bg;
+                
+                
+                
+                
+            }
+                
+                .s100418{
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+                
+                .s100420{
+                
+                @include cell-style;
+                
+                @include cell-right-style;
+                
+                @include light-bg;
+                
+                
+                
+                
+            }
+                
+                .s100422{
+                
+                @include text-align-center;
+                
+                
+                
+            .s100424 {
+              display: inline-block;
+              .button-container{
+                
+                .s100425{
+                    
+                    @include action-button;
+                    
+                    @include budget-button-background;
+                    
+                    
+                    .contacts-page-edit-icon-img-container{
+                    width:$contacts-page-edit-icon-img-width;
+                    height:$contacts-page-edit-icon-img-height;
+                    display:inline-flex;
+                    justify-content:center;
+                    align-items:center;
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                    
+                }
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .contacts-data-modal{
+                    
+                    
+                    .s100377{
+                      
+                      @include text-align-start;
+                      
+
+                      
+                      
+                      
+                      .contacts-name {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .contacts-company {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .contacts-email {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .contacts-phone {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .s100378{
+                            
+                            
+                        }
+                      
+                      .s100379{
+                            
+                            @include display-flex;
+                            
+                            @include flex-gap1;
+                            
+                            @include flex-direction-column;
+                            
+                            
+                            .s100380 {
+                          
+                          
+                          
+                          
+                          @include gray-background-link;
+                          
+                          @include background-color-four-normal;
+                          
+                          @include font-color-white;
+                          
+                          @include button-radius;
+                          
+                        }
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+
+                
+            }
+                
+                .s100426{
+                
+                @include text-align-center;
+                
+                
+                
+            .s100428 {
+              display: inline-block;
+              .button-container{
+                
+                .s100429{
+                    
+                    @include action-button;
+                    
+                    @include background-color-white;
+                    
+                    @include button-radius;
+                    
+                    
+                    .contacts-page-trash-icon-img-container{
+                    width:$contacts-page-trash-icon-img-width;
+                    height:$contacts-page-trash-icon-img-height;
+                    display:inline-flex;
+                    justify-content:center;
+                    align-items:center;
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                    
+                }
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .contacts-delete-modal{
+                    
+                    
+                    .s100382{
+                        
+                        @include display-flex;
+                        
+                        @include align-items-center;
+                        
+                        @include justify-content-center;
+                        
+                        @include flex-gap1;
+                        
+                        
+                        .contacts-delete-title-icon-img-container{
+                        width:$contacts-delete-title-icon-img-width;
+                        height:$contacts-delete-title-icon-img-height;
+                        display:inline-flex;
+                        justify-content:center;
+                        align-items:center;
+                        img{
+                            max-width:100%;
+                            max-height:100%;
+                        }
+                        
+                    }
+                        
+                        .s100383{
+                        
+                        @include bold-text;
+                        
+                        @include font-size-large;
+                        
+                    }
+                        
+                    }
+                    
+                    .s100384{
+                        
+                        @include text-align-center;
+                        
+                        @include margin-y2;
+                        
+                    }
+                    
+                    .s100385{
+                      
+                      @include display-flex;
+                      
+                      @include align-items-center;
+                      
+                      @include justify-content-center;
+                      
+                      @include flex-gap1;
+                      
+
+                      
+                      
+                      
+                      .contacts-delete-button{
+                            
+                            @include gray-background-link;
+                            
+                            @include padding-x1;
+                            
+                            @include padding-y05;
+                            
+                            @include button-radius;
+                            
+                            
+                            
+                            
+                        }
+                      
+                      .s100387{
+                            
+                            @include gray-background-link;
+                            
+                            @include padding-x1;
+                            
+                            @include padding-y05;
+                            
+                            @include border-black;
+                            
+                            @include button-radius;
+                            
+                            
+                            
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+
+                
+            }
+                
+            }
+
+            
+        }
+        
+    }
+    
+}
+    
+    .s100430{
+    
+    @include margin-b4;
+    
+    
+    .s100431{
+        
+        
+        .s100432 {
+          display: flex;
+          justify-content: center;
+          align-items:center;
+          gap:0.3rem;
+          a {
+            text-decoration: none;
+            color: black;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            &.page-link.current{
+              border: 1px solid black;
+              padding: 0rem 0.3rem;
+            }
+          }
+        }
+        
+    }
+    
+}
+    
+}
+    
+}
+

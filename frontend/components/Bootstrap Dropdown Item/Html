@@ -1,0 +1,1 @@
+<li class="{{s.p("Dash Name")}} {{s.p("Type Dash Name")}}"><a href="{{l.link[0].p("Data Getter")}}" target="{{l.target[0].p("Data Getter")}}" class="dropdown-item ">{{l.label[0].p("Data Getter")}}</a></li>

@@ -1,0 +1,28 @@
+.{{s.p('Dash Name')}} {
+  {% for m in l.mixins%}
+  {{m.p("Scss Code")}}
+  {% endfor %}
+
+  label {
+    {% for m in l.label_styles%}
+    {{m.p("Scss Code")}}
+    {% endfor %}
+  }
+
+  input {
+    display:none;
+    
+  }
+
+  .active-image{
+    display:none;
+  }
+  
+  .inactive-image{
+    display:none;
+  }
+
+  {% for m in l.input_styles%}
+    {{m.p("Scss Code")}}
+    {% endfor %}
+}

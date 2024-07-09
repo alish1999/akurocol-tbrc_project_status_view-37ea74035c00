@@ -1,0 +1,34 @@
+data-collection(banner){
+  fields:[
+    data-field(banner-desktop){
+      collection:[
+        (banner);
+      ]
+    };
+    data-field(banner-mobile){
+      collection:[
+        (banner);
+      ]
+    };
+    data-field(banner-href){
+      collection:[
+        (banner);
+      ]
+    };
+    data-field(banner-target){
+      collection:[
+        (banner);
+      ]
+    };
+    data-field(banner-title){
+      collection:[
+        (banner);
+      ]
+    };
+    data-field(banner-explanation){
+      collection:[
+        (banner);
+      ]
+    };
+  ]
+};

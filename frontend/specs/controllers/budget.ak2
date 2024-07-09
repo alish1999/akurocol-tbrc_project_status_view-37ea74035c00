@@ -1,0 +1,20 @@
+controller-with-params(budget){
+  params:[
+    (project-url);
+  ],
+  component:[
+    (budget-page);
+  ]
+};
+
+custom-return-post-controller(save-budget-contact-data){
+  component:[],
+};
+
+custom-return-post-controller(save-budget-money-data){
+  component:[],
+};
+
+custom-return-post-controller(delete-budget-action){
+  component:[],
+};

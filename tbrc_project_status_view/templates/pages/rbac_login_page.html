@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="google" content="notranslate">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{labels["pages"]["rbac_login_page"]["title"]}}</title>
+
+    <!-- Bootstrap -->
+<link href="/static/vendor/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link href="/static/vendor/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<!-- NProgress -->
+<link href="/static/vendor/node_modules/nprogress/nprogress.css" rel="stylesheet">
+<!-- Animate.css -->
+<link href="/static/vendor/node_modules/animate.css/animate.min.css" rel="stylesheet">
+
+<!-- Custom Theme Style -->
+<link href="/static/build/css/custom.min.css" rel="stylesheet">
+    <script>CLEAVES = {}</script>
+  </head>
+  {% set label_path = labels['pages']['rbac_login_page'] %}
+  <body class="login">
+    <script>
+    if (window.frameElement){
+        parent.window.location="/login"
+    }
+    </script>
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form action="" method="post">
+              <h1>Login</h1>
+              <div>
+                {%if error%}
+                <div class="alert alert-danger">
+                    Credenciales incorrectas
+                </div>
+                {%endif%}
+              </div>
+              <div>
+                <input type="text" name="username" class="form-control" placeholder="Nombre de usuario" required="" />
+              </div>
+              <div>
+                <input type="password" autocomplete="off" name="password" class="form-control" placeholder="Contraseña" required="" />
+              </div>
+              <div>
+                <input type="submit" class="btn btn-default btn-block submit" href="index.html" value="{{labels["pages"]["rbac_login_page"]["login_button"]}}" style="margin-left: 0px;">
+              </div>
+
+              <div class="clearfix"></div>
+              <div>{{labels["pages"]["rbac_login_page"]["extras"]}}<div>
+              
+              <div class="separator">
+                
+                <div>
+                  <h1><i class="fa fa-check-circle-o"></i> {{copyright['trademark_label']}} </h1>
+                  <p>©2022 {{copyright['company']}}</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!--
+Desarrollo realizado por akuro SAS. Contactenos en http://akuro.co.
+Development made by akuro. contact Us at http://akuro.co
+  __    __    _______   ______    __    __     ______          _______    ______     _______                               
+ /" |  | "\  /"     "| /" _  "\  /" |  | "\   /    " \        |   __ "\  /    " \   /"      \                              
+(:  (__)  :)(: ______)(: ( \___)(:  (__)  :) // ____  \       (. |__) :)// ____  \ |:        |                             
+ \/      \/  \/    |   \/ \      \/      \/ /  /    ) :)      |:  ____//  /    ) :)|_____/   )                             
+ //  __  \\  // ___)_  //  \ _   //  __  \\(: (____/ //       (|  /   (: (____/ //  //      /                              
+(:  (  )  :)(:      "|(:   _) \ (:  (  )  :)\        /       /|__/ \   \        /  |:  __   \                              
+ \__|  |__/  \_______) \_______) \__|  |__/  \"_____/       (_______)   \"_____/   |__|  \___)                             
+                                                                                                                           
+      __       __   ___  ____  ____   _______     ______                                                                   
+     /""\     |/"| /  ")("  _||_ " | /"      \   /    " \                                                                  
+    /    \    (: |/   / |   (  ) : ||:        | // ____  \                                                                 
+   /' /\  \   |    __/  (:  |  | . )|_____/   )/  /    ) :)                                                                
+  //  __'  \  (// _  \   \\ \__/ //  //      /(: (____/ //                                                                 
+ /   /  \\  \ |: | \  \  /\\ __ //\ |:  __   \ \        /                                                                  
+(___/    \___)(__|  \__)(__________)|__|  \___) \"_____/                                                                   
+                                                                                                                           
+  ______    ______    _____  ___  ___________   __       ______  ___________  _______  _____  ___      ______    ________  
+ /" _  "\  /    " \  (\"   \|"  \("     _   ") /""\     /" _  "\("     _   ")/"     "|(\"   \|"  \    /    " \  /"       ) 
+(: ( \___)// ____  \ |.\\   \    |)__/  \\__/ /    \   (: ( \___))__/  \\__/(: ______)|.\\   \    |  // ____  \(:   \___/  
+ \/ \    /  /    ) :)|: \.   \\  |   \\_ /   /' /\  \   \/ \        \\_ /    \/    |  |: \.   \\  | /  /    ) :)\___  \    
+ //  \ _(: (____/ // |.  \    \. |   |.  |  //  __'  \  //  \ _     |.  |    // ___)_ |.  \    \. |(: (____/ //  __/  \\   
+(:   _) \\        /  |    \    \ |   \:  | /   /  \\  \(:   _) \    \:  |   (:      "||    \    \ | \        /  /" \   :)  
+ \_______)\"_____/    \___|\____\)    \__|(___/    \___)\_______)    \__|    \_______) \___|\____\)  \"_____/  (_______/   
+                                                                                                                           
+  ______    ______    _____  ___  ___________   __       ______  ___________      ____  ____   ________                    
+ /" _  "\  /    " \  (\"   \|"  \("     _   ") /""\     /" _  "\("     _   ")    ("  _||_ " | /"       )                   
+(: ( \___)// ____  \ |.\\   \    |)__/  \\__/ /    \   (: ( \___))__/  \\__/     |   (  ) : |(:   \___/                    
+ \/ \    /  /    ) :)|: \.   \\  |   \\_ /   /' /\  \   \/ \        \\_ /        (:  |  | . ) \___  \                      
+ //  \ _(: (____/ // |.  \    \. |   |.  |  //  __'  \  //  \ _     |.  |         \\ \__/ //   __/  \\                     
+(:   _) \\        /  |    \    \ |   \:  | /   /  \\  \(:   _) \    \:  |         /\\ __ //\  /" \   :)                    
+ \_______)\"_____/    \___|\____\)    \__|(___/    \___)\_______)    \__|        (__________)(_______/                     
+                                                                                                                           
+      __       __   ___  ____  ____   _______     ______          ______    ______                                         
+     /""\     |/"| /  ")("  _||_ " | /"      \   /    " \        /" _  "\  /    " \                                        
+    /    \    (: |/   / |   (  ) : ||:        | // ____  \      (: ( \___)// ____  \                                       
+   /' /\  \   |    __/  (:  |  | . )|_____/   )/  /    ) :)      \/ \    /  /    ) :)                                      
+  //  __'  \  (// _  \   \\ \__/ //  //      /(: (____/ //_____  //  \ _(: (____/ //                                       
+ /   /  \\  \ |: | \  \  /\\ __ //\ |:  __   \ \        /))_  ")(:   _) \\        /                                        
+(___/    \___)(__|  \__)(__________)|__|  \___) \"_____/(_____(  \_______)\"_____/                                         
+                                                                                                                           
+-->
+</html>

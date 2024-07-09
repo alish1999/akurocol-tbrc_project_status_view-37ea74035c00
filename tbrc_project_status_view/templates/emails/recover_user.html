@@ -1,0 +1,20 @@
+{% extends "emails/layout.html" %}
+{% block header %}
+  Automatic email to change your password
+{% endblock %}
+{% block greeting %}
+Change your password
+{% endblock %}
+{% block message %}
+Hi, {{recover_token_instance.token_user.user_full_name}}
+{% endblock %}
+{% block mail_content %}
+  <div>
+    <p>
+        We have received an email requesting a password change.
+    </p>
+    <p>
+        To change your account password click <a href="{{system_config('system_home')}}/set-new-pass?token={{recover_token_instance.token_string}}" target="_blank">here.</a>
+    </p>
+  </div>
+{% endblock %}

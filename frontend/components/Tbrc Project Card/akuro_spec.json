@@ -1,0 +1,21 @@
+{
+    "generate_files": {},
+    "parent_type": "Tbrc Components",
+    "links": {
+        "Href": [
+            "Data Field"
+        ],
+        "Top Label": [
+            "Data Field"
+        ],
+        "Bottom Label": [
+            "Data Field"
+        ],
+        "Top Label Sytles": [
+            "Mixin"
+        ],
+        "Bottom Label Sytles": [
+            "Mixin"
+        ]
+    }
+}

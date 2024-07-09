@@ -1,0 +1,160 @@
+import "specs/mixins.ak2";
+
+url-param(project-url){};
+url-param(gallery-ident){};
+
+
+import "specs/data/select-option.ak2";
+import "specs/data/project-data.ak2";
+import "specs/data/simple-link.ak2";
+import "specs/data/banner.ak2";
+import "specs/data/image-data.ak2";
+import "specs/data/simple-info-data.ak2";
+import "specs/data/general-data.ak2";
+import "specs/data/main-page-data.ak2";
+import "specs/data/stats-page-data.ak2";
+import "specs/data/budget-page-data.ak2";
+import "specs/data/budget-item-data.ak2";
+import "specs/data/schedule-page-data.ak2";
+import "specs/data/schedule-item-data.ak2";
+import "specs/data/orfi-page-data.ak2";
+import "specs/data/orfi-item-data.ak2";
+import "specs/data/architect-page-data.ak2";
+import "specs/data/architect-item-data.ak2";
+import "specs/data/contacts-page-data.ak2";
+import "specs/data/contacts-item-data.ak2";
+import "specs/data/gallery-page-data.ak2";
+import "specs/data/gallery-item-data.ak2";
+import "specs/data/project-edit-page-data.ak2";
+import "specs/data/create-user-data.ak2";
+import "specs/data/files-item-data.ak2";
+import "specs/data/files-page-data.ak2";
+import "specs/data/gallery-view-item.ak2";
+import "specs/data/gallery-view-data.ak2";
+
+import "specs/components/general-template.ak2";
+import "specs/components/main-page.ak2";
+import "specs/components/stats-page.ak2";
+import "specs/components/budget-page.ak2";
+import "specs/components/schedule-page.ak2";
+import "specs/components/orfi-page.ak2";
+import "specs/components/architect-page.ak2";
+import "specs/components/contacts-page.ak2";
+import "specs/components/gallery-page.ak2";
+import "specs/components/edit-project-page.ak2";
+import "specs/components/create-user-page.ak2";
+import "specs/components/presentation.ak2";
+import "specs/components/login.ak2";
+import "specs/components/request-password-change.ak2";
+import "specs/components/set-new-password.ak2";
+import "specs/components/file-folder-page.ak2";
+import "specs/components/gallery-view-page.ak2";
+
+import "specs/controllers/home.ak2";
+import "specs/controllers/stats.ak2";
+import "specs/controllers/budget.ak2";
+import "specs/controllers/schedule.ak2";
+import "specs/controllers/orfi.ak2";
+import "specs/controllers/architect.ak2";
+import "specs/controllers/contacts.ak2";
+import "specs/controllers/gallery.ak2";
+import "specs/controllers/edit-project.ak2";
+import "specs/controllers/create-user.ak2";
+import "specs/controllers/start.ak2";
+import "specs/controllers/login.ak2";
+import "specs/controllers/pass-change.ak2";
+import "specs/controllers/orfi-files.ak2";
+import "specs/controllers/contractor-files.ak2";
+import "specs/controllers/change-mode.ak2";
+import "specs/controllers/gallery-view.ak2";
+
+web-site(tbrc-site){
+  components:[
+    (general-template);
+    (main-page);
+    (stats-page);
+    (budget-page);
+    (schedule-page);
+    (orfi-page);
+    (architect-page);
+    (contacts-page);
+    (gallery-page);
+    (project-edit-page);
+    (create-user-page);
+    (presentation-template);
+    (login-template);
+    (request-password-change);
+    (set-new-password);
+    (files-page);
+    (gallery-view-page);
+  ],
+  data:[
+    (general-data);
+    (main-page-data);
+    (stats-page-data);
+    (budget-page-data);
+    (schedule-page-data);
+    (orfi-page-data);
+    (architect-page-data);
+    (contacts-page-data);
+    (gallery-page-data);
+    (project-edit-page-data);
+    (create-user-page-data);
+    (files-page-data);
+    (gallery-view-page-data);
+  ],
+  controllers:[
+    (home);
+    (stats);
+    (budget);
+    (schedule);
+    (orfi);
+    (orfi-file-upload);
+    (architect);
+    (contacts);
+    (gallery);
+    (edit-project);
+    (create-user);
+    (start);
+    (public-login);
+    (orfi-files);
+    (contractor-files);
+    (gallery-view);
+    (pass-change);
+    (set-new-pass);
+
+
+    //actions:
+    (session-start);
+    (public-logout);
+    (save-project-data);
+    (save-user);
+    (save-budget-contact-data);
+    (save-budget-money-data);
+    (delete-budget-action);
+    (save-architect-data);
+    (delete-architect-action);
+    (save-orfi-data);
+    (save-orfi-file);
+    (delete-orfi-action);
+    (save-contacts-data);
+    (delete-contacts-action);
+    (save-gallery-folder);
+    (delete-gallery-folder);
+    (save-file-action);
+    (delete-file-action);
+    (edit-file-action);
+    (change-mode);
+    (save-gallery-view-image);
+    (delete-gallery-view-image);
+    (edit-gallery-view-image);
+    (change-start);
+    (save-new-pass);
+    (save-schedule-data);
+  ]
+};
+
+(orfi-new-file):controller<-(orfi-file-upload);
+(new-file-file):controller<-(orfi-file-upload);
+(new-image-file):controller<-(orfi-file-upload);
+(files-item-new-file):controller<-(orfi-file-upload);

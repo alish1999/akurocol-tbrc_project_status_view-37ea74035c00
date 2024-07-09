@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="google" content="notranslate">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{labels["pages"]["redirector_list"]["title"]}}</title>
+
+        <!-- Bootstrap -->
+    <link href="/static/vendor/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/static/vendor/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/static/vendor/node_modules/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="/static/vendor/node_modules/icheck/skins/flat/green.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="/static/vendor/node_modules/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="/static/vendor/node_modules/switchery/dist/switchery.min.css" rel="stylesheet">
+    <!-- starrr -->
+    <link href="/static/vendor/node_modules/starrr/dist/starrr.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="/static/vendor/node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="/static/build/css/custom.min.css" rel="stylesheet">
+    
+    <!-- jQuery -->
+    <script src="/static/vendor/node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/static/vendor/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Select2 -->
+    <script src="/static/vendor/node_modules/select2/dist/js/select2.full.min.js"></script>
+    
+    <!-- PNotify -->
+    <link href="/static/vendor/node_modules/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/pnotify/src/pnotify.nonblock.css" rel="stylesheet">
+    
+    <!-- PNotify -->
+    <script src="/static/vendor/node_modules/pnotify/dist/pnotify.js"></script>
+    <script src="/static/vendor/node_modules/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="/static/vendor/node_modules/pnotify/dist/pnotify.nonblock.js"></script>
+    
+    
+        <!-- Datatables -->
+    <link href="/static/vendor/node_modules/datatables.net-bs/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/datatables.net-buttons-bs/css/buttons.bootstrap.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/datatables.net-scroller-bs/css/scroller.bootstrap.css" rel="stylesheet">
+    
+      <!-- Datatables -->
+    <script src="/static/vendor/node_modules/datatables.net/js/jquery.dataTables.js"></script>
+    <script src="/static/vendor/node_modules/datatables.net-bs/js/dataTables.bootstrap.js"></script>
+    <script src="/static/vendor/node_modules/datatables.net-buttons/js/dataTables.buttons.js"></script>
+    <script src="/static/vendor/node_modules/datatables.net-buttons-bs/js/buttons.bootstrap.js"></script>
+    <script src="/static/vendor/node_modules/datatables.net-buttons/js/buttons.flash.js"></script>
+    <script src="/static/vendor/node_modules/datatables.net-buttons/js/buttons.html5.js"></script>
+    <script src="/static/vendor/node_modules/datatables.net-buttons/js/buttons.print.js"></script>
+    <script src="/static/vendor/node_modules/datatables.net-fixedheader/js/dataTables.fixedHeader.js"></script>
+    <script src="/static/vendor/node_modules/datatables.net-keytable/js/dataTables.keyTable.js"></script>
+    <script src="/static/vendor/node_modules/datatables.net-responsive/js/dataTables.responsive.js"></script>
+    <script src="/static/vendor/node_modules/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="/static/vendor/node_modules/datatables.net-scroller/js/dataTables.scroller.js"></script>
+    
+    <script src="/static/vendor/node_modules/js-cookie/dist/js.cookie.js"></script>
+    
+    <script>CLEAVES = {}</script>
+  </head>
+  {% set label_path = labels['pages']['redirector_list'] %}
+  <body class="akuro_body">
+    <div id="action_modal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg">
+    
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title" id="action_modal_header" >Modal Header</h4>
+          </div>
+          <div class="modal-body">
+            <iframe id="action_modal_body" scr="" style="width:100%;height:500px"></iframe>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    <div class="container-fluid">
+        <div class="page-title">
+          <div class="title_left">
+            <h3>{{labels["pages"]["redirector_list"]["title"]}}</h3>
+          </div>
+        </div>
+        <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_content">
+                            <div class="table-responsive">          
+                              <table class="table table-hover" id="redirector_list">
+                                <thead>
+                                  <tr>
+                                    
+                                        <th>{{labels["pages"]["redirector_list"]["headers"]["redirector_from"]["label"]}}</th>
+                                    
+                                        <th>{{labels["pages"]["redirector_list"]["headers"]["redirector_to"]["label"]}}</th>
+                                    
+                                        <th>{{labels["pages"]["redirector_list"]["headers"]["redirector_edition"]["label"]}}</th>
+                                    
+                                        <th>{{labels["pages"]["redirector_list"]["headers"]["delete_redirector"]["label"]}}</th>
+                                    
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  
+                                    {% for elm in redirector_list %}
+                                    <tr>
+                                    
+                                        <td>{{  elm.redirector_from }}</td>
+                                    
+                                        <td>{{  elm.redirector_to }}</td>
+                                    
+                                        <td><button data-url={{"/page/redirectorEdition/%d"|format(elm.id)}} data-title="{{labels["pages"]["redirector_edition"]["title"].format(self=elm)}}" class="btn btn-primary btn-block TableAction">{{labels["pages"]["redirector_edition"]["title"].format(self=elm)}}</button> </td>
+                                    
+                                        <td><input type="button" data-delete="{{elm.id}}" class="btn btn-danger btn-block DeleteRedirector" value="{{labels["pages"]["delete_redirector"]["title"]}}"/></td>
+                                    
+                                    </tr>
+                                    {%endfor%}
+                                </tbody>
+                              </table>
+                              </div>
+                              
+                              
+                            
+                              
+                              
+                            <div class="modal right-side-modal" id="PAGE_MODAL">
+                            	<div class="modal-content"><iframe src=""></iframe></div>
+                            </div>
+                            
+                            
+                            
+                              <script>
+                              PAGE_TABLE = $('#redirector_list').dataTable( {
+                                        "language":{{ labels["plugins"]["datatables"]|tojson}}
+                                    } 
+                                );
+                              </script>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            <script>
+$(document).on( "click", ".DeleteRedirector",function(){
+    var altertmsg = $("<div>").attr("class","alert alert-warning").css("position","fixed").css("top","100px").css("right","0px").css("z-index",15585);
+    altertmsg.html("Ejecutando acción");
+    $(document.body).append(altertmsg);
+    var $this  = $(this)
+    var to_delete= $this.data("delete")
+    $.post( "/ajax/deleteRedirector/<instance_id>".replace('<instance_id>',to_delete),{}, function( data ) {
+      data = JSON.parse(data);
+      if (data.sucess){
+          altertmsg.html("Elemento eliminado con exito");
+          altertmsg.attr("class","alert alert-success").delay(3000).fadeOut( 500, function(){altertmsg.remove()} );
+          $this.parents("tr").remove();
+          $this.parents(".item_holder").remove();
+        }else{
+            altertmsg.html("Error al guardar los cambios: "+data.error);
+            altertmsg.attr("class","alert alert-danger").delay(8000).fadeOut( 500, function(){altertmsg.remove()} );
+        }
+    });
+})
+</script>
+                            
+                            <div class="row">
+                                <a href = "/page/redirectorList?xlsx=true"><img src="/static/images/excel_ico.png"/> Exportar a Excel</a>
+                            </div>
+                            <script>
+                            $("table").on("click",".TableAction",function(){
+                                var t = $(this)
+                                $("#action_modal_header").html(t.data("title"))
+                                $("#action_modal_body").attr("src",t.data("url"))
+                                $("#action_modal").modal("show")
+                            })
+                            </script>
+                        </div>
+                    </div>
+              </div>
+        </div>
+    </div>
+</body>
+  <!--
+Desarrollo realizado por akuro SAS. Contactenos en http://akuro.co.
+Development made by akuro. contact Us at http://akuro.co
+  __    __    _______   ______    __    __     ______          _______    ______     _______                               
+ /" |  | "\  /"     "| /" _  "\  /" |  | "\   /    " \        |   __ "\  /    " \   /"      \                              
+(:  (__)  :)(: ______)(: ( \___)(:  (__)  :) // ____  \       (. |__) :)// ____  \ |:        |                             
+ \/      \/  \/    |   \/ \      \/      \/ /  /    ) :)      |:  ____//  /    ) :)|_____/   )                             
+ //  __  \\  // ___)_  //  \ _   //  __  \\(: (____/ //       (|  /   (: (____/ //  //      /                              
+(:  (  )  :)(:      "|(:   _) \ (:  (  )  :)\        /       /|__/ \   \        /  |:  __   \                              
+ \__|  |__/  \_______) \_______) \__|  |__/  \"_____/       (_______)   \"_____/   |__|  \___)                             
+                                                                                                                           
+      __       __   ___  ____  ____   _______     ______                                                                   
+     /""\     |/"| /  ")("  _||_ " | /"      \   /    " \                                                                  
+    /    \    (: |/   / |   (  ) : ||:        | // ____  \                                                                 
+   /' /\  \   |    __/  (:  |  | . )|_____/   )/  /    ) :)                                                                
+  //  __'  \  (// _  \   \\ \__/ //  //      /(: (____/ //                                                                 
+ /   /  \\  \ |: | \  \  /\\ __ //\ |:  __   \ \        /                                                                  
+(___/    \___)(__|  \__)(__________)|__|  \___) \"_____/                                                                   
+                                                                                                                           
+  ______    ______    _____  ___  ___________   __       ______  ___________  _______  _____  ___      ______    ________  
+ /" _  "\  /    " \  (\"   \|"  \("     _   ") /""\     /" _  "\("     _   ")/"     "|(\"   \|"  \    /    " \  /"       ) 
+(: ( \___)// ____  \ |.\\   \    |)__/  \\__/ /    \   (: ( \___))__/  \\__/(: ______)|.\\   \    |  // ____  \(:   \___/  
+ \/ \    /  /    ) :)|: \.   \\  |   \\_ /   /' /\  \   \/ \        \\_ /    \/    |  |: \.   \\  | /  /    ) :)\___  \    
+ //  \ _(: (____/ // |.  \    \. |   |.  |  //  __'  \  //  \ _     |.  |    // ___)_ |.  \    \. |(: (____/ //  __/  \\   
+(:   _) \\        /  |    \    \ |   \:  | /   /  \\  \(:   _) \    \:  |   (:      "||    \    \ | \        /  /" \   :)  
+ \_______)\"_____/    \___|\____\)    \__|(___/    \___)\_______)    \__|    \_______) \___|\____\)  \"_____/  (_______/   
+                                                                                                                           
+  ______    ______    _____  ___  ___________   __       ______  ___________      ____  ____   ________                    
+ /" _  "\  /    " \  (\"   \|"  \("     _   ") /""\     /" _  "\("     _   ")    ("  _||_ " | /"       )                   
+(: ( \___)// ____  \ |.\\   \    |)__/  \\__/ /    \   (: ( \___))__/  \\__/     |   (  ) : |(:   \___/                    
+ \/ \    /  /    ) :)|: \.   \\  |   \\_ /   /' /\  \   \/ \        \\_ /        (:  |  | . ) \___  \                      
+ //  \ _(: (____/ // |.  \    \. |   |.  |  //  __'  \  //  \ _     |.  |         \\ \__/ //   __/  \\                     
+(:   _) \\        /  |    \    \ |   \:  | /   /  \\  \(:   _) \    \:  |         /\\ __ //\  /" \   :)                    
+ \_______)\"_____/    \___|\____\)    \__|(___/    \___)\_______)    \__|        (__________)(_______/                     
+                                                                                                                           
+      __       __   ___  ____  ____   _______     ______          ______    ______                                         
+     /""\     |/"| /  ")("  _||_ " | /"      \   /    " \        /" _  "\  /    " \                                        
+    /    \    (: |/   / |   (  ) : ||:        | // ____  \      (: ( \___)// ____  \                                       
+   /' /\  \   |    __/  (:  |  | . )|_____/   )/  /    ) :)      \/ \    /  /    ) :)                                      
+  //  __'  \  (// _  \   \\ \__/ //  //      /(: (____/ //_____  //  \ _(: (____/ //                                       
+ /   /  \\  \ |: | \  \  /\\ __ //\ |:  __   \ \        /))_  ")(:   _) \\        /                                        
+(___/    \___)(__|  \__)(__________)|__|  \___) \"_____/(_____(  \_______)\"_____/                                         
+                                                                                                                           
+-->
+</html>

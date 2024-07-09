@@ -1,0 +1,12 @@
+<script>
+akuro.registerComponent("{{s.p('Type Dash Name')}}", [], (elm)=>{
+    let profile = elm.querySelector(".profile");
+    profile.addEventListener("click", function(){
+        const toggleMenu = elm.querySelector(".menu");
+        toggleMenu.classList.toggle("active");
+    });    
+
+    return new LoadedElm(elm, "test")
+})
+akuro.instantiate("{{s.p('Type Dash Name')}}", document.querySelectorAll(".{{s.p('Dash Name')}}"))
+</script>

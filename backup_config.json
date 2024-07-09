@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "extreme-zephyr-259423",
+  "private_key_id": "fd841f1d205a0f3fe16b5177890402ab1b77901f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCr8eWttjqEjMIm\nwC0+e5ix1SPny9/vrvUcfrkTYV7lG8mQNui2WsbI4nN7bQ7mzYhMieq7cVGhX6cA\n2SciXKZ/LRoPWtP8oqEXzuZff6rz7Xqdf+Y89mavKTaAiXdWrQo8QFdCynjrPTFM\nV8T1mmSjS3COSL8MivTEyvaGrb4bvm1W8JzoWBNou2k74jha1zoXF7/9ty2fYODl\ndgZywhowpHR/zOsVohVqybCamzOaLDPdKj8q4CdVGODRWrNtuUDaw2iicVIbz6yA\nu5MglO3rekq2yVsM6LmGpm/K6Ol8YREm1QtJxHBu+NreWH1hdhKpCuBL9NcVFAeY\nrY3RGy+DAgMBAAECggEAAUlVCOtacrrENRquUU+xa8XcIpQsP78qXE/iaJpg5baY\ngni2swPo2tXpkUcr8Ql2oe6iOqF1ao9W+4hPD6XBJSXG583Wf4cOoilNIJ0e6qZL\nNY8gajJZwFO+8aVAUaiycT2gqYJETKuaM9Ja9I9200tG3fmosZpUjH227HkI+WzR\n1n53HQXwkWYYdP0wjCRWDy/sxXwr4C50vpnZFeqbsJP4g7kvccF012m5gsY/UZ8E\n6eHHIIkcSvevQ2BFVdSxPYw82Xk4flHKDrsYnZLvMkFTGYGzArpiUyZ3AuZ9ihdZ\nYLud8T6JfEvL0ieOjpVcA1DQr3KTGdlNQi8LafobAQKBgQDYl/E50XdmFjjII3eB\nuLIf+ZvhVKsEsxvoKHPcseexB0yWZ14xnVvccwjGB0CavJt+D5lR58Nt22gXBEHn\nszFxtZdurwcUNrFY5IlGHrQJMir377p5JtLyNj1ariX68ZS7oLCoxhow43GBcM+f\nNdN2J/2oSUSLstFtkErxktGJAwKBgQDLOmbK56/82hUQmvNlXJfbienhDomfQQYC\nzWf2A9dPTsNe3T6asnPa4pMDBwlzK1rUT2FpW1o/Q8CtwB0fjwIdrpS1tRM+TyFD\nJ1dc16ZdZxG0f0nIcO4SZAMECmZ3M34fiA8mBhy6Uv7ZBL6ev/QYPGYl8rdRQPvj\nkYmhGty3gQKBgQCyDT4VjLd9qZjmFhng/ucXWAen1gV8qIyxbcfJTkqsAdcY8ULC\nwJxKfhphSIb4bUHaAJLGfSLvxWUtPqe7BFkKJACn0aSdHlTuQXkDtqvDv4UJKv59\nJ8hTqvkG+ZBpWX0uPOvc4nWXaPHfOdDEDeiXAksIs6pwuQBm9C5Xpp0v5wKBgQDK\n9Ir9bb3STVSmHaie/IZnZ+aarHMCCOTg3ZNKG/HlMOppjZfc1ARhfs6EQn3Md2qh\nBplopyOMdLQykN5EywO48sVuZeRO4KV+NAbKIE7zjmAfGtNrimQnF5vvaBeGSXVW\nNgGy3n3IEeSShGt9jINPxNnaYfdy/OvRC2If8vyjgQKBgAq6lEInVTQ/CzhVLY33\nBzTNb/KHj3mPvi7BH0eloyCzgEwUygn1fdlZ4ME0yZI7n00r956iJeI9x+7nddlS\nWAx5CI21nZurANA4JHcU4fwpOneH33zRpsigUosCwEbG1MYgEuuaAG12Ci8gi6wx\nocHwa9//lBa3igCS8HVcjNIW\n-----END PRIVATE KEY-----\n",
+  "client_email": "akurobackups@extreme-zephyr-259423.iam.gserviceaccount.com",
+  "client_id": "112978166421312728831",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/akurobackups%40extreme-zephyr-259423.iam.gserviceaccount.com"
+}

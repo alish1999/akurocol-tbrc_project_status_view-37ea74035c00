@@ -1,0 +1,12 @@
+{
+    "generate_files": {},
+    "parent_type": "Stable Component",
+    "links": {
+        "Button Parts": [
+            "Page Component"
+        ],
+        "Modal Parts": [
+            "Page Component"
+        ]
+    }
+}

@@ -1,0 +1,1192 @@
+
+
+.s100250{
+    
+    @include background-color-three-lightest;
+    
+    @include padding-t4;
+    
+    @include full-height;
+    
+    
+    .s100251{
+    
+    
+    .s100252{
+    
+    @include margin-b2;
+    
+    
+    .s100253{
+        
+        
+        .s100254{
+            
+            @include font-size-xxxlarge;
+            
+            @include font-family-one;
+            
+            
+            
+            
+        }
+        
+    }
+    
+}
+    
+    .s100256{
+    
+    @include margin-b1;
+    
+    
+    .s100257{
+        
+        
+        .orfi-page-table{
+            border-collapse: collapse;
+            width: 100%;
+
+            
+            @include text-align-center;
+            
+            .s100258{
+                
+                @include font-color-white;
+                
+                @include borders-top-round3;
+                
+                
+                
+            .s100260{
+                
+                @include background-color-three-normal;
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+
+                
+                .s100262{
+                
+                
+            }
+                
+                .s100263{
+                
+                
+            }
+                
+            }
+            
+            
+            .s100265{
+                
+                
+                .s100266{
+                
+                @include cell-style;
+                
+                @include cell-left-style;
+                
+                
+                .s100267{
+                
+                @include bold-text;
+                
+            }
+                
+            }
+                
+                .s100268{
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+                
+                .s100270{
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+                
+                .s100272{
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+                
+                .s100274{
+                
+                @include cell-style;
+                
+                
+                
+            .s100276 {
+              display: inline-block;
+              .button-container{
+                
+                .s100277{
+                    
+                    @include flat-button;
+                    
+                    
+                    .orfi-page-folder-icon-img-container{
+                    width:$orfi-page-folder-icon-img-width;
+                    height:$orfi-page-folder-icon-img-height;
+                    display:inline-flex;
+                    justify-content:center;
+                    align-items:center;
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                    
+                }
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .orfi-folders-modal{
+                    
+                    
+                    .s100223{
+                      
+
+                      
+                      
+                      
+                      .s100224{
+                            
+                            @include font-size-xlarge;
+                            
+                            @include font-family-one;
+                            
+                            @include text-align-center;
+                            
+                            
+                            
+                            
+                        }
+                      
+                      
+                        .s100227{
+                            
+                            @include margin-b1;
+                            
+                            @include black-text-link;
+                            
+                            @include upload-box-styles;
+                            
+                            
+                        }
+
+                      
+                      .orfi-new-file {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+                          @include margin-b1;
+                          
+
+                          label {
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            
+                            & > input {
+                              display: none;
+                            }
+                            .drop-zone{
+                              .text-container{
+                                &.loading{
+                                  @keyframes blink-animation {
+                                    to {
+                                      visibility: hidden;
+                                    }
+                                  }
+                                  background-color: blueviolet;
+                                  animation: blink-animation 1s steps(5, start) infinite;
+                                }
+                                &.loaded{
+                                  background-color: greenyellow;
+                                }
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                gap:1rem;
+                                
+                                @include upload-box-styles;
+                                
+                                .title{
+                                  
+                                }
+                                .text{
+                                  
+                                }
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .s100228{
+                            
+                            
+                        }
+                      
+                      .s100229{
+                            
+                            @include display-flex;
+                            
+                            @include flex-gap1;
+                            
+                            @include flex-direction-column;
+                            
+                            
+                            .s100230 {
+                          
+                          
+                          
+                          
+                          @include gray-background-link;
+                          
+                          @include background-color-three-normal;
+                          
+                          @include font-color-white;
+                          
+                          @include button-radius;
+                          
+                        }
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+
+                
+                
+
+            .orfi-row-icon-container{
+                width:$orfi-row-icon-width;
+                height:$orfi-row-icon-height;
+                display:inline-flex;
+                justify-content:center;
+                align-items:center;
+                a{
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                }
+                
+            }
+
+
+                
+            }
+                
+                .s100280{
+                
+                @include cell-style;
+                
+                @include cell-right-style;
+                
+                
+                .resolved-img-container{
+                width:$resolved-img-width;
+                height:$resolved-img-height;
+                display:inline-flex;
+                justify-content:center;
+                align-items:center;
+                img{
+                    max-width:100%;
+                    max-height:100%;
+                }
+                
+            }
+                
+            }
+                
+                .s100281{
+                
+                
+                
+            .s100283 {
+              display: inline-block;
+              .button-container{
+                
+                .s100284{
+                    
+                    @include action-button;
+                    
+                    @include orfi-button-background;
+                    
+                    
+                    .orfi-page-edit-icon-img-container{
+                    width:$orfi-page-edit-icon-img-width;
+                    height:$orfi-page-edit-icon-img-height;
+                    display:inline-flex;
+                    justify-content:center;
+                    align-items:center;
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                    
+                }
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .orfi-data-modal{
+                    
+                    
+                    .s100232{
+                      
+                      @include text-align-start;
+                      
+
+                      
+                      
+                      
+                      .orfi-asigned-to {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .orfi-question {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .orfi-due-date {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .orfi-resolved {
+                          
+                          @include padding-b1;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          input {
+                            display:none;
+                            
+                          }
+
+                          .active-image{
+                            display:none;
+                          }
+                          
+                          .inactive-image{
+                            display:none;
+                          }
+
+                          
+                        }
+                      
+                      .s100233{
+                            
+                            
+                        }
+                      
+                      .s100234{
+                            
+                            @include display-flex;
+                            
+                            @include flex-gap1;
+                            
+                            @include flex-direction-column;
+                            
+                            
+                            .s100235 {
+                          
+                          
+                          
+                          
+                          @include gray-background-link;
+                          
+                          @include background-color-three-normal;
+                          
+                          @include font-color-white;
+                          
+                          @include button-radius;
+                          
+                        }
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+
+                
+            }
+                
+                .s100285{
+                
+                
+                
+            .s100287 {
+              display: inline-block;
+              .button-container{
+                
+                .s100288{
+                    
+                    @include action-button;
+                    
+                    @include background-color-white;
+                    
+                    
+                    .orfi-page-trash-icon-img-container{
+                    width:$orfi-page-trash-icon-img-width;
+                    height:$orfi-page-trash-icon-img-height;
+                    display:inline-flex;
+                    justify-content:center;
+                    align-items:center;
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                    
+                }
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .orfi-delete-modal{
+                    
+                    
+                    .s100242{
+                        
+                        @include display-flex;
+                        
+                        @include align-items-center;
+                        
+                        @include justify-content-center;
+                        
+                        @include flex-gap1;
+                        
+                        
+                        .orfi-delete-title-icon-img-container{
+                        width:$orfi-delete-title-icon-img-width;
+                        height:$orfi-delete-title-icon-img-height;
+                        display:inline-flex;
+                        justify-content:center;
+                        align-items:center;
+                        img{
+                            max-width:100%;
+                            max-height:100%;
+                        }
+                        
+                    }
+                        
+                        .s100243{
+                        
+                        @include bold-text;
+                        
+                        @include font-size-large;
+                        
+                    }
+                        
+                    }
+                    
+                    .s100244{
+                        
+                        @include text-align-center;
+                        
+                        @include margin-y2;
+                        
+                    }
+                    
+                    .s100245{
+                      
+                      @include display-flex;
+                      
+                      @include align-items-center;
+                      
+                      @include justify-content-center;
+                      
+                      @include flex-gap1;
+                      
+
+                      
+                      
+                      
+                      .orfi-delete-button{
+                            
+                            @include gray-background-link;
+                            
+                            @include padding-x1;
+                            
+                            @include padding-y05;
+                            
+                            @include button-radius;
+                            
+                            
+                            
+                            
+                        }
+                      
+                      .s100247{
+                            
+                            @include gray-background-link;
+                            
+                            @include padding-x1;
+                            
+                            @include padding-y05;
+                            
+                            @include border-black;
+                            
+                            @include button-radius;
+                            
+                            
+                            
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+
+                
+            }
+                
+            }
+
+            
+            
+            .s100290{
+                
+                
+                .s100291{
+                
+                @include cell-style;
+                
+                
+                .s100292{
+                
+                @include display-flex;
+                
+                @include justify-content-between;
+                
+                @include align-items-center;
+                
+                @include padding-y1;
+                
+                
+                .s100293 {
+              display: inline-block;
+              .button-container{
+                
+                .s100294{
+                    
+                    @include flat-button;
+                    
+                    
+                    
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .new-orfi-data-modal{
+                    
+                    
+                    .s100237{
+                      
+                      @include text-align-start;
+                      
+
+                      
+                      .new-orfi-asigned-to {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .new-orfi-question {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .new-orfi-due-date {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .new-orfi-resolved {
+                          
+                          @include padding-b1;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          input {
+                            display:none;
+                            
+                          }
+
+                          .active-image{
+                            display:none;
+                          }
+                          
+                          .inactive-image{
+                            display:none;
+                          }
+
+                          
+                            @include checkbox-styles;
+                            
+                        }
+                      
+                      .s100238{
+                            
+                            
+                        }
+                      
+                      .s100239{
+                            
+                            @include display-flex;
+                            
+                            @include flex-gap1;
+                            
+                            @include flex-direction-column;
+                            
+                            
+                            .s100240 {
+                          
+                          
+                          
+                          
+                          @include gray-background-link;
+                          
+                          @include background-color-three-normal;
+                          
+                          @include font-color-white;
+                          
+                          @include button-radius;
+                          
+                        }
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+                
+                .s100296 {
+              display: inline-block;
+              .button-container{
+                
+                .s100297{
+                    
+                    @include button-color-three;
+                    
+                    @include button-boder-styles;
+                    
+                    @include button-radius;
+                    
+                    
+                    
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .new-orfi-data-modal{
+                    
+                    
+                    .s100237{
+                      
+                      @include text-align-start;
+                      
+
+                      
+                      .new-orfi-asigned-to {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .new-orfi-question {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .new-orfi-due-date {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .new-orfi-resolved {
+                          
+                          @include padding-b1;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          input {
+                            display:none;
+                            
+                          }
+
+                          .active-image{
+                            display:none;
+                          }
+                          
+                          .inactive-image{
+                            display:none;
+                          }
+
+                          
+                            @include checkbox-styles;
+                            
+                        }
+                      
+                      .s100238{
+                            
+                            
+                        }
+                      
+                      .s100239{
+                            
+                            @include display-flex;
+                            
+                            @include flex-gap1;
+                            
+                            @include flex-direction-column;
+                            
+                            
+                            .s100240 {
+                          
+                          
+                          
+                          
+                          @include gray-background-link;
+                          
+                          @include background-color-three-normal;
+                          
+                          @include font-color-white;
+                          
+                          @include button-radius;
+                          
+                        }
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+                
+            }
+                
+            }
+                
+                .s100299{
+                
+                
+            }
+                
+                .s100300{
+                
+                
+            }
+                
+            }
+
+            
+        }
+        
+    }
+    
+}
+    
+    .s100301{
+    
+    @include margin-b4;
+    
+    
+    .s100302{
+        
+        
+        .s100303 {
+          display: flex;
+          justify-content: center;
+          align-items:center;
+          gap:0.3rem;
+          a {
+            text-decoration: none;
+            color: black;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            &.page-link.current{
+              border: 1px solid black;
+              padding: 0rem 0.3rem;
+            }
+          }
+        }
+        
+    }
+    
+}
+    
+}
+    
+}
+

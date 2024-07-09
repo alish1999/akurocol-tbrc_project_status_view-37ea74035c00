@@ -1,0 +1,24 @@
+controller-with-params(orfi){
+  params:[
+    (project-url);
+  ],
+  component:[
+    (orfi-page);
+  ]
+};
+
+custom-return-ajax-post-controller(orfi-file-upload){
+  component:[],
+};
+
+custom-return-post-controller(save-orfi-data){
+  component:[],
+};
+
+custom-return-post-controller(save-orfi-file){
+  component:[],
+};
+
+custom-return-post-controller(delete-orfi-action){
+  component:[],
+};

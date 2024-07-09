@@ -1,0 +1,9 @@
+{
+    "generate_files": {},
+    "parent_type": "Stable Component",
+    "links": {
+        "Parts": [
+            "Page Component"
+        ]
+    }
+}

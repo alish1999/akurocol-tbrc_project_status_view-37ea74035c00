@@ -1,0 +1,5 @@
+root-controller(start){
+  component:[
+     (presentation-template);
+  ],
+};

@@ -1,0 +1,499 @@
+
+
+.s100646 {
+  & > .modal-gallery{
+    .modal-dialog{
+      .modal-content{
+        background-color:transparent;
+        border: none;
+        .modal-header{
+          border-bottom:none;
+        }
+        .modal-body{
+          
+        }
+      }
+    }
+  }
+  
+  .s100647{
+            
+            @include padding-t4;
+            
+            
+            .s100648{
+            
+            @include margin-b1;
+            
+            
+            .s100649{
+                
+                
+                .s100650{
+                    
+                    @include font-size-xxxlarge;
+                    
+                    @include font-family-one;
+                    
+                    @include text-align-center;
+                    
+                    
+                    
+                    
+                }
+                
+            }
+            
+        }
+            
+            .s100652{
+            
+            @include margin-b4;
+            
+            
+            .s100653{
+                
+                @include text-align-center;
+                
+                @include font-weight300;
+                
+                
+                
+                
+            }
+            
+        }
+            
+            .s100655{
+            
+            
+            .s100656{
+                
+                @include three-columns-grid;
+                
+                
+                
+                .s100658 {
+                  display: inline-block;
+                  .button-container{
+                    
+                    .s100659{
+                        
+                        @include action-button;
+                        
+                        @include create-folder-button;
+                        
+                        @include font-family-two;
+                        
+                        @include font-size-xlarge;
+                        
+                        
+                        .gallery-view-new-image-img-container{
+                        width:$gallery-view-new-image-img-width;
+                        height:$gallery-view-new-image-img-height;
+                        display:inline-flex;
+                        justify-content:center;
+                        align-items:center;
+                        img{
+                            max-width:100%;
+                            max-height:100%;
+                        }
+                        
+                    }
+                        
+                        
+                        
+                    }
+                    
+                  }
+                  .modal-container{
+                    
+                    .gallery-view-new-image-modal{
+                        
+                        
+                        .s100640{
+                          
+
+                          
+                          .new-image-name {
+                              display: flex;
+                              flex-direction: column;
+                              width: 100%;
+                              
+
+                              label {
+                                
+                                @include margin-b05;
+                                
+                                @include bold-text;
+                                
+                                @include font-size-medium;
+                                
+                              }
+
+                              .help {
+                                
+                              }
+
+                              .input-container{
+                                input {
+                                  
+                                  @include common-inputs-styles;
+                                  
+                              
+                                  &::placeholder {
+                                    
+                                  }
+                              
+                                  &:focus {
+                                    
+                                  }
+                                }
+                              }  
+                            }
+                          
+                          .new-image-file {
+                              display: flex;
+                              flex-direction: column;
+                              width: 100%;
+                              
+                              @include margin-b1;
+                              
+
+                              label {
+                                
+                              }
+
+                              .help {
+                                
+                              }
+
+                              .input-container{
+                                
+                                & > input {
+                                  display: none;
+                                }
+                                .drop-zone{
+                                  .text-container{
+                                    &.loading{
+                                      @keyframes blink-animation {
+                                        to {
+                                          visibility: hidden;
+                                        }
+                                      }
+                                      background-color: blueviolet;
+                                      animation: blink-animation 1s steps(5, start) infinite;
+                                    }
+                                    &.loaded{
+                                      background-color: greenyellow;
+                                    }
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap:1rem;
+                                    
+                                    @include upload-box-styles;
+                                    
+                                    .title{
+                                      
+                                    }
+                                    .text{
+                                      
+                                    }
+                                  }
+                                }
+                              }  
+                            }
+                          
+                          .s100641{
+                                
+                                
+                            }
+                          
+                          .s100642{
+                                
+                                @include display-flex;
+                                
+                                @include flex-gap1;
+                                
+                                @include flex-direction-column;
+                                
+                                
+                                .s100643 {
+                              
+                              
+                              
+                              
+                              @include gray-background-link;
+                              
+                              @include background-color-one-normal;
+                              
+                              @include font-color-white;
+                              
+                              @include button-radius;
+                              
+                            }
+                                
+                            }
+                          
+                        }
+                        
+                    }
+                    
+                  }
+                }
+
+                
+                
+                .s100662{
+                    
+                    @include postion-relative;
+                    
+                    
+                    
+                .s100664{
+                    
+                    @include floating-delete-position;
+                    
+                    
+                    .s100665 {
+                  display: inline-block;
+                  .button-container{
+                    
+                    .s100666{
+                        
+                        @include action-button;
+                        
+                        @include font-family-two;
+                        
+                        @include font-size-xlarge;
+                        
+                        
+                        .gallery-view-page-trash-icon-img-container{
+                        width:$gallery-view-page-trash-icon-img-width;
+                        height:$gallery-view-page-trash-icon-img-height;
+                        display:inline-flex;
+                        justify-content:center;
+                        align-items:center;
+                        img{
+                            max-width:100%;
+                            max-height:100%;
+                        }
+                        
+                    }
+                        
+                    }
+                    
+                  }
+                  .modal-container{
+                    
+                    .gallery-view-delete-modal{
+                        
+                        
+                        .s100633{
+                            
+                            @include display-flex;
+                            
+                            @include align-items-center;
+                            
+                            @include justify-content-center;
+                            
+                            @include flex-gap1;
+                            
+                            
+                            .gallery-view-delete-title-icon-img-container{
+                            width:$gallery-view-delete-title-icon-img-width;
+                            height:$gallery-view-delete-title-icon-img-height;
+                            display:inline-flex;
+                            justify-content:center;
+                            align-items:center;
+                            img{
+                                max-width:100%;
+                                max-height:100%;
+                            }
+                            
+                        }
+                            
+                            .s100634{
+                            
+                            @include bold-text;
+                            
+                            @include font-size-large;
+                            
+                        }
+                            
+                        }
+                        
+                        .s100635{
+                            
+                            @include text-align-center;
+                            
+                            @include margin-y2;
+                            
+                        }
+                        
+                        .s100636{
+                          
+                          @include display-flex;
+                          
+                          @include align-items-center;
+                          
+                          @include justify-content-center;
+                          
+                          @include flex-gap1;
+                          
+
+                          
+                          
+                          
+                          .gallery-view-delete-button{
+                                
+                                @include gray-background-link;
+                                
+                                @include padding-x1;
+                                
+                                @include padding-y05;
+                                
+                                @include button-radius;
+                                
+                                
+                                
+                                
+                            }
+                          
+                          .s100638{
+                                
+                                @include gray-background-link;
+                                
+                                @include padding-x1;
+                                
+                                @include padding-y05;
+                                
+                                @include border-black;
+                                
+                                @include button-radius;
+                                
+                                
+                                
+                                
+                            }
+                          
+                        }
+                        
+                    }
+                    
+                  }
+                }
+                    
+                }
+
+                    
+                    .gv-item-container{
+                    width:$gv-item-width;
+                    height:$gv-item-height;
+                    display:inline-flex;
+                    justify-content:center;
+                    align-items:center;
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                    
+                }
+                    
+                    
+                .s100668{
+                  
+
+                  
+                  
+                  
+                  .edit-image-name {
+                      display: flex;
+                      flex-direction: column;
+                      width: 100%;
+                      
+
+                      label {
+                        
+                        @include margin-b05;
+                        
+                        @include bold-text;
+                        
+                        @include font-size-medium;
+                        
+                      }
+
+                      .help {
+                        
+                      }
+
+                      .input-container{
+                        input {
+                          
+                          @include common-inputs-styles;
+                          
+                      
+                          &::placeholder {
+                            
+                          }
+                      
+                          &:focus {
+                            
+                          }
+                        }
+                      }  
+                    }
+                  
+                  .s100669{
+                        
+                        
+                    }
+                  
+                  .s100670{
+                        
+                        @include display-flex;
+                        
+                        @include flex-gap1;
+                        
+                        @include flex-direction-column;
+                        
+                        
+                        .s100671 {
+                      
+                      
+                      
+                      
+                      @include gray-background-link;
+                      
+                      @include background-color-one-normal;
+                      
+                      @include font-color-white;
+                      
+                      @include button-radius;
+                      
+                    }
+                        
+                    }
+                  
+                }
+
+                    
+                    
+                .s100674{
+                    
+                }
+
+                    
+                }
+
+                
+            }
+            
+        }
+            
+        }
+  
+}
+
+

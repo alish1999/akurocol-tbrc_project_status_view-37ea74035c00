@@ -1,0 +1,1384 @@
+$spaces-base:1rem;
+$font-size-base: 1rem;
+$color1:#A48C50;
+$color2:#864F4F;
+$color3:#74836B;
+$color4:#A48C50;
+$gray:#aaaaaa;
+$higlightback:#222222;
+$breakpoint-mobile: 800px;
+
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;500;600&display=swap');
+
+@mixin padding-cero{
+    padding: 0;
+}
+
+@mixin padding-y05{
+    padding-top: $spaces-base*0.5;
+    padding-bottom: $spaces-base*0.5;
+}
+@mixin padding-y1{
+    padding-top: $spaces-base*1;
+    padding-bottom: $spaces-base*1;
+}
+
+@mixin padding-y2{
+    padding-top: $spaces-base*2;
+    padding-bottom: $spaces-base*2;
+}
+
+@mixin padding-y3{
+    padding-top: $spaces-base*3;
+    padding-bottom: $spaces-base*3;
+}
+
+@mixin padding-y4{
+    padding-top: $spaces-base*4;
+    padding-bottom: $spaces-base*4;
+}
+
+
+@mixin padding-b1{
+    padding-bottom: $spaces-base*1;
+}
+
+@mixin padding-b2{
+    padding-bottom: $spaces-base*2;
+}
+
+@mixin padding-b3{
+    padding-bottom: $spaces-base*3;
+}
+
+@mixin padding-b4{
+    padding-bottom: $spaces-base*4;
+}
+
+@mixin padding-x1{
+    padding-right: $spaces-base*1;
+    padding-left: $spaces-base*1;
+}
+
+@mixin padding-x2{
+    padding-right: $spaces-base*2;
+    padding-left: $spaces-base*2;
+}
+
+@mixin padding-x3{
+    padding-right: $spaces-base*3;
+    padding-left: $spaces-base*3;
+}
+
+@mixin padding-x4{
+    padding-right: $spaces-base*4;
+    padding-left: $spaces-base*4;
+}
+
+@mixin padding-l1{
+    padding-left: $spaces-base*1;
+}
+
+@mixin padding-l2{
+    padding-left: $spaces-base*2;
+}
+
+@mixin padding-l3{
+    padding-left: $spaces-base*3;
+
+}
+
+@mixin padding-l4{
+    padding-left: $spaces-base*4;
+}
+
+@mixin padding-r1{
+    padding-right: $spaces-base*1;
+}
+
+@mixin padding-r2{
+    padding-right: $spaces-base*2;
+}
+
+@mixin padding-r3{
+    padding-right: $spaces-base*3;
+}
+
+@mixin padding-r4{
+    padding-right: $spaces-base*4;
+}
+
+@mixin padding-t1{
+    padding-top: $spaces-base*1;
+}
+
+@mixin padding-t2{
+    padding-top: $spaces-base*2;
+}
+
+@mixin padding-t3{
+    padding-top: $spaces-base*3;
+}
+
+@mixin padding-t4{
+    padding-top: $spaces-base*4;
+}
+
+@mixin margin-y1{
+    margin-top: $spaces-base*1;
+    margin-bottom: $spaces-base*1;
+}
+
+@mixin margin-y2{
+    margin-top: $spaces-base*2;
+    margin-bottom: $spaces-base*2;
+}
+
+@mixin margin-y3{
+    margin-top: $spaces-base*3;
+    margin-bottom: $spaces-base*3;
+}
+
+@mixin margin-y4{
+    margin-top: $spaces-base*4;
+    margin-bottom: $spaces-base*4;
+}
+
+
+@mixin margin-b05{
+    margin-bottom: $spaces-base*0.5;
+}
+
+@mixin margin-b1{
+    margin-bottom: $spaces-base*1;
+}
+
+@mixin margin-b2{
+    margin-bottom: $spaces-base*2;
+}
+
+@mixin margin-b3{
+    margin-bottom: $spaces-base*1;
+}
+
+@mixin margin-b4{
+    margin-bottom: $spaces-base*4;
+}
+
+@mixin margin-x1{
+    margin-right: $spaces-base*1;
+    margin-left: $spaces-base*1;
+}
+
+@mixin margin-x2{
+    margin-right: $spaces-base*2;
+    margin-left: $spaces-base*2;
+}
+
+@mixin margin-x3{
+    margin-right: $spaces-base*3;
+    margin-left: $spaces-base*3;
+}
+
+@mixin margin-x4{
+    margin-right: $spaces-base*4;
+    margin-left: $spaces-base*4;
+}
+
+@mixin margin-l1{
+    margin-left: $spaces-base*1;
+}
+
+@mixin margin-l2{
+    margin-left: $spaces-base*2;
+}
+
+@mixin margin-l3{
+    margin-left: $spaces-base*3;
+
+}
+
+@mixin margin-l4{
+    margin-left: $spaces-base*4;
+}
+
+@mixin margin-r1{
+    margin-right: $spaces-base*1;
+}
+
+@mixin margin-r2{
+    margin-right: $spaces-base*2;
+}
+
+@mixin margin-r3{
+    margin-right: $spaces-base*3;
+}
+
+@mixin margin-r4{
+    margin-right: $spaces-base*4;
+}
+
+@mixin margin-t1{
+    margin-top: $spaces-base*1;
+}
+
+@mixin margin-t2{
+    margin-top: $spaces-base*2;
+}
+
+@mixin margin-t3{
+    margin-top: $spaces-base*3;
+}
+
+@mixin margin-t4{
+    margin-top: $spaces-base*4;
+}
+
+@mixin font-color-one-normal{
+    color:$color1
+}
+
+@mixin font-color-one-lighter{
+    color:lighthen($color1,10%)
+}
+
+@mixin font-color-one-lightest{
+    color:lighthen($color1,20%)
+}
+
+@mixin font-color-one-darker{
+    color:darken($color1,10%)
+}
+
+@mixin font-color-one-darkets{
+    color:darken($color1,20%)
+}
+
+@mixin font-color-two-normal{
+    color:$color2
+}
+
+@mixin font-color-two-lighter{
+    color:lighthen($color2,10%)
+}
+
+@mixin font-color-two-lightest{
+    color:lighthen($color2,20%)
+}
+
+@mixin font-color-two-darker{
+    color:darken($color2,10%)
+}
+
+@mixin font-color-two-darkets{
+    color:darken($color2,20%)
+}
+
+@mixin font-color-three-normal{
+    color:$color3
+}
+
+@mixin font-color-three-lighter{
+    color:lighthen($color3,10%)
+}
+
+@mixin font-color-three-lightest{
+    color:lighthen($color3,20%)
+}
+
+@mixin font-color-three-darker{
+    color:darken($color3,10%)
+}
+
+@mixin font-color-three-darkets{
+    color:darken($color3,20%)
+}
+
+@mixin font-color-four-normal{
+    color:$color4
+}
+
+@mixin font-color-four-lighter{
+    color:lighthen($color4,10%)
+}
+
+@mixin font-color-four-lightest{
+    color:lighthen($color4,20%)
+}
+
+@mixin font-color-four-darker{
+    color:darken($color4,10%)
+}
+
+@mixin font-color-four-darkets{
+    color:darken($color4,20%)
+}
+
+
+@mixin font-color-black{
+    color: black;
+}
+
+@mixin font-color-white{
+    color: white;
+}
+
+@mixin background-color-one-normal{
+    background-color:$color1;
+}
+
+@mixin background-color-one-lighter{
+    background-color:lighthen($color1,10%);
+}
+
+@mixin background-color-one-lightest{
+    background-color:#F3EFE6;
+}
+
+@mixin background-color-one-darker{
+    background-color:darken($color1,10%);
+}
+
+@mixin background-color-one-darkets{
+    background-color:darken($color1,20%);
+}
+
+@mixin background-color-two-normal{
+    background-color:$color2;
+}
+
+@mixin background-color-two-lighter{
+    background-color:lighthen($color2,10%);
+}
+
+@mixin background-color-two-lightest{
+    background-color:#F1EAEA;
+}
+
+@mixin background-color-two-darker{
+    background-color:darken($color2,10%);
+}
+
+@mixin background-color-two-darkets{
+    background-color:darken($color2,20%);
+}
+
+@mixin background-color-three-normal{
+    background-color:$color3;
+}
+
+@mixin background-color-three-lighter{
+    background-color:lighthen($color3,10%);
+}
+
+@mixin background-color-three-lightest{
+    background-color:#E8EAE7;
+}
+
+@mixin background-color-three-darker{
+    background-color:#F3F4F6;
+}
+
+@mixin background-color-three-darkets{
+    background-color:darken($color3,20%);
+}
+
+@mixin background-color-four-normal{
+    background-color:$color4;
+}
+
+@mixin background-color-four-lighter{
+    background-color:lighthen($color4,10%);
+}
+
+@mixin background-color-four-lightest{
+    background-color:#EFEADE;
+}
+
+@mixin background-color-four-darker{
+    background-color:darken($color4,10%);
+}
+
+@mixin background-color-four-darkets{
+    background-color:darken($color4,20%);
+}
+
+@mixin background-color-black{
+    background-color: black;
+}
+
+@mixin background-color-white{
+    background-color: white;
+}
+
+@mixin font-color-gray-p10{
+    color:darken(white, 10%);
+}
+
+@mixin font-color-gray-p20{
+    color:darken(white, 20%);
+}
+
+@mixin font-color-gray-p30{
+    color:darken(white, 30%);
+}
+
+@mixin font-color-gray-p40{
+    color:darken(white, 40%);
+}
+
+@mixin font-color-gray-p50{
+    color:darken(white, 50%);
+}
+
+@mixin font-color-gray-p60{
+    color:darken(white, 60%);
+}
+
+@mixin font-color-gray-p70{
+    color:darken(white, 70%);
+}
+
+@mixin font-color-gray-p80{
+    color:darken(white, 80%);
+}
+
+@mixin font-color-gray-p90{
+    color:darken(white, 90%);
+}
+
+@mixin background-color-gray-p5{
+    background-color:darken(white, 5%);
+}
+
+@mixin background-color-gray-p10{
+    background-color:#F1F3F4;
+}
+
+@mixin background-color-gray-p20{
+    background-color:darken(white, 20%);
+}
+
+@mixin background-color-gray-p30{
+    background-color:darken(white, 30%);
+}
+
+@mixin background-color-gray-p40{
+    background-color:darken(white, 40%);
+}
+
+@mixin background-color-gray-p50{
+    background-color:darken(white, 50%);
+}
+
+@mixin background-color-gray-p60{
+    background-color:darken(white, 60%);
+}
+
+@mixin background-color-gray-p70{
+    background-color:darken(white, 70%);
+}
+
+@mixin background-color-gray-p80{
+    background-color:darken(white, 80%);
+}
+
+@mixin background-color-gray-p90{
+    background-color:darken(white, 90%);
+}
+
+@mixin font-size-smallest{
+    font-size: $font-size-base*0.5;
+}
+
+@mixin font-size-smaller{
+    font-size: $font-size-base*0.10;
+}
+
+@mixin font-size-xxxsmall{
+    font-size: $font-size-base*0.20;
+}
+
+@mixin font-size-xxsmall{
+    font-size: $font-size-base*0.25;
+}
+
+@mixin font-size-xsmall{
+    font-size: $font-size-base*0.50;
+}
+
+@mixin font-size-small{
+    font-size: $font-size-base*0.85;
+}
+
+@mixin font-size-medium{
+    font-size: $font-size-base;
+}
+
+@mixin font-size-large{
+    font-size: $font-size-base*1.31;
+}
+
+@mixin font-size-xlarge{
+    font-size: $font-size-base*1.68;
+}
+
+@mixin font-size-xxlarge{
+    font-size: $font-size-base*2.25;
+}
+
+@mixin font-size-xxxlarge{
+    font-size: $font-size-base*2.93;
+
+}
+@mixin font-size-larger{
+    font-size: $font-size-base*3;
+}
+
+@mixin font-size-largest{
+    font-size: $font-size-base*3.2;
+}
+
+@mixin display-flex {
+    display: flex;
+}
+
+@mixin display-none {
+    display: none;
+}
+
+@mixin justify-content-between{
+    justify-content: space-between;
+}
+
+@mixin justify-content-center {
+    justify-content: center;
+}
+
+@mixin justify-content-start {
+    justify-content: start;
+}
+
+@mixin justify-content-end {
+    justify-content: end;
+}
+
+@mixin align-items-center {
+    align-items: center;
+}
+
+@mixin align-items-end {
+    align-items: end;
+}
+
+@mixin bold-text {
+    font-weight: bold;
+}
+
+@mixin button-color-four {
+    @include font-color-white;
+    @include background-color-four-normal;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+@mixin button-color-three {
+    @include font-color-white;
+    @include background-color-three-normal;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+@mixin text-align-center {
+    text-align: center;
+}
+
+@mixin text-align-end {
+    text-align: end;
+    text-align: flex-end;
+}
+
+@mixin bullet-width {
+    width: auto;
+}
+
+@mixin text-align-start {
+    text-align: start;
+}
+
+@mixin three-columns-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem 2rem;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ". . ."
+        ;
+    width: 100%;
+    margin: auto;
+}
+
+@mixin simple-card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    &:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    padding: 2rem;
+    background-color: white;
+    border-radius: 20px;
+}
+
+@mixin category-mixin {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem 2rem;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ". . . ."
+        ". . . .";
+    width: 100%;
+    margin: auto;
+}
+
+@mixin news-page-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap:1.5rem;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ". . ."
+        ". . .";
+    width: min-content;
+    @media (max-width: $breakpoint-mobile) {
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+}
+
+@mixin filter-style-white{
+    background: transparent;
+    padding: 3.25rem 0;
+}
+
+@mixin full-height{
+    min-height: 100vh;
+}
+
+@mixin flex-direction-column {
+    flex-direction: column;
+}
+
+
+
+@mixin  white-text-link{
+    color: white;
+    text-decoration: none
+};
+
+@mixin black-text-link{
+    color: black;
+    text-decoration: none
+};
+@mixin black-text-link2{
+    color: black;
+    text-decoration: underline;
+};
+
+@mixin gray-text-link{
+    color: #6B7280;
+    text-decoration: none
+};
+
+@mixin white-background-link{
+    background-color: white;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+};
+
+
+@mixin green-background-link{
+    background-color: $color2;
+    border-radius: 5px;
+    padding: 0.8rem 0.5rem;
+};
+
+@mixin black-background-link{
+    background-color: black;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    border: none;
+    border-radius: 25px;
+};
+
+@mixin gray-background-link{
+    background-color: #F1F3F4;
+    border-radius: 5px;
+    padding: 0.8rem 0.5rem;
+    display: inline-block;
+    border: none;
+};
+
+@mixin button-radius{
+    border-radius: 25px;
+}
+
+@mixin width100{
+    width: 100%;
+}
+
+@mixin text-decoration-none{
+    text-decoration: none
+};
+
+@mixin flex-direction-row-invert{
+    flex-direction: row-reverse;
+}
+
+@mixin flex-gap1(){
+    gap:$font-size-base;
+}
+
+@mixin font-family-one{
+    font-family: 'Marcellus', serif;
+}
+
+@mixin font-family-two{
+    font-family: 'Outfit', sans-serif;
+}
+
+@mixin font-weight300{
+    font-weight: 300;
+}
+
+@mixin font-weight400{
+    font-weight: 400;
+}
+
+@mixin font-weight500{
+    font-weight: 500;
+}
+
+@mixin font-weight600{
+    font-weight: 600;
+}
+
+@mixin random-sized-text(){
+    .smallest{
+        @include font-size-smallest;
+    }
+    .smaller{
+        @include font-size-smaller;
+    }
+    .xxxsmall{
+        @include font-size-xxxsmall;
+    }
+    .xxsmall{
+        @include font-size-xxsmall;
+    }
+    .xsmall{
+        @include font-size-xsmall;
+    }
+    .small{
+        @include font-size-small;
+    }
+    .medium{
+        @include font-size-medium;
+    }
+    .large{
+        @include font-size-large;
+    }
+    .xlarge{
+        @include font-size-xlarge;
+    }
+    .xxlarge{
+        @include font-size-xxlarge;
+    }
+    .xxxlarge{
+        @include font-size-xxxlarge;
+    }
+    .larger{
+        @include font-size-larger;
+    }
+    .largest{
+        @include font-size-largest;
+    }
+}
+
+@mixin dropdown-button-style{
+    padding: 0.5rem;
+    border: none;
+    border-radius: 8px;
+}
+
+@mixin border-bottom-black(){
+    border-bottom: 1px solid gray;
+}
+
+@mixin border-black(){
+    border: 1px solid black;
+}
+
+@mixin showing-style(){
+    color: gray;
+    &::after  {
+        content: "";
+        width: 50%;
+        background-color: gray;
+        height: 2px;    display: block;
+        margin: auto;
+        margin-top: 0.5rem;
+    }
+}
+
+@mixin custom-button(){
+    padding: 1rem 2rem;
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 5px;
+    @include background-color-gray-p10;
+    color: black;
+    padding: 0.375rem 0.75rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+
+////******////****variables 
+
+@mixin bullet-width{
+    width: max-content;
+    white-space: nowrap;
+    margin: auto;
+    img{
+        display: block;
+        margin: auto;
+        width: 100%;
+        max-width: 3.5rem;
+    }
+}
+@mixin verified-medal-style{
+    background-color: $color2;
+    @include font-color-white;
+    width: 100%;
+    max-width:  350px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1rem;
+    justify-content: center;
+    border-radius: 4px;
+    @media (max-width: $breakpoint-mobile) {
+        max-width: none;
+        width: 80%;
+    }
+}
+@mixin car-view-custom-button{
+    @include background-color-black();
+    @include font-color-white();
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    white-space: nowrap;
+    @include font-size-small();
+    width: 100%;
+    max-width: 350px;
+    height: 45px;
+    &:hover{
+        @include background-color-white();
+        @include font-color-black();
+        border: 1px solid grey;
+    }
+    @media (max-width: $breakpoint-mobile) {
+        max-width: none;
+        width: 80%;
+    }
+}
+
+@mixin custom-anchor-icon{
+    text-decoration: none;
+    img{
+        margin: 0 !important;
+        height: 1.5rem !important;
+    }
+}
+
+@mixin custom-image-in-banner{
+    width: 100%;
+    height: 380px;
+    object-fit: cover ;
+    a{
+        width: 100% ;
+        height: 100%;
+        img{
+            width: 100% ;
+            height: 100%;
+        }
+    }
+}
+
+@mixin custom-font-size{
+    font-size: calc(0.7rem + 0.3vw);
+    @media (max-width: $breakpoint-mobile) {
+        font-size: calc(1rem + 0.3vw);
+    }
+
+}
+
+@mixin custom-responsive-align-center{   
+    @media (max-width: $breakpoint-mobile) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@mixin border-b-black{}
+
+@mixin border-left{
+    border-left: 1px solid #707070;
+    @media (max-width: $breakpoint-mobile) {
+        border-left: none;
+        div > .verified-seller-container{
+            max-width: none !important;
+            width: 80% !important;
+        }
+    }
+
+}
+
+@mixin borders-top-round{
+    & th:nth-child(2){border-top-left-radius: 15px;}
+    & tr:nth-child(6)>td:first-child{border-bottom-left-radius: 15px;}
+
+    & th:nth-child(6){border-top-right-radius: 15px;}
+    & tr:nth-child(6)>td:last-child{border-bottom-right-radius: 15px;}
+}
+
+@mixin borders-top-round2{
+    & th:nth-child(1){border-top-left-radius: 15px;}
+    & tr:nth-child(7)>td:first-child{border-bottom-left-radius: 15px;}
+
+    & th:nth-child(7){border-top-right-radius: 15px;}
+    & tr:nth-child(7)>td:last-child{border-bottom-right-radius: 15px;}
+}
+
+@mixin borders-top-round3{
+    & th:nth-child(1){border-top-left-radius: 15px;}
+    & tr:nth-child(6)>td:first-child{border-bottom-left-radius: 15px;}
+
+    & th:nth-child(6){border-top-right-radius: 15px;}
+    & tr:nth-child(6)>td:last-child{border-bottom-right-radius: 15px;}
+}
+
+@mixin borders-top-round4{
+    & th:nth-child(1){border-top-left-radius: 15px;}
+    & tr:nth-child(5)>td:first-child{border-bottom-left-radius: 15px;}
+
+    & th:nth-child(5){border-top-right-radius: 15px;}
+    & tr:nth-child(5)>td:last-child{border-bottom-right-radius: 15px;}
+}
+@mixin borders-top-round5{
+    & th:nth-child(1){border-top-left-radius: 15px;}
+    & tr:nth-child(6)>td:first-child{border-bottom-left-radius: 15px;}
+
+    & th:nth-child(6){border-top-right-radius: 15px;}
+    & tr:nth-child(6)>td:last-child{border-bottom-right-radius: 15px;}
+}
+
+html, body{
+    @include font-family-two;
+    @include background-color-gray-p10;
+}
+
+
+$budget-row-icon-width: 1rem;
+$budget-row-icon-height: 1rem;
+
+
+$orfi-row-icon-width: 1rem;
+$orfi-row-icon-height: 1rem;
+
+
+$topbar-main-logo-width:88px;
+$topbar-main-logo-height: 60px;
+
+
+
+$go-to-budget-btn-width:42px;
+$go-to-budget-btn-height:42px;
+$go-to-schedule-btn-width:42px;
+$go-to-schedule-btn-height:42px;
+$go-to-orfi-btn-width:42px;
+$go-to-orfi-btn-height:42px;
+
+
+$gallery-page-folder-icon-elm-width:32px;
+$gallery-page-folder-icon-elm-height:24px;
+
+$gallery-link-top-icon-width:19px;
+$gallery-link-top-icon-height:19px;
+
+$gallery-link-contacts-icon-width:19px;
+$gallery-link-contacts-icon-height:19px;
+
+@mixin width-search{
+    width: 260px;
+}
+
+$project-edit-icon-width:57px;
+$project-edit-icon-height:57px;
+
+@mixin flex-grow2{
+    flex-grow: 2;
+}
+
+
+@mixin new-project-link{
+    font-size: 42px;
+    display: block;
+    padding: 42px;
+    text-align: center;
+    border: 1px do black;
+    color: #6B7280;
+    text-decoration: none;
+    background-color: white;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    @include font-family-one;
+}
+
+@mixin create-inputs-styles{
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    margin-bottom: 2rem;
+    background-image: url('/static/frontend/images/edit_icon.png');
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: right 10px;
+    vertical-align: middle;
+}
+
+.proj-projects{
+    .ts-wrapper.multi{
+        margin-bottom: 2rem;
+        .ts-control{
+            border: none;
+            border-bottom: 1px solid black;
+            padding-left: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0;
+            font-size: 18px;
+        }   
+    }
+}
+
+
+$project-delete-icon-img-width: 13px;
+$project-delete-icon-img-height: 15px;
+
+$project-edit-delete-title-icon-img-width: 21px;
+$project-edit-delete-title-icon-img-height: 24px;
+
+$category-delete-title-icon-img-width: 21px;
+$category-delete-title-icon-img-height: 24px;
+
+$architect-delete-title-icon-img-width: 21px;
+$architect-delete-title-icon-img-height: 24px;
+
+$budget-page-edit-icon-img-width: 17px;
+$budget-page-edit-icon-img-height: 17px;
+
+$budget-page-edit-icon2-img-width: 17px;
+$budget-page-edit-icon2-img-height: 17px;
+
+$schedule-page-edit-icon2-img-width: 17px;
+$schedule-page-edit-icon2-img-height: 17px;
+
+$architect-page-edit-icon-img-width: 17px;
+$architect-page-edit-icon-img-height: 17px;
+
+$budget-page-trash-icon-img-width: 13px;
+$budget-page-trash-icon-img-height: 14.44px;
+
+$architect-page-trash-icon-img-width: 13px;
+$architect-page-trash-icon-img-height: 14.44px;
+
+$orfi-page-folder-icon-img-width: 28px;
+$orfi-page-folder-icon-img-height: 22px;
+
+$resolved-img-width: 26px;
+$resolved-img-height: 22px;
+
+$orfi-page-edit-icon-img-width:17px;
+$orfi-page-edit-icon-img-height:17px;
+
+$orfi-page-trash-icon-img-width: 13px;
+$orfi-page-trash-icon-img-height: 14.44px;
+
+$orfi-delete-title-icon-img-width: 21px;
+$orfi-delete-title-icon-img-height: 24px;
+
+$contacts-page-edit-icon-img-width:17px;
+$contacts-page-edit-icon-img-height:17px;
+
+$contacts-page-trash-icon-img-width: 13px;
+$contacts-page-trash-icon-img-height: 14.44px;
+
+$contacts-delete-title-icon-img-width: 21px;
+$contacts-delete-title-icon-img-height: 24px;
+
+$tbrc-get-started-logo-img-width: 500px;
+$tbrc-get-started-logo-img-height: auto;
+
+$tbrc-login-logo-img-width: 220px;
+$tbrc-login-logo-img-height: 220px;
+
+$tbrc-pass-change-logo-img-width: 220px;
+$tbrc-pass-change-logo-img-height: 220px;
+
+$gallery-page-trash-icon-img-width:32x;
+$gallery-page-trash-icon-img-height:24px;
+
+$gallery-delete-title-icon-img-width: 21px;
+$gallery-delete-title-icon-img-height: 24px;
+
+$gallery-new-folder-img-width: 21px;
+$gallery-new-folder-img-height: 24px;
+
+$files-new-file-img-width : 21px;
+$files-new-file-img-height : 24px;
+
+$files-page-folder-icon-elm-width: 21px;
+$files-page-folder-icon-elm-height: 24px;
+
+
+$files-page-trash-icon-img-width:32x;
+$files-page-trash-icon-img-height:24px;
+
+$files-delete-title-icon-img-width: 21px;
+$files-delete-title-icon-img-height: 24px;
+
+
+$tbrc-edit-mode-img-width:185px;
+$tbrc-edit-mode-img-height:40px;
+
+
+$gallery-view-new-image-img-width: 50px;
+$gallery-view-new-image-img-height: 50px;
+
+$gallery-view-page-folder-icon-elm-width: 50px;
+$gallery-view-page-folder-icon-elm-height: 50px;
+
+$gallery-view-page-trash-icon-img-width: 50px;
+$gallery-view-page-trash-icon-img-height: 50px;
+
+$gallery-view-delete-title-icon-img-width: 50px;
+$gallery-view-delete-title-icon-img-height: 50px;
+
+$gv-item-width: 100%;
+$gv-item-height: 260px;
+
+@mixin responsive-width{
+    width: 580px;
+    @media (max-width: $breakpoint-mobile) {
+        width: auto;
+    }
+}
+
+
+@mixin user-inputs-styles{
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 18px;
+    border: 1px solid #D1D5DB;
+    border-radius: 2rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: right 10px;
+    vertical-align: middle;
+}
+
+@mixin cell-style{
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem;
+}
+
+@mixin cell-left-style{
+    border-left: 1px solid #ddd;
+}
+
+@mixin cell-right-style{
+    border-right: 1px solid #ddd;
+}
+
+@mixin action-button{
+    border-radius: 50%;
+    border: none;
+    padding: 0.5rem;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin budget-button-background{
+    background-color: #DCD3BD;
+}
+
+@mixin schedule-button-background{
+    background-color: #bf9d9d;
+}
+
+@mixin orfi-button-background{
+    background-color: #D3D9D6;
+}
+
+
+@mixin common-inputs-styles{
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 18px;
+    border: 1px solid #D1D5DB;
+    border-radius: 2rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: right 10px;
+    vertical-align: middle;
+}
+
+@mixin common2-inputs-styles{
+    padding-left: 0rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 2rem;
+    font-size: 18px;
+    width: 100%;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: right 10px;
+    vertical-align: middle;
+    border:none;
+    border-bottom: 1px dotted black;
+    background-image: url('/static/frontend/images/edit_icon.png');
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: right 10px;
+    vertical-align: middle;
+}
+
+@mixin button-boder-styles{
+    border:none;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+@mixin upload-box-styles{
+    background-color: #E8EAE7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+@mixin create-folder-button{
+    width: 100%;
+    height: 18rem;
+    border-radius: 15px;
+    background-color: #E4E6E7;
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin create-file-button{
+    width: 100%;
+    height: 11.5rem;
+    border-radius: 15px;
+    background-color: #E4E6E7;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+@mixin floating-delete-position(){
+    position: absolute;
+    right: 10px;
+    top:10px;
+}
+
+@mixin postion-relative(){
+    position: relative;
+}
+
+.gv-item-container{
+    border-radius: 10px;
+}
+
+@mixin width80{
+    width: 80%;
+}
+
+.home-table{
+    border-spacing: 1rem;
+    border-collapse: inherit !important;
+}
+
+@mixin project-card-styles{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flat-button{
+    background-color: transparent;
+    border: none;
+}
+
+.orfi-page-table{
+    tr{
+        td:first-child, th:first-child { text-align: left; }
+    }
+}
+
+@mixin light-bg{
+    background-color: #ffffff50;
+}
+
+input::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+@mixin checkbox-styles{
+
+}

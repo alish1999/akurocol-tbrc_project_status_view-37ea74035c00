@@ -1,0 +1,20 @@
+controller-with-params(gallery-view){
+  params:[
+    (gallery-ident);
+  ],
+  component:[
+    (gallery-view-page);
+  ]
+};
+
+
+custom-return-post-controller(save-gallery-view-image){
+  component:[],
+};
+custom-return-post-controller(delete-gallery-view-image){
+  component:[],
+};
+
+custom-return-post-controller(edit-gallery-view-image){
+  component:[],
+};

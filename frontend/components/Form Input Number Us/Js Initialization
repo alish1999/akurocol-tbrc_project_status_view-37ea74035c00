@@ -1,0 +1,43 @@
+<script>
+  akuro.registerComponent("{{s.p('Type Dash Name')}}", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let input = elm.querySelector(".money-input");
+    input.addEventListener('keyup', function(){
+      const numericValue = input.value.replace(/[^\d^\.]/g, '');
+      let numericValueFormatted = Number(numericValue);
+      if (numericValue.endsWith(".")){
+        let moneyValue = numericValueFormatted.toLocaleString('en-US');
+        input.value = `${moneyValue}.`;
+      }else if (!isNaN(numericValueFormatted)) {
+        let moneyValue = numericValueFormatted.toLocaleString('en-US');
+        input.value = `${moneyValue}`;
+      }else {
+        input.value = numericValueFormatted;
+      }
+    })
+
+    input.dispatchEvent(new Event('keyup'));
+    
+
+    class AkuroMoneyInput{
+        constructor(elm){
+            this.elm = elm;
+            this.hasValidation = true;
+        }
+        getValue(){
+            let input = this.elm.querySelector(".money-input");
+            return input.value;
+        }
+        validate(){
+            if ((this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " ") && this.hasValidation){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroMoneyInput(elm)
+  })
+  akuro.instantiate("{{s.p('Type Dash Name')}}", document.querySelectorAll(".{{s.p('Dash Name')}}"))
+</script>
+

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="google" content="notranslate">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{labels["pages"]["collection_edition"]["title"]}}</title>
+
+    <!-- Bootstrap -->
+<link href="/static/vendor/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link href="/static/vendor/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Custom Theme Style -->
+<link href="/static/build/css/custom.min.css" rel="stylesheet">
+
+<!-- jQuery -->
+<script src="/static/vendor/node_modules/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="/static/vendor/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+<link href="/static/vendor/node_modules/jsoneditor/dist/jsoneditor.css" rel="stylesheet">
+
+<script src="/static/vendor/node_modules/jsoneditor/dist/jsoneditor.min.js"></script>
+    <script>CLEAVES = {}</script>
+  </head>
+  {% set label_path = labels['pages']['collection_edition'] %}
+  <body class="akuro_body">
+    <div class="x_panel">
+        <div class="x_content">
+            <form action="" id="collection_edition_form" method='post' class="form-horizontal form-label-left" enctype='multipart/form-data'>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="page-title">
+                                <div class="title_left">
+                                    <h3>{{labels["pages"]["collection_edition"]["title"]}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            
+                            {%set messages = flash_messages(with_categories=true)%}
+                            {% for category, message in messages %}
+                            <div class="alert alert-{{category}}">
+                                <strong>{{ message }}</strong> 
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-xs-12">
+                            
+                            {{labels["pages"]["collection_edition"]["intro"]}}
+                                
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <input type="text" id="Collection-collection_name" name="Collection-collection_name" value="{{collection_instance.collection_name|safe_none|e}}" class="form-control col-md-7 col-xs-12 CollectionEdition"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <textarea style="display:none" id="Collection-collection_data" name="Collection-collection_data">{{collection_instance.collection_data}}</textarea>
+                            <div id="jsoneditor" style="width: 100%; height: auto;"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="button" id="collection_edition_btn" class="btn btn-primary btn-block">{{labels["pages"]["collection_edition"]["editbtn"]}}</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="/static/vendor/node_modules/akuro-statics/admin-pane/custom.js"></script>
+    <script>
+        $("#collection_edition_btn").click(function(){
+            $("#Collection-collection_data").val(JSON.stringify(editor.get()))
+            $("#collection_edition_form").submit();
+        });
+        const container = document.getElementById("jsoneditor")
+        const options = {}
+        const editor = new JSONEditor(container, options)
+    
+        // set json
+        const initialJson = JSON.parse($("#Collection-collection_data").val())
+        editor.set(initialJson)
+    </script>
+    
+</body>
+  <!--
+Desarrollo realizado por akuro SAS. Contactenos en http://akuro.co.
+Development made by akuro. contact Us at http://akuro.co
+  __    __    _______   ______    __    __     ______          _______    ______     _______                               
+ /" |  | "\  /"     "| /" _  "\  /" |  | "\   /    " \        |   __ "\  /    " \   /"      \                              
+(:  (__)  :)(: ______)(: ( \___)(:  (__)  :) // ____  \       (. |__) :)// ____  \ |:        |                             
+ \/      \/  \/    |   \/ \      \/      \/ /  /    ) :)      |:  ____//  /    ) :)|_____/   )                             
+ //  __  \\  // ___)_  //  \ _   //  __  \\(: (____/ //       (|  /   (: (____/ //  //      /                              
+(:  (  )  :)(:      "|(:   _) \ (:  (  )  :)\        /       /|__/ \   \        /  |:  __   \                              
+ \__|  |__/  \_______) \_______) \__|  |__/  \"_____/       (_______)   \"_____/   |__|  \___)                             
+                                                                                                                           
+      __       __   ___  ____  ____   _______     ______                                                                   
+     /""\     |/"| /  ")("  _||_ " | /"      \   /    " \                                                                  
+    /    \    (: |/   / |   (  ) : ||:        | // ____  \                                                                 
+   /' /\  \   |    __/  (:  |  | . )|_____/   )/  /    ) :)                                                                
+  //  __'  \  (// _  \   \\ \__/ //  //      /(: (____/ //                                                                 
+ /   /  \\  \ |: | \  \  /\\ __ //\ |:  __   \ \        /                                                                  
+(___/    \___)(__|  \__)(__________)|__|  \___) \"_____/                                                                   
+                                                                                                                           
+  ______    ______    _____  ___  ___________   __       ______  ___________  _______  _____  ___      ______    ________  
+ /" _  "\  /    " \  (\"   \|"  \("     _   ") /""\     /" _  "\("     _   ")/"     "|(\"   \|"  \    /    " \  /"       ) 
+(: ( \___)// ____  \ |.\\   \    |)__/  \\__/ /    \   (: ( \___))__/  \\__/(: ______)|.\\   \    |  // ____  \(:   \___/  
+ \/ \    /  /    ) :)|: \.   \\  |   \\_ /   /' /\  \   \/ \        \\_ /    \/    |  |: \.   \\  | /  /    ) :)\___  \    
+ //  \ _(: (____/ // |.  \    \. |   |.  |  //  __'  \  //  \ _     |.  |    // ___)_ |.  \    \. |(: (____/ //  __/  \\   
+(:   _) \\        /  |    \    \ |   \:  | /   /  \\  \(:   _) \    \:  |   (:      "||    \    \ | \        /  /" \   :)  
+ \_______)\"_____/    \___|\____\)    \__|(___/    \___)\_______)    \__|    \_______) \___|\____\)  \"_____/  (_______/   
+                                                                                                                           
+  ______    ______    _____  ___  ___________   __       ______  ___________      ____  ____   ________                    
+ /" _  "\  /    " \  (\"   \|"  \("     _   ") /""\     /" _  "\("     _   ")    ("  _||_ " | /"       )                   
+(: ( \___)// ____  \ |.\\   \    |)__/  \\__/ /    \   (: ( \___))__/  \\__/     |   (  ) : |(:   \___/                    
+ \/ \    /  /    ) :)|: \.   \\  |   \\_ /   /' /\  \   \/ \        \\_ /        (:  |  | . ) \___  \                      
+ //  \ _(: (____/ // |.  \    \. |   |.  |  //  __'  \  //  \ _     |.  |         \\ \__/ //   __/  \\                     
+(:   _) \\        /  |    \    \ |   \:  | /   /  \\  \(:   _) \    \:  |         /\\ __ //\  /" \   :)                    
+ \_______)\"_____/    \___|\____\)    \__|(___/    \___)\_______)    \__|        (__________)(_______/                     
+                                                                                                                           
+      __       __   ___  ____  ____   _______     ______          ______    ______                                         
+     /""\     |/"| /  ")("  _||_ " | /"      \   /    " \        /" _  "\  /    " \                                        
+    /    \    (: |/   / |   (  ) : ||:        | // ____  \      (: ( \___)// ____  \                                       
+   /' /\  \   |    __/  (:  |  | . )|_____/   )/  /    ) :)      \/ \    /  /    ) :)                                      
+  //  __'  \  (// _  \   \\ \__/ //  //      /(: (____/ //_____  //  \ _(: (____/ //                                       
+ /   /  \\  \ |: | \  \  /\\ __ //\ |:  __   \ \        /))_  ")(:   _) \\        /                                        
+(___/    \___)(__|  \__)(__________)|__|  \___) \"_____/(_____(  \_______)\"_____/                                         
+                                                                                                                           
+-->
+</html>

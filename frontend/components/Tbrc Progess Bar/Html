@@ -1,0 +1,19 @@
+<div class="{{s.p('Dash Name')}} progress-indicator" {{s.p('Locator Tag')}}>
+    <div class="labels labels-top">
+        <div class="label">
+            {{l.top_right_label[0].p('Data Getter')}}
+        </div>
+    </div>
+    <div class="progress">
+        <span class="tooltiptext" style="left: {{l.current_percentage[0].p('Data Getter')}}%;" >{{l.current_value[0].p('Data Getter')}}</span>
+        <div class="bar" style="width: {{l.current_percentage[0].p('Data Getter')}}%; background-color: {{l.bar_color[0].p('Data Getter')}};"></div>
+    </div>
+    <div class="labels labels-bottom">
+        <div class="label">
+            {{l.bottom_left_label[0].p('Data Getter')}}
+        </div>
+        <div class="label">
+            {{l.bottom_right_label[0].p('Data Getter')}}
+        </div>
+    </div>
+</div>

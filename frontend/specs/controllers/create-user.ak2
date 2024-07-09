@@ -1,0 +1,9 @@
+controller(create-user){
+  params:[],
+  component:[
+    (create-user-page);
+  ],
+};
+custom-return-post-controller(save-user){
+  component:[],
+};

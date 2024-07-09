@@ -1,0 +1,48 @@
+{
+    "generate_files": {},
+    "parent_type": "Stable Component",
+    "links": {
+        "Label": [
+            "Data Field"
+        ],
+        "Help": [
+            "Data Field"
+        ],
+        "Text": [
+            "Data Field"
+        ],
+        "Upload Text": [
+            "Data Field"
+        ],
+        "Image Icon": [
+            "Data Field"
+        ],
+        "Error Message": [
+            "Data Field"
+        ],
+        "Group Style": [
+            "Mixin"
+        ],
+        "Label Style": [
+            "Mixin"
+        ],
+        "Help Style": [
+            "Mixin"
+        ],
+        "Text Style": [
+            "Mixin"
+        ],
+        "Upload Text Style": [
+            "Mixin"
+        ],
+        "Box Style": [
+            "Mixin"
+        ],
+        "Controller": [
+            "Controller"
+        ],
+        "Value": [
+            "Data Field"
+        ]
+    }
+}

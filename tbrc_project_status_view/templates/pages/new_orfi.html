@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="google" content="notranslate">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{labels["pages"]["new_orfi"]["title"]}}</title>
+
+        <!-- Bootstrap -->
+    <link href="/static/vendor/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/static/vendor/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/static/vendor/node_modules/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="/static/vendor/node_modules/icheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="/static/vendor/node_modules/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="/static/vendor/node_modules/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="/static/vendor/node_modules/switchery/dist/switchery.min.css" rel="stylesheet">
+    <!-- starrr -->
+    <link href="/static/vendor/node_modules/starrr/dist/starrr.css" rel="stylesheet">
+   
+
+    <!-- Custom Theme Style -->
+    <link href="/static/build/css/custom.min.css" rel="stylesheet">
+    
+    <!-- jQuery -->
+    <script src="/static/vendor/node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/static/vendor/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Select2 -->
+    <script src="/static/vendor/node_modules/select2/dist/js/select2.full.min.js"></script>
+    
+    <!-- PNotify -->
+    <link href="/static/vendor/node_modules/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/pnotify/src/pnotify.nonblock.css" rel="stylesheet">
+    
+    <!-- PNotify -->
+    <script src="/static/vendor/node_modules/pnotify/dist/pnotify.js"></script>
+    <script src="/static/vendor/node_modules/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="/static/vendor/node_modules/pnotify/dist/pnotify.nonblock.js"></script>
+    
+    
+    <script src="/static/vendor/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="/static/vendor/node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js"></script>
+    <link href="/static/vendor/node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+    
+    <link href="/static/vendor/node_modules/dropzone/dist/dropzone.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/blueimp-file-upload/css/jquery.fileupload.css" rel="stylesheet">
+    
+    
+     <!-- bootstrap-daterangepicker -->
+    <script src="/static/vendor/node_modules/moment/min/moment.min.js"></script>
+    <script src="/static/vendor/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <link href="/static/vendor/node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    
+    <script src="/static/vendor/node_modules/cleave.js/dist/cleave.min.js"></script>
+    
+    <link href="/static/vendor/node_modules/akuro-statics/jsexcel/jexcel.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/akuro-statics/jsexcel/jsuites.css" rel="stylesheet">
+    
+    <link href="/static/vendor/node_modules/clockpicker/dist/jquery-clockpicker.min.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/bootstrap-duallistbox/dist/bootstrap-duallistbox.min.css" rel="stylesheet">
+    
+    <script>CLEAVES = {}</script>
+  </head>
+  {% set label_path = labels['pages']['new_orfi'] %}
+  <body class="akuro_body">
+<script>VALIDATIONS = {}, CLEAVES = {}</script>
+<div class="container-fluid">
+<div class="page-title">
+  <div class="title_left">
+    <h3>{{labels["pages"]["new_orfi"]["title"]}}</h3>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+    
+        {%set messages = flash_messages(with_categories=true)%}
+            {% for category, message in messages %}
+                <div class="alert alert-{{category}}">
+                  <strong>{{ message }}</strong> 
+                </div>
+            {% endfor %}
+        
+    </div>
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      
+      <div class="x_content">
+        <div>{{labels["pages"]["new_orfi"]["intro"]}}</div>
+        <br>
+        <form action="" method='post' class="form-horizontal form-label-left" enctype='multipart/form-data' id="new_orfi_form" autocomplete="off">
+            
+            <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >
+        <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_Orfi_orfi_project">
+            <i class="fa fa-question-circle"></i>
+        </button> 
+        {{labels["domain_classes"]["orfi"]["orfi_project"]["label"]}} 
+    </label>
+    <div class="col-md-9 col-sm-9 col-xs-12 OrfiProject">
+        
+{{orfi_form.orfi_project(class="form-control",autocomplete="off")}}
+
+        <div class="collapse" data-akuropath="domain_classes,orfi,orfi_project,description" id="Help_Orfi_orfi_project">
+            {{labels["domain_classes"]["orfi"]["orfi_project"]["description"]}} 
+        </div>
+    </div>
+    <script>
+    
+$("#Orfi-orfi_project").select2();
+
+    </script>
+</div>
+            
+            
+            
+            <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >
+        <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_Orfi_orfi_completion">
+            <i class="fa fa-question-circle"></i>
+        </button> 
+        {{labels["domain_classes"]["orfi"]["orfi_completion"]["label"]}} 
+    </label>
+    <div class="col-md-9 col-sm-9 col-xs-12">
+        <input type="text" id="Orfi-orfi_completion" name="Orfi-orfi_completion" class="form-control col-md-7 col-xs-12 OrfiCompletion"/>
+<script>
+$('#Orfi-orfi_completion').datetimepicker({
+    format: 'YYYY-MM-DD HH:mm:ss',
+    date:new Date()
+});
+$Orfi_orfi_completion_isValid=true
+</script>
+        <div class="collapse" data-akuropath="domain_classes,orfi,orfi_completion,description" id="Help_Orfi_orfi_completion">
+            {{labels["domain_classes"]["orfi"]["orfi_completion"]["description"]}} 
+        </div>
+    </div>
+</div>
+            
+            <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >
+        <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_Orfi_orfi_asigned_to">
+            <i class="fa fa-question-circle"></i>
+        </button> 
+        {{labels["domain_classes"]["orfi"]["orfi_asigned_to"]["label"]}} 
+    </label>
+    <div class="col-md-9 col-sm-9 col-xs-12">
+        <input type="text" id="Orfi-orfi_asigned_to" name="Orfi-orfi_asigned_to" class="form-control col-md-7 col-xs-12 OrfiAsignedTo"/>
+<script>$Orfi_orfi_asigned_to_isValid=true</script>
+        <div class="collapse" data-akuropath="domain_classes,orfi,orfi_asigned_to,description" id="Help_Orfi_orfi_asigned_to">
+            {{labels["domain_classes"]["orfi"]["orfi_asigned_to"]["description"]}} 
+        </div>
+    </div>
+</div>
+            
+            <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >
+        <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_Orfi_orfi_title">
+            <i class="fa fa-question-circle"></i>
+        </button> 
+        {{labels["domain_classes"]["orfi"]["orfi_title"]["label"]}} 
+    </label>
+    <div class="col-md-9 col-sm-9 col-xs-12">
+        <input type="text" id="Orfi-orfi_title" name="Orfi-orfi_title" class="form-control col-md-7 col-xs-12 OrfiTitle"/>
+<script>$Orfi_orfi_title_isValid=true</script>
+        <div class="collapse" data-akuropath="domain_classes,orfi,orfi_title,description" id="Help_Orfi_orfi_title">
+            {{labels["domain_classes"]["orfi"]["orfi_title"]["description"]}} 
+        </div>
+    </div>
+</div>
+            
+            <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >
+        <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_Orfi_orfi_file">
+            <i class="fa fa-question-circle"></i>
+        </button> 
+        {{labels["domain_classes"]["orfi"]["orfi_file"]["label"]}} 
+    </label>
+    <div class="col-md-9 col-sm-9 col-xs-12">
+        <span class="btn btn-success fileinput-button">
+				<i class="glyphicon glyphicon-plus"></i>
+				<span>Seleccione Archivo...</span>
+                <input type="hidden" id="Orfi-orfi_file" name="Orfi-orfi_file"/>
+                <input type="file" id="Orfi-orfi_file-File" name="Orfi-orfi_file-File" class="form-control col-md-7 col-xs-12 OrfiFile"/>
+</span>
+<div id="Orfi-orfi_file_progress" class="progress">
+	<div class="progress-bar progress-bar-primary"></div>
+</div>
+
+<button type="button" data-toggle="collapse" data-target="#Orfi-orfi_file-Collapse">
+▼
+</button>
+
+<div id="Orfi-orfi_file-Collapse" class="collapse">
+<a href="" id="Orfi-orfi_file-Link"/ target="_blank"> </a>
+</div> 
+
+<script>$Orfi_orfi_file_isValid=true</script>
+<script>
+var f = function () {
+    $('#Orfi-orfi_file-File').fileupload({
+        dataType: 'json',
+        url:"/page/imageUploads",
+        progressall: function (e, data) {
+    			var progress = parseInt(data.loaded / data.total * 90, 10);
+    			$('#Orfi-orfi_file_progress .progress-bar').css(
+    				'width',
+    				progress + '%'
+    			);
+    		},
+        done: function (e, data) {
+            $('#Orfi-orfi_file_progress .progress-bar').css('width','100%');
+            $.each(data.result.files, function (index, file) {
+                if(!file.error){
+        			$("#Orfi-orfi_file").val(file.url);
+        			$("#Orfi-orfi_file-Link").attr("href",file.url).html(file.url);
+        			$("#Orfi-orfi_file-Collapse").collapse("show");
+    			}else{
+    			    $("#Orfi-orfi_file-Link").attr("href","#").html(file.error);
+        			$("#Orfi-orfi_file-Collapse").collapse("show");
+    			}
+			});
+        }
+    });
+}
+
+
+if(typeof $.fn.fileupload !== 'undefined') {
+    f();
+}else{
+    $(f);
+}
+
+</script>
+        <div class="collapse" data-akuropath="domain_classes,orfi,orfi_file,description" id="Help_Orfi_orfi_file">
+            {{labels["domain_classes"]["orfi"]["orfi_file"]["description"]}} 
+        </div>
+    </div>
+</div>
+            
+            <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >
+        <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_Orfi_orfi_description">
+            <i class="fa fa-question-circle"></i>
+        </button> 
+        {{labels["domain_classes"]["orfi"]["orfi_description"]["label"]}} 
+    </label>
+    <div class="col-md-9 col-sm-9 col-xs-12">
+        <textarea id="Orfi-orfi_description" name="Orfi-orfi_description" class="form-control Input OrfiDescription">
+{{labels["domain_classes"]["orfi"]["orfi_description"]["template"]}}
+</textarea>
+<script>$Orfi_orfi_description_isValid=true</script>
+        <div class="collapse" data-akuropath="domain_classes,orfi,orfi_description,description" id="Help_Orfi_orfi_description">
+            {{labels["domain_classes"]["orfi"]["orfi_description"]["description"]}} 
+        </div>
+    </div>
+</div>
+            
+            <div class="ln_solid"></div>
+          <div class="form-group">
+            <div class="row">
+                <div class="col-xs-2">
+                </div>
+                <div class="col-xs-12">
+                    <button id="new_orfi_btn" type="button" class="btn btn-block btn-success">{{labels["pages"]["new_orfi"]["createbtn"]}}</button>
+                </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Modal-->
+<div class="modal fade" id="new_orfi_wait_modal" tabindex="-1" role="dialog" aria-labelledby="new_orfi_label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row" style="padding:15px">
+            Por favor espere ....                 
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+    <!-- FastClick -->
+    <script src="/static/vendor/node_modules/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="/static/vendor/node_modules/nprogress/nprogress.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="/static/vendor/node_modules/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="/static/vendor/node_modules/icheck/icheck.min.js"></script>
+
+    <!-- bootstrap-wysiwyg -->
+    <script src="/static/vendor/node_modules/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="/static/vendor/node_modules/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="/static/vendor/node_modules/google-code-prettify/src/prettify.js"></script>
+    <!-- jQuery Tags Input -->
+    <script src="/static/vendor/node_modules/jquery-tags-input/dist/jquery.tagsinput.min.js"></script>
+    <!-- Switchery -->
+    <script src="/static/vendor/node_modules/switchery/dist/switchery.min.js"></script>
+
+    <!-- Parsley -->
+    <script src="/static/vendor/node_modules/parsleyjs/dist/parsley.min.js"></script>
+    <!-- Autosize -->
+    <script src="/static/vendor/node_modules/autosize/dist/autosize.min.js"></script>
+    <!-- jQuery autocomplete -->
+    <script src="/static/vendor/node_modules/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+    <!-- starrr -->
+    <script src="/static/vendor/node_modules/starrr/dist/starrr.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="/static/vendor/node_modules/akuro-statics/admin-pane/custom.js"></script>
+
+    <script src="/static/vendor/node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="/static/vendor/node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="/static/vendor/node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+
+
+    <script src="/static/vendor/node_modules/jquery-smart-wizard/js/jquery.smartWizard.js"></script>
+
+    <script src="/static/vendor/node_modules/dropzone/dist/dropzone.js"></script>
+    <script src="/static/vendor/node_modules/tinymce/tinymce.min.js"></script>
+    <script src="/static/vendor/node_modules/akuro-statics/jsexcel/jexcel.js"></script>
+    <script src="/static/vendor/node_modules/akuro-statics/jsexcel/jsuites.js"></script>
+    <script src="/static/vendor/node_modules/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <script src="/static/vendor/node_modules/bootstrap-duallistbox/dist/jquery.bootstrap-duallistbox.min.js"></script>
+    
+    
+    <script>
+    
+    
+    $("#new_orfi_btn").click(function(){
+        var flag = true;
+        for(var o in VALIDATIONS){
+            if (document.getElementById(o)!= null){
+              flag = VALIDATIONS[o] && flag;
+            }
+        }
+        if(flag){
+            $("#new_orfi_wait_modal").modal("show");
+            $("#new_orfi_form").submit();
+        }else{
+            for(var o in VALIDATIONS){
+                if (document.getElementById(o) != null && VALIDATIONS[o]==false){
+                    var elm = $("#"+o)
+                    var p = elm.parents(".form-group").find("button").trigger("click");
+                    $('html, body').animate({
+                        scrollTop: elm.offset().top
+                    }, 300);
+                    break;
+                }
+            }
+            
+        }
+    });
+    </script>
+</body>
+  <!--
+Desarrollo realizado por akuro SAS. Contactenos en http://akuro.co.
+Development made by akuro. contact Us at http://akuro.co
+  __    __    _______   ______    __    __     ______          _______    ______     _______                               
+ /" |  | "\  /"     "| /" _  "\  /" |  | "\   /    " \        |   __ "\  /    " \   /"      \                              
+(:  (__)  :)(: ______)(: ( \___)(:  (__)  :) // ____  \       (. |__) :)// ____  \ |:        |                             
+ \/      \/  \/    |   \/ \      \/      \/ /  /    ) :)      |:  ____//  /    ) :)|_____/   )                             
+ //  __  \\  // ___)_  //  \ _   //  __  \\(: (____/ //       (|  /   (: (____/ //  //      /                              
+(:  (  )  :)(:      "|(:   _) \ (:  (  )  :)\        /       /|__/ \   \        /  |:  __   \                              
+ \__|  |__/  \_______) \_______) \__|  |__/  \"_____/       (_______)   \"_____/   |__|  \___)                             
+                                                                                                                           
+      __       __   ___  ____  ____   _______     ______                                                                   
+     /""\     |/"| /  ")("  _||_ " | /"      \   /    " \                                                                  
+    /    \    (: |/   / |   (  ) : ||:        | // ____  \                                                                 
+   /' /\  \   |    __/  (:  |  | . )|_____/   )/  /    ) :)                                                                
+  //  __'  \  (// _  \   \\ \__/ //  //      /(: (____/ //                                                                 
+ /   /  \\  \ |: | \  \  /\\ __ //\ |:  __   \ \        /                                                                  
+(___/    \___)(__|  \__)(__________)|__|  \___) \"_____/                                                                   
+                                                                                                                           
+  ______    ______    _____  ___  ___________   __       ______  ___________  _______  _____  ___      ______    ________  
+ /" _  "\  /    " \  (\"   \|"  \("     _   ") /""\     /" _  "\("     _   ")/"     "|(\"   \|"  \    /    " \  /"       ) 
+(: ( \___)// ____  \ |.\\   \    |)__/  \\__/ /    \   (: ( \___))__/  \\__/(: ______)|.\\   \    |  // ____  \(:   \___/  
+ \/ \    /  /    ) :)|: \.   \\  |   \\_ /   /' /\  \   \/ \        \\_ /    \/    |  |: \.   \\  | /  /    ) :)\___  \    
+ //  \ _(: (____/ // |.  \    \. |   |.  |  //  __'  \  //  \ _     |.  |    // ___)_ |.  \    \. |(: (____/ //  __/  \\   
+(:   _) \\        /  |    \    \ |   \:  | /   /  \\  \(:   _) \    \:  |   (:      "||    \    \ | \        /  /" \   :)  
+ \_______)\"_____/    \___|\____\)    \__|(___/    \___)\_______)    \__|    \_______) \___|\____\)  \"_____/  (_______/   
+                                                                                                                           
+  ______    ______    _____  ___  ___________   __       ______  ___________      ____  ____   ________                    
+ /" _  "\  /    " \  (\"   \|"  \("     _   ") /""\     /" _  "\("     _   ")    ("  _||_ " | /"       )                   
+(: ( \___)// ____  \ |.\\   \    |)__/  \\__/ /    \   (: ( \___))__/  \\__/     |   (  ) : |(:   \___/                    
+ \/ \    /  /    ) :)|: \.   \\  |   \\_ /   /' /\  \   \/ \        \\_ /        (:  |  | . ) \___  \                      
+ //  \ _(: (____/ // |.  \    \. |   |.  |  //  __'  \  //  \ _     |.  |         \\ \__/ //   __/  \\                     
+(:   _) \\        /  |    \    \ |   \:  | /   /  \\  \(:   _) \    \:  |         /\\ __ //\  /" \   :)                    
+ \_______)\"_____/    \___|\____\)    \__|(___/    \___)\_______)    \__|        (__________)(_______/                     
+                                                                                                                           
+      __       __   ___  ____  ____   _______     ______          ______    ______                                         
+     /""\     |/"| /  ")("  _||_ " | /"      \   /    " \        /" _  "\  /    " \                                        
+    /    \    (: |/   / |   (  ) : ||:        | // ____  \      (: ( \___)// ____  \                                       
+   /' /\  \   |    __/  (:  |  | . )|_____/   )/  /    ) :)      \/ \    /  /    ) :)                                      
+  //  __'  \  (// _  \   \\ \__/ //  //      /(: (____/ //_____  //  \ _(: (____/ //                                       
+ /   /  \\  \ |: | \  \  /\\ __ //\ |:  __   \ \        /))_  ")(:   _) \\        /                                        
+(___/    \___)(__|  \__)(__________)|__|  \___) \"_____/(_____(  \_______)\"_____/                                         
+                                                                                                                           
+-->
+</html>

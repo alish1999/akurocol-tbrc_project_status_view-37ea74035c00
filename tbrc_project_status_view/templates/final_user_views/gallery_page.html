@@ -1,0 +1,733 @@
+{% set gallery_page_data = gallery_page_data_collection(project_url) %}
+
+{% extends 'general_template.html' %}
+{% block css_dependencies_loaders%}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+{% endblock %}
+
+{% block html%}
+
+<div class="container s100446">
+    
+    <div class="row s100447">
+        
+        <div class="col s100448">
+            
+            <h1 class="s100449 h1-element">
+                
+                {{gallery_page_data['gallery_page_title']}}
+                
+            </h1>
+            
+        </div>
+        
+    </div>
+    
+    <div class="row s100451">
+        
+        <div class="col s100452">
+            
+            {{gallery_page_data['gallery_page_description']}}
+            
+        </div>
+        
+    </div>
+    
+    <div class="row s100454">
+        
+        <div class="col s100455">
+            
+            {% if general_data['edit_mode_on'] %}
+
+            <div class="s100457 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100457">
+              <div class="button-container">
+                
+                <button role="button" type="button" class="s100458 button-component"><div class="gallery-new-folder-img-container">
+                    <img src="{{gallery_page_data['gallery_new_folder_icon']}}"/>
+                </div>{{gallery_page_data['gallery_new_folder_label']}}</button>
+                
+              </div>
+              <div class="modal-container">
+                
+                <div class="modal gallery-new-folder-modal" data-open="0" tabindex="-1">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                        <div class="modal-body">
+                            
+                            <form action="{{gallery_page_data['budget_new_folder_action']}}" method="{{gallery_page_data['budget_new_folder_method']}}" class="akuro-form s100440 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100440">
+                              <!-- Form input components here. Labels will be visible -->
+                              
+                              
+                              <div class="new-folder-name form-input" data-error-message="{{gallery_page_data['new_folder_name_error']}}" data-akuro-ct="form-input" data-akuro-c="new-folder-name">
+                                  <label for="new_folder_name">{{gallery_page_data['new_folder_name_label']}}</label>
+                                  
+                                  <div class="input-container">
+                                    <input 
+                                      type="text" 
+                                      name="new_folder_name" 
+                                      id="new_folder_name" 
+                                      placeholder="{{gallery_page_data['new_folder_name_placeholder']}}"
+                                      
+                                      />
+                                  </div>
+                                </div>
+                              
+                              <div class="new-folder-description form-input" data-error-message="{{gallery_page_data['new_folder_description_error']}}" data-akuro-ct="form-input" data-akuro-c="new-folder-description">
+                                  <label for="new_folder_description">{{gallery_page_data['new_folder_description_label']}}</label>
+                                  
+                                  <div class="input-container">
+                                    <input 
+                                      type="text" 
+                                      name="new_folder_description" 
+                                      id="new_folder_description" 
+                                      placeholder="{{gallery_page_data['new_folder_description_placeholder']}}"
+                                      
+                                      />
+                                  </div>
+                                </div>
+                              
+                              <div class="alert-space s100441 alert-space-element">
+                                    
+                                </div>
+                              
+                              <div class="s100442 div-element">
+                                    
+                                    <button class="s100443 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100443">
+                                      
+                                      {{gallery_page_data['new_folder_button_label']}}
+                                      
+                                    </button>
+                                    
+                                </div>
+                              
+
+                            </form>
+                            
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+            {%endif%}
+            
+            {%for gallery_item_data in gallery_page_data.gallery_page_items %}
+
+            {% if general_data['edit_mode_on'] %}
+
+            <div class="s100462 div-element">
+                
+                <div class="s100463 div-element">
+                    
+                    <div class="gallery-page-folder-icon-elm-container">
+                        <img src="{{gallery_page_data['gallery_page_folder_icon']}}"/>
+                    </div>
+                    
+                    <div class="s100464 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100464">
+                      <div class="button-container">
+                        
+                        <button role="button" type="button" class="s100465 button-component"><div class="gallery-page-trash-icon-img-container">
+                            <img src="{{gallery_page_data['gallery_page_trash_icon']}}"/>
+                        </div></button>
+                        
+                      </div>
+                      <div class="modal-container">
+                        
+                        <div class="modal gallery-delete-modal" data-open="0" tabindex="-1">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                                <div class="modal-body">
+                                    
+                                    <div class="s100433 div-element">
+                                        
+                                        <div class="gallery-delete-title-icon-img-container">
+                                            <img src="{{gallery_page_data['gallery_delete_title_icon']}}"/>
+                                        </div>
+                                        
+                                        <div class="s100434 styled-label-getter">
+                                        {{gallery_page_data['gallery_delete_title']}}
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                    <div class="s100435 styled-label-getter">
+                                    {{gallery_page_data['gallery_delete_alert']}}
+                                    </div>
+                                    
+                                    <form action="{{gallery_page_data['gallery_delete_action']}}" method="{{gallery_page_data['gallery_delete_method']}}" class="akuro-form s100436 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100436">
+                                      <!-- Form input components here. Labels will be visible -->
+                                      
+                                      
+                                      <input 
+                                          type="hidden" 
+                                          
+                                          name="gallery_item_hidden_id" 
+                                          
+                                          
+                                          value="{{gallery_item_data['gallery_item_id']}}" 
+                                          
+                                          id="gallery_item_hidden_id" 
+                                          
+                                        />
+                                      
+                                      <button role="button" value="gallery_delete_button" name="gallery_delete_button" type="submit" class="gallery-delete-button submit-component">{{gallery_page_data['gallery_confirm_label']}}</button>
+                                      
+                                      <button role="button" type="button" class="s100438 bootstrap-dismiss-modal-button" data-bs-dismiss="modal">{{gallery_page_data['gallery_cancel_label']}}</button>
+                                      
+
+                                    </form>
+                                    
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    
+                </div>
+                
+                <form action="{{gallery_page_data['gallery_page_edition_action']}}" method="{{gallery_page_data['gallery_page_edition_method']}}" class="akuro-form s100466 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100466">
+                  <!-- Form input components here. Labels will be visible -->
+                  
+                  
+                  <input 
+                      type="hidden" 
+                      
+                      name="gallery_item_hidden_id" 
+                      
+                      
+                      value="{{gallery_item_data['gallery_item_id']}}" 
+                      
+                      id="gallery_item_hidden_id" 
+                      
+                    />
+                  
+                  <div class="gallery-item-new-name form-input" data-error-message="{{gallery_page_data['gallery_item_new_name_error']}}" data-akuro-ct="form-input" data-akuro-c="gallery-item-new-name">
+                      
+                      
+                      <div class="input-container">
+                        <input 
+                          type="text" 
+                          name="gallery_item_new_name" 
+                          id="gallery_item_new_name" 
+                          placeholder="{{gallery_page_data['gallery_item_new_name_placeholder']}}"
+                          value="{{gallery_item_data['gallery_item_name']}}"
+                          />
+                      </div>
+                    </div>
+                  
+                  <div class="gallery-item-new-description form-input" data-error-message="{{gallery_page_data['gallery_item_description_error']}}" data-akuro-ct="form-input" data-akuro-c="gallery-item-new-description">
+                      
+                      
+                      <div class="input-container">
+                        <input 
+                          type="text" 
+                          name="gallery_item_new_description" 
+                          id="gallery_item_new_description" 
+                          placeholder="{{gallery_page_data['gallery_item_description_placeholder']}}"
+                          value="{{gallery_item_data['gallery_item_description']}}"
+                          />
+                      </div>
+                    </div>
+                  
+                  {% set simple_link = gallery_item_data.gallery_item_link %}
+
+                    <a href="{{simple_link['link_href']}}" target="{{simple_link['link_target']}}" class="s100468 simple-anchor">{{simple_link['link_label']}}</a>
+
+                  
+                  <div class="alert-space s100469 alert-space-element">
+                        
+                    </div>
+                  
+                  <div class="s100470 div-element">
+                        
+                        <button class="s100471 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100471">
+                          
+                          {{gallery_page_data['gallery_save_button_label']}}
+                          
+                        </button>
+                        
+                    </div>
+                  
+
+                </form>
+                
+            </div>
+
+            {%endif%}
+
+            {% if not general_data['edit_mode_on'] %}
+
+            <div class="s100474 div-element">
+                
+                <div class="gallery-page-folder-icon-elm-container">
+                    <img src="{{gallery_page_data['gallery_page_folder_icon']}}"/>
+                </div>
+                
+                <div class="s100475 styled-label-getter">
+                {{gallery_item_data['gallery_item_name']}}
+                </div>
+                
+                <div class="s100476 styled-label-getter">
+                {{gallery_item_data['gallery_item_description']}}
+                </div>
+                
+                {% set simple_link = gallery_item_data.gallery_item_link %}
+
+                <a href="{{simple_link['link_href']}}" target="{{simple_link['link_target']}}" class="s100478 simple-anchor">{{simple_link['link_label']}}</a>
+
+                
+            </div>
+
+            {%endif%}
+
+            {%endfor%}
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+{% endblock %}
+
+{% block support_html%}
+
+<!-- s100446-->
+
+{% endblock %}
+
+{% block js_dependencies_loaders%}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block js_initialization%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".new-folder-name"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".new-folder-description"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100443"))
+</script>
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100440"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".gallery-new-folder-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100457"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-hidden", [], (elm)=>{
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-hidden", document.querySelectorAll(".gallery-item-hidden-id"))
+</script>
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100436"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".gallery-delete-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100464"))
+</script>
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-hidden", [], (elm)=>{
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-hidden", document.querySelectorAll(".gallery-item-hidden-id"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".gallery-item-new-name"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".gallery-item-new-description"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100471"))
+</script>
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100466"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

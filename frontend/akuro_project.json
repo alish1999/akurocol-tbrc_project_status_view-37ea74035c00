@@ -1,0 +1,11 @@
+{
+    "compile_tasks": [
+        {
+            "akuro_version": "compilerfront",
+            "key_file": "priv_key.pem",
+            "start_file": "specs/tbrc.ak2",
+            "start_specification": "Tbrc Site",
+            "start_perspective": "Python Controller"
+        }
+    ]
+}

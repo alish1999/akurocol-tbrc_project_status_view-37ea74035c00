@@ -1,0 +1,14 @@
+data-collection(simple-info-data){
+  fields:[    
+    data-field(simple-title){
+      collection:[
+        (simple-info-data);
+      ]
+    };
+    data-field(simple-value){
+      collection:[
+        (simple-info-data);
+      ]
+    };
+  ]
+};

@@ -1,0 +1,34 @@
+view only
+/ #hecho
+/home #hecho
+/public-login #hecho
+/stats/<project_url> #hecho
+/budget/<project_url> #hecho
+/schedule/<project_url> #hecho
+/orfi/<project_url> #hecho
+/architect/<project_url> #hecho
+/contacts/<project_url> #hecho
+/gallery/<project_url> #hecho
+/orfi-files/<project_url> #hecho
+/contractor-files/<project_url> #hecho
+
+
+
+
+#eidtion mode
+
+/  #hecho
+/home #hecho
+/public-login  #hecho
+/stats/<project_url>  #hecho
+/create-user #hecho
+/budget/<project_url> #hecho
+/schedule/<project_url> #hecho
+/orfi/<project_url>
+/ajax/orfiFileUpload
+/architect/<project_url>
+/contacts/<project_url>
+/gallery/<project_url>
+/edit-project/<project_url>
+/orfi-files/<project_url>
+/contractor-files/<project_url>

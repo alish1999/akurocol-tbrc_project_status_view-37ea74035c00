@@ -1,0 +1,28 @@
+<script>
+  akuro.registerComponent("{{s.p('Type Dash Name')}}", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let input = elm.querySelector("select");
+    let load = new TomSelect(input,{});
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+            this.hasValidation = true;
+        }
+        getValue(){
+            
+            return input.value;
+        }
+        validate(){
+            if ((this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " ") && this.hasValidation ){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("{{s.p('Type Dash Name')}}", document.querySelectorAll(".{{s.p('Dash Name')}}"))
+</script>
+

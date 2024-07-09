@@ -1,0 +1,26 @@
+.x_content{
+    .result-set{
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+        grid-template-rows: 1fr; 
+        gap: 1rem 1rem; 
+        grid-template-areas: 
+            ". . . . ."; 
+        word-wrap: anywhere;
+        .loader-unit{
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            border-radius: 5px;
+            padding: 1rem;
+            .loader-field{
+                .field-title{
+                    display: inline;
+                    margin-right: 1rem;
+                    font-weight: bold;
+                }
+                .field-value{
+                    display: inline;
+                }
+            }
+        }
+    }
+}

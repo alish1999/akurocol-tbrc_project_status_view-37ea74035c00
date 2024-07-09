@@ -1,0 +1,8 @@
+controller-with-params(orfi-files){
+  params:[
+    (project-url);
+  ],
+  component:[
+    (files-page);
+  ]
+};

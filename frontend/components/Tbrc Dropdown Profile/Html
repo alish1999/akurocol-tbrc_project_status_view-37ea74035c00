@@ -1,0 +1,13 @@
+<div class="{{s.p('Dash Name')}}" {{s.p("Locator Tag")}}>
+  <div class="profile">
+    <img src="{{l.image[0].p('Data Getter')}}" />
+  </div>
+  <div class="menu">
+    <h3>{{l.top_label[0].p('Data Getter')}}<br /><span>{{l.bottom_label[0].p('Data Getter')}}</span></h3>
+    <ul>
+      {%for p in l.links%}
+      {{p.p("Html")|indent}}
+      {%endfor%}
+    </ul>
+  </div>
+</div>

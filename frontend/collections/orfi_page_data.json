@@ -1,0 +1,31 @@
+{
+    "orfi_page_title":"Project Name Orfi",
+    "orfi_page_columns":[
+        {
+            "simple_title":"Date"
+        },
+        {
+            "simple_title":"Assigned To"
+        },
+        {
+            "simple_title":"Question/Theme"
+        },
+        {
+            "simple_title":"E-Mail"
+        }
+    ],
+    "orfi_page_items":[
+        {
+            "orfi_item_date":"22/22/2022",
+            "orfi_item_asigned":"None",
+            "orfi_item_question":"Lorem Ipsum",
+            "orfi_item_link":{
+                "link_href":"/",
+                "link_label":"See more",
+                "link_target":"_self",
+                "simple_link_image":"/static/images/icon.png"
+            }
+        }
+    ]
+    
+}

@@ -1,0 +1,43 @@
+<script>
+  akuro.registerComponent("{{s.p('Type Dash Name')}}", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let active = elm.querySelector(".active-image");
+    let inactive = elm.querySelector(".inactive-image");
+    let input = elm.querySelector("input");
+
+    function show(){
+      if(input.checked){
+        active.style.display="block"
+        inactive.style.display="none"
+      }else{
+        active.style.display="none"
+        inactive.style.display="block"
+      }
+    }
+
+    function toggle(){
+      input.checked = !input.checked;
+      show();
+    }
+
+    active.addEventListener("click",toggle)
+    inactive.addEventListener("click",toggle)
+
+    show();
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            return input.checked;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("{{s.p('Type Dash Name')}}", document.querySelectorAll(".{{s.p('Dash Name')}}"))
+</script>
+

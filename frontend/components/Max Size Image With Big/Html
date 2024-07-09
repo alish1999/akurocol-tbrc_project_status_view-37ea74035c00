@@ -1,0 +1,3 @@
+<div class="{{s.p("Dash Name")}}-container">
+    <img src="{{l.image[0].p("Data Getter")}}" data-big-image="{{l.big_image[0].p("Data Getter")}}"/>
+</div>

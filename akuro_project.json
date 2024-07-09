@@ -1,0 +1,11 @@
+{
+    "compile_tasks": [
+        {
+            "akuro_version": "compilerp3",
+            "key_file": "priv_key.pem",
+            "start_file": "tbrc_project_status_view.akuro",
+            "start_specification": "Tbrc Project Status View",
+            "start_perspective": "Apache Conector"
+        }
+    ]
+}

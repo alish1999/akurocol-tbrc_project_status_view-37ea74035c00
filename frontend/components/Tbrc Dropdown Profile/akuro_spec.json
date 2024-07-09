@@ -1,0 +1,18 @@
+{
+    "generate_files": {},
+    "parent_type": "Tbrc Components",
+    "links": {
+        "Image": [
+            "Data Field"
+        ],
+        "Top Label": [
+            "Data Field"
+        ],
+        "Bottom Label": [
+            "Data Field"
+        ],
+        "Links": [
+            "Page Component"
+        ]
+    }
+}

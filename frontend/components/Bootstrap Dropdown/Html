@@ -1,0 +1,10 @@
+<div class="dropdown {{s.p('Dash Name')}}" {{s.p("Locator Tag")}}>
+    <button class="d-button dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        {{l.label[0].p('Data Getter')}}
+    </button>
+    <ul class="dropdown-menu">
+        {%for p in l.parts%}
+        {{p.p("Html")}}
+        {%endfor%}
+    </ul>
+</div>

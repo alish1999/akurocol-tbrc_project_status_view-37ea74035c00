@@ -1,0 +1,33 @@
+{
+    "generate_files": {},
+    "parent_type": "Sponzo Components",
+    "links": {
+        "Label": [
+            "Data Field"
+        ],
+        "Placeholder": [
+            "Data Field"
+        ],
+        "Icon": [
+            "Data Field"
+        ],
+        "Group Style": [
+            "Mixin"
+        ],
+        "Label Style": [
+            "Mixin"
+        ],
+        "Container Style": [
+            "Mixin"
+        ],
+        "Input Style": [
+            "Mixin"
+        ],
+        "Placeholder Style": [
+            "Mixin"
+        ],
+        "Focus Style": [
+            "Mixin"
+        ]
+    }
+}

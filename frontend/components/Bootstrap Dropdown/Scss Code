@@ -1,0 +1,12 @@
+.{{s.p("Dash Name")}}{
+    .d-button{
+        {% for p in l.mixins %}
+        {{p.p("Scss Code")|indent|indent}}
+        {%endfor%}
+    }    
+    .dropdown-menu{
+        {% for p in l.parts %}
+        {{p.p("Scss Code")|indent|indent}}
+        {%endfor%}
+    }
+}

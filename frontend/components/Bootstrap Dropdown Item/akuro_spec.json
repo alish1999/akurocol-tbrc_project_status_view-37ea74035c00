@@ -1,0 +1,21 @@
+{
+    "generate_files": {},
+    "parent_type": "Stable Component",
+    "links": {
+        "Parts": [
+            "Page Component"
+        ],
+        "Link": [
+            "Data Field"
+        ],
+        "Label": [
+            "Data Field"
+        ],
+        "Target": [
+            "Data Field"
+        ],
+        "Mixins": [
+            "Mixin"
+        ]
+    }
+}

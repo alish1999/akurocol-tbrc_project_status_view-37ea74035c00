@@ -1,0 +1,27 @@
+{
+    "budget_page_title":"Project Name Budget",
+    "budget_page_columns":[
+        {
+            "simple_title":"Category"
+        },
+        {
+            "simple_title":"Budget"
+        },
+        {
+            "simple_title":"See More"
+        }
+    ],
+    "budget_page_items":[
+        {
+            "budget_item_name":"Architect",
+            "budget_item_total":"$1552",
+            "budget_item_link":{
+                "link_href":"/",
+                "link_label":"See more",
+                "link_target":"_self",
+                "simple_link_image":"/static/images/icon.png"
+            }           
+        }
+    ]
+    
+}

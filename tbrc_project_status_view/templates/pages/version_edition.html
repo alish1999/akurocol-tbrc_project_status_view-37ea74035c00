@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="google" content="notranslate">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{labels["pages"]["version_edition"]["title"]}}</title>
+
+        <!-- Bootstrap -->
+    <link href="/static/vendor/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/static/vendor/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/static/vendor/node_modules/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="/static/vendor/node_modules/icheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="/static/vendor/node_modules/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="/static/vendor/node_modules/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="/static/vendor/node_modules/switchery/dist/switchery.min.css" rel="stylesheet">
+    <!-- starrr -->
+    <link href="/static/vendor/node_modules/starrr/dist/starrr.css" rel="stylesheet">
+  
+
+    <!-- Custom Theme Style -->
+    <link href="/static/build/css/custom.min.css" rel="stylesheet">
+    
+    <!-- jQuery -->
+    <script src="/static/vendor/node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/static/vendor/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Select2 -->
+    <script src="/static/vendor/node_modules/select2/dist/js/select2.full.min.js"></script>
+    
+    <!-- PNotify -->
+    <link href="/static/vendor/node_modules/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/pnotify/src/pnotify.nonblock.css" rel="stylesheet">
+    
+    <!-- PNotify -->
+    <script src="/static/vendor/node_modules/pnotify/dist/pnotify.js"></script>
+    <script src="/static/vendor/node_modules/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="/static/vendor/node_modules/pnotify/dist/pnotify.nonblock.js"></script>
+    
+    <script src="/static/vendor/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="/static/vendor/node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js"></script>
+    <link href="/static/vendor/node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+    
+    <link href="/static/vendor/node_modules/blueimp-file-upload/css/jquery.fileupload.css" rel="stylesheet">
+    
+    <link href="/static/vendor/node_modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+    
+    <script src="/static/vendor/node_modules/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+    
+    <link href="/static/vendor/node_modules/dropzone/dist/dropzone.css" rel="stylesheet">
+    
+      <!-- bootstrap-daterangepicker -->
+    <script src="/static/vendor/node_modules/moment/min/moment.min.js"></script>
+    <script src="/static/vendor/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <link href="/static/vendor/node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    
+    <script src="/static/vendor/node_modules/cleave.js/dist/cleave.min.js"></script>
+    
+    <link href="/static/vendor/node_modules/akuro-statics/jsexcel/jexcel.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/akuro-statics/jsexcel/jsuites.css" rel="stylesheet">
+    
+    <link href="/static/vendor/node_modules/clockpicker/dist/jquery-clockpicker.min.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/bootstrap-duallistbox/dist/bootstrap-duallistbox.min.css" rel="stylesheet">
+    
+    <script>CLEAVES = {}</script>
+  </head>
+  {% set label_path = labels['pages']['version_edition'] %}
+  <body class="akuro_body">
+    <script>VALIDATIONS ={};</script>
+    <div class="container-fluid">
+        <div class="page-title">
+          <div class="title_left">
+            <h3>{{labels["pages"]["version_edition"]["title"]}}</h3>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+            
+                {%set messages = flash_messages(with_categories=true)%}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{category}}">
+                      <strong>{{ message }}</strong> 
+                    </div>
+                {% endfor %}
+            
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <br>
+                        <form action="" method='post' class="form-horizontal form-label-left" enctype='multipart/form-data'>
+                            <!-- relations --> 
+                            
+                            
+                            
+                            <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >
+            <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_Version_version_project">
+                <i class="fa fa-question-circle"></i>
+            </button> 
+            {{labels["domain_classes"]["version"]["version_project"]["label"]}} 
+        </label>
+        <div class="col-md-9 col-sm-9 col-xs-12 VersionProject">
+            
+    {{version_form.version_project(class="form-control")}}
+
+            <div class="collapse" data-akuropath="domain_classes,version,version_project,description" id="Help_Version_version_project">
+                {{labels["domain_classes"]["version"]["version_project"]["description"]}} 
+            </div>
+        </div>
+        <script>
+        
+    $("#Version-version_project").select2();
+
+        </script>
+    </div>
+                            
+                            
+                            
+                            
+                            
+                            <div class="form-group">
+        <div class="row">
+            <div class="col-xs-12">
+                <label class="control-label" for="first-name" >
+                    <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_Version_version_costs">
+                        <i class="fa fa-question-circle"></i>
+                    </button> 
+                    {{labels["domain_classes"]["version"]["version_costs"]["label"]}} 
+                </label>
+            </div>
+            <div class="collapse" data-akuropath="domain_classes,version,version_costs,description" id="Help_Version_version_costs">
+                {{labels["domain_classes"]["version"]["version_costs"]["description"]}} 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="container-fluid" id="version_costs_container" style="overflow-x: scroll;max-width: 100%;">
+                </div>
+                <div class="container-fluid" id="version_costs_container_hiddens">
+                </div>
+                <div class="row">
+                    <div class="col-xs-2">
+                    </div>
+                    <div class="col-xs-4">
+            	        <button class="btn btn-block btn-primary" type="button" id="version_costs_remove">{{labels["domain_classes"]["version"]["version_costs"]["remove_btn"]}}</button>
+            	    </div>
+            	    <div class="col-xs-4">
+            	        <button class="btn btn-block btn-success" type="button" id="version_costs_add">{{labels["domain_classes"]["version"]["version_costs"]["add_btn"]}}</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+    table_version_costs = null;
+    function update_data_version_costs(){
+        var parent = document.getElementById("version_costs_container_hiddens");
+        parent.innerHTML = "";
+        var data = table_version_costs.getData();
+        for (var i=0;i<data.length; i++){
+          if (!(data[i][0] == "" && data[i][1] == "" && data[i][2] == "" && data[i][3] == "" && data[i][4] == "" && data[i][5] == "" && data[i][6] == "" && data[i][7] == "" )){
+        
+              
+                var input = document.createElement("input");  
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", "Version-version_costs-"+i+"-cost_is_schedule");
+                var raw_value = data[i][0];
+                input.setAttribute("value", raw_value);
+                parent.appendChild(input);
+              
+                var input = document.createElement("input");  
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", "Version-version_costs-"+i+"-cost_phase");
+                var raw_value = data[i][1];
+                input.setAttribute("value", raw_value);
+                parent.appendChild(input);
+              
+                var input = document.createElement("input");  
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", "Version-version_costs-"+i+"-cost_vendor");
+                var raw_value = data[i][2];
+                input.setAttribute("value", raw_value);
+                parent.appendChild(input);
+              
+                var input = document.createElement("input");  
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", "Version-version_costs-"+i+"-cost_budget");
+                var raw_value = data[i][3];
+                input.setAttribute("value", (raw_value ? raw_value : "").replace(/[ $]/g,""));
+                parent.appendChild(input);
+              
+                var input = document.createElement("input");  
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", "Version-version_costs-"+i+"-cost_paid_to_date");
+                var raw_value = data[i][4];
+                input.setAttribute("value", (raw_value ? raw_value : "").replace(/[ $]/g,""));
+                parent.appendChild(input);
+              
+                var input = document.createElement("input");  
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", "Version-version_costs-"+i+"-cost_pending_due");
+                var raw_value = data[i][5];
+                input.setAttribute("value", (raw_value ? raw_value : "").replace(/[ $]/g,""));
+                parent.appendChild(input);
+              
+                var input = document.createElement("input");  
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", "Version-version_costs-"+i+"-cost_remaining_balance");
+                var raw_value = data[i][6];
+                input.setAttribute("value", (raw_value ? raw_value : "").replace(/[ $]/g,""));
+                parent.appendChild(input);
+              
+                var input = document.createElement("input");  
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", "Version-version_costs-"+i+"-next_month_estimated");
+                var raw_value = data[i][7];
+                input.setAttribute("value", (raw_value ? raw_value : "").replace(/[ $]/g,""));
+                parent.appendChild(input);
+              
+         }
+        }
+        
+        console.log(table_version_costs.getData())
+    }
+
+    function init_version_costs(){
+        var None = null;
+        var data = [
+            {% for cost_instance in version_instance.version_costs %}
+                [ {%if cost_instance.cost_is_schedule%}true{%else%}false{%endif%} ,  `{%if cost_instance.cost_phase is not none %}{{cost_instance.cost_phase|e}}{%endif%}` ,  `{%if cost_instance.cost_vendor is not none %}{{cost_instance.cost_vendor|e}}{%endif%}` ,  '{%if cost_instance.cost_budget is not none %}{{cost_instance.cost_budget|int}}{%else%}0{%endif%}' ,  '{%if cost_instance.cost_paid_to_date is not none %}{{cost_instance.cost_paid_to_date|int}}{%else%}0{%endif%}' ,  '{%if cost_instance.cost_pending_due is not none %}{{cost_instance.cost_pending_due|int}}{%else%}0{%endif%}' ,  '{%if cost_instance.cost_remaining_balance is not none %}{{cost_instance.cost_remaining_balance|int}}{%else%}0{%endif%}' ,  '{%if cost_instance.next_month_estimated is not none %}{{cost_instance.next_month_estimated|int}}{%else%}0{%endif%}' ]{%if not loop.last%},{%endif%}
+            {% endfor %}
+            
+        ]
+        {% set cost_form = version_form.version_costs.entries[0].form %}
+        var TABLE = jexcel(document.getElementById('version_costs_container'), {
+            data:data,
+            allowInsertColumn:false,
+            onselection:function(a){
+                a.jexcel.lastRowSelected = parseInt(a.jexcel.getSelectedRows()[0].dataset.y);
+            },
+            columns: [
+                
+                { type:'checkbox', width:'70', title:'{{labels["domain_classes"]["cost"]["cost_is_schedule"]["label"]}}' },
+                
+                { type:'text', width:'{{labels["domain_classes"]["cost"]["cost_phase"]["excel_width"]}}', title:'{{labels["domain_classes"]["cost"]["cost_phase"]["label"]}}' },
+                
+                { type:'text', width:'{{labels["domain_classes"]["cost"]["cost_vendor"]["excel_width"]}}', title:'{{labels["domain_classes"]["cost"]["cost_vendor"]["label"]}}' },
+                
+                {
+                    type: 'numeric',
+                    title:'{{labels["domain_classes"]["cost"]["cost_budget"]["label"]}}',
+                    mask:'$ #,##.00',
+                    width:'{{labels["domain_classes"]["cost"]["cost_budget"]["excel_width"]}}',
+                    decimal:'.'
+                },
+                
+                {
+                    type: 'numeric',
+                    title:'{{labels["domain_classes"]["cost"]["cost_paid_to_date"]["label"]}}',
+                    mask:'$ #,##.00',
+                    width:'{{labels["domain_classes"]["cost"]["cost_paid_to_date"]["excel_width"]}}',
+                    decimal:'.'
+                },
+                
+                {
+                    type: 'numeric',
+                    title:'{{labels["domain_classes"]["cost"]["cost_pending_due"]["label"]}}',
+                    mask:'$ #,##.00',
+                    width:'{{labels["domain_classes"]["cost"]["cost_pending_due"]["excel_width"]}}',
+                    decimal:'.'
+                },
+                
+                {
+                    type: 'numeric',
+                    title:'{{labels["domain_classes"]["cost"]["cost_remaining_balance"]["label"]}}',
+                    mask:'$ #,##.00',
+                    width:'{{labels["domain_classes"]["cost"]["cost_remaining_balance"]["excel_width"]}}',
+                    decimal:'.'
+                },
+                
+                {
+                    type: 'numeric',
+                    title:'{{labels["domain_classes"]["cost"]["next_month_estimated"]["label"]}}',
+                    mask:'$ #,##.00',
+                    width:'{{labels["domain_classes"]["cost"]["next_month_estimated"]["excel_width"]}}',
+                    decimal:'.'
+                },
+                
+            ],
+            onafterchanges: update_data_version_costs,
+            ondeleterow: update_data_version_costs,
+            updateTable: function(instance, cell, col, row, val, label, cellName){
+                
+                if (col == 0) {
+                    
+                }
+                
+                if (col == 1) {
+                    
+                }
+                
+                if (col == 2) {
+                    
+                }
+                
+                if (col == 3) {
+                    
+                }
+                
+                if (col == 4) {
+                    
+                }
+                
+                if (col == 5) {
+                    
+                }
+                
+                if (col == 6) {
+                    
+                }
+                
+                if (col == 7) {
+                    
+                }
+                
+            }
+        });
+        table_version_costs = TABLE
+        if (data.length==0){
+            table_version_costs.insertRow()
+        }
+        update_data_version_costs();
+    }
+
+
+    $(function(){
+        init_version_costs();
+    });
+
+
+    $("#version_costs_remove").click(function(){
+        if(table_version_costs != null ){
+            table_version_costs.deleteRow(table_version_costs.lastRowSelected,1)
+        }
+    });
+
+    $("#version_costs_add").click(function(){
+        if(table_version_costs != null ){
+            table_version_costs.insertRow()
+        }
+    });
+    </script>
+                            
+                            
+                            
+                            
+                            
+                            <div class="form-group">
+        <div class="row">
+            <div class="col-xs-12">
+                <label class="control-label" for="first-name" >
+                    <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_Version_version_bills">
+                        <i class="fa fa-question-circle"></i>
+                    </button> 
+                    {{labels["domain_classes"]["version"]["version_bills"]["label"]}} 
+                </label>
+            </div>
+            <div class="collapse" data-akuropath="domain_classes,version,version_bills,description" id="Help_Version_version_bills">
+                {{labels["domain_classes"]["version"]["version_bills"]["description"]}} 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="container-fluid" id="version_bills_container" style="overflow-x: scroll;max-width: 100%;">
+                </div>
+                <div class="container-fluid" id="version_bills_container_hiddens">
+                </div>
+                <div class="row">
+                    <div class="col-xs-2">
+                    </div>
+                    <div class="col-xs-4">
+            	        <button class="btn btn-block btn-primary" type="button" id="version_bills_remove">{{labels["domain_classes"]["version"]["version_bills"]["remove_btn"]}}</button>
+            	    </div>
+            	    <div class="col-xs-4">
+            	        <button class="btn btn-block btn-success" type="button" id="version_bills_add">{{labels["domain_classes"]["version"]["version_bills"]["add_btn"]}}</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+    table_version_bills = null;
+    function update_data_version_bills(){
+        var parent = document.getElementById("version_bills_container_hiddens");
+        parent.innerHTML = "";
+        var data = table_version_bills.getData();
+        for (var i=0;i<data.length; i++){
+          if (!(data[i][0] == "" && data[i][1] == "" && data[i][2] == "" && data[i][3] == "" && data[i][4] == "" && data[i][5] == "" && data[i][6] == "" && data[i][7] == "" )){
+        
+              
+                var input = document.createElement("input");  
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", "Version-version_bills-"+i+"-bill_phase");
+                var raw_value = data[i][0];
+                input.setAttribute("value", raw_value);
+                parent.appendChild(input);
+              
+                var input = document.createElement("input");  
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", "Version-version_bills-"+i+"-bill_vendor");
+                var raw_value = data[i][1];
+                input.setAttribute("value", raw_value);
+                parent.appendChild(input);
+              
+                var input = document.createElement("input");  
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", "Version-version_bills-"+i+"-bill_date");
+                var raw_value = data[i][2];
+                input.setAttribute("value", raw_value);
+                parent.appendChild(input);
+              
+                var input = document.createElement("input");  
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", "Version-version_bills-"+i+"-bill_invoice");
+                var raw_value = data[i][3];
+                input.setAttribute("value", raw_value);
+                parent.appendChild(input);
+              
+                var input = document.createElement("input");  
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", "Version-version_bills-"+i+"-bill_paid_to");
+                var raw_value = data[i][4];
+                input.setAttribute("value", raw_value);
+                parent.appendChild(input);
+              
+                var input = document.createElement("input");  
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", "Version-version_bills-"+i+"-bill_pending");
+                var raw_value = data[i][5];
+                input.setAttribute("value", (raw_value ? raw_value : "").replace(/[ $]/g,""));
+                parent.appendChild(input);
+              
+                var input = document.createElement("input");  
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", "Version-version_bills-"+i+"-bill_budget");
+                var raw_value = data[i][6];
+                input.setAttribute("value", (raw_value ? raw_value : "").replace(/[ $]/g,""));
+                parent.appendChild(input);
+              
+                var input = document.createElement("input");  
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", "Version-version_bills-"+i+"-bill_paid_to_date");
+                var raw_value = data[i][7];
+                input.setAttribute("value", (raw_value ? raw_value : "").replace(/[ $]/g,""));
+                parent.appendChild(input);
+              
+         }
+        }
+        
+        console.log(table_version_bills.getData())
+    }
+
+    function init_version_bills(){
+        var None = null;
+        var data = [
+            {% for bill_instance in version_instance.version_bills %}
+                [ `{%if bill_instance.bill_phase is not none %}{{bill_instance.bill_phase|e}}{%endif%}` ,  `{%if bill_instance.bill_vendor is not none %}{{bill_instance.bill_vendor|e}}{%endif%}` ,  `{%if bill_instance.bill_date is not none %}{{bill_instance.bill_date|e}}{%endif%}` ,  `{%if bill_instance.bill_invoice is not none %}{{bill_instance.bill_invoice|e}}{%endif%}` ,  `{%if bill_instance.bill_paid_to is not none %}{{bill_instance.bill_paid_to|e}}{%endif%}` ,  '{%if bill_instance.bill_pending is not none %}{{bill_instance.bill_pending|int}}{%else%}0{%endif%}' ,  '{%if bill_instance.bill_budget is not none %}{{bill_instance.bill_budget|int}}{%else%}0{%endif%}' ,  '{%if bill_instance.bill_paid_to_date is not none %}{{bill_instance.bill_paid_to_date|int}}{%else%}0{%endif%}' ]{%if not loop.last%},{%endif%}
+            {% endfor %}
+            
+        ]
+        {% set bill_form = version_form.version_bills.entries[0].form %}
+        var TABLE = jexcel(document.getElementById('version_bills_container'), {
+            data:data,
+            allowInsertColumn:false,
+            onselection:function(a){
+                a.jexcel.lastRowSelected = parseInt(a.jexcel.getSelectedRows()[0].dataset.y);
+            },
+            columns: [
+                
+                { type:'text', width:'{{labels["domain_classes"]["bill"]["bill_phase"]["excel_width"]}}', title:'{{labels["domain_classes"]["bill"]["bill_phase"]["label"]}}' },
+                
+                { type:'text', width:'{{labels["domain_classes"]["bill"]["bill_vendor"]["excel_width"]}}', title:'{{labels["domain_classes"]["bill"]["bill_vendor"]["label"]}}' },
+                
+                { type:'text', width:'{{labels["domain_classes"]["bill"]["bill_date"]["excel_width"]}}', title:'{{labels["domain_classes"]["bill"]["bill_date"]["label"]}}' },
+                
+                { type:'text', width:'{{labels["domain_classes"]["bill"]["bill_invoice"]["excel_width"]}}', title:'{{labels["domain_classes"]["bill"]["bill_invoice"]["label"]}}' },
+                
+                { type:'text', width:'{{labels["domain_classes"]["bill"]["bill_paid_to"]["excel_width"]}}', title:'{{labels["domain_classes"]["bill"]["bill_paid_to"]["label"]}}' },
+                
+                {
+                    type: 'numeric',
+                    title:'{{labels["domain_classes"]["bill"]["bill_pending"]["label"]}}',
+                    mask:'$ #,##.00',
+                    width:'{{labels["domain_classes"]["bill"]["bill_pending"]["excel_width"]}}',
+                    decimal:'.'
+                },
+                
+                {
+                    type: 'numeric',
+                    title:'{{labels["domain_classes"]["bill"]["bill_budget"]["label"]}}',
+                    mask:'$ #,##.00',
+                    width:'{{labels["domain_classes"]["bill"]["bill_budget"]["excel_width"]}}',
+                    decimal:'.'
+                },
+                
+                {
+                    type: 'numeric',
+                    title:'{{labels["domain_classes"]["bill"]["bill_paid_to_date"]["label"]}}',
+                    mask:'$ #,##.00',
+                    width:'{{labels["domain_classes"]["bill"]["bill_paid_to_date"]["excel_width"]}}',
+                    decimal:'.'
+                },
+                
+            ],
+            onafterchanges: update_data_version_bills,
+            ondeleterow: update_data_version_bills,
+            updateTable: function(instance, cell, col, row, val, label, cellName){
+                
+                if (col == 0) {
+                    
+                }
+                
+                if (col == 1) {
+                    
+                }
+                
+                if (col == 2) {
+                    
+                }
+                
+                if (col == 3) {
+                    
+                }
+                
+                if (col == 4) {
+                    
+                }
+                
+                if (col == 5) {
+                    
+                }
+                
+                if (col == 6) {
+                    
+                }
+                
+                if (col == 7) {
+                    
+                }
+                
+            }
+        });
+        table_version_bills = TABLE
+        if (data.length==0){
+            table_version_bills.insertRow()
+        }
+        update_data_version_bills();
+    }
+
+
+    $(function(){
+        init_version_bills();
+    });
+
+
+    $("#version_bills_remove").click(function(){
+        if(table_version_bills != null ){
+            table_version_bills.deleteRow(table_version_bills.lastRowSelected,1)
+        }
+    });
+
+    $("#version_bills_add").click(function(){
+        if(table_version_bills != null ){
+            table_version_bills.insertRow()
+        }
+    });
+    </script>
+                            
+                            
+                            
+                            <!--fields-->
+                            
+                            <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >
+            <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_Version_version_timestamp">
+                <i class="fa fa-question-circle"></i>
+            </button> 
+            {{labels["domain_classes"]["version"]["version_timestamp"]["label"]}} 
+        </label>
+        <div class="col-md-9 col-sm-9 col-xs-12">
+            <input type="text" id="Version-version_timestamp" name="Version-version_timestamp" value="{{version_instance.version_timestamp.strftime('%Y-%m-%d %H:%M:%S') if version_instance.version_timestamp != None else ''}}" class="form-control col-md-7 col-xs-12 VersionTimestamp"/>
+    <script>
+    $('#Version-version_timestamp').datetimepicker({
+        format: 'YYYY-MM-DD HH:mm:ss'
+    });
+    $Version_version_timestamp_isValid=true
+    </script>
+            <div class="collapse" data-akuropath="domain_classes,version,version_timestamp,description" id="Help_Version_version_timestamp">
+                {{labels["domain_classes"]["version"]["version_timestamp"]["description"]}} 
+            </div>
+        </div>
+    </div>
+                            
+                            <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >
+            <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_Version_version_description">
+                <i class="fa fa-question-circle"></i>
+            </button> 
+            {{labels["domain_classes"]["version"]["version_description"]["label"]}} 
+        </label>
+        <div class="col-md-9 col-sm-9 col-xs-12">
+            <textarea id="Version-version_description" name="Version-version_description" class="form-control Input VersionDescription">{%if version_instance.version_description not in [None,'',' ','None'] %}{{version_instance.version_description|e}}{%else%}{{labels["domain_classes"]["version"]["version_description"]["template"]}}{%endif%}</textarea>
+    <script>$Version_version_description_isValid=true</script>
+            <div class="collapse" data-akuropath="domain_classes,version,version_description,description" id="Help_Version_version_description">
+                {{labels["domain_classes"]["version"]["version_description"]["description"]}} 
+            </div>
+        </div>
+    </div>
+                            
+                            <input type="submit" value="{{labels["pages"]["version_edition"]["editbtn"]}}" class="btn btn-primary btn-block">
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FastClick -->
+    <script src="/static/vendor/node_modules/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="/static/vendor/node_modules/nprogress/nprogress.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="/static/vendor/node_modules/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="/static/vendor/node_modules/icheck/icheck.min.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="/static/vendor/node_modules/moment/min/moment.min.js"></script>
+    <script src="/static/vendor/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <!-- bootstrap-wysiwyg -->
+    <script src="/static/vendor/node_modules/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="/static/vendor/node_modules/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="/static/vendor/node_modules/google-code-prettify/src/prettify.js"></script>
+    <!-- jQuery Tags Input -->
+    <script src="/static/vendor/node_modules/jquery-tags-input/dist/jquery.tagsinput.min.js"></script>
+    <!-- Switchery -->
+    <script src="/static/vendor/node_modules/switchery/dist/switchery.min.js"></script>
+
+    <!-- Parsley -->
+    <script src="/static/vendor/node_modules/parsleyjs/dist/parsley.min.js"></script>
+    <!-- Autosize -->
+    <script src="/static/vendor/node_modules/autosize/dist/autosize.min.js"></script>
+    <!-- jQuery autocomplete -->
+    <script src="/static/vendor/node_modules/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+    <!-- starrr -->
+    <script src="/static/vendor/node_modules/starrr/dist/starrr.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="/static/vendor/node_modules/akuro-statics/admin-pane/custom.js"></script>
+
+    <script src="/static/vendor/node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="/static/vendor/node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="/static/vendor/node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+
+    <script src="/static/vendor/node_modules/jquery-smart-wizard/js/jquery.smartWizard.js"></script>
+    <script src="/static/vendor/node_modules/dropzone/dist/dropzone.js"></script>
+    <script src="/static/vendor/node_modules/tinymce/tinymce.min.js"></script>
+    <script src="/static/vendor/node_modules/akuro-statics/jsexcel/jexcel.js"></script>
+    <script src="/static/vendor/node_modules/akuro-statics/jsexcel/jsuites.js"></script>
+    <script src="/static/vendor/node_modules/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <script src="/static/vendor/node_modules/bootstrap-duallistbox/dist/jquery.bootstrap-duallistbox.min.js"></script>
+    <script>
+    
+    
+    
+    </script>
+</body>
+  <!--
+Desarrollo realizado por akuro SAS. Contactenos en http://akuro.co.
+Development made by akuro. contact Us at http://akuro.co
+  __    __    _______   ______    __    __     ______          _______    ______     _______                               
+ /" |  | "\  /"     "| /" _  "\  /" |  | "\   /    " \        |   __ "\  /    " \   /"      \                              
+(:  (__)  :)(: ______)(: ( \___)(:  (__)  :) // ____  \       (. |__) :)// ____  \ |:        |                             
+ \/      \/  \/    |   \/ \      \/      \/ /  /    ) :)      |:  ____//  /    ) :)|_____/   )                             
+ //  __  \\  // ___)_  //  \ _   //  __  \\(: (____/ //       (|  /   (: (____/ //  //      /                              
+(:  (  )  :)(:      "|(:   _) \ (:  (  )  :)\        /       /|__/ \   \        /  |:  __   \                              
+ \__|  |__/  \_______) \_______) \__|  |__/  \"_____/       (_______)   \"_____/   |__|  \___)                             
+                                                                                                                           
+      __       __   ___  ____  ____   _______     ______                                                                   
+     /""\     |/"| /  ")("  _||_ " | /"      \   /    " \                                                                  
+    /    \    (: |/   / |   (  ) : ||:        | // ____  \                                                                 
+   /' /\  \   |    __/  (:  |  | . )|_____/   )/  /    ) :)                                                                
+  //  __'  \  (// _  \   \\ \__/ //  //      /(: (____/ //                                                                 
+ /   /  \\  \ |: | \  \  /\\ __ //\ |:  __   \ \        /                                                                  
+(___/    \___)(__|  \__)(__________)|__|  \___) \"_____/                                                                   
+                                                                                                                           
+  ______    ______    _____  ___  ___________   __       ______  ___________  _______  _____  ___      ______    ________  
+ /" _  "\  /    " \  (\"   \|"  \("     _   ") /""\     /" _  "\("     _   ")/"     "|(\"   \|"  \    /    " \  /"       ) 
+(: ( \___)// ____  \ |.\\   \    |)__/  \\__/ /    \   (: ( \___))__/  \\__/(: ______)|.\\   \    |  // ____  \(:   \___/  
+ \/ \    /  /    ) :)|: \.   \\  |   \\_ /   /' /\  \   \/ \        \\_ /    \/    |  |: \.   \\  | /  /    ) :)\___  \    
+ //  \ _(: (____/ // |.  \    \. |   |.  |  //  __'  \  //  \ _     |.  |    // ___)_ |.  \    \. |(: (____/ //  __/  \\   
+(:   _) \\        /  |    \    \ |   \:  | /   /  \\  \(:   _) \    \:  |   (:      "||    \    \ | \        /  /" \   :)  
+ \_______)\"_____/    \___|\____\)    \__|(___/    \___)\_______)    \__|    \_______) \___|\____\)  \"_____/  (_______/   
+                                                                                                                           
+  ______    ______    _____  ___  ___________   __       ______  ___________      ____  ____   ________                    
+ /" _  "\  /    " \  (\"   \|"  \("     _   ") /""\     /" _  "\("     _   ")    ("  _||_ " | /"       )                   
+(: ( \___)// ____  \ |.\\   \    |)__/  \\__/ /    \   (: ( \___))__/  \\__/     |   (  ) : |(:   \___/                    
+ \/ \    /  /    ) :)|: \.   \\  |   \\_ /   /' /\  \   \/ \        \\_ /        (:  |  | . ) \___  \                      
+ //  \ _(: (____/ // |.  \    \. |   |.  |  //  __'  \  //  \ _     |.  |         \\ \__/ //   __/  \\                     
+(:   _) \\        /  |    \    \ |   \:  | /   /  \\  \(:   _) \    \:  |         /\\ __ //\  /" \   :)                    
+ \_______)\"_____/    \___|\____\)    \__|(___/    \___)\_______)    \__|        (__________)(_______/                     
+                                                                                                                           
+      __       __   ___  ____  ____   _______     ______          ______    ______                                         
+     /""\     |/"| /  ")("  _||_ " | /"      \   /    " \        /" _  "\  /    " \                                        
+    /    \    (: |/   / |   (  ) : ||:        | // ____  \      (: ( \___)// ____  \                                       
+   /' /\  \   |    __/  (:  |  | . )|_____/   )/  /    ) :)      \/ \    /  /    ) :)                                      
+  //  __'  \  (// _  \   \\ \__/ //  //      /(: (____/ //_____  //  \ _(: (____/ //                                       
+ /   /  \\  \ |: | \  \  /\\ __ //\ |:  __   \ \        /))_  ")(:   _) \\        /                                        
+(___/    \___)(__|  \__)(__________)|__|  \___) \"_____/(_____(  \_______)\"_____/                                         
+                                                                                                                           
+-->
+</html>

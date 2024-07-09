@@ -1,0 +1,16 @@
+controller-with-params(gallery){
+  params:[
+    (project-url);
+  ],
+  component:[
+    (gallery-page);
+  ]
+};
+
+
+custom-return-post-controller(save-gallery-folder){
+  component:[],
+};
+custom-return-post-controller(delete-gallery-folder){
+  component:[],
+};

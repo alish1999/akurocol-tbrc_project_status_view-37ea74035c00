@@ -1,0 +1,32 @@
+
+<div class="{{s.p("Dash Name")}}" tabindex="-1">
+  <div class="{{s.p("Dash Name")}}-cont provider-content">
+  {%for p in l.parts%}
+  {{p.p("Html")|indent}}
+  {%endfor%}
+  </div>
+  <div class="modal modal-gallery modal-{{s.p("Dash Name")}}" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+          <div class="modal-body">
+            <div class="carousel slide" id="{{s.p("Var Name")}}-carr">
+              <div class="carousel-inner">
+                
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#{{s.p("Var Name")}}-carr" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#{{s.p("Var Name")}}-carr" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,799 @@
+{% set gallery_view_page_data = gallery_view_page_data_collection(gallery_ident) %}
+
+{% extends 'general_template.html' %}
+{% block css_dependencies_loaders%}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+{% endblock %}
+
+{% block html%}
+
+
+<div class="s100646" tabindex="-1">
+  <div class="s100646-cont provider-content">
+  
+  <div class="container s100647">
+        
+        <div class="row s100648">
+            
+            <div class="col s100649">
+                
+                <h1 class="s100650 h1-element">
+                    
+                    {{gallery_view_page_data['gallery_view_page_title']}}
+                    
+                </h1>
+                
+            </div>
+            
+        </div>
+        
+        <div class="row s100652">
+            
+            <div class="col s100653">
+                
+                {{gallery_view_page_data['gallery_view_page_description']}}
+                
+            </div>
+            
+        </div>
+        
+        <div class="row s100655">
+            
+            <div class="col s100656">
+                
+                {% if general_data['edit_mode_on'] %}
+
+                <div class="s100658 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100658">
+                  <div class="button-container">
+                    
+                    <button role="button" type="button" class="s100659 button-component"><div class="gallery-view-new-image-img-container">
+                        <img src="{{gallery_view_page_data['gallery_view_new_image_icon']}}"/>
+                    </div>{{gallery_view_page_data['gallery_view_new_image_label']}}</button>
+                    
+                  </div>
+                  <div class="modal-container">
+                    
+                    <div class="modal gallery-view-new-image-modal" data-open="0" tabindex="-1">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                            <div class="modal-body">
+                                
+                                <form action="{{gallery_view_page_data['gallery_view_new_image_action']}}" method="{{gallery_view_page_data['gallery_view_new_image_method']}}" class="akuro-form s100640 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100640">
+                                  <!-- Form input components here. Labels will be visible -->
+                                  
+                                  
+                                  <div class="new-image-name form-input" data-error-message="{{gallery_view_page_data['new_image_name_error']}}" data-akuro-ct="form-input" data-akuro-c="new-image-name">
+                                      <label for="new_image_name">{{gallery_view_page_data['new_image_name_label']}}</label>
+                                      
+                                      <div class="input-container">
+                                        <input 
+                                          type="text" 
+                                          name="new_image_name" 
+                                          id="new_image_name" 
+                                          placeholder="{{gallery_view_page_data['new_image_name_placeholder']}}"
+                                          
+                                          />
+                                      </div>
+                                    </div>
+                                  
+                                  <div class="new-image-file form-input-file-upload" 
+                                    data-controller="/ajax/orfiFileUpload" 
+                                    data-error-message="{{gallery_view_page_data['new_image_upload_error']}}" 
+                                    data-akuro-ct="form-input-file-upload" data-akuro-c="new-image-file"
+                                    >
+                                      
+                                      
+                                      <div class="input-container">
+                                        <input type="file" class="file-upload">
+                                        <input type="hidden" class="real-value" name="new_image_file" id="new_image_file" >
+                                        <div class="drop-zone">
+                                          <div class="text-container">
+                                            <img src="{{gallery_view_page_data['new_image_upload_image_icon']}}" alt="">
+                                            <div>
+                                              <div class="title">{{gallery_view_page_data['new_image_upload_text']}}</div>
+                                              <div class="text">{{gallery_view_page_data['new_image_upload_upload_text']}}</div>
+                                            </div>  
+                                          </div>
+                                          <div class="image-preview"></div>
+                                          <div class="format-message"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  
+                                  <div class="alert-space s100641 alert-space-element">
+                                        
+                                    </div>
+                                  
+                                  <div class="s100642 div-element">
+                                        
+                                        <button class="s100643 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100643">
+                                          
+                                          {{gallery_view_page_data['new_image_button_label']}}
+                                          
+                                        </button>
+                                        
+                                    </div>
+                                  
+
+                                </form>
+                                
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+
+                {%endif%}
+                
+                {%for gallery_view_item_data in gallery_view_page_data.gallery_view_page_items %}
+
+                <div class="s100662 div-element">
+                    
+                    {% if general_data['edit_mode_on'] %}
+
+                    <div class="s100664 div-element">
+                        
+                        <div class="s100665 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100665">
+                          <div class="button-container">
+                            
+                            <button role="button" type="button" class="s100666 button-component"><div class="gallery-view-page-trash-icon-img-container">
+                                <img src="{{gallery_view_page_data['gallery_view_page_trash_icon']}}"/>
+                            </div></button>
+                            
+                          </div>
+                          <div class="modal-container">
+                            
+                            <div class="modal gallery-view-delete-modal" data-open="0" tabindex="-1">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                    <div class="modal-body">
+                                        
+                                        <div class="s100633 div-element">
+                                            
+                                            <div class="gallery-view-delete-title-icon-img-container">
+                                                <img src="{{gallery_view_page_data['gallery_view_delete_title_icon']}}"/>
+                                            </div>
+                                            
+                                            <div class="s100634 styled-label-getter">
+                                            {{gallery_view_page_data['gallery_view_delete_title']}}
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                        <div class="s100635 styled-label-getter">
+                                        {{gallery_view_page_data['gallery_view_delete_alert']}}
+                                        </div>
+                                        
+                                        <form action="{{gallery_view_page_data['gallery_view_delete_action']}}" method="{{gallery_view_page_data['gallery_view_delete_method']}}" class="akuro-form s100636 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100636">
+                                          <!-- Form input components here. Labels will be visible -->
+                                          
+                                          
+                                          <input 
+                                              type="hidden" 
+                                              
+                                              name="gallery_view_item_hidden_id" 
+                                              
+                                              
+                                              value="{{gallery_view_item_data['gallery_view_item_id']}}" 
+                                              
+                                              id="gallery_view_item_hidden_id" 
+                                              
+                                            />
+                                          
+                                          <button role="button" value="gallery_view_delete_button" name="gallery_view_delete_button" type="submit" class="gallery-view-delete-button submit-component">{{gallery_view_page_data['gallery_view_confirm_label']}}</button>
+                                          
+                                          <button role="button" type="button" class="s100638 bootstrap-dismiss-modal-button" data-bs-dismiss="modal">{{gallery_view_page_data['gallery_view_cancel_label']}}</button>
+                                          
+
+                                        </form>
+                                        
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        
+                    </div>
+
+                    {%endif%}
+                    
+                    <div class="gv-item-container">
+                        <img src="{{gallery_view_item_data['gallery_view_item_image_small']}}" data-big-image="{{gallery_view_item_data['gallery_view_item_image_big']}}"/>
+                    </div>
+                    
+                    {% if general_data['edit_mode_on'] %}
+
+                    <form action="{{gallery_view_page_data['gallery_view_edit_image_action']}}" method="{{gallery_view_page_data['gallery_view_edit_image_method']}}" class="akuro-form s100668 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100668">
+                      <!-- Form input components here. Labels will be visible -->
+                      
+                      
+                      <input 
+                          type="hidden" 
+                          
+                          name="gallery_view_item_hidden_id" 
+                          
+                          
+                          value="{{gallery_view_item_data['gallery_view_item_id']}}" 
+                          
+                          id="gallery_view_item_hidden_id" 
+                          
+                        />
+                      
+                      <div class="edit-image-name form-input" data-error-message="{{gallery_view_page_data['edit_image_name_error']}}" data-akuro-ct="form-input" data-akuro-c="edit-image-name">
+                          <label for="edit_image_name">{{gallery_view_page_data['edit_image_name_label']}}</label>
+                          
+                          <div class="input-container">
+                            <input 
+                              type="text" 
+                              name="edit_image_name" 
+                              id="edit_image_name" 
+                              placeholder="{{gallery_view_page_data['edit_image_name_placeholder']}}"
+                              value="{{gallery_view_item_data['gallery_view_item_name']}}"
+                              />
+                          </div>
+                        </div>
+                      
+                      <div class="alert-space s100669 alert-space-element">
+                            
+                        </div>
+                      
+                      <div class="s100670 div-element">
+                            
+                            <button class="s100671 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100671">
+                              
+                              {{gallery_view_page_data['edit_image_button_label']}}
+                              
+                            </button>
+                            
+                        </div>
+                      
+
+                    </form>
+
+                    {%endif%}
+                    
+                    {% if not general_data['edit_mode_on'] %}
+
+                    <div class="s100674 styled-label-getter">
+                    {{gallery_view_item_data['gallery_view_item_name']}}
+                    </div>
+
+                    {%endif%}
+                    
+                </div>
+
+                {%endfor%}
+                
+            </div>
+            
+        </div>
+        
+    </div>
+  
+  </div>
+  <div class="modal modal-gallery modal-s100646" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+          <div class="modal-body">
+            <div class="carousel slide" id="s100646-carr">
+              <div class="carousel-inner">
+                
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#s100646-carr" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#s100646-carr" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block support_html%}
+
+<!-- s100646-->
+
+{% endblock %}
+
+{% block js_dependencies_loaders%}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block js_initialization%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".new-image-name"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-file-upload", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let controller = elm.dataset.controller;
+    let uploading = false;
+    
+    const dropZone = elm.querySelector(".drop-zone");
+    const dropZonebox = elm.querySelector(".drop-zone .text-container");
+    const fileInput = elm.querySelector("input.file-upload");
+    const realValue = elm.querySelector("input.real-value");
+
+
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('active');
+    });
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('active');
+    });
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('active');
+        dropZone.classList.add('ready');
+        
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            fileInput.files = files;
+            uploadFile(files[0]);
+        }
+    });
+    dropZone.addEventListener('click', () => {
+        fileInput.click();
+    });
+    fileInput.addEventListener('change', () => {
+        dropZone.classList.add('ready');
+        const files = fileInput.files;
+        if (files.length > 0) {
+            uploadFile(files[0]);
+        }
+    });
+    
+
+    function uploadFile(file_to_send) {
+        let xhrRequest = new XMLHttpRequest();
+        xhrRequest.open("POST", controller, true);
+        xhrRequest.upload.addEventListener("progress", ({ loaded, total }) => {
+            realValue.value = '';
+            dropZonebox.classList.add('loading');
+        });
+
+        xhrRequest.onreadystatechange = () => {
+            if (xhrRequest.readyState === 4) {
+                dropZonebox.classList.add('loaded');
+                dropZonebox.classList.remove('loading');
+                let data = JSON.parse(xhrRequest.response);
+                data = data["files"][0]
+                realValue.value = data.url;
+                fileInput.value = null;
+                uploading = false;
+            }else{
+                uploading =  true;
+            }
+        };
+        const formData = new FormData();
+        formData.append("file", file_to_send);
+        xhrRequest.send(formData);
+    }
+
+    class AkuroInputPicture{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            return realValue.value;
+        }
+        validate(){
+            console.log("adasasd", this.getValue());
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " " || uploading){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInputPicture(elm)
+  })
+  akuro.instantiate("form-input-file-upload", document.querySelectorAll(".new-image-file"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100643"))
+</script>
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100640"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".gallery-view-new-image-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100658"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-hidden", [], (elm)=>{
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-hidden", document.querySelectorAll(".gallery-view-item-hidden-id"))
+</script>
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100636"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".gallery-view-delete-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100665"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-hidden", [], (elm)=>{
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-hidden", document.querySelectorAll(".gallery-view-item-hidden-id"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".edit-image-name"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100671"))
+</script>
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100668"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    akuro.registerComponent("modal-from-content-provider", [], (elm)=>{
+        let myModal = null;
+        let carousel = null;
+        let carousel_obj = null;
+        carousel = elm.querySelector(".modal-gallery .carousel");
+        
+
+        let images = elm.querySelectorAll("[data-big-image]");
+        for(let image_index = 0; image_index < images.length; image_index++){
+            let image = images[image_index];
+            console.log(image);
+            carousel.querySelector(".carousel-inner").innerHTML +=`<div class="carousel-item ${image_index==0?"active":""}">
+                  <img src="${image.dataset.bigImage}" class="d-block w-100" alt="..."/>
+            </div>`
+            image.addEventListener("click",()=>{
+                myModal.show();
+                carousel_obj.to(image_index);
+            })
+        }
+
+        myModal = new bootstrap.Modal(elm.querySelector(".modal-gallery"), {});
+        carousel_obj = new bootstrap.Carousel(carousel, {})
+
+        
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("modal-from-content-provider", document.querySelectorAll(".s100646"))
+</script>
+
+{% endblock %}

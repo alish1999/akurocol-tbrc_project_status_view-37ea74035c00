@@ -1,0 +1,306 @@
+
+
+.s100021{
+    
+    @include padding-t4;
+    
+    
+    .s100022{
+    
+    @include margin-b2;
+    
+    
+}
+    
+    .s100023{
+    
+    
+    .s100024{
+        
+        
+        .home-table{
+            border-collapse: collapse;
+            width: 100%;
+
+            
+            .s100025{
+                
+                
+                .s100026{
+                
+                
+                .s100027{
+                
+                @include display-flex;
+                
+                @include align-items-center;
+                
+                @include justify-content-between;
+                
+                
+                .s100028{
+                
+                @include font-size-xxxlarge;
+                
+                @include font-family-one;
+                
+                
+                
+                
+            }
+                
+                .s100030{
+                
+                @include width-search;
+                
+                
+                .s100031{
+              
+
+              
+              .project-search {
+                  display: flex;
+                  flex-direction: column;
+                  width: 100%;
+                  
+
+                  label {
+                    
+                  }
+
+                  .input-container{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+                    border: 1px solid $color1;
+                    padding: 0.5rem 1rem;
+                    border-radius: 10rem;
+                    background-color:white;
+                    overflow:hidden;
+                    
+                    &:focus-within{
+                        border:1px solid $color4;
+                    }
+                    img {
+                      height: 1.2rem;
+                      width: 1.2rem;
+                      object-fit: contain;
+                    }
+                    input {
+                      border: none;
+                      width: 100%;
+                      outline: none;
+                      
+                  
+                      &::placeholder {
+                        
+                      }
+                  
+                      &:focus {
+                        outline: none;
+                        
+                      }
+                    }
+                  }  
+                }
+              
+            }
+                
+            }
+                
+            }
+                
+            }
+                
+                
+            .s100033{
+                
+                
+            }
+
+                
+            }
+            
+            
+            .s100035{
+                
+                
+                .s100036{
+                
+                
+                .s100037{
+                
+                @include project-card-styles;
+                
+                
+                .s100038{
+                
+                
+                .s100039{
+                
+                @include font-size-xlarge;
+                
+                @include font-family-one;
+                
+                
+                
+            .s100041{
+                
+                @include font-size-xlarge;
+                
+                @include font-family-one;
+                
+                @include black-text-link;
+                
+                
+            }
+
+                
+            }
+                
+                .s100042{
+                
+                @include font-color-gray-p60;
+                
+                
+                
+                
+                
+
+            .s100046{
+                
+                @include black-text-link2;
+                
+                
+            }
+
+
+                
+            }
+                
+            }
+                
+                
+
+            .project-edit-icon-container{
+                width:$project-edit-icon-width;
+                height:$project-edit-icon-height;
+                display:inline-flex;
+                justify-content:center;
+                align-items:center;
+                a{
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                }
+                
+            }
+
+
+                
+            }
+                
+            }
+                
+                
+            .s100050{
+                
+                @include text-align-center;
+                
+                
+                
+            .s100052{
+                
+                @include white-background-link;
+                
+                @include black-text-link;
+                
+                @include button-radius;
+                
+                
+            }
+
+                
+            }
+
+                
+            }
+
+            
+            .s100053{
+                
+                
+                .s100054{
+                
+                
+                
+
+            .s100057{
+                
+                @include new-project-link;
+                
+                
+            }
+
+
+                
+            }
+                
+                .s100058{
+                
+                
+            }
+                
+                .s100059{
+                
+                
+            }
+                
+            }
+            
+        }
+        
+        .s100060{
+            
+            
+        }
+        
+    }
+    
+}
+    
+    .s100061{
+    
+    @include margin-t2;
+    
+    
+    .s100062{
+        
+        
+        .s100063 {
+          display: flex;
+          justify-content: center;
+          align-items:center;
+          gap:0.3rem;
+          a {
+            text-decoration: none;
+            color: black;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            &.page-link.current{
+              border: 1px solid black;
+              padding: 0rem 0.3rem;
+            }
+          }
+        }
+        
+    }
+    
+}
+    
+}
+

@@ -1,0 +1,13 @@
+.{{s.p('Dash Name')}} {
+  display: inline-block;
+  .button-container{
+    {%for p in l.button_parts %}
+    {{p.p("Scss Code")|indent}}
+    {%endfor%}
+  }
+  .modal-container{
+    {%for p in l.modal_parts %}
+    {{p.p("Scss Code")|indent}}
+    {%endfor%}
+  }
+}

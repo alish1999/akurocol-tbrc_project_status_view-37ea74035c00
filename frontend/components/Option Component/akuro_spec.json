@@ -1,0 +1,15 @@
+{
+    "generate_files": {},
+    "parent_type": "Stable Component",
+    "links": {
+        "Label": [
+            "Data Field"
+        ],
+        "Value": [
+            "Data Field"
+        ],
+        "Selected": [
+            "Data Field"
+        ]
+    }
+}

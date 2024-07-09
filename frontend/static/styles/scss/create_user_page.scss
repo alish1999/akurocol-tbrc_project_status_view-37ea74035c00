@@ -1,0 +1,221 @@
+
+
+.s100508{
+    
+    @include padding-y4;
+    
+    @include display-flex;
+    
+    @include justify-content-center;
+    
+    
+    .s100509{
+  
+  @include simple-card;
+  
+  @include responsive-width;
+  
+
+  
+  .s100510{
+        
+        @include font-family-one;
+        
+        @include margin-b1;
+        
+        
+        
+        
+    }
+  
+  .new-user-fullname {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      
+
+      label {
+        
+        @include margin-b1;
+        
+        @include bold-text;
+        
+        @include font-size-medium;
+        
+      }
+
+      .help {
+        
+      }
+
+      .input-container{
+        input {
+          
+          @include user-inputs-styles;
+          
+      
+          &::placeholder {
+            
+          }
+      
+          &:focus {
+            
+          }
+        }
+      }  
+    }
+  
+  .new-user-email {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      
+
+      label {
+        
+        @include margin-b1;
+        
+        @include bold-text;
+        
+        @include font-size-medium;
+        
+      }
+
+      .help {
+        
+      }
+
+      .input-container{
+        input {
+          
+          @include user-inputs-styles;
+          
+      
+          &::placeholder {
+            
+          }
+      
+          &:focus {
+            
+          }
+        }
+      }  
+    }
+  
+  .new-user-roles {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      
+      @include margin-b2;
+      
+
+      
+
+      label {
+        
+        @include margin-b1;
+        
+        @include bold-text;
+        
+        @include font-size-medium;
+        
+      }
+
+      .help {
+        
+      }
+
+      .input-container{
+        width: 100%;
+        .item {
+            background: rgba($color4, 0.2) !important;
+            color: $color4 !important;
+            border: 1px solid $color4 !important;
+            border-radius: 5px;
+        }
+        select {
+          
+          
+          @include user-inputs-styles;
+          
+      
+          &::placeholder {
+            
+          }
+      
+          &:focus {
+            
+          }
+        }
+      }  
+    }
+  
+  .new-user-password {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      
+
+      label {
+        
+        @include margin-b1;
+        
+        @include bold-text;
+        
+        @include font-size-medium;
+        
+      }
+
+      .help {
+        
+      }
+
+      .input-container{
+        input {
+          
+          @include user-inputs-styles;
+          
+      
+          &::placeholder {
+            
+          }
+      
+          &:focus {
+            
+          }
+        }
+      }  
+    }
+  
+  .s100514{
+        
+        
+    }
+  
+  .s100515{
+        
+        @include text-align-center;
+        
+        
+        .s100516 {
+      
+      
+      
+      
+      @include gray-background-link;
+      
+      @include padding-x3;
+      
+      @include button-radius;
+      
+      @include width100;
+      
+    }
+        
+    }
+  
+}
+    
+}
+

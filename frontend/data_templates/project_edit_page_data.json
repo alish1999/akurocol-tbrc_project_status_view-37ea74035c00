@@ -1,0 +1,27 @@
+{
+    "project_edit_page_title":"",
+    "project_edit_page_action":"",
+    "project_edit_page_method":"",
+    "project_edit_name_placeholder":"",
+    "project_edit_name_error":"",
+    "project_edit_name_value":"",
+    "project_edit_projects_placeholder":"",
+    "project_edit_projects_error":"",
+    "project_edit_projects_value":"",
+    "project_edit_description_placeholder":"",
+    "project_edit_description_error":"",
+    "project_edit_description_value":"",
+    "project_edit_address_placeholder":"",
+    "project_edit_address_error":"",
+    "project_edit_address_value":"",
+    "project_edit_save_label":"",
+    "project_edit_delete_label":"",
+    "project_edit_delete_icon":"",
+    "project_edit_delete_title":"",
+    "project_edit_delete_title_icon":"",
+    "project_edit_delete_alert":"",
+    "project_edit_confirm_label":"",
+    "project_edit_cancel_label":"",
+    "show_delete_in_project":""
+    
+}

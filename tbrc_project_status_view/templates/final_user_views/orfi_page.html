@@ -1,0 +1,1780 @@
+{% set orfi_page_data = orfi_page_data_collection(project_url) %}
+
+{% extends 'general_template.html' %}
+{% block css_dependencies_loaders%}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+{% endblock %}
+
+{% block html%}
+
+<div class="s100250 div-element">
+    
+    <div class="container s100251">
+        
+        <div class="row s100252">
+            
+            <div class="col s100253">
+                
+                <h1 class="s100254 h1-element">
+                    
+                    {{orfi_page_data['orfi_page_title']}}
+                    
+                </h1>
+                
+            </div>
+            
+        </div>
+        
+        <div class="row s100256">
+            
+            <div class="col s100257">
+                
+                <table class="orfi-page-table table-element">
+                    
+                    <tr class="s100258 tr-element">
+                        
+                        {%for simple_info_data in orfi_page_data.orfi_page_columns %}
+
+                        <th class="s100260 th-element">
+                            
+                            {{simple_info_data['simple_title']}}
+                            
+                        </th>
+
+                        {%endfor%}
+                        
+                        <th class="s100262 th-element">
+                            
+                        </th>
+                        
+                        <th class="s100263 th-element">
+                            
+                        </th>
+                        
+                    </tr>
+                    
+                    {%for orfi_item_data in orfi_page_data.orfi_page_items %}
+
+                    <tr class="s100265 tr-element">
+                        
+                        <td 
+                            class="s100266 td-element" 
+                            
+                            
+                        >
+                            
+                            <div class="s100267 styled-label-getter">
+                            {{orfi_item_data['orfi_item_date']}}
+                            </div>
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100268 td-element" 
+                            
+                            
+                        >
+                            
+                            {{orfi_item_data['orfi_item_asigned']}}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100270 td-element" 
+                            
+                            
+                        >
+                            
+                            {{orfi_item_data['orfi_item_question']}}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100272 td-element" 
+                            
+                            
+                        >
+                            
+                            {{orfi_item_data['orfi_item_due_data']}}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100274 td-element" 
+                            
+                            
+                        >
+                            
+                            {% if general_data['edit_mode_on'] %}
+
+                            <div class="s100276 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100276">
+                              <div class="button-container">
+                                
+                                <button role="button" type="button" class="s100277 button-component"><div class="orfi-page-folder-icon-img-container">
+                                    <img src="{{orfi_page_data['orfi_page_folder_icon']}}"/>
+                                </div></button>
+                                
+                              </div>
+                              <div class="modal-container">
+                                
+                                <div class="modal orfi-folders-modal" data-open="0" tabindex="-1">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                        <div class="modal-body">
+                                            
+                                            <form action="{{orfi_page_data['orfi_folders_action']}}" method="{{orfi_page_data['orfi_folders_method']}}" class="akuro-form s100223 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100223">
+                                              <!-- Form input components here. Labels will be visible -->
+                                              
+                                              
+                                              <input 
+                                                  type="hidden" 
+                                                  
+                                                  name="current_orfi_id" 
+                                                  
+                                                  
+                                                  value="{{orfi_item_data['orfi_item_id']}}" 
+                                                  
+                                                  id="current_orfi_id" 
+                                                  
+                                                />
+                                              
+                                              <h2 class="s100224 h2-element" >
+                                                    
+                                                    {{orfi_page_data['orfi_folders_title']}}
+                                                    
+                                                </h2>
+                                              
+                                              {% set simple_link = orfi_item_data.orfi_item_link %}
+
+                                                <a href="{{simple_link['link_href']}}" target="{{simple_link['link_target']}}" class="s100227 simple-anchor">{{simple_link['link_label']}}</a>
+
+                                              
+                                              <div class="orfi-new-file form-input-file-upload" 
+                                                data-controller="/ajax/orfiFileUpload" 
+                                                data-error-message="{{orfi_page_data['orfi_folders_upload_error']}}" 
+                                                data-akuro-ct="form-input-file-upload" data-akuro-c="orfi-new-file"
+                                                >
+                                                  
+                                                  
+                                                  <div class="input-container">
+                                                    <input type="file" class="file-upload">
+                                                    <input type="hidden" class="real-value" name="orfi_new_file" id="orfi_new_file" >
+                                                    <div class="drop-zone">
+                                                      <div class="text-container">
+                                                        <img src="{{orfi_page_data['orfi_folders_upload_image_icon']}}" alt="">
+                                                        <div>
+                                                          <div class="title">{{orfi_page_data['orfi_folders_upload_text']}}</div>
+                                                          <div class="text">{{orfi_page_data['orfi_folders_upload_upload_text']}}</div>
+                                                        </div>  
+                                                      </div>
+                                                      <div class="image-preview"></div>
+                                                      <div class="format-message"></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              
+                                              <div class="alert-space s100228 alert-space-element">
+                                                    
+                                                </div>
+                                              
+                                              <div class="s100229 div-element">
+                                                    
+                                                    <button class="s100230 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100230">
+                                                      
+                                                      {{orfi_page_data['orfi_folders_upload_button_text']}}
+                                                      
+                                                    </button>
+                                                    
+                                                </div>
+                                              
+
+                                            </form>
+                                            
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                              </div>
+                            </div>
+
+                            {%endif%}
+                            
+                            {% if not general_data['edit_mode_on'] %}
+
+                            {% set simple_link = orfi_item_data.orfi_item_link %}
+
+                            <div class="orfi-row-icon-container">
+                                <a href="{{simple_link['link_href']}}" target="{{simple_link['link_target']}}">
+                                    <img src="{{simple_link['simple_link_image']}}"/>
+                                </a>
+                            </div>
+
+
+                            {%endif%}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100280 td-element" 
+                            
+                            
+                        >
+                            
+                            <div class="resolved-img-container">
+                                <img src="{{orfi_item_data['orfi_item_resolved']}}"/>
+                            </div>
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100281 td-element" 
+                            
+                            
+                        >
+                            
+                            {% if general_data['edit_mode_on'] %}
+
+                            <div class="s100283 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100283">
+                              <div class="button-container">
+                                
+                                <button role="button" type="button" class="s100284 button-component"><div class="orfi-page-edit-icon-img-container">
+                                    <img src="{{orfi_page_data['orfi_page_edit_icon']}}"/>
+                                </div></button>
+                                
+                              </div>
+                              <div class="modal-container">
+                                
+                                <div class="modal orfi-data-modal" data-open="0" tabindex="-1">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                        <div class="modal-body">
+                                            
+                                            <form action="{{orfi_page_data['orfi_modal_action']}}" method="{{orfi_page_data['orfi_modal_method']}}" class="akuro-form s100232 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100232">
+                                              <!-- Form input components here. Labels will be visible -->
+                                              
+                                              
+                                              <input 
+                                                  type="hidden" 
+                                                  
+                                                  name="current_orfi_id" 
+                                                  
+                                                  
+                                                  value="{{orfi_item_data['orfi_item_id']}}" 
+                                                  
+                                                  id="current_orfi_id" 
+                                                  
+                                                />
+                                              
+                                              <div class="orfi-asigned-to form-input" data-error-message="{{orfi_page_data['orfi_asigned_to_error']}}" data-akuro-ct="form-input" data-akuro-c="orfi-asigned-to">
+                                                  <label for="orfi_asigned_to">{{orfi_page_data['orfi_asigned_to_label']}}</label>
+                                                  
+                                                  <div class="input-container">
+                                                    <input 
+                                                      type="text" 
+                                                      name="orfi_asigned_to" 
+                                                      id="orfi_asigned_to" 
+                                                      placeholder="{{orfi_page_data['orfi_asigned_to_placeholder']}}"
+                                                      value="{{orfi_item_data['orfi_item_asigned']}}"
+                                                      />
+                                                  </div>
+                                                </div>
+                                              
+                                              <div class="orfi-question form-input" data-error-message="{{orfi_page_data['orfi_question_error']}}" data-akuro-ct="form-input" data-akuro-c="orfi-question">
+                                                  <label for="orfi_question">{{orfi_page_data['orfi_question_label']}}</label>
+                                                  
+                                                  <div class="input-container">
+                                                    <input 
+                                                      type="text" 
+                                                      name="orfi_question" 
+                                                      id="orfi_question" 
+                                                      placeholder="{{orfi_page_data['orfi_question_placeholder']}}"
+                                                      value="{{orfi_item_data['orfi_item_question']}}"
+                                                      />
+                                                  </div>
+                                                </div>
+                                              
+                                              <div class="orfi-due-date form-input-date" data-error-message="{{orfi_page_data['orfi_due_date_error']}}" data-akuro-ct="form-input-date" data-akuro-c="orfi-due-date">
+                                                  <label for="orfi_due_date">{{orfi_page_data['orfi_due_date_label']}}</label>
+                                                  
+                                                  <div class="input-container">
+                                                    <input 
+                                                      type="date" 
+                                                      name="orfi_due_date" 
+                                                      id="orfi_due_date" 
+                                                      value="{{orfi_item_data['orfi_item_due_data']}}"
+                                                      placeholder="{{orfi_page_data['orfi_due_date_placeholder']}}"
+                                                      >
+                                                  </div>
+                                                </div>
+                                              
+                                              <div class="orfi-resolved form-input-optional-check2" data-error-message="{{orfi_page_data['orfi_resolved_error']}}" data-akuro-ct="form-input-optional-check2" data-akuro-c="orfi-resolved">
+                                                  <label for="orfi_resolved">{{orfi_page_data['orfi_resolved_label']}}</label>
+                                                  
+                                                  <div class="input-container">
+                                                    <input 
+                                                      type="checkbox" 
+                                                      name="orfi_resolved" 
+                                                      {% if orfi_item_data['orfi_item_resolved_raw'] %}checked{%endif%}
+                                                      id="orfi_resolved"
+                                                    >
+                                                    <div class="images-container">
+                                                      <img src="{{orfi_page_data['orfi_page_active_checkbox_icon']}}" class="active-image">
+                                                      <img src="{{orfi_page_data['orfi_page_inactive_checkbox_icon']}}" class="inactive-image">
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              
+                                              <div class="alert-space s100233 alert-space-element">
+                                                    
+                                                </div>
+                                              
+                                              <div class="s100234 div-element">
+                                                    
+                                                    <button class="s100235 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100235">
+                                                      
+                                                      {{orfi_page_data['orfi_modal_save_label']}}
+                                                      
+                                                    </button>
+                                                    
+                                                </div>
+                                              
+
+                                            </form>
+                                            
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                              </div>
+                            </div>
+
+                            {%endif%}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100285 td-element" 
+                            
+                            
+                        >
+                            
+                            {% if general_data['edit_mode_on'] %}
+
+                            <div class="s100287 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100287">
+                              <div class="button-container">
+                                
+                                <button role="button" type="button" class="s100288 button-component"><div class="orfi-page-trash-icon-img-container">
+                                    <img src="{{orfi_page_data['orfi_page_trash_icon']}}"/>
+                                </div></button>
+                                
+                              </div>
+                              <div class="modal-container">
+                                
+                                <div class="modal orfi-delete-modal" data-open="0" tabindex="-1">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                        <div class="modal-body">
+                                            
+                                            <div class="s100242 div-element">
+                                                
+                                                <div class="orfi-delete-title-icon-img-container">
+                                                    <img src="{{orfi_page_data['orfi_delete_title_icon']}}"/>
+                                                </div>
+                                                
+                                                <div class="s100243 styled-label-getter">
+                                                {{orfi_page_data['orfi_delete_title']}}
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="s100244 styled-label-getter">
+                                            {{orfi_page_data['orfi_delete_alert']}}
+                                            </div>
+                                            
+                                            <form action="{{orfi_page_data['orfi_delete_action']}}" method="{{orfi_page_data['orfi_delete_method']}}" class="akuro-form s100245 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100245">
+                                              <!-- Form input components here. Labels will be visible -->
+                                              
+                                              
+                                              <input 
+                                                  type="hidden" 
+                                                  
+                                                  name="current_orfi_id" 
+                                                  
+                                                  
+                                                  value="{{orfi_item_data['orfi_item_id']}}" 
+                                                  
+                                                  id="current_orfi_id" 
+                                                  
+                                                />
+                                              
+                                              <button role="button" value="orfi_delete_button" name="orfi_delete_button" type="submit" class="orfi-delete-button submit-component">{{orfi_page_data['orfi_confirm_label']}}</button>
+                                              
+                                              <button role="button" type="button" class="s100247 bootstrap-dismiss-modal-button" data-bs-dismiss="modal">{{orfi_page_data['orfi_cancel_label']}}</button>
+                                              
+
+                                            </form>
+                                            
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                              </div>
+                            </div>
+
+                            {%endif%}
+                            
+                        </td>
+                        
+                    </tr>
+
+                    {%endfor%}
+                    
+                    {% if general_data['edit_mode_on'] %}
+
+                    <tr class="s100290 tr-element">
+                        
+                        <td 
+                            class="s100291 td-element" 
+                            colspan="{{orfi_page_data['orfi_last_row_colspan']}}"
+                            
+                        >
+                            
+                            <div class="s100292 div-element">
+                                
+                                <div class="s100293 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100293">
+                                  <div class="button-container">
+                                    
+                                    <button role="button" type="button" class="s100294 button-component">{{orfi_page_data['orfi_page_add_label']}}</button>
+                                    
+                                  </div>
+                                  <div class="modal-container">
+                                    
+                                    <div class="modal new-orfi-data-modal" data-open="0" tabindex="-1">
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                            <div class="modal-body">
+                                                
+                                                <form action="{{orfi_page_data['orfi_modal_action']}}" method="{{orfi_page_data['orfi_modal_method']}}" class="akuro-form s100237 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100237">
+                                                  <!-- Form input components here. Labels will be visible -->
+                                                  
+                                                  
+                                                  <div class="new-orfi-asigned-to form-input" data-error-message="{{orfi_page_data['orfi_asigned_to_error']}}" data-akuro-ct="form-input" data-akuro-c="new-orfi-asigned-to">
+                                                      <label for="new_orfi_asigned_to">{{orfi_page_data['orfi_asigned_to_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="text" 
+                                                          name="new_orfi_asigned_to" 
+                                                          id="new_orfi_asigned_to" 
+                                                          placeholder="{{orfi_page_data['orfi_asigned_to_placeholder']}}"
+                                                          
+                                                          />
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="new-orfi-question form-input" data-error-message="{{orfi_page_data['orfi_question_error']}}" data-akuro-ct="form-input" data-akuro-c="new-orfi-question">
+                                                      <label for="new_orfi_question">{{orfi_page_data['orfi_question_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="text" 
+                                                          name="new_orfi_question" 
+                                                          id="new_orfi_question" 
+                                                          placeholder="{{orfi_page_data['orfi_question_placeholder']}}"
+                                                          
+                                                          />
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="new-orfi-due-date form-input-date" data-error-message="{{orfi_page_data['orfi_due_date_error']}}" data-akuro-ct="form-input-date" data-akuro-c="new-orfi-due-date">
+                                                      <label for="new_orfi_due_date">{{orfi_page_data['orfi_due_date_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="date" 
+                                                          name="new_orfi_due_date" 
+                                                          id="new_orfi_due_date" 
+                                                          
+                                                          placeholder="{{orfi_page_data['orfi_due_date_placeholder']}}"
+                                                          >
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="new-orfi-resolved form-input-optional-check2" data-error-message="{{orfi_page_data['orfi_resolved_error']}}" data-akuro-ct="form-input-optional-check2" data-akuro-c="new-orfi-resolved">
+                                                      <label for="new_orfi_resolved">{{orfi_page_data['orfi_resolved_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="checkbox" 
+                                                          name="new_orfi_resolved" 
+                                                          
+                                                          id="new_orfi_resolved"
+                                                        >
+                                                        <div class="images-container">
+                                                          <img src="{{orfi_page_data['orfi_page_active_checkbox_icon']}}" class="active-image">
+                                                          <img src="{{orfi_page_data['orfi_page_inactive_checkbox_icon']}}" class="inactive-image">
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="alert-space s100238 alert-space-element">
+                                                        
+                                                    </div>
+                                                  
+                                                  <div class="s100239 div-element">
+                                                        
+                                                        <button class="s100240 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100240">
+                                                          
+                                                          {{orfi_page_data['orfi_modal_save_label']}}
+                                                          
+                                                        </button>
+                                                        
+                                                    </div>
+                                                  
+
+                                                </form>
+                                                
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                </div>
+                                
+                                <div class="s100296 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100296">
+                                  <div class="button-container">
+                                    
+                                    <button role="button" type="button" class="s100297 button-component">{{orfi_page_data['orfi_page_add_button_label']}}</button>
+                                    
+                                  </div>
+                                  <div class="modal-container">
+                                    
+                                    <div class="modal new-orfi-data-modal" data-open="0" tabindex="-1">
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                            <div class="modal-body">
+                                                
+                                                <form action="{{orfi_page_data['orfi_modal_action']}}" method="{{orfi_page_data['orfi_modal_method']}}" class="akuro-form s100237 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100237">
+                                                  <!-- Form input components here. Labels will be visible -->
+                                                  
+                                                  
+                                                  <div class="new-orfi-asigned-to form-input" data-error-message="{{orfi_page_data['orfi_asigned_to_error']}}" data-akuro-ct="form-input" data-akuro-c="new-orfi-asigned-to">
+                                                      <label for="new_orfi_asigned_to">{{orfi_page_data['orfi_asigned_to_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="text" 
+                                                          name="new_orfi_asigned_to" 
+                                                          id="new_orfi_asigned_to" 
+                                                          placeholder="{{orfi_page_data['orfi_asigned_to_placeholder']}}"
+                                                          
+                                                          />
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="new-orfi-question form-input" data-error-message="{{orfi_page_data['orfi_question_error']}}" data-akuro-ct="form-input" data-akuro-c="new-orfi-question">
+                                                      <label for="new_orfi_question">{{orfi_page_data['orfi_question_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="text" 
+                                                          name="new_orfi_question" 
+                                                          id="new_orfi_question" 
+                                                          placeholder="{{orfi_page_data['orfi_question_placeholder']}}"
+                                                          
+                                                          />
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="new-orfi-due-date form-input-date" data-error-message="{{orfi_page_data['orfi_due_date_error']}}" data-akuro-ct="form-input-date" data-akuro-c="new-orfi-due-date">
+                                                      <label for="new_orfi_due_date">{{orfi_page_data['orfi_due_date_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="date" 
+                                                          name="new_orfi_due_date" 
+                                                          id="new_orfi_due_date" 
+                                                          
+                                                          placeholder="{{orfi_page_data['orfi_due_date_placeholder']}}"
+                                                          >
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="new-orfi-resolved form-input-optional-check2" data-error-message="{{orfi_page_data['orfi_resolved_error']}}" data-akuro-ct="form-input-optional-check2" data-akuro-c="new-orfi-resolved">
+                                                      <label for="new_orfi_resolved">{{orfi_page_data['orfi_resolved_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="checkbox" 
+                                                          name="new_orfi_resolved" 
+                                                          
+                                                          id="new_orfi_resolved"
+                                                        >
+                                                        <div class="images-container">
+                                                          <img src="{{orfi_page_data['orfi_page_active_checkbox_icon']}}" class="active-image">
+                                                          <img src="{{orfi_page_data['orfi_page_inactive_checkbox_icon']}}" class="inactive-image">
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="alert-space s100238 alert-space-element">
+                                                        
+                                                    </div>
+                                                  
+                                                  <div class="s100239 div-element">
+                                                        
+                                                        <button class="s100240 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100240">
+                                                          
+                                                          {{orfi_page_data['orfi_modal_save_label']}}
+                                                          
+                                                        </button>
+                                                        
+                                                    </div>
+                                                  
+
+                                                </form>
+                                                
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100299 td-element" 
+                            
+                            
+                        >
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100300 td-element" 
+                            
+                            
+                        >
+                            
+                        </td>
+                        
+                    </tr>
+
+                    {%endif%}
+                    
+                </table>
+                
+            </div>
+            
+        </div>
+        
+        <div class="row s100301">
+            
+            <div class="col-12 col-md-12 s100302">
+                
+                <div class="pager s100303" data-akuro-ct="tbrc-paginator" data-akuro-c="s100303">
+                    {%if orfi_page_data['orfi_page_paginator_prev'] not in ['None','',' ', None] %} 
+                    <a class="page-link" href="{{orfi_page_data['orfi_page_paginator_prev']}}" aria-label="Previous">
+                      <span aria-hidden="true">&lt;</span>
+                    </a>
+                    {%endif%}
+                    <a class="page-link current" href="#" aria-label="Current">{{orfi_page_data['orfi_page_paginator_current']}}</a>
+                    <span>of {{orfi_page_data['orfi_page_paginator_total']}}</span>
+                    {%if orfi_page_data['orfi_page_paginator_next'] not in ['None','',' ', None] %} 
+                    <a class="page-link" href="{{orfi_page_data['orfi_page_paginator_next']}}" aria-label="Next">
+                      <span aria-hidden="true">&gt;</span>
+                    </a>
+                    {%endif%}
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+{% endblock %}
+
+{% block support_html%}
+
+<!-- s100250-->
+
+{% endblock %}
+
+{% block js_dependencies_loaders%}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block js_initialization%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-hidden", [], (elm)=>{
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-hidden", document.querySelectorAll(".current-orfi-id"))
+</script>
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-file-upload", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let controller = elm.dataset.controller;
+    let uploading = false;
+    
+    const dropZone = elm.querySelector(".drop-zone");
+    const dropZonebox = elm.querySelector(".drop-zone .text-container");
+    const fileInput = elm.querySelector("input.file-upload");
+    const realValue = elm.querySelector("input.real-value");
+
+
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('active');
+    });
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('active');
+    });
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('active');
+        dropZone.classList.add('ready');
+        
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            fileInput.files = files;
+            uploadFile(files[0]);
+        }
+    });
+    dropZone.addEventListener('click', () => {
+        fileInput.click();
+    });
+    fileInput.addEventListener('change', () => {
+        dropZone.classList.add('ready');
+        const files = fileInput.files;
+        if (files.length > 0) {
+            uploadFile(files[0]);
+        }
+    });
+    
+
+    function uploadFile(file_to_send) {
+        let xhrRequest = new XMLHttpRequest();
+        xhrRequest.open("POST", controller, true);
+        xhrRequest.upload.addEventListener("progress", ({ loaded, total }) => {
+            realValue.value = '';
+            dropZonebox.classList.add('loading');
+        });
+
+        xhrRequest.onreadystatechange = () => {
+            if (xhrRequest.readyState === 4) {
+                dropZonebox.classList.add('loaded');
+                dropZonebox.classList.remove('loading');
+                let data = JSON.parse(xhrRequest.response);
+                data = data["files"][0]
+                realValue.value = data.url;
+                fileInput.value = null;
+                uploading = false;
+            }else{
+                uploading =  true;
+            }
+        };
+        const formData = new FormData();
+        formData.append("file", file_to_send);
+        xhrRequest.send(formData);
+    }
+
+    class AkuroInputPicture{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            return realValue.value;
+        }
+        validate(){
+            console.log("adasasd", this.getValue());
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " " || uploading){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInputPicture(elm)
+  })
+  akuro.instantiate("form-input-file-upload", document.querySelectorAll(".orfi-new-file"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100230"))
+</script>
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100223"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".orfi-folders-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100276"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-hidden", [], (elm)=>{
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-hidden", document.querySelectorAll(".current-orfi-id"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".orfi-asigned-to"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".orfi-question"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-date", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+          let val = this.getValue();
+          if (val == null || val == undefined || val == "" || val == " " ){
+            return [text];
+          }else{
+            return [];
+          }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-date", document.querySelectorAll(".orfi-due-date"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-optional-check2", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let active = elm.querySelector(".active-image");
+    let inactive = elm.querySelector(".inactive-image");
+    let input = elm.querySelector("input");
+
+    function show(){
+      if(input.checked){
+        active.style.display="block"
+        inactive.style.display="none"
+      }else{
+        active.style.display="none"
+        inactive.style.display="block"
+      }
+    }
+
+    function toggle(){
+      input.checked = !input.checked;
+      show();
+    }
+
+    active.addEventListener("click",toggle)
+    inactive.addEventListener("click",toggle)
+
+    show();
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            return input.checked;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-optional-check2", document.querySelectorAll(".orfi-resolved"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100235"))
+</script>
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100232"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".orfi-data-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100283"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-hidden", [], (elm)=>{
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-hidden", document.querySelectorAll(".current-orfi-id"))
+</script>
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100245"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".orfi-delete-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100287"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".new-orfi-asigned-to"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".new-orfi-question"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-date", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+          let val = this.getValue();
+          if (val == null || val == undefined || val == "" || val == " " ){
+            return [text];
+          }else{
+            return [];
+          }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-date", document.querySelectorAll(".new-orfi-due-date"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-optional-check2", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let active = elm.querySelector(".active-image");
+    let inactive = elm.querySelector(".inactive-image");
+    let input = elm.querySelector("input");
+
+    function show(){
+      if(input.checked){
+        active.style.display="block"
+        inactive.style.display="none"
+      }else{
+        active.style.display="none"
+        inactive.style.display="block"
+      }
+    }
+
+    function toggle(){
+      input.checked = !input.checked;
+      show();
+    }
+
+    active.addEventListener("click",toggle)
+    inactive.addEventListener("click",toggle)
+
+    show();
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            return input.checked;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-optional-check2", document.querySelectorAll(".new-orfi-resolved"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100240"))
+</script>
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100237"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".new-orfi-data-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100293"))
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".new-orfi-asigned-to"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".new-orfi-question"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-date", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+          let val = this.getValue();
+          if (val == null || val == undefined || val == "" || val == " " ){
+            return [text];
+          }else{
+            return [];
+          }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-date", document.querySelectorAll(".new-orfi-due-date"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-optional-check2", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let active = elm.querySelector(".active-image");
+    let inactive = elm.querySelector(".inactive-image");
+    let input = elm.querySelector("input");
+
+    function show(){
+      if(input.checked){
+        active.style.display="block"
+        inactive.style.display="none"
+      }else{
+        active.style.display="none"
+        inactive.style.display="block"
+      }
+    }
+
+    function toggle(){
+      input.checked = !input.checked;
+      show();
+    }
+
+    active.addEventListener("click",toggle)
+    inactive.addEventListener("click",toggle)
+
+    show();
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            return input.checked;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-optional-check2", document.querySelectorAll(".new-orfi-resolved"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100240"))
+</script>
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100237"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".new-orfi-data-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100296"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

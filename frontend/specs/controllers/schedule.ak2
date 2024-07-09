@@ -1,0 +1,12 @@
+controller-with-params(schedule){
+  params:[
+    (project-url);
+  ],
+  component:[
+    (schedule-page);
+  ]
+};
+
+custom-return-post-controller(save-schedule-data){
+  component:[],
+};

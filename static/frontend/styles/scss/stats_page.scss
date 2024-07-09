@@ -1,0 +1,446 @@
+
+
+.s100065{
+    
+    @include padding-t4;
+    
+    
+    .s100066{
+    
+    @include margin-b1;
+    
+    
+    .s100067{
+        
+        
+        .s100068{
+            
+            @include font-size-xxxlarge;
+            
+            @include font-family-one;
+            
+            @include text-align-center;
+            
+            
+            
+            
+        }
+        
+    }
+    
+}
+    
+    .s100070{
+    
+    @include margin-b1;
+    
+    
+    .s100071{
+        
+        @include text-align-center;
+        
+        @include font-weight300;
+        
+        
+        
+        
+    }
+    
+}
+    
+    .s100073{
+    
+    @include margin-b4;
+    
+    
+    .s100074{
+        
+        @include text-align-center;
+        
+        @include font-weight300;
+        
+        
+        
+        .s100076{
+            
+            @include font-color-black;
+            
+            
+        }
+
+        
+    }
+    
+}
+    
+    .s100077{
+    
+    
+    .s100078{
+        
+        
+        .s100079{
+            
+            @include font-size-xlarge;
+            
+            @include font-weight500;
+            
+            
+            
+            
+        }
+        
+    }
+    
+}
+    
+    .s100081{
+    
+    @include margin-b2;
+    
+    @include align-items-center;
+    
+    
+    .s100082{
+        
+        @include padding-t1;
+        
+        
+        
+        .s100083{
+            .progress {
+                width: 100%;
+                background-color: rgb(229,231,235);
+                border-radius: 8px;
+                position: relative;
+                display: inline-block;
+                border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+                overflow: unset;
+                height: auto;
+                .bar {
+                    width: 1%;
+                    height: 20px;
+                    border-radius: 8px;
+                }
+                .tooltiptext {
+                    visibility: visible;
+                    width: 120px;
+                    background-color: black;
+                    color: #fff;
+                    text-align: center;
+                    padding: 5px 0;
+                    border-radius: 4px;
+                    
+                    @include font-color-white;
+                    
+                    /* Position the tooltip text - see examples below! */
+                    position: absolute;
+                    z-index: 1;
+                    width: 120px;
+                    bottom: calc(100% + 1rem);
+                    left: 80%;
+                    margin-left: -60px; 
+                    &::after {
+                        content: " ";
+                        position: absolute;
+                        top: 100%; /* At the bottom of the tooltip */
+                        left: 50%;
+                        margin-left: -5px;
+                        border-width: 5px;
+                        border-style: solid;
+                        border-color: black transparent transparent transparent;
+                    }
+                }
+            }
+
+            .labels{
+                
+                @include font-color-gray-p60;
+                
+            }
+
+            .labels-top{
+                display: flex;
+                justify-content: end;
+            }
+
+            .labels-bottom{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        
+    }
+    
+    .s100084{
+        
+        
+        
+        .go-to-budget-btn-container{
+            width:$go-to-budget-btn-width;
+            height:$go-to-budget-btn-height;
+            display:inline-flex;
+            justify-content:center;
+            align-items:center;
+            a{
+                img{
+                    max-width:100%;
+                    max-height:100%;
+                }
+            }
+            
+        }
+
+        
+    }
+    
+}
+    
+    .s100086{
+    
+    
+    .s100087{
+        
+        
+        .s100088{
+            
+            @include font-size-xlarge;
+            
+            @include font-weight500;
+            
+            
+            
+            
+        }
+        
+    }
+    
+}
+    
+    .s100090{
+    
+    @include margin-b2;
+    
+    @include align-items-center;
+    
+    
+    .s100091{
+        
+        @include padding-t1;
+        
+        
+        
+        .s100092{
+            .progress {
+                width: 100%;
+                background-color: rgb(229,231,235);
+                border-radius: 8px;
+                position: relative;
+                display: inline-block;
+                border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+                overflow: unset;
+                height: auto;
+                .bar {
+                    width: 1%;
+                    height: 20px;
+                    border-radius: 8px;
+                }
+                .tooltiptext {
+                    visibility: visible;
+                    width: 120px;
+                    background-color: black;
+                    color: #fff;
+                    text-align: center;
+                    padding: 5px 0;
+                    border-radius: 4px;
+                    
+                    @include font-color-white;
+                    
+                    /* Position the tooltip text - see examples below! */
+                    position: absolute;
+                    z-index: 1;
+                    width: 120px;
+                    bottom: calc(100% + 1rem);
+                    left: 80%;
+                    margin-left: -60px; 
+                    &::after {
+                        content: " ";
+                        position: absolute;
+                        top: 100%; /* At the bottom of the tooltip */
+                        left: 50%;
+                        margin-left: -5px;
+                        border-width: 5px;
+                        border-style: solid;
+                        border-color: black transparent transparent transparent;
+                    }
+                }
+            }
+
+            .labels{
+                
+                @include font-color-gray-p60;
+                
+            }
+
+            .labels-top{
+                display: flex;
+                justify-content: end;
+            }
+
+            .labels-bottom{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        
+    }
+    
+    .s100093{
+        
+        
+        
+        .go-to-schedule-btn-container{
+            width:$go-to-schedule-btn-width;
+            height:$go-to-schedule-btn-height;
+            display:inline-flex;
+            justify-content:center;
+            align-items:center;
+            a{
+                img{
+                    max-width:100%;
+                    max-height:100%;
+                }
+            }
+            
+        }
+
+        
+    }
+    
+}
+    
+    .s100095{
+    
+    
+    .s100096{
+        
+        
+        .s100097{
+            
+            @include font-size-xlarge;
+            
+            @include font-weight500;
+            
+            
+            
+            
+        }
+        
+    }
+    
+}
+    
+    .s100099{
+    
+    @include margin-b2;
+    
+    @include align-items-center;
+    
+    
+    .s100100{
+        
+        @include padding-t1;
+        
+        
+        
+        .s100101{
+            .progress {
+                width: 100%;
+                background-color: rgb(229,231,235);
+                border-radius: 8px;
+                position: relative;
+                display: inline-block;
+                border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+                overflow: unset;
+                height: auto;
+                .bar {
+                    width: 1%;
+                    height: 20px;
+                    border-radius: 8px;
+                }
+                .tooltiptext {
+                    visibility: visible;
+                    width: 120px;
+                    background-color: black;
+                    color: #fff;
+                    text-align: center;
+                    padding: 5px 0;
+                    border-radius: 4px;
+                    
+                    @include font-color-white;
+                    
+                    /* Position the tooltip text - see examples below! */
+                    position: absolute;
+                    z-index: 1;
+                    width: 120px;
+                    bottom: calc(100% + 1rem);
+                    left: 80%;
+                    margin-left: -60px; 
+                    &::after {
+                        content: " ";
+                        position: absolute;
+                        top: 100%; /* At the bottom of the tooltip */
+                        left: 50%;
+                        margin-left: -5px;
+                        border-width: 5px;
+                        border-style: solid;
+                        border-color: black transparent transparent transparent;
+                    }
+                }
+            }
+
+            .labels{
+                
+                @include font-color-gray-p60;
+                
+            }
+
+            .labels-top{
+                display: flex;
+                justify-content: end;
+            }
+
+            .labels-bottom{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        
+    }
+    
+    .s100102{
+        
+        
+        
+        .go-to-orfi-btn-container{
+            width:$go-to-orfi-btn-width;
+            height:$go-to-orfi-btn-height;
+            display:inline-flex;
+            justify-content:center;
+            align-items:center;
+            a{
+                img{
+                    max-width:100%;
+                    max-height:100%;
+                }
+            }
+            
+        }
+
+        
+    }
+    
+}
+    
+}
+

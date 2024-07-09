@@ -1,0 +1,55 @@
+{
+    "favicon":"",
+    "theme_color":"",
+    "meta_description":"",
+    "title":"",
+    "home_url":"",
+    "og_image":"",
+    "keywords":"",
+    "start_path":"",
+    "header_scripts":"",
+    "body_scripts":"",
+    "canonical":"",
+    "tbrc_main_logo":{
+        "link_href":"/",
+        "link_target":"_self",
+        "simple_link_image":"/static/frontend/images/logo_main.png"
+    },
+    "project_links":[
+        {
+            "link_href":"/",
+            "link_target":"_self",
+            "link_label":"Dashboard"
+        },
+        {
+            "link_href":"/",
+            "link_target":"_self",
+            "link_label":"Budget"
+        },
+        {
+            "link_href":"/",
+            "link_target":"_self",
+            "link_label":"Schedule"
+        },
+        {
+            "link_href":"/",
+            "link_target":"_self",
+            "link_label":"Orfi"
+        }
+    ],
+    "profile_pic":"/static/frontend/images/logo_main.png",
+    "profile_name":"Jean Pierre",
+    "profile_subtitle":"Web Developer",
+    "profile_links":[
+        {
+            "link_href":"/",
+            "link_target":"_self",
+            "link_label":"My Projects"
+        },
+        {
+            "link_href":"/logout",
+            "link_target":"_self",
+            "link_label":"Sing Out"
+        }
+    ]
+}

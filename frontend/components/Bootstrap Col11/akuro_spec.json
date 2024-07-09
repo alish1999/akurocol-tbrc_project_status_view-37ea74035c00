@@ -1,0 +1,12 @@
+{
+    "generate_files": {},
+    "parent_type": "Bootstrap Col",
+    "links": {
+        "Parts": [
+            "Page Component"
+        ],
+        "Mixins": [
+            "Mixin"
+        ]
+    }
+}

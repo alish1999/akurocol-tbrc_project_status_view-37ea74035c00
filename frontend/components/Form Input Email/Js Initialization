@@ -1,0 +1,28 @@
+<script>
+  akuro.registerComponent("{{s.p('Type Dash Name')}}", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+          let val = this.getValue();
+          let at_index = val.indexOf("@");
+          let dot_index = val.indexOf(".", at_index);
+          if (val == null || val == undefined || val == "" || val == " " ||  at_index < 0 || dot_index <= at_index+1 || dot_index == val.length-1){
+            return [text];
+          }else{
+            return [];
+          }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("{{s.p('Type Dash Name')}}", document.querySelectorAll(".{{s.p('Dash Name')}}"))
+</script>
+

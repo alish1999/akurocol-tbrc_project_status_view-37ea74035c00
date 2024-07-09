@@ -1,0 +1,265 @@
+
+
+.s100530{
+    
+    @include border-bottom-black;
+    
+    @include background-color-white;
+    
+    
+    .s100531{
+    
+    
+    .s100532{
+    
+    
+    .s100533{
+        
+        @include display-flex;
+        
+        @include justify-content-end;
+        
+        @include align-items-center;
+        
+        @include padding-y2;
+        
+        
+        .s100534{
+            
+            @include display-flex;
+            
+            @include flex-gap1;
+            
+            @include align-items-center;
+            
+            @include font-size-large;
+            
+            
+        }
+        
+    }
+    
+}
+    
+}
+    
+}
+
+.s100535{
+    
+    @include display-flex;
+    
+    @include justify-content-center;
+    
+    @include align-items-center;
+    
+    @include padding-t4;
+    
+    @include padding-b1;
+    
+    
+    .tbrc-login-logo-img-container{
+    width:$tbrc-login-logo-img-width;
+    height:$tbrc-login-logo-img-height;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    img{
+        max-width:100%;
+        max-height:100%;
+    }
+    
+}
+    
+}
+
+.s100536{
+    
+    @include padding-b4;
+    
+    
+    .s100537{
+    
+    
+    .s100538{
+        
+        
+    }
+    
+    .s100539{
+        
+        
+        .s100540{
+          
+          @include simple-card;
+          
+          @include padding-y4;
+          
+          @include padding-x4;
+          
+
+          
+          .s100541{
+                
+                @include font-size-xxxlarge;
+                
+                @include font-family-one;
+                
+                @include text-align-center;
+                
+                @include padding-b1;
+                
+                
+                
+                
+            }
+          
+          .login-email {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              
+
+              label {
+                
+                @include margin-b05;
+                
+                @include font-size-medium;
+                
+              }
+
+              .help {
+                
+              }
+
+              .input-container{
+                input {
+                  
+                  @include common-inputs-styles;
+                  
+              
+                  &::placeholder {
+                    
+                  }
+              
+                  &:focus {
+                    
+                  }
+                }
+              }  
+            }
+          
+          .login-password {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              
+
+              label {
+                
+                @include margin-b05;
+                
+                @include font-size-medium;
+                
+              }
+
+              .help {
+                
+              }
+
+              .input-container{
+                input {
+                  
+                  @include common-inputs-styles;
+                  
+              
+                  &::placeholder {
+                    
+                  }
+              
+                  &:focus {
+                    
+                  }
+                }
+              }  
+            }
+          
+          .s100543{
+                
+                
+            }
+          
+          .s100544{
+                
+                @include display-flex;
+                
+                @include align-items-center;
+                
+                @include justify-content-between;
+                
+                
+                .login-remember {
+              
+
+              label {
+                
+                @include gray-text-link;
+                
+              }
+
+              input {
+                
+              }
+            }
+                
+                
+            .s100546{
+                
+                @include gray-text-link;
+                
+                
+            }
+
+                
+            }
+          
+          .s100547{
+                
+                @include display-flex;
+                
+                @include align-items-center;
+                
+                @include justify-content-center;
+                
+                @include padding-y1;
+                
+                
+                .s100548 {
+              
+              
+              
+              
+              @include gray-background-link;
+              
+              @include font-color-white;
+              
+              @include padding-x4;
+              
+              @include black-text-link;
+              
+              @include button-radius;
+              
+              @include width100;
+              
+            }
+                
+            }
+          
+        }
+        
+    }
+    
+}
+    
+}
+

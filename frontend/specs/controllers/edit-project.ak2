@@ -1,0 +1,10 @@
+controller-with-params(edit-project){
+  params:[(project-url);],
+  component:[
+    (project-edit-page);
+  ],
+};
+
+custom-return-post-controller(save-project-data){
+  component:[],
+};

@@ -1,0 +1,89 @@
+<script>
+  akuro.registerComponent("{{s.p('Type Dash Name')}}", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let controller = elm.dataset.controller;
+    let uploading = false;
+    
+    const dropZone = elm.querySelector(".drop-zone");
+    const dropZonebox = elm.querySelector(".drop-zone .text-container");
+    const fileInput = elm.querySelector("input.file-upload");
+    const realValue = elm.querySelector("input.real-value");
+
+
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('active');
+    });
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('active');
+    });
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('active');
+        dropZone.classList.add('ready');
+        
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            fileInput.files = files;
+            uploadFile(files[0]);
+        }
+    });
+    dropZone.addEventListener('click', () => {
+        fileInput.click();
+    });
+    fileInput.addEventListener('change', () => {
+        dropZone.classList.add('ready');
+        const files = fileInput.files;
+        if (files.length > 0) {
+            uploadFile(files[0]);
+        }
+    });
+    
+
+    function uploadFile(file_to_send) {
+        let xhrRequest = new XMLHttpRequest();
+        xhrRequest.open("POST", controller, true);
+        xhrRequest.upload.addEventListener("progress", ({ loaded, total }) => {
+            realValue.value = '';
+            dropZonebox.classList.add('loading');
+        });
+
+        xhrRequest.onreadystatechange = () => {
+            if (xhrRequest.readyState === 4) {
+                dropZonebox.classList.add('loaded');
+                dropZonebox.classList.remove('loading');
+                let data = JSON.parse(xhrRequest.response);
+                data = data["files"][0]
+                realValue.value = data.url;
+                fileInput.value = null;
+                uploading = false;
+            }else{
+                uploading =  true;
+            }
+        };
+        const formData = new FormData();
+        formData.append("file", file_to_send);
+        xhrRequest.send(formData);
+    }
+
+    class AkuroInputPicture{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            return realValue.value;
+        }
+        validate(){
+            console.log("adasasd", this.getValue());
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " " || uploading){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInputPicture(elm)
+  })
+  akuro.instantiate("{{s.p('Type Dash Name')}}", document.querySelectorAll(".{{s.p('Dash Name')}}"))
+</script>
+

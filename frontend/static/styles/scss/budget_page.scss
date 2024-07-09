@@ -1,0 +1,1262 @@
+
+
+.s100129{
+    
+    @include padding-t4;
+    
+    @include background-color-one-lightest;
+    
+    @include full-height;
+    
+    
+    .s100130{
+    
+    
+    .s100131{
+    
+    @include margin-b2;
+    
+    
+    .s100132{
+        
+        
+        .s100133{
+            
+            @include font-size-xxxlarge;
+            
+            @include font-family-one;
+            
+            
+            
+            
+        }
+        
+    }
+    
+}
+    
+    .s100135{
+    
+    @include padding-b2;
+    
+    
+    .s100136{
+        
+        
+        .s100137{
+            border-collapse: collapse;
+            width: 100%;
+
+            
+            .s100138{
+                
+                @include borders-top-round;
+                
+                
+                .s100139{
+                
+                
+            }
+                
+                
+            .s100141{
+                
+                @include background-color-one-normal;
+                
+                @include font-color-white;
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+
+                
+                .s100143{
+                
+                
+            }
+                
+                .s100144{
+                
+                
+            }
+                
+            }
+            
+            
+            .s100146{
+                
+                
+                .s100147{
+                
+                
+                
+            .s100149 {
+              display: inline-block;
+              .button-container{
+                
+                .s100150{
+                    
+                    @include action-button;
+                    
+                    @include budget-button-background;
+                    
+                    
+                    .budget-page-edit-icon-img-container{
+                    width:$budget-page-edit-icon-img-width;
+                    height:$budget-page-edit-icon-img-height;
+                    display:inline-flex;
+                    justify-content:center;
+                    align-items:center;
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                    
+                }
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .contact-data-modal{
+                    
+                    
+                    .s100104{
+                      
+
+                      
+                      
+                      
+                      .budget-contact-is-hard {
+                          
+                          @include display-flex;
+                          
+                          @include flex-direction-row-invert;
+                          
+                          @include flex-gap1;
+                          
+                          @include justify-content-start;
+                          
+                          @include align-items-center;
+                          
+                          @include margin-b1;
+                          
+
+                          label {
+                            
+                            @include font-family-one;
+                            
+                            @include font-size-xlarge;
+                            
+                          }
+
+                          input {
+                            display:none;
+                            
+                          }
+
+                          .active-image{
+                            display:none;
+                          }
+                          
+                          .inactive-image{
+                            display:none;
+                          }
+
+                          
+                        }
+                      
+                      .budget-contact-company {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .budget-contact-email {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .budget-contact-phone {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .s100105{
+                            
+                            
+                        }
+                      
+                      .s100106{
+                            
+                            @include display-flex;
+                            
+                            @include flex-gap1;
+                            
+                            @include flex-direction-column;
+                            
+                            
+                            .s100107 {
+                          
+                          
+                          
+                          
+                          @include gray-background-link;
+                          
+                          @include background-color-one-normal;
+                          
+                          @include font-color-white;
+                          
+                          @include button-radius;
+                          
+                        }
+                            
+                            
+                        .s100110{
+                            
+                            @include gray-background-link;
+                            
+                            @include background-color-four-lightest;
+                            
+                            @include font-color-one-normal;
+                            
+                            @include text-align-center;
+                            
+                            @include button-radius;
+                            
+                            @include text-decoration-none;
+                            
+                            
+                        }
+
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+
+                
+            }
+                
+                .s100151{
+                
+                @include cell-style;
+                
+                @include cell-left-style;
+                
+                
+                .s100152{
+                
+                @include bold-text;
+                
+            }
+                
+            }
+                
+                .s100153{
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+                
+                .s100155{
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+                
+                .s100157{
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+                
+                .s100159{
+                
+                @include cell-style;
+                
+                @include cell-right-style;
+                
+                @include text-align-center;
+                
+                
+                
+            .budget-row-icon-container{
+                width:$budget-row-icon-width;
+                height:$budget-row-icon-height;
+                display:inline-flex;
+                justify-content:center;
+                align-items:center;
+                a{
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                }
+                
+            }
+
+                
+            }
+                
+                .s100161{
+                
+                @include text-align-center;
+                
+                
+                
+            .s100163 {
+              display: inline-block;
+              .button-container{
+                
+                .s100164{
+                    
+                    @include action-button;
+                    
+                    @include budget-button-background;
+                    
+                    
+                    .budget-page-edit-icon2-img-container{
+                    width:$budget-page-edit-icon2-img-width;
+                    height:$budget-page-edit-icon2-img-height;
+                    display:inline-flex;
+                    justify-content:center;
+                    align-items:center;
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                    
+                }
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .category-data-modal{
+                    
+                    
+                    .s100111{
+                      
+                      @include text-align-start;
+                      
+
+                      
+                      
+                      
+                      .budget-caregory-name {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .budget-caregory-money {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .budget-caregory-time {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .s100112{
+                            
+                            
+                        }
+                      
+                      .s100113{
+                            
+                            @include display-flex;
+                            
+                            @include flex-gap1;
+                            
+                            @include flex-direction-column;
+                            
+                            
+                            .s100114 {
+                          
+                          
+                          
+                          
+                          @include gray-background-link;
+                          
+                          @include background-color-one-normal;
+                          
+                          @include font-color-white;
+                          
+                          @include button-radius;
+                          
+                        }
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+
+                
+            }
+                
+                .s100165{
+                
+                
+                
+            .s100167 {
+              display: inline-block;
+              .button-container{
+                
+                .s100168{
+                    
+                    @include action-button;
+                    
+                    @include background-color-white;
+                    
+                    
+                    .budget-page-trash-icon-img-container{
+                    width:$budget-page-trash-icon-img-width;
+                    height:$budget-page-trash-icon-img-height;
+                    display:inline-flex;
+                    justify-content:center;
+                    align-items:center;
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                    
+                }
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .category-delete-modal{
+                    
+                    
+                    .s100116{
+                        
+                        @include display-flex;
+                        
+                        @include align-items-center;
+                        
+                        @include justify-content-center;
+                        
+                        @include flex-gap1;
+                        
+                        
+                        .category-delete-title-icon-img-container{
+                        width:$category-delete-title-icon-img-width;
+                        height:$category-delete-title-icon-img-height;
+                        display:inline-flex;
+                        justify-content:center;
+                        align-items:center;
+                        img{
+                            max-width:100%;
+                            max-height:100%;
+                        }
+                        
+                    }
+                        
+                        .s100117{
+                        
+                        @include bold-text;
+                        
+                        @include font-size-large;
+                        
+                    }
+                        
+                    }
+                    
+                    .s100118{
+                        
+                        @include text-align-center;
+                        
+                        @include margin-y2;
+                        
+                    }
+                    
+                    .s100119{
+                      
+                      @include display-flex;
+                      
+                      @include align-items-center;
+                      
+                      @include justify-content-center;
+                      
+                      @include flex-gap1;
+                      
+
+                      
+                      
+                      
+                      .category-delete-button{
+                            
+                            @include gray-background-link;
+                            
+                            @include padding-x1;
+                            
+                            @include padding-y05;
+                            
+                            @include button-radius;
+                            
+                            
+                            
+                            
+                        }
+                      
+                      .s100121{
+                            
+                            @include gray-background-link;
+                            
+                            @include padding-x1;
+                            
+                            @include padding-y05;
+                            
+                            @include border-black;
+                            
+                            @include button-radius;
+                            
+                            
+                            
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+
+                
+            }
+                
+            }
+
+            
+            
+            .s100170{
+                
+                
+                .s100171{
+                
+                
+            }
+                
+                .s100172{
+                
+                @include cell-style;
+                
+                
+                .s100173{
+                
+                @include display-flex;
+                
+                @include justify-content-between;
+                
+                @include align-items-center;
+                
+                @include padding-y1;
+                
+                
+                .s100174 {
+              display: inline-block;
+              .button-container{
+                
+                .s100175{
+                    
+                    @include flat-button;
+                    
+                    
+                    
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .new-contact-data-modal{
+                    
+                    
+                    .s100123{
+                      
+
+                      
+                      .new-budget-contact-is-hard {
+                          
+                          @include display-flex;
+                          
+                          @include flex-direction-row-invert;
+                          
+                          @include flex-gap1;
+                          
+                          @include justify-content-start;
+                          
+                          @include align-items-center;
+                          
+                          @include margin-b1;
+                          
+                          @include font-family-one;
+                          
+                          @include font-size-xlarge;
+                          
+
+                          label {
+                            
+                            @include font-family-one;
+                            
+                            @include font-size-xlarge;
+                            
+                          }
+
+                          input {
+                            display:none;
+                            
+                          }
+
+                          .active-image{
+                            display:none;
+                          }
+                          
+                          .inactive-image{
+                            display:none;
+                          }
+
+                          
+                        }
+                      
+                      .new-budget-contact-company {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .new-budget-contact-email {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .new-budget-contact-phone {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .s100124{
+                            
+                            
+                        }
+                      
+                      .s100125{
+                            
+                            @include display-flex;
+                            
+                            @include flex-gap1;
+                            
+                            @include flex-direction-column;
+                            
+                            
+                            .s100126 {
+                          
+                          
+                          
+                          
+                          @include gray-background-link;
+                          
+                          @include background-color-one-normal;
+                          
+                          @include font-color-white;
+                          
+                          @include button-radius;
+                          
+                        }
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+                
+                .s100177 {
+              display: inline-block;
+              .button-container{
+                
+                .s100178{
+                    
+                    @include button-color-four;
+                    
+                    @include button-boder-styles;
+                    
+                    @include button-radius;
+                    
+                    
+                    
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .new-contact-data-modal{
+                    
+                    
+                    .s100123{
+                      
+
+                      
+                      .new-budget-contact-is-hard {
+                          
+                          @include display-flex;
+                          
+                          @include flex-direction-row-invert;
+                          
+                          @include flex-gap1;
+                          
+                          @include justify-content-start;
+                          
+                          @include align-items-center;
+                          
+                          @include margin-b1;
+                          
+                          @include font-family-one;
+                          
+                          @include font-size-xlarge;
+                          
+
+                          label {
+                            
+                            @include font-family-one;
+                            
+                            @include font-size-xlarge;
+                            
+                          }
+
+                          input {
+                            display:none;
+                            
+                          }
+
+                          .active-image{
+                            display:none;
+                          }
+                          
+                          .inactive-image{
+                            display:none;
+                          }
+
+                          
+                        }
+                      
+                      .new-budget-contact-company {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .new-budget-contact-email {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .new-budget-contact-phone {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .s100124{
+                            
+                            
+                        }
+                      
+                      .s100125{
+                            
+                            @include display-flex;
+                            
+                            @include flex-gap1;
+                            
+                            @include flex-direction-column;
+                            
+                            
+                            .s100126 {
+                          
+                          
+                          
+                          
+                          @include gray-background-link;
+                          
+                          @include background-color-one-normal;
+                          
+                          @include font-color-white;
+                          
+                          @include button-radius;
+                          
+                        }
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+                
+            }
+                
+            }
+                
+                .s100180{
+                
+                
+            }
+                
+                .s100181{
+                
+                
+            }
+                
+            }
+
+            
+        }
+        
+    }
+    
+}
+    
+    .s100182{
+    
+    
+    .s100183{
+        
+        
+        .s100184 {
+          display: flex;
+          justify-content: center;
+          align-items:center;
+          gap:0.3rem;
+          a {
+            text-decoration: none;
+            color: black;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            &.page-link.current{
+              border: 1px solid black;
+              padding: 0rem 0.3rem;
+            }
+          }
+        }
+        
+    }
+    
+}
+    
+}
+    
+}
+

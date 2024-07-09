@@ -1,0 +1,38 @@
+{
+    "stats_page_title":"Project name",
+    "stats_page_description":"as asda Asdfvs s sdf as asda Asdfvs s sdf as asda Asdfvs s sdf as asda Asdfvs s sdf as asda Asdfvs s sdf as asda Asdfvs s sdf as asda Asdfvs s sdf ",
+    "stats_page_budget_title":"Budget",
+    "stats_page_budget_start":"$ 0",
+    "stats_page_budget_end":"$ 1,000,000",
+    "stats_page_budget_current_percentage":"20",
+    "stats_page_budget_current_value":"200,000",
+    "stats_page_budget_end2":"100%",
+    "stats_page_budget_link":{
+        "link_href":"/",
+        "link_label":"See more",
+        "link_target":"_self"
+    },
+    "stats_page_schedule_title":"Schedule",
+    "stats_page_schedule_start":"Week 0",
+    "stats_page_schedule_end":"Week 10",
+    "stats_page_schedule_current_percentage":"10",
+    "stats_page_schedule_current_value":"Week 1",
+    "stats_page_schedule_end2":"Week 1",
+    "stats_page_schedule_link":{
+        "link_href":"/",
+        "link_label":"See more",
+        "link_target":"_self"
+    },
+    "stats_page_orfi_title":"ORFI",
+    "stats_page_orfi_start":"0",
+    "stats_page_orfi_end":"100",
+    "stats_page_orfi_current_percentage":"75",
+    "stats_page_orfi_current_value":"75",
+    "stats_page_orfi_end2":"100%",
+    "stats_page_orfi_link":{
+        "link_href":"/",
+        "link_label":"See more",
+        "link_target":"_self"
+    }
+    
+}

@@ -1,0 +1,24 @@
+data-collection(files-item-data){
+  fields:[
+    data-field(files-item-id){
+      collection:[
+        (files-item-data);
+      ]
+    };
+    data-field(files-item-name){
+      collection:[
+        (files-item-data);
+      ]
+    };
+    data-field(files-item-file){
+      collection:[
+        (files-item-data);
+      ]
+    };
+    data-field(files-item-link){
+      collection:[
+        (files-item-data);
+      ]
+    };
+  ]
+};

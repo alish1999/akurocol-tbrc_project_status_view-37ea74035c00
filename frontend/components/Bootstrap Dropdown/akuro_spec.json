@@ -1,0 +1,15 @@
+{
+    "generate_files": {},
+    "parent_type": "Bootstrap Component",
+    "links": {
+        "Label": [
+            "Data Field"
+        ],
+        "Parts": [
+            "Page Component"
+        ],
+        "Mixins": [
+            "Page Component"
+        ]
+    }
+}

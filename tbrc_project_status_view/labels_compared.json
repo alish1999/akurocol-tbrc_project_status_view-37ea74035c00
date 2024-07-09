@@ -1,0 +1,342 @@
+{
+    "plugins": {
+        "datatables": {
+            "decimal": ",",
+            "infoPostFix": "",
+            "thousands": "."
+        }
+    },
+    "domain_classes": {
+        "permission_label": "Permission",
+        "permission": {
+            "url": {
+                "label": "Url"
+            },
+            "permission_description": {
+                "label": "Permission Description"
+            },
+            "permissions_of_role": {
+                "label": "Permissions Of Role"
+            }
+        },
+        "role_label": "Role",
+        "role": {
+            "name": {
+                "label": "Name"
+            },
+            "description": {
+                "label": "Description"
+            },
+            "permissions_of_role": {
+                "label": "Permissions Of Role"
+            }
+        },
+        "user_label": "User",
+        "user": {
+            "username": {
+                "label": "Username"
+            },
+            "password": {
+                "label": "Password",
+                "original_label": "Password",
+                "copy_label": "Repeat password"
+            },
+            "profile_picture": {
+                "label": "Profile Picture"
+            },
+            "user_full_name": {
+                "label": "User Full Name"
+            },
+            "token_user": {
+                "label": "Token User",
+                "description": "Texto de ayuda para Token User",
+                "excel_width": "100px"
+            }
+        },
+        "recover_token_label": "Recover Token",
+        "recover_token_system_format": "{self.token_string} {self.token_expires} {self.token_email} ",
+        "recover_token": {
+            "token_string": {
+                "label": "Token String",
+                "description": "Texto de ayuda para Token String",
+                "excel_width": "100px"
+            },
+            "token_expires": {
+                "label": "Token Expires",
+                "description": "Texto de ayuda para Token Expires",
+                "null_label": "Pendiente",
+                "excel_width": "100px"
+            },
+            "token_email": {
+                "label": "Username",
+                "description": "Texto de ayuda para Username",
+                "excel_width": "100px"
+            },
+            "token_user": {
+                "label": "Token User",
+                "description": "Texto de ayuda para Token User",
+                "excel_width": "100px"
+            }
+        },
+        "collection_label": "Collection",
+        "collection": {
+            "collection_name": {
+                "label": "Collection Name"
+            },
+            "collection_data": {
+                "label": "Collection Data",
+                "template": ""
+            }
+        },
+        "project_label": "Project",
+        "project": {
+            "project_description": {
+                "template": ""
+            },
+            "project_address": {
+                "label": "Project Address",
+                "description": "Texto de ayuda para Project Address",
+                "template": "",
+                "excel_width": "100px"
+            },
+            "budget_project": {
+                "label": "Budget Project",
+                "description": "Texto de ayuda para Budget Project",
+                "excel_width": "100px"
+            },
+            "gallery_folder_project": {
+                "label": "Gallery Folder Project",
+                "description": "Texto de ayuda para Gallery Folder Project",
+                "excel_width": "100px"
+            }
+        },
+        "orfi_label": "Orfi",
+        "orfi": {
+            "orfi_creation": {
+                "null_label": "Pendiente"
+            },
+            "orfi_due": {
+                "label": "Orfi Due",
+                "description": "Texto de ayuda para Orfi Due",
+                "null_label": "Pendiente",
+                "excel_width": "100px"
+            },
+            "orfi_resolved": {
+                "label": "Orfi Resolved",
+                "description": "Texto de ayuda para Orfi Resolved",
+                "true_label": "Si",
+                "false_label": "No",
+                "excel_width": "100px"
+            },
+            "orfi_file_orfi": {
+                "label": "Orfi File Orfi",
+                "description": "Texto de ayuda para Orfi File Orfi",
+                "excel_width": "100px"
+            }
+        },
+        "orfi_file_label": "Orfi File",
+        "orfi_file_system_format": "{self.orfi_file_name} {self.orfi_file_file} ",
+        "orfi_file": {
+            "orfi_file_name": {
+                "label": "Orfi File Name",
+                "description": "Texto de ayuda para Orfi File Name",
+                "excel_width": "100px"
+            },
+            "orfi_file_file": {
+                "label": "Orfi File File",
+                "description": "Texto de ayuda para Orfi File File",
+                "excel_width": "100px"
+            },
+            "orfi_file_orfi": {
+                "label": "Orfi File Orfi",
+                "description": "Texto de ayuda para Orfi File Orfi",
+                "excel_width": "100px"
+            }
+        },
+        "budget_label": "Budget",
+        "budget": {
+            "budget_is_hard_cost": {
+                "label": "Budget Is Hard Cost",
+                "description": "Texto de ayuda para Budget Is Hard Cost",
+                "true_label": "Si",
+                "false_label": "No",
+                "excel_width": "100px"
+            },
+            "budget_name": {
+                "label": "Budget Name",
+                "description": "Texto de ayuda para Budget Name",
+                "excel_width": "100px"
+            },
+            "budget_company": {
+                "label": "Budget Company",
+                "description": "Texto de ayuda para Budget Company",
+                "excel_width": "100px"
+            },
+            "budget_email": {
+                "label": "Budget Email",
+                "description": "Texto de ayuda para Budget Email",
+                "excel_width": "100px"
+            },
+            "budget_phone": {
+                "label": "Budget Phone",
+                "description": "Texto de ayuda para Budget Phone",
+                "excel_width": "100px"
+            },
+            "budget_name2": {
+                "label": "Budget Name2",
+                "description": "Texto de ayuda para Budget Name2",
+                "excel_width": "100px"
+            },
+            "budget_amount": {
+                "label": "Budget Amount",
+                "description": "Texto de ayuda para Budget Amount",
+                "excel_width": "100px"
+            },
+            "budget_total_duration": {
+                "label": "Budget Total Duration",
+                "description": "Texto de ayuda para Budget Total Duration",
+                "excel_width": "100px"
+            },
+            "budget_progress": {
+                "label": "Budget Progress",
+                "description": "Texto de ayuda para Budget Progress",
+                "excel_width": "100px"
+            },
+            "budget_project": {
+                "label": "Budget Project",
+                "description": "Texto de ayuda para Budget Project",
+                "excel_width": "100px"
+            },
+            "bill_budget": {
+                "label": "Bill Budget",
+                "description": "Texto de ayuda para Bill Budget",
+                "excel_width": "100px"
+            },
+            "budget_file_budget": {
+                "label": "Budget File Budget",
+                "description": "Texto de ayuda para Budget File Budget",
+                "excel_width": "100px"
+            }
+        },
+        "bill_label": "Bill",
+        "bill": {
+            "bill_date": {
+                "null_label": "Pendiente"
+            },
+            "bill_amount": {
+                "label": "Bill Amount",
+                "description": "Texto de ayuda para Bill Amount",
+                "excel_width": "100px"
+            }
+        },
+        "budget_file_label": "Budget File",
+        "budget_file_system_format": "{self.budget_file_name} {self.budget_file_file} ",
+        "budget_file": {
+            "budget_file_name": {
+                "label": "Budget File Name",
+                "description": "Texto de ayuda para Budget File Name",
+                "excel_width": "100px"
+            },
+            "budget_file_file": {
+                "label": "Budget File File",
+                "description": "Texto de ayuda para Budget File File",
+                "excel_width": "100px"
+            },
+            "budget_file_budget": {
+                "label": "Budget File Budget",
+                "description": "Texto de ayuda para Budget File Budget",
+                "excel_width": "100px"
+            }
+        },
+        "contact_label": "Contact",
+        "contact": {
+            "contact_phone": {
+                "label": "Contact Phone",
+                "description": "Texto de ayuda para Contact Phone",
+                "excel_width": "100px"
+            }
+        },
+        "gallery_folder_label": "Gallery Folder",
+        "gallery_folder_system_format": "{self.gallery_folder_name} {self.gallery_folder_description} {self.gallery_folder_link} ",
+        "gallery_folder": {
+            "gallery_folder_name": {
+                "label": "Gallery Folder Name",
+                "description": "Texto de ayuda para Gallery Folder Name",
+                "excel_width": "100px"
+            },
+            "gallery_folder_description": {
+                "label": "Gallery Folder Description",
+                "description": "Texto de ayuda para Gallery Folder Description",
+                "excel_width": "100px"
+            },
+            "gallery_folder_link": {
+                "label": "Gallery Folder Link",
+                "description": "Texto de ayuda para Gallery Folder Link",
+                "excel_width": "100px"
+            },
+            "gallery_folder_project": {
+                "label": "Gallery Folder Project",
+                "description": "Texto de ayuda para Gallery Folder Project",
+                "excel_width": "100px"
+            },
+            "gallery_item_folder": {
+                "label": "Gallery Item Folder",
+                "description": "Texto de ayuda para Gallery Item Folder",
+                "excel_width": "100px"
+            }
+        },
+        "gallery_item_label": "Gallery Item",
+        "gallery_item": {
+            "gallery_item_folder": {
+                "label": "Gallery Item Folder",
+                "description": "Texto de ayuda para Gallery Item Folder",
+                "excel_width": "100px"
+            }
+        },
+        "system_config_label": "System Config",
+        "system_config": {
+            "system_home": {
+                "label": "System Home"
+            },
+            "system_domain": {
+                "label": "System Domain"
+            },
+            "system_seo_default_title": {
+                "label": "System Seo Default Title"
+            },
+            "system_seo_default_image": {
+                "label": "System Seo Default Image"
+            },
+            "system_seo_default_description": {
+                "label": "System Seo Default Description"
+            },
+            "system_seo_default_keywords": {
+                "label": "System Seo Default Keywords"
+            }
+        }
+    },
+    "pages": {
+        "platform_admin_pane": {
+            "cache": "Cache",
+            "profile": "Profile",
+            "log_out": "Log Out"
+        },
+        "image_uploads": {
+            "title": "Image Uploads",
+            "icon": "fa fa-circle"
+        },
+        "bulk_uploads": {
+            "title": "Bulk Uploads",
+            "icon": "fa fa-circle"
+        },
+        "rbac_login_page": {
+            "title": "Rbac Login Page",
+            "extras": "",
+            "login_button": "Login"
+        },
+        "rbac_logout_page": {
+            "title": "Rbac Logout Page",
+            "icon": "fa fa-circle"
+        }
+    }
+}

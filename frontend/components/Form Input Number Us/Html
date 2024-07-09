@@ -1,0 +1,14 @@
+<div class="money {{s.p('Dash Name')}} {{s.p('Type Dash Name')}}" {%if l.error_message|count>0 %}data-error-message="{{l.error_message[0].p('Data Getter')}}"{% endif %} {{s.p("Locator Tag")}}>
+  {%if l.label|count>0 %}<label for="{{s.p("Var Name")}}">{{l.label[0].p('Data Getter')}}</label>{% endif %}
+  {%if l.help|count>0 %}<div class="help">{{l.help[0].p('Data Getter')}}</div>{% endif %}
+  <div class="input-container">
+    <input 
+      class="money-input" 
+      type="text"
+      name="{{s.p("Var Name")}}" 
+      id="{{s.p("Var Name")}}"
+      {%if l.value|count>0 %}value="{{l.value[0].p('Data Getter')}}"{% endif %}
+      {%if l.placeholder|count>0 %}placeholder="{{l.placeholder[0].p('Data Getter')}}"{% endif %}
+      >
+  </div>
+</div>

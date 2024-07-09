@@ -1,0 +1,29 @@
+data-collection(project){
+  fields:[
+    data-field(project-href){
+      collection:[
+        (project);
+      ]
+    };
+    data-field(project-name){
+      collection:[
+        (project);
+      ]
+    };
+    data-field(project-subtitle){
+      collection:[
+        (project);
+      ]
+    };
+    data-field(project-gallery-link){
+      collection:[
+        (project);
+      ]
+    };
+    data-field(project-edit-link){
+      collection:[
+        (project);
+      ]
+    };
+  ]
+};

@@ -1,0 +1,7 @@
+<div class="{{s.p('Dash Name')}} {{s.p('Type Dash Name')}}" {{s.p("Locator Tag")}}>
+  {%if l.label|count>0 %}<label for="{{s.p("Var Name")}}">{{l.label[0].p('Data Getter')}}</label>{% endif %}
+  <div class="input-container">
+    <img src="{{l.icon[0].p('Data Getter')}}" alt="">
+    <input type="text" name="{{s.p("Var Name")}}" id="{{s.p("Var Name")}}" {%if l.placeholder|count>0 %}placeholder="{{l.placeholder[0].p('Data Getter')}}"{% endif %}>
+  </div>
+</div>

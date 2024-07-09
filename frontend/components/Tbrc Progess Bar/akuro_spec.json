@@ -1,0 +1,30 @@
+{
+    "generate_files": {},
+    "parent_type": "Tbrc Components",
+    "links": {
+        "Top Right Label": [
+            "Data Field"
+        ],
+        "Bottom Left Label": [
+            "Data Field"
+        ],
+        "Bottom Right Label": [
+            "Data Field"
+        ],
+        "Current Percentage": [
+            "Data Field"
+        ],
+        "Current Value": [
+            "Data Field"
+        ],
+        "Bounds Labels Sytles": [
+            "Mixin"
+        ],
+        "Tooltip Labels Sytles": [
+            "Mixin"
+        ],
+        "Bar Color": [
+            "Data Field"
+        ]
+    }
+}

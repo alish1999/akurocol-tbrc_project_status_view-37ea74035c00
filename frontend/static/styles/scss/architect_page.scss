@@ -1,0 +1,1061 @@
+
+
+.s100322{
+    
+    @include background-color-four-lightest;
+    
+    @include padding-t4;
+    
+    @include full-height;
+    
+    
+    .s100323{
+    
+    
+    .s100324{
+    
+    @include margin-b2;
+    
+    
+    .s100325{
+        
+        @include display-flex;
+        
+        @include flex-gap1;
+        
+        @include align-items-center;
+        
+        @include justify-content-between;
+        
+        
+        .s100326{
+            
+            @include font-size-xxxlarge;
+            
+            @include font-family-one;
+            
+            
+            
+            
+        }
+        
+        
+        .s100329{
+            
+            @include background-color-one-normal;
+            
+            @include font-color-white;
+            
+            @include dropdown-button-style;
+            
+            @include white-text-link;
+            
+            @include button-radius;
+            
+            @include padding-x1;
+            
+            
+        }
+
+        
+    }
+    
+}
+    
+    .s100330{
+    
+    @include margin-b1;
+    
+    
+    .s100331{
+        
+        
+        .architect-page-table{
+            border-collapse: collapse;
+            width: 100%;
+
+            
+            .s100332{
+                
+                @include borders-top-round2;
+                
+                
+                
+            .s100334{
+                
+                @include background-color-one-normal;
+                
+                @include font-color-white;
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+
+                
+                .s100336{
+                
+                
+            }
+                
+                .s100337{
+                
+                
+            }
+                
+            }
+            
+            
+            .s100339{
+                
+                
+                .s100340{
+                
+                @include cell-style;
+                
+                @include cell-left-style;
+                
+                @include light-bg;
+                
+                
+                .s100341{
+                
+                @include bold-text;
+                
+            }
+                
+            }
+                
+                .s100342{
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+                
+                .s100344{
+                
+                @include cell-style;
+                
+                @include light-bg;
+                
+                
+                
+                
+            }
+                
+                .s100346{
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+                
+                .s100348{
+                
+                @include cell-style;
+                
+                @include light-bg;
+                
+                
+                
+                
+            }
+                
+                .s100350{
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+                
+                .s100352{
+                
+                @include cell-style;
+                
+                @include cell-right-style;
+                
+                @include light-bg;
+                
+                
+                
+                
+            }
+                
+                .s100354{
+                
+                
+                
+            .s100356 {
+              display: inline-block;
+              .button-container{
+                
+                .s100357{
+                    
+                    @include action-button;
+                    
+                    @include budget-button-background;
+                    
+                    @include margin-l1;
+                    
+                    
+                    .architect-page-edit-icon-img-container{
+                    width:$architect-page-edit-icon-img-width;
+                    height:$architect-page-edit-icon-img-height;
+                    display:inline-flex;
+                    justify-content:center;
+                    align-items:center;
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                    
+                }
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .bill-data-modal{
+                    
+                    
+                    .s100304{
+                      
+
+                      
+                      
+                      
+                      .bill-date {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .bill-invoice {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .bill-amount {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .bill-paid {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .s100305{
+                            
+                            
+                        }
+                      
+                      .s100306{
+                            
+                            @include display-flex;
+                            
+                            @include flex-gap1;
+                            
+                            @include flex-direction-column;
+                            
+                            
+                            .s100307 {
+                          
+                          
+                          
+                          
+                          @include gray-background-link;
+                          
+                          @include background-color-one-normal;
+                          
+                          @include font-color-white;
+                          
+                          @include button-radius;
+                          
+                        }
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+
+                
+            }
+                
+                .s100358{
+                
+                
+                
+            .s100360 {
+              display: inline-block;
+              .button-container{
+                
+                .s100361{
+                    
+                    @include action-button;
+                    
+                    @include background-color-white;
+                    
+                    
+                    .architect-page-trash-icon-img-container{
+                    width:$architect-page-trash-icon-img-width;
+                    height:$architect-page-trash-icon-img-height;
+                    display:inline-flex;
+                    justify-content:center;
+                    align-items:center;
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                    
+                }
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .architect-delete-modal{
+                    
+                    
+                    .s100314{
+                        
+                        @include display-flex;
+                        
+                        @include align-items-center;
+                        
+                        @include justify-content-center;
+                        
+                        @include flex-gap1;
+                        
+                        
+                        .architect-delete-title-icon-img-container{
+                        width:$architect-delete-title-icon-img-width;
+                        height:$architect-delete-title-icon-img-height;
+                        display:inline-flex;
+                        justify-content:center;
+                        align-items:center;
+                        img{
+                            max-width:100%;
+                            max-height:100%;
+                        }
+                        
+                    }
+                        
+                        .s100315{
+                        
+                        @include bold-text;
+                        
+                        @include font-size-large;
+                        
+                    }
+                        
+                    }
+                    
+                    .s100316{
+                        
+                        @include text-align-center;
+                        
+                        @include margin-y2;
+                        
+                    }
+                    
+                    .s100317{
+                      
+                      @include display-flex;
+                      
+                      @include align-items-center;
+                      
+                      @include justify-content-center;
+                      
+                      @include flex-gap1;
+                      
+
+                      
+                      
+                      
+                      .architect-delete-button{
+                            
+                            @include gray-background-link;
+                            
+                            @include padding-x1;
+                            
+                            @include padding-y05;
+                            
+                            @include button-radius;
+                            
+                            
+                            
+                            
+                        }
+                      
+                      .s100319{
+                            
+                            @include gray-background-link;
+                            
+                            @include padding-x1;
+                            
+                            @include padding-y05;
+                            
+                            @include border-black;
+                            
+                            @include button-radius;
+                            
+                            
+                            
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+
+                
+            }
+                
+            }
+
+            
+            
+            .s100363{
+                
+                
+                .s100364{
+                
+                @include cell-style;
+                
+                
+                .s100365{
+                
+                @include display-flex;
+                
+                @include justify-content-between;
+                
+                @include align-items-center;
+                
+                @include padding-y1;
+                
+                
+                .s100366 {
+              display: inline-block;
+              .button-container{
+                
+                .s100367{
+                    
+                    @include flat-button;
+                    
+                    
+                    
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .new-bill-data-modal{
+                    
+                    
+                    .s100309{
+                      
+
+                      
+                      .new-bill-date {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .new-bill-invoice {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .new-bill-amount {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .new-bill-paid {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .s100310{
+                            
+                            
+                        }
+                      
+                      .s100311{
+                            
+                            @include display-flex;
+                            
+                            @include flex-gap1;
+                            
+                            @include flex-direction-column;
+                            
+                            
+                            .s100312 {
+                          
+                          
+                          
+                          
+                          @include gray-background-link;
+                          
+                          @include background-color-one-normal;
+                          
+                          @include font-color-white;
+                          
+                          @include button-radius;
+                          
+                        }
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+                
+                .s100369 {
+              display: inline-block;
+              .button-container{
+                
+                .s100370{
+                    
+                    @include button-color-four;
+                    
+                    @include button-boder-styles;
+                    
+                    @include button-radius;
+                    
+                    
+                    
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .new-bill-data-modal{
+                    
+                    
+                    .s100309{
+                      
+
+                      
+                      .new-bill-date {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .new-bill-invoice {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .new-bill-amount {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .new-bill-paid {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .s100310{
+                            
+                            
+                        }
+                      
+                      .s100311{
+                            
+                            @include display-flex;
+                            
+                            @include flex-gap1;
+                            
+                            @include flex-direction-column;
+                            
+                            
+                            .s100312 {
+                          
+                          
+                          
+                          
+                          @include gray-background-link;
+                          
+                          @include background-color-one-normal;
+                          
+                          @include font-color-white;
+                          
+                          @include button-radius;
+                          
+                        }
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+                
+            }
+                
+            }
+                
+                .s100372{
+                
+                
+            }
+                
+                .s100373{
+                
+                
+            }
+                
+            }
+
+            
+        }
+        
+    }
+    
+}
+    
+    .s100374{
+    
+    @include margin-b4;
+    
+    
+    .s100375{
+        
+        
+        .s100376 {
+          display: flex;
+          justify-content: center;
+          align-items:center;
+          gap:0.3rem;
+          a {
+            text-decoration: none;
+            color: black;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            &.page-link.current{
+              border: 1px solid black;
+              padding: 0rem 0.3rem;
+            }
+          }
+        }
+        
+    }
+    
+}
+    
+}
+    
+}
+

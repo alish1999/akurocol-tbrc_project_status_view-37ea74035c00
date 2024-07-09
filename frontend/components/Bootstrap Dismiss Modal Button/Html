@@ -1,0 +1,1 @@
+<button role="button" type="button" class="{{s.p("Dash Name")}} {{s.p("Type Dash Name")}}" data-bs-dismiss="modal">{%for p in l.parts%}{{p.p("Html")}}{%endfor%}</button>

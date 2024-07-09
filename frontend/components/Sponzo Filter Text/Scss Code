@@ -1,0 +1,56 @@
+.{{s.p('Dash Name')}} {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  {% for m in l.group_style%}
+  {{m.p("Scss Code")}}
+  {% endfor %}
+
+  label {
+    {% for m in l.label_style%}
+    {{m.p("Scss Code")}}
+    {% endfor %}
+  }
+
+  .input-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid $color1;
+    padding: 0.5rem 1rem;
+    border-radius: 10rem;
+    background-color:white;
+    overflow:hidden;
+    {% for m in l.container_style%}
+    {{m.p("Scss Code")}}
+    {% endfor %}
+    img {
+      height: 1rem;
+      width: 1rem;
+      object-fit: contain;
+    }
+    input {
+      border: none;
+      width: 100%;
+      outline: none;
+      {% for m in l.input_style%}
+      {{m.p("Scss Code")}}
+      {% endfor %}
+  
+      &::placeholder {
+        {% for m in l.placeholder_style%}
+        {{m.p("Scss Code")}}
+        {% endfor %}
+      }
+  
+      &:focus {
+        outline: none;
+        {% for m in l.focus_style%}
+        {{m.p("Scss Code")}}
+        {% endfor %}
+      }
+    }
+  }  
+}

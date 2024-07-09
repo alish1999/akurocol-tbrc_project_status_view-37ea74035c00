@@ -1,0 +1,8 @@
+controller-with-params(stats){
+  params:[
+    (project-url);
+  ],
+  component:[
+    (stats-page);
+  ]
+};

@@ -1,0 +1,39 @@
+{
+    "generate_files": {},
+    "parent_type": "Form Input Money",
+    "links": {
+        "Label": [
+            "Data Field"
+        ],
+        "Placeholder": [
+            "Data Field"
+        ],
+        "Help": [
+            "Data Field"
+        ],
+        "Error Message": [
+            "Data Field"
+        ],
+        "Group Style": [
+            "Mixin"
+        ],
+        "Label Style": [
+            "Mixin"
+        ],
+        "Help Style": [
+            "Mixin"
+        ],
+        "Input Style": [
+            "Mixin"
+        ],
+        "Placeholder Style": [
+            "Mixin"
+        ],
+        "Focus Style": [
+            "Mixin"
+        ],
+        "Value": [
+            "Data Field"
+        ]
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "architect_page_title":"Project Name Arquitect",
+    "architect_page_columns":[
+        {
+            "simple_title":"Vendors Name"
+        },
+        {
+            "simple_title":"Budget"
+        },
+        {
+            "simple_title":"Paid To Date"
+        },
+        {
+            "simple_title":"Pending Due"
+        },
+        {
+            "simple_title":"Remaining Balance"
+        },
+        {
+            "simple_title":"Paid To Date"
+        },
+        {
+            "simple_title":"% Complete"
+        }
+    ],
+    "architect_page_items":[
+        {
+            "architect_item_vendor":"Name",
+            "architect_item_budget":"$ 100.000",
+            "architect_item_paid":"$ 100.000",
+            "architect_item_pending":"$ 100.000",
+            "architect_item_remaining":"$ 100.000",
+            "architect_item_paid2":"$ 100.000",
+            "architect_item_percetage":"100%"
+        }
+    ]
+    
+}

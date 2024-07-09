@@ -1,0 +1,9 @@
+data-collection(image-data){
+  fields:[    
+    data-field(image-url){
+      collection:[
+        (image-data);
+      ]
+    };
+  ]
+};

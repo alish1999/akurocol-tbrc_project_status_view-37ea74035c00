@@ -1,0 +1,34 @@
+data-collection(contacts-item-data){
+  fields:[    
+    data-field(contacts-item-id){
+      collection:[
+        (contacts-item-data);
+      ]
+    };
+    data-field(contacts-item-role){
+      collection:[
+        (contacts-item-data);
+      ]
+    };
+    data-field(contacts-item-name){
+      collection:[
+        (contacts-item-data);
+      ]
+    };
+    data-field(contacts-item-company){
+      collection:[
+        (contacts-item-data);
+      ]
+    };
+    data-field(contacts-item-email){
+      collection:[
+        (contacts-item-data);
+      ]
+    };
+    data-field(contacts-item-phone){
+      collection:[
+        (contacts-item-data);
+      ]
+    };
+  ]
+};

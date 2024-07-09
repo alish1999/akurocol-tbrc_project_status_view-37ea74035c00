@@ -1,0 +1,1821 @@
+{% set budget_page_data = budget_page_data_collection(project_url) %}
+
+{% extends 'general_template.html' %}
+{% block css_dependencies_loaders%}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+{% endblock %}
+
+{% block html%}
+
+<div class="s100129 div-element">
+    
+    <div class="container s100130">
+        
+        <div class="row s100131">
+            
+            <div class="col s100132">
+                
+                <h1 class="s100133 h1-element">
+                    
+                    {{budget_page_data['budget_page_title']}}
+                    
+                </h1>
+                
+            </div>
+            
+        </div>
+        
+        <div class="row s100135">
+            
+            <div class="col s100136">
+                
+                <table class="s100137 table-element">
+                    
+                    <tr class="s100138 tr-element">
+                        
+                        <th class="s100139 th-element">
+                            
+                        </th>
+                        
+                        {%for simple_info_data in budget_page_data.budget_page_columns %}
+
+                        <th class="s100141 th-element">
+                            
+                            {{simple_info_data['simple_title']}}
+                            
+                        </th>
+
+                        {%endfor%}
+                        
+                        <th class="s100143 th-element">
+                            
+                        </th>
+                        
+                        <th class="s100144 th-element">
+                            
+                        </th>
+                        
+                    </tr>
+                    
+                    {%for budget_item_data in budget_page_data.budget_page_items %}
+
+                    <tr class="s100146 tr-element">
+                        
+                        <td 
+                            class="s100147 td-element" 
+                            
+                            
+                        >
+                            
+                            {% if general_data['edit_mode_on'] %}
+
+                            <div class="s100149 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100149">
+                              <div class="button-container">
+                                
+                                <button role="button" type="button" class="s100150 button-component"><div class="budget-page-edit-icon-img-container">
+                                    <img src="{{budget_page_data['budget_page_edit_icon']}}"/>
+                                </div></button>
+                                
+                              </div>
+                              <div class="modal-container">
+                                
+                                <div class="modal contact-data-modal" data-open="0" tabindex="-1">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                        <div class="modal-body">
+                                            
+                                            <form action="{{budget_page_data['budget_contact_action']}}" method="{{budget_page_data['budget_contact_method']}}" class="akuro-form s100104 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100104">
+                                              <!-- Form input components here. Labels will be visible -->
+                                              
+                                              
+                                              <input 
+                                                  type="hidden" 
+                                                  
+                                                  name="current_category_id" 
+                                                  
+                                                  
+                                                  value="{{budget_item_data['budget_item_id']}}" 
+                                                  
+                                                  id="current_category_id" 
+                                                  
+                                                />
+                                              
+                                              <div class="budget-contact-is-hard form-input-optional-check2" data-error-message="{{budget_page_data['budget_hard_cost_error']}}" data-akuro-ct="form-input-optional-check2" data-akuro-c="budget-contact-is-hard">
+                                                  <label for="budget_contact_is_hard">{{budget_page_data['budget_hard_cost_label']}}</label>
+                                                  
+                                                  <div class="input-container">
+                                                    <input 
+                                                      type="checkbox" 
+                                                      name="budget_contact_is_hard" 
+                                                      {% if budget_item_data['budget_item_hard_cost_value'] %}checked{%endif%}
+                                                      id="budget_contact_is_hard"
+                                                    >
+                                                    <div class="images-container">
+                                                      <img src="{{budget_page_data['budget_page_active_checkbox_icon']}}" class="active-image">
+                                                      <img src="{{budget_page_data['budget_page_inactive_checkbox_icon']}}" class="inactive-image">
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              
+                                              <div class="budget-contact-company form-input" data-error-message="{{budget_page_data['budget_company_error']}}" data-akuro-ct="form-input" data-akuro-c="budget-contact-company">
+                                                  <label for="budget_contact_company">{{budget_page_data['budget_company_label']}}</label>
+                                                  
+                                                  <div class="input-container">
+                                                    <input 
+                                                      type="text" 
+                                                      name="budget_contact_company" 
+                                                      id="budget_contact_company" 
+                                                      placeholder="{{budget_page_data['budget_company_placeholder']}}"
+                                                      value="{{budget_item_data['budget_item_company_value']}}"
+                                                      />
+                                                  </div>
+                                                </div>
+                                              
+                                              <div class="budget-contact-email form-input-email" data-error-message="{{budget_page_data['budget_email_error']}}" data-akuro-ct="form-input-email" data-akuro-c="budget-contact-email">
+                                                  <label for="budget_contact_email">{{budget_page_data['budget_email_label']}}</label>
+                                                  
+                                                  <div class="input-container">
+                                                    <input 
+                                                      type="email" 
+                                                      name="budget_contact_email" 
+                                                      id="budget_contact_email" 
+                                                      value="{{budget_item_data['budget_item_email_value']}}"
+                                                      placeholder="{{budget_page_data['budget_email_placeholder']}}"
+                                                      >
+                                                  </div>
+                                                </div>
+                                              
+                                              <div class="budget-contact-phone form-input" data-error-message="{{budget_page_data['budget_phone_error']}}" data-akuro-ct="form-input" data-akuro-c="budget-contact-phone">
+                                                  <label for="budget_contact_phone">{{budget_page_data['budget_phone_label']}}</label>
+                                                  
+                                                  <div class="input-container">
+                                                    <input 
+                                                      type="text" 
+                                                      name="budget_contact_phone" 
+                                                      id="budget_contact_phone" 
+                                                      placeholder="{{budget_page_data['budget_phone_placeholder']}}"
+                                                      value="{{budget_item_data['budget_item_phone_value']}}"
+                                                      />
+                                                  </div>
+                                                </div>
+                                              
+                                              <div class="alert-space s100105 alert-space-element">
+                                                    
+                                                </div>
+                                              
+                                              <div class="s100106 div-element">
+                                                    
+                                                    <button class="s100107 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100107">
+                                                      
+                                                      {{budget_page_data['budget_save_button_label']}}
+                                                      
+                                                    </button>
+                                                    
+                                                    {% set simple_link = budget_item_data.budget_item_files_link %}
+
+                                                    <a href="{{simple_link['link_href']}}" target="{{simple_link['link_target']}}" class="s100110 simple-anchor">{{simple_link['link_label']}}</a>
+
+                                                    
+                                                </div>
+                                              
+
+                                            </form>
+                                            
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                              </div>
+                            </div>
+
+                            {%endif%}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100151 td-element" 
+                            
+                            
+                        >
+                            
+                            <div class="s100152 styled-label-getter">
+                            {{budget_item_data['budget_item_name']}}
+                            </div>
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100153 td-element" 
+                            
+                            
+                        >
+                            
+                            {{budget_item_data['budget_item_total']}}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100155 td-element" 
+                            
+                            
+                        >
+                            
+                            {{budget_item_data['budget_item_paid']}}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100157 td-element" 
+                            
+                            
+                        >
+                            
+                            {{budget_item_data['budget_item_percentage']}}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100159 td-element" 
+                            
+                            
+                        >
+                            
+                            {% set simple_link = budget_item_data.budget_item_link %}
+
+                            <div class="budget-row-icon-container">
+                                <a href="{{simple_link['link_href']}}" target="{{simple_link['link_target']}}">
+                                    <img src="{{simple_link['simple_link_image']}}"/>
+                                </a>
+                            </div>
+
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100161 td-element" 
+                            
+                            
+                        >
+                            
+                            {% if general_data['edit_mode_on'] %}
+
+                            <div class="s100163 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100163">
+                              <div class="button-container">
+                                
+                                <button role="button" type="button" class="s100164 button-component"><div class="budget-page-edit-icon2-img-container">
+                                    <img src="{{budget_page_data['budget_page_edit_icon2']}}"/>
+                                </div></button>
+                                
+                              </div>
+                              <div class="modal-container">
+                                
+                                <div class="modal category-data-modal" data-open="0" tabindex="-1">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                        <div class="modal-body">
+                                            
+                                            <form action="{{budget_page_data['category_form_action']}}" method="{{budget_page_data['category_form_method']}}" class="akuro-form s100111 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100111">
+                                              <!-- Form input components here. Labels will be visible -->
+                                              
+                                              
+                                              <input 
+                                                  type="hidden" 
+                                                  
+                                                  name="current_category_id" 
+                                                  
+                                                  
+                                                  value="{{budget_item_data['budget_item_id']}}" 
+                                                  
+                                                  id="current_category_id" 
+                                                  
+                                                />
+                                              
+                                              <div class="budget-caregory-name form-input" data-error-message="{{budget_page_data['category_title_error']}}" data-akuro-ct="form-input" data-akuro-c="budget-caregory-name">
+                                                  <label for="budget_caregory_name">{{budget_page_data['category_title_label']}}</label>
+                                                  
+                                                  <div class="input-container">
+                                                    <input 
+                                                      type="text" 
+                                                      name="budget_caregory_name" 
+                                                      id="budget_caregory_name" 
+                                                      placeholder="{{budget_page_data['category_title_placeholder']}}"
+                                                      value="{{budget_item_data['budget_item_title_value']}}"
+                                                      />
+                                                  </div>
+                                                </div>
+                                              
+                                              <div class="money budget-caregory-money form-input-money-us" data-error-message="{{budget_page_data['category_budget_error']}}" data-akuro-ct="form-input-money-us" data-akuro-c="budget-caregory-money">
+                                                  <label for="budget_caregory_money">{{budget_page_data['category_budget_label']}}</label>
+                                                  
+                                                  <div class="input-container">
+                                                    <input 
+                                                      class="money-input" 
+                                                      type="text"
+                                                      name="budget_caregory_money" 
+                                                      id="budget_caregory_money"
+                                                      value="{{budget_item_data['budget_item_total_raw']}}"
+                                                      placeholder="{{budget_page_data['category_budget_placeholder']}}"
+                                                      >
+                                                  </div>
+                                                </div>
+                                              
+                                              <div class="money budget-caregory-time form-input-number-us" data-error-message="{{budget_page_data['category_time_error']}}" data-akuro-ct="form-input-number-us" data-akuro-c="budget-caregory-time">
+                                                  <label for="budget_caregory_time">{{budget_page_data['category_time_label']}}</label>
+                                                  
+                                                  <div class="input-container">
+                                                    <input 
+                                                      class="money-input" 
+                                                      type="text"
+                                                      name="budget_caregory_time" 
+                                                      id="budget_caregory_time"
+                                                      value="{{budget_item_data['budget_item_time_raw']}}"
+                                                      placeholder="{{budget_page_data['category_time_placeholder']}}"
+                                                      >
+                                                  </div>
+                                                </div>
+                                              
+                                              <div class="alert-space s100112 alert-space-element">
+                                                    
+                                                </div>
+                                              
+                                              <div class="s100113 div-element">
+                                                    
+                                                    <button class="s100114 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100114">
+                                                      
+                                                      {{budget_page_data['category_save_button_label']}}
+                                                      
+                                                    </button>
+                                                    
+                                                </div>
+                                              
+
+                                            </form>
+                                            
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                              </div>
+                            </div>
+
+                            {%endif%}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100165 td-element" 
+                            
+                            
+                        >
+                            
+                            {% if general_data['edit_mode_on'] %}
+
+                            <div class="s100167 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100167">
+                              <div class="button-container">
+                                
+                                <button role="button" type="button" class="s100168 button-component"><div class="budget-page-trash-icon-img-container">
+                                    <img src="{{budget_page_data['budget_page_trash_icon']}}"/>
+                                </div></button>
+                                
+                              </div>
+                              <div class="modal-container">
+                                
+                                <div class="modal category-delete-modal" data-open="0" tabindex="-1">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                        <div class="modal-body">
+                                            
+                                            <div class="s100116 div-element">
+                                                
+                                                <div class="category-delete-title-icon-img-container">
+                                                    <img src="{{budget_page_data['category_delete_title_icon']}}"/>
+                                                </div>
+                                                
+                                                <div class="s100117 styled-label-getter">
+                                                {{budget_page_data['category_delete_title']}}
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="s100118 styled-label-getter">
+                                            {{budget_page_data['category_delete_alert']}}
+                                            </div>
+                                            
+                                            <form action="{{budget_page_data['category_delete_action']}}" method="{{budget_page_data['category_delete_method']}}" class="akuro-form s100119 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100119">
+                                              <!-- Form input components here. Labels will be visible -->
+                                              
+                                              
+                                              <input 
+                                                  type="hidden" 
+                                                  
+                                                  name="current_category_id" 
+                                                  
+                                                  
+                                                  value="{{budget_item_data['budget_item_id']}}" 
+                                                  
+                                                  id="current_category_id" 
+                                                  
+                                                />
+                                              
+                                              <button role="button" value="category_delete_button" name="category_delete_button" type="submit" class="category-delete-button submit-component">{{budget_page_data['category_confirm_label']}}</button>
+                                              
+                                              <button role="button" type="button" class="s100121 bootstrap-dismiss-modal-button" data-bs-dismiss="modal">{{budget_page_data['category_cancel_label']}}</button>
+                                              
+
+                                            </form>
+                                            
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                              </div>
+                            </div>
+
+                            {%endif%}
+                            
+                        </td>
+                        
+                    </tr>
+
+                    {%endfor%}
+                    
+                    {% if general_data['edit_mode_on'] %}
+
+                    <tr class="s100170 tr-element">
+                        
+                        <td 
+                            class="s100171 td-element" 
+                            
+                            
+                        >
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100172 td-element" 
+                            colspan="{{budget_page_data['budget_last_row_colspan']}}"
+                            
+                        >
+                            
+                            <div class="s100173 div-element">
+                                
+                                <div class="s100174 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100174">
+                                  <div class="button-container">
+                                    
+                                    <button role="button" type="button" class="s100175 button-component">{{budget_page_data['budget_page_add_label']}}</button>
+                                    
+                                  </div>
+                                  <div class="modal-container">
+                                    
+                                    <div class="modal new-contact-data-modal" data-open="0" tabindex="-1">
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                            <div class="modal-body">
+                                                
+                                                <form action="{{budget_page_data['budget_contact_action']}}" method="{{budget_page_data['budget_contact_method']}}" class="akuro-form s100123 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100123">
+                                                  <!-- Form input components here. Labels will be visible -->
+                                                  
+                                                  
+                                                  <div class="new-budget-contact-is-hard form-input-optional-check2" data-error-message="{{budget_page_data['budget_hard_cost_error']}}" data-akuro-ct="form-input-optional-check2" data-akuro-c="new-budget-contact-is-hard">
+                                                      <label for="new_budget_contact_is_hard">{{budget_page_data['budget_hard_cost_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="checkbox" 
+                                                          name="new_budget_contact_is_hard" 
+                                                          
+                                                          id="new_budget_contact_is_hard"
+                                                        >
+                                                        <div class="images-container">
+                                                          <img src="{{budget_page_data['budget_page_active_checkbox_icon']}}" class="active-image">
+                                                          <img src="{{budget_page_data['budget_page_inactive_checkbox_icon']}}" class="inactive-image">
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="new-budget-contact-company form-input" data-error-message="{{budget_page_data['budget_company_error']}}" data-akuro-ct="form-input" data-akuro-c="new-budget-contact-company">
+                                                      <label for="new_budget_contact_company">{{budget_page_data['budget_company_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="text" 
+                                                          name="new_budget_contact_company" 
+                                                          id="new_budget_contact_company" 
+                                                          placeholder="{{budget_page_data['budget_company_placeholder']}}"
+                                                          
+                                                          />
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="new-budget-contact-email form-input-email" data-error-message="{{budget_page_data['budget_email_error']}}" data-akuro-ct="form-input-email" data-akuro-c="new-budget-contact-email">
+                                                      <label for="new_budget_contact_email">{{budget_page_data['budget_email_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="email" 
+                                                          name="new_budget_contact_email" 
+                                                          id="new_budget_contact_email" 
+                                                          
+                                                          placeholder="{{budget_page_data['budget_email_placeholder']}}"
+                                                          >
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="new-budget-contact-phone form-input" data-error-message="{{budget_page_data['budget_phone_error']}}" data-akuro-ct="form-input" data-akuro-c="new-budget-contact-phone">
+                                                      <label for="new_budget_contact_phone">{{budget_page_data['budget_phone_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="text" 
+                                                          name="new_budget_contact_phone" 
+                                                          id="new_budget_contact_phone" 
+                                                          placeholder="{{budget_page_data['budget_phone_placeholder']}}"
+                                                          
+                                                          />
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="alert-space s100124 alert-space-element">
+                                                        
+                                                    </div>
+                                                  
+                                                  <div class="s100125 div-element">
+                                                        
+                                                        <button class="s100126 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100126">
+                                                          
+                                                          {{budget_page_data['budget_save_button_label']}}
+                                                          
+                                                        </button>
+                                                        
+                                                    </div>
+                                                  
+
+                                                </form>
+                                                
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                </div>
+                                
+                                <div class="s100177 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100177">
+                                  <div class="button-container">
+                                    
+                                    <button role="button" type="button" class="s100178 button-component">{{budget_page_data['budget_page_add_button_label']}}</button>
+                                    
+                                  </div>
+                                  <div class="modal-container">
+                                    
+                                    <div class="modal new-contact-data-modal" data-open="0" tabindex="-1">
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                            <div class="modal-body">
+                                                
+                                                <form action="{{budget_page_data['budget_contact_action']}}" method="{{budget_page_data['budget_contact_method']}}" class="akuro-form s100123 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100123">
+                                                  <!-- Form input components here. Labels will be visible -->
+                                                  
+                                                  
+                                                  <div class="new-budget-contact-is-hard form-input-optional-check2" data-error-message="{{budget_page_data['budget_hard_cost_error']}}" data-akuro-ct="form-input-optional-check2" data-akuro-c="new-budget-contact-is-hard">
+                                                      <label for="new_budget_contact_is_hard">{{budget_page_data['budget_hard_cost_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="checkbox" 
+                                                          name="new_budget_contact_is_hard" 
+                                                          
+                                                          id="new_budget_contact_is_hard"
+                                                        >
+                                                        <div class="images-container">
+                                                          <img src="{{budget_page_data['budget_page_active_checkbox_icon']}}" class="active-image">
+                                                          <img src="{{budget_page_data['budget_page_inactive_checkbox_icon']}}" class="inactive-image">
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="new-budget-contact-company form-input" data-error-message="{{budget_page_data['budget_company_error']}}" data-akuro-ct="form-input" data-akuro-c="new-budget-contact-company">
+                                                      <label for="new_budget_contact_company">{{budget_page_data['budget_company_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="text" 
+                                                          name="new_budget_contact_company" 
+                                                          id="new_budget_contact_company" 
+                                                          placeholder="{{budget_page_data['budget_company_placeholder']}}"
+                                                          
+                                                          />
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="new-budget-contact-email form-input-email" data-error-message="{{budget_page_data['budget_email_error']}}" data-akuro-ct="form-input-email" data-akuro-c="new-budget-contact-email">
+                                                      <label for="new_budget_contact_email">{{budget_page_data['budget_email_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="email" 
+                                                          name="new_budget_contact_email" 
+                                                          id="new_budget_contact_email" 
+                                                          
+                                                          placeholder="{{budget_page_data['budget_email_placeholder']}}"
+                                                          >
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="new-budget-contact-phone form-input" data-error-message="{{budget_page_data['budget_phone_error']}}" data-akuro-ct="form-input" data-akuro-c="new-budget-contact-phone">
+                                                      <label for="new_budget_contact_phone">{{budget_page_data['budget_phone_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="text" 
+                                                          name="new_budget_contact_phone" 
+                                                          id="new_budget_contact_phone" 
+                                                          placeholder="{{budget_page_data['budget_phone_placeholder']}}"
+                                                          
+                                                          />
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="alert-space s100124 alert-space-element">
+                                                        
+                                                    </div>
+                                                  
+                                                  <div class="s100125 div-element">
+                                                        
+                                                        <button class="s100126 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100126">
+                                                          
+                                                          {{budget_page_data['budget_save_button_label']}}
+                                                          
+                                                        </button>
+                                                        
+                                                    </div>
+                                                  
+
+                                                </form>
+                                                
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100180 td-element" 
+                            
+                            
+                        >
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100181 td-element" 
+                            
+                            
+                        >
+                            
+                        </td>
+                        
+                    </tr>
+
+                    {%endif%}
+                    
+                </table>
+                
+            </div>
+            
+        </div>
+        
+        <div class="row s100182">
+            
+            <div class="col-12 col-md-12 s100183">
+                
+                <div class="pager s100184" data-akuro-ct="tbrc-paginator" data-akuro-c="s100184">
+                    {%if budget_page_data['budget_page_paginator_prev'] not in ['None','',' ', None] %} 
+                    <a class="page-link" href="{{budget_page_data['budget_page_paginator_prev']}}" aria-label="Previous">
+                      <span aria-hidden="true">&lt;</span>
+                    </a>
+                    {%endif%}
+                    <a class="page-link current" href="#" aria-label="Current">{{budget_page_data['budget_page_paginator_current']}}</a>
+                    <span>of {{budget_page_data['budget_page_paginator_total']}}</span>
+                    {%if budget_page_data['budget_page_paginator_next'] not in ['None','',' ', None] %} 
+                    <a class="page-link" href="{{budget_page_data['budget_page_paginator_next']}}" aria-label="Next">
+                      <span aria-hidden="true">&gt;</span>
+                    </a>
+                    {%endif%}
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+{% endblock %}
+
+{% block support_html%}
+
+<!-- s100129-->
+
+{% endblock %}
+
+{% block js_dependencies_loaders%}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block js_initialization%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-hidden", [], (elm)=>{
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-hidden", document.querySelectorAll(".current-category-id"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-optional-check2", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let active = elm.querySelector(".active-image");
+    let inactive = elm.querySelector(".inactive-image");
+    let input = elm.querySelector("input");
+
+    function show(){
+      if(input.checked){
+        active.style.display="block"
+        inactive.style.display="none"
+      }else{
+        active.style.display="none"
+        inactive.style.display="block"
+      }
+    }
+
+    function toggle(){
+      input.checked = !input.checked;
+      show();
+    }
+
+    active.addEventListener("click",toggle)
+    inactive.addEventListener("click",toggle)
+
+    show();
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            return input.checked;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-optional-check2", document.querySelectorAll(".budget-contact-is-hard"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".budget-contact-company"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-email", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+          let val = this.getValue();
+          let at_index = val.indexOf("@");
+          let dot_index = val.indexOf(".", at_index);
+          if (val == null || val == undefined || val == "" || val == " " ||  at_index < 0 || dot_index <= at_index+1 || dot_index == val.length-1){
+            return [text];
+          }else{
+            return [];
+          }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-email", document.querySelectorAll(".budget-contact-email"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".budget-contact-phone"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100107"))
+</script>
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100104"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".contact-data-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100149"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-hidden", [], (elm)=>{
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-hidden", document.querySelectorAll(".current-category-id"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".budget-caregory-name"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-money-us", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let input = elm.querySelector(".money-input");
+    input.addEventListener('keyup', function(){
+      const numericValue = input.value.replace(/[^\d]/g, '');
+      let numericValueFormatted = Number(numericValue);
+      if (!isNaN(numericValueFormatted)) {
+        let moneyValue = numericValueFormatted.toLocaleString('en-US');
+        input.value = `$${moneyValue}`;
+      }else {
+        input.value = numericValueFormatted;
+      }
+    })
+
+    input.dispatchEvent(new Event('keyup'));
+    
+
+    class AkuroMoneyInput{
+        constructor(elm){
+            this.elm = elm;
+            this.hasValidation = true;
+        }
+        getValue(){
+            let input = this.elm.querySelector(".money-input");
+            return input.value;
+        }
+        validate(){
+            if ((this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " ") && this.hasValidation){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroMoneyInput(elm)
+  })
+  akuro.instantiate("form-input-money-us", document.querySelectorAll(".budget-caregory-money"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-number-us", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let input = elm.querySelector(".money-input");
+    input.addEventListener('keyup', function(){
+      const numericValue = input.value.replace(/[^\d^\.]/g, '');
+      let numericValueFormatted = Number(numericValue);
+      if (numericValue.endsWith(".")){
+        let moneyValue = numericValueFormatted.toLocaleString('en-US');
+        input.value = `${moneyValue}.`;
+      }else if (!isNaN(numericValueFormatted)) {
+        let moneyValue = numericValueFormatted.toLocaleString('en-US');
+        input.value = `${moneyValue}`;
+      }else {
+        input.value = numericValueFormatted;
+      }
+    })
+
+    input.dispatchEvent(new Event('keyup'));
+    
+
+    class AkuroMoneyInput{
+        constructor(elm){
+            this.elm = elm;
+            this.hasValidation = true;
+        }
+        getValue(){
+            let input = this.elm.querySelector(".money-input");
+            return input.value;
+        }
+        validate(){
+            if ((this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " ") && this.hasValidation){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroMoneyInput(elm)
+  })
+  akuro.instantiate("form-input-number-us", document.querySelectorAll(".budget-caregory-time"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100114"))
+</script>
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100111"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".category-data-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100163"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-hidden", [], (elm)=>{
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-hidden", document.querySelectorAll(".current-category-id"))
+</script>
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100119"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".category-delete-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100167"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-optional-check2", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let active = elm.querySelector(".active-image");
+    let inactive = elm.querySelector(".inactive-image");
+    let input = elm.querySelector("input");
+
+    function show(){
+      if(input.checked){
+        active.style.display="block"
+        inactive.style.display="none"
+      }else{
+        active.style.display="none"
+        inactive.style.display="block"
+      }
+    }
+
+    function toggle(){
+      input.checked = !input.checked;
+      show();
+    }
+
+    active.addEventListener("click",toggle)
+    inactive.addEventListener("click",toggle)
+
+    show();
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            return input.checked;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-optional-check2", document.querySelectorAll(".new-budget-contact-is-hard"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".new-budget-contact-company"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-email", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+          let val = this.getValue();
+          let at_index = val.indexOf("@");
+          let dot_index = val.indexOf(".", at_index);
+          if (val == null || val == undefined || val == "" || val == " " ||  at_index < 0 || dot_index <= at_index+1 || dot_index == val.length-1){
+            return [text];
+          }else{
+            return [];
+          }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-email", document.querySelectorAll(".new-budget-contact-email"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".new-budget-contact-phone"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100126"))
+</script>
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100123"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".new-contact-data-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100174"))
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-optional-check2", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let active = elm.querySelector(".active-image");
+    let inactive = elm.querySelector(".inactive-image");
+    let input = elm.querySelector("input");
+
+    function show(){
+      if(input.checked){
+        active.style.display="block"
+        inactive.style.display="none"
+      }else{
+        active.style.display="none"
+        inactive.style.display="block"
+      }
+    }
+
+    function toggle(){
+      input.checked = !input.checked;
+      show();
+    }
+
+    active.addEventListener("click",toggle)
+    inactive.addEventListener("click",toggle)
+
+    show();
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            return input.checked;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-optional-check2", document.querySelectorAll(".new-budget-contact-is-hard"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".new-budget-contact-company"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-email", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+          let val = this.getValue();
+          let at_index = val.indexOf("@");
+          let dot_index = val.indexOf(".", at_index);
+          if (val == null || val == undefined || val == "" || val == " " ||  at_index < 0 || dot_index <= at_index+1 || dot_index == val.length-1){
+            return [text];
+          }else{
+            return [];
+          }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-email", document.querySelectorAll(".new-budget-contact-email"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".new-budget-contact-phone"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100126"))
+</script>
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100123"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".new-contact-data-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100177"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

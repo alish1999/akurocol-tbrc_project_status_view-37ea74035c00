@@ -1,0 +1,16 @@
+controller-with-params(contacts){
+  params:[
+    (project-url);
+  ],
+  component:[
+    (contacts-page);
+  ]
+};
+
+
+custom-return-post-controller(save-contacts-data){
+  component:[],
+};
+custom-return-post-controller(delete-contacts-action){
+  component:[],
+};

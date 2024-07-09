@@ -1,0 +1,8 @@
+.{{s.p("Dash Name")}}{
+    {% for p in l.mixins %}
+    {{p.p("Scss Code")|indent}}
+    {%endfor%}
+    {% for p in l.parts %}
+    {{p.p("Scss Code")|indent}}
+    {%endfor%}
+}

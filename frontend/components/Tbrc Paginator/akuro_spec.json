@@ -1,0 +1,18 @@
+{
+    "generate_files": {},
+    "parent_type": "Tbrc Components",
+    "links": {
+        "Paginator Prev": [
+            "Data Field"
+        ],
+        "Paginator Next": [
+            "Data Field"
+        ],
+        "Paginator Current": [
+            "Data Field"
+        ],
+        "Paginator Total": [
+            "Data Field"
+        ]
+    }
+}

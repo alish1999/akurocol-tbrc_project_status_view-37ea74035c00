@@ -1,0 +1,14 @@
+uwsgi:
+  socket: service.sock
+  chmod-socket: 660
+  vacuum: 1
+  die-on-term: 1
+  master: 1
+  processes: 1
+  auto-procname: 1
+  procname-prefix: tbrc_project_status_view_
+  python-path: .
+  module: runserver:app
+  logto: /var/log/tbrc_project_status_view.log
+  enable-threads: 1
+  lazy-apps: 1

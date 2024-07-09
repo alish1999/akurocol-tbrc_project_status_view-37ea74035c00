@@ -1,0 +1,17 @@
+{%for p in l.button_parts + l.modal_parts %}
+{{p.p("Js Initialization")}}
+{%endfor%}
+
+<script>
+  akuro.registerComponent("{{s.p('Type Dash Name')}}", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("{{s.p('Type Dash Name')}}", document.querySelectorAll(".{{s.p('Dash Name')}}"))
+</script>
+

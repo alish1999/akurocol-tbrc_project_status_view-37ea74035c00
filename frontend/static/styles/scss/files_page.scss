@@ -1,0 +1,561 @@
+
+
+.s100603{
+    
+    @include padding-t4;
+    
+    
+    .s100604{
+    
+    @include margin-b1;
+    
+    
+    .s100605{
+        
+        
+        .s100606{
+            
+            @include font-size-xxxlarge;
+            
+            @include font-family-one;
+            
+            @include text-align-center;
+            
+            
+            
+            
+        }
+        
+    }
+    
+}
+    
+    .s100608{
+    
+    @include margin-b4;
+    
+    
+    .s100609{
+        
+        @include text-align-center;
+        
+        @include font-weight300;
+        
+        
+        
+        
+    }
+    
+}
+    
+    .s100611{
+    
+    
+    .s100612{
+        
+        @include three-columns-grid;
+        
+        
+        
+        .s100614 {
+          display: inline-block;
+          .button-container{
+            
+            .s100615{
+                
+                @include action-button;
+                
+                @include create-file-button;
+                
+                @include font-family-two;
+                
+                @include font-size-xlarge;
+                
+                
+                .files-new-file-img-container{
+                width:$files-new-file-img-width;
+                height:$files-new-file-img-height;
+                display:inline-flex;
+                justify-content:center;
+                align-items:center;
+                img{
+                    max-width:100%;
+                    max-height:100%;
+                }
+                
+            }
+                
+                
+                
+            }
+            
+          }
+          .modal-container{
+            
+            .files-new-file-modal{
+                
+                
+                .s100597{
+                  
+
+                  
+                  .new-file-name {
+                      display: flex;
+                      flex-direction: column;
+                      width: 100%;
+                      
+
+                      label {
+                        
+                        @include margin-b05;
+                        
+                        @include bold-text;
+                        
+                        @include font-size-medium;
+                        
+                      }
+
+                      .help {
+                        
+                      }
+
+                      .input-container{
+                        input {
+                          
+                          @include common-inputs-styles;
+                          
+                      
+                          &::placeholder {
+                            
+                          }
+                      
+                          &:focus {
+                            
+                          }
+                        }
+                      }  
+                    }
+                  
+                  .new-file-file {
+                      display: flex;
+                      flex-direction: column;
+                      width: 100%;
+                      
+                      @include margin-b1;
+                      
+
+                      label {
+                        
+                      }
+
+                      .help {
+                        
+                      }
+
+                      .input-container{
+                        
+                        & > input {
+                          display: none;
+                        }
+                        .drop-zone{
+                          .text-container{
+                            &.loading{
+                              @keyframes blink-animation {
+                                to {
+                                  visibility: hidden;
+                                }
+                              }
+                              background-color: blueviolet;
+                              animation: blink-animation 1s steps(5, start) infinite;
+                            }
+                            &.loaded{
+                              background-color: greenyellow;
+                            }
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap:1rem;
+                            
+                            @include upload-box-styles;
+                            
+                            .title{
+                              
+                            }
+                            .text{
+                              
+                            }
+                          }
+                        }
+                      }  
+                    }
+                  
+                  .s100598{
+                        
+                        
+                    }
+                  
+                  .s100599{
+                        
+                        @include display-flex;
+                        
+                        @include flex-gap1;
+                        
+                        @include flex-direction-column;
+                        
+                        
+                        .s100600 {
+                      
+                      
+                      
+                      
+                      @include gray-background-link;
+                      
+                      @include background-color-one-normal;
+                      
+                      @include font-color-white;
+                      
+                    }
+                        
+                    }
+                  
+                }
+                
+            }
+            
+          }
+        }
+
+        
+        
+
+        .s100619{
+            
+            @include simple-card;
+            
+            @include display-flex;
+            
+            @include flex-direction-column;
+            
+            @include flex-gap1;
+            
+            @include justify-content-start;
+            
+            
+            .s100620{
+            
+            @include display-flex;
+            
+            @include align-items-center;
+            
+            @include justify-content-between;
+            
+            
+            .files-page-folder-icon-elm-container{
+            width:$files-page-folder-icon-elm-width;
+            height:$files-page-folder-icon-elm-height;
+            display:inline-flex;
+            justify-content:center;
+            align-items:center;
+            img{
+                max-width:100%;
+                max-height:100%;
+            }
+            
+        }
+            
+            .s100621 {
+          display: inline-block;
+          .button-container{
+            
+            .s100622{
+                
+                @include action-button;
+                
+                @include background-color-white;
+                
+                
+                .files-page-trash-icon-img-container{
+                width:$files-page-trash-icon-img-width;
+                height:$files-page-trash-icon-img-height;
+                display:inline-flex;
+                justify-content:center;
+                align-items:center;
+                img{
+                    max-width:100%;
+                    max-height:100%;
+                }
+                
+            }
+                
+            }
+            
+          }
+          .modal-container{
+            
+            .files-delete-modal{
+                
+                
+                .s100590{
+                    
+                    @include display-flex;
+                    
+                    @include align-items-center;
+                    
+                    @include justify-content-center;
+                    
+                    @include flex-gap1;
+                    
+                    
+                    .files-delete-title-icon-img-container{
+                    width:$files-delete-title-icon-img-width;
+                    height:$files-delete-title-icon-img-height;
+                    display:inline-flex;
+                    justify-content:center;
+                    align-items:center;
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                    
+                }
+                    
+                    .s100591{
+                    
+                    @include bold-text;
+                    
+                    @include font-size-large;
+                    
+                }
+                    
+                }
+                
+                .s100592{
+                    
+                    @include text-align-center;
+                    
+                    @include margin-y2;
+                    
+                }
+                
+                .s100593{
+                  
+                  @include display-flex;
+                  
+                  @include align-items-center;
+                  
+                  @include justify-content-center;
+                  
+                  @include flex-gap1;
+                  
+
+                  
+                  
+                  
+                  .files-delete-button{
+                        
+                        @include gray-background-link;
+                        
+                        @include padding-x1;
+                        
+                        @include padding-y05;
+                        
+                        
+                        
+                        
+                    }
+                  
+                  .s100595{
+                        
+                        @include gray-background-link;
+                        
+                        @include padding-x1;
+                        
+                        @include padding-y05;
+                        
+                        @include border-black;
+                        
+                        
+                        
+                        
+                    }
+                  
+                }
+                
+            }
+            
+          }
+        }
+            
+        }
+            
+            
+        .s100624{
+          
+
+          
+          
+          
+          .files-item-file-name-input {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              
+              @include margin-b1;
+              
+
+              label {
+                
+              }
+
+              .help {
+                
+              }
+
+              .input-container{
+                input {
+                  
+                  @include common2-inputs-styles;
+                  
+              
+                  &::placeholder {
+                    
+                  }
+              
+                  &:focus {
+                    
+                  }
+                }
+              }  
+            }
+          
+          .files-item-new-file {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              
+              @include margin-b1;
+              
+
+              label {
+                
+              }
+
+              .help {
+                
+              }
+
+              .input-container{
+                
+                & > input {
+                  display: none;
+                }
+                .drop-zone{
+                  .text-container{
+                    &.loading{
+                      @keyframes blink-animation {
+                        to {
+                          visibility: hidden;
+                        }
+                      }
+                      background-color: blueviolet;
+                      animation: blink-animation 1s steps(5, start) infinite;
+                    }
+                    &.loaded{
+                      background-color: greenyellow;
+                    }
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap:1rem;
+                    
+                    @include upload-box-styles;
+                    
+                    .title{
+                      
+                    }
+                    .text{
+                      
+                    }
+                  }
+                }
+              }  
+            }
+          
+          .s100625{
+                
+                
+            }
+          
+          .s100626 {
+              
+              
+              
+              
+              @include gray-background-link;
+              
+              @include background-color-one-normal;
+              
+              @include font-color-white;
+              
+            }
+          
+        }
+
+            
+        }
+
+
+
+        .s100629{
+            
+            @include simple-card;
+            
+            @include display-flex;
+            
+            @include flex-direction-column;
+            
+            @include flex-gap1;
+            
+            @include justify-content-start;
+            
+            
+            .files-page-folder-icon-elm-container{
+            width:$files-page-folder-icon-elm-width;
+            height:$files-page-folder-icon-elm-height;
+            display:inline-flex;
+            justify-content:center;
+            align-items:center;
+            img{
+                max-width:100%;
+                max-height:100%;
+            }
+            
+        }
+            
+            .s100630{
+            
+            @include font-size-large;
+            
+            @include font-weight500;
+            
+        }
+            
+            
+        .s100632{
+            
+            @include black-text-link;
+            
+            
+        }
+
+            
+        }
+
+
+        
+    }
+    
+}
+    
+}
+

@@ -1,0 +1,310 @@
+{% set create_user_page_data = create_user_page_data_collection() %}
+
+{% extends 'general_template.html' %}
+{% block css_dependencies_loaders%}
+
+<link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+{% endblock %}
+
+{% block html%}
+
+<div class="s100508 div-element">
+    
+    <form action="{{create_user_page_data['create_user_page_action']}}" method="{{create_user_page_data['create_user_page_method']}}" class="akuro-form s100509 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100509">
+      <!-- Form input components here. Labels will be visible -->
+      
+      
+      <h1 class="s100510 h1-element">
+            
+            {{create_user_page_data['create_user_page_title']}}
+            
+        </h1>
+      
+      <div class="new-user-fullname form-input" data-error-message="{{create_user_page_data['create_user_fullname_error']}}" data-akuro-ct="form-input" data-akuro-c="new-user-fullname">
+          <label for="new_user_fullname">{{create_user_page_data['create_user_fullname_label']}}</label>
+          
+          <div class="input-container">
+            <input 
+              type="text" 
+              name="new_user_fullname" 
+              id="new_user_fullname" 
+              placeholder="{{create_user_page_data['create_user_fullname_placeholder']}}"
+              
+              />
+          </div>
+        </div>
+      
+      <div class="new-user-email form-input-email" data-error-message="{{create_user_page_data['create_user_email_error']}}" data-akuro-ct="form-input-email" data-akuro-c="new-user-email">
+          <label for="new_user_email">{{create_user_page_data['create_user_email_label']}}</label>
+          
+          <div class="input-container">
+            <input 
+              type="email" 
+              name="new_user_email" 
+              id="new_user_email" 
+              
+              placeholder="{{create_user_page_data['create_user_email_placeholder']}}"
+              >
+          </div>
+        </div>
+      
+      <div class="new-user-roles form-input-tomselect-multiselect" 
+          data-error-message="{{create_user_page_data['create_user_roles_error']}}"
+           data-akuro-ct="form-input-tomselect-multiselect" data-akuro-c="new-user-roles">
+          <label for="new_user_roles">{{create_user_page_data['create_user_roles_label']}}</label>
+          
+          <div class="input-container">
+            <select 
+              name="new_user_roles"
+              id="new_user_roles"
+              multiple
+              placeholder="{{create_user_page_data['create_user_roles_placeholder']}}"
+            >
+              <option value="" selected disabled hidden>{{create_user_page_data['create_user_roles_placeholder']}}</option>
+              
+              {%for option_data in create_user_page_data.create_user_roles_value %}
+
+                <option value="{{option_data['option_value']}}" {%if option_data['option_selected'] %}selected{%endif%}  >{{option_data['option_label']}}</option>
+
+                {%endfor%}
+              
+            </select>
+          </div>
+        </div>
+      
+      <div class="new-user-password form-input-password-confirmation" data-error-message="{{create_user_page_data['create_user_password_error']}}" data-akuro-ct="form-input-password-confirmation" data-akuro-c="new-user-password">
+          <label for="new_user_password">{{create_user_page_data['create_user_password_label']}}</label>
+          
+          <div class="input-container original">
+            <input type="password" name="new_user_password" id="new_user_password" placeholder="{{create_user_page_data['create_user_password_placeholder']}}">
+          </div>
+          <label for="new_user_password">{{create_user_page_data['create_user_re_password_label']}}</label>
+          <div class="input-container repeat">
+            <input type="password" name="new_user_password_re" id="new_user_password_re" placeholder="{{create_user_page_data['create_user_re_password_placeholder']}}">
+          </div>
+        </div>
+      
+      <div class="alert-space s100514 alert-space-element">
+            
+        </div>
+      
+      <div class="s100515 div-element">
+            
+            <button class="s100516 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100516">
+              
+              {{create_user_page_data['create_user_submit_label']}}
+              
+            </button>
+            
+        </div>
+      
+
+    </form>
+    
+</div>
+
+{% endblock %}
+
+{% block support_html%}
+
+<!-- s100508-->
+
+{% endblock %}
+
+{% block js_dependencies_loaders%}
+
+<script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+{% endblock %}
+
+{% block js_initialization%}
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".new-user-fullname"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-email", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+          let val = this.getValue();
+          let at_index = val.indexOf("@");
+          let dot_index = val.indexOf(".", at_index);
+          if (val == null || val == undefined || val == "" || val == " " ||  at_index < 0 || dot_index <= at_index+1 || dot_index == val.length-1){
+            return [text];
+          }else{
+            return [];
+          }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-email", document.querySelectorAll(".new-user-email"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-tomselect-multiselect", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let input = elm.querySelector("select");
+    let create_bool = elm.dataset.create != undefined && elm.dataset.create != null;
+    let load = new TomSelect(input,{
+      plugins: {
+        remove_button:{
+          title:'Eliminar',
+        }
+      },
+      persist: false,
+      create: create_bool,
+
+    });
+
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+            this.hasValidation = true;
+        }
+        addSearchListener(method) {
+          let _this = this;
+          load.on('change',(evt)=>{
+            method(_this.getName(), _this.getValue());
+          });
+        }
+        getName(){
+             return input.name;
+        }
+        getValue(){
+             return load.items;
+        }
+        validate(){
+            if ((this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "|| this.getValue().length == 0) && this.hasValidation ){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-tomselect-multiselect", document.querySelectorAll(".new-user-roles"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-password-confirmation", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let input = elm.querySelector(".original input");
+    let input_re = elm.querySelector(".repeat input");
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            return input.value;
+        }
+        validate(){
+          let val = this.getValue();
+          if (val == null || val == undefined || val == "" || val == " " || val != input_re.value){
+            return [text];
+          }else{
+            return [];
+          }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-password-confirmation", document.querySelectorAll(".new-user-password"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100516"))
+</script>
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100509"))
+</script>
+
+
+
+{% endblock %}

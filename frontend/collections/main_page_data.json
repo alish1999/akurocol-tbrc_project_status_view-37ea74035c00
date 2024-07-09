@@ -1,0 +1,23 @@
+{
+    
+    "main_page_title":"My Projects",
+    "main_page_projects":[
+        {
+            "link_href":"/",
+            "link_label":"Project Name",
+            "link_extra_label":"Encuentra el auto que soñaste"
+        },
+        {
+            "link_href":"/",
+            "link_label":"Project Name",
+            "link_extra_label":"Encuentra el auto que soñaste"
+        },
+        {
+            "link_href":"/",
+            "link_label":"Project Name",
+            "link_extra_label":"Encuentra el auto que soñaste"
+        }
+    ]
+    
+    
+}

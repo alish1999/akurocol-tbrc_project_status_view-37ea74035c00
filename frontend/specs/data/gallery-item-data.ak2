@@ -1,0 +1,24 @@
+data-collection(gallery-item-data){
+  fields:[
+    data-field(gallery-item-id){
+      collection:[
+        (gallery-item-data);
+      ]
+    };
+    data-field(gallery-item-name){
+      collection:[
+        (gallery-item-data);
+      ]
+    };
+    data-field(gallery-item-description){
+      collection:[
+        (gallery-item-data);
+      ]
+    };
+    data-field(gallery-item-link){
+      collection:[
+        (gallery-item-data);
+      ]
+    };
+  ]
+};

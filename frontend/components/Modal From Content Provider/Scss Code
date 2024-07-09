@@ -1,0 +1,20 @@
+.{{s.p("Dash Name")}} {
+  & > .modal-gallery{
+    .modal-dialog{
+      .modal-content{
+        background-color:transparent;
+        border: none;
+        .modal-header{
+          border-bottom:none;
+        }
+        .modal-body{
+          
+        }
+      }
+    }
+  }
+  {%for p in l.parts%}
+  {{p.p("Scss Code")|indent|indent}}
+  {%endfor%}
+}
+

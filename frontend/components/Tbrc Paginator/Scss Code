@@ -1,0 +1,17 @@
+.{{s.p("Dash Name")}} {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  gap:0.3rem;
+  a {
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    &.page-link.current{
+      border: 1px solid black;
+      padding: 0rem 0.3rem;
+    }
+  }
+}

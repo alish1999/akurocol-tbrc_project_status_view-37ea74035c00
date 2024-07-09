@@ -1,0 +1,8 @@
+<a href="{{l.href[0].p('Data Getter')}}"class="{{s.p('Dash Name')}}">
+  <div class="card" {{s.p('Locator Tag')}}>
+      <div class="container">
+        <h4>{{l.top_label[0].p('Data Getter')}}</h4>
+        <div>{{l.bottom_label[0].p('Data Getter')}}</div>
+      </div>
+  </div>
+</a>

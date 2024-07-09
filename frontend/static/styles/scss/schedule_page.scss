@@ -1,0 +1,294 @@
+
+
+.s100191{
+    
+    @include background-color-two-lightest;
+    
+    @include padding-t4;
+    
+    @include full-height;
+    
+    
+    .s100192{
+    
+    
+    .s100193{
+    
+    @include margin-b2;
+    
+    
+    .s100194{
+        
+        
+        .s100195{
+            
+            @include font-size-xxxlarge;
+            
+            @include font-family-one;
+            
+            
+            
+            
+        }
+        
+    }
+    
+}
+    
+    .s100197{
+    
+    @include margin-b4;
+    
+    
+    .s100198{
+        
+        
+        .s100199{
+            border-collapse: collapse;
+            width: 100%;
+
+            
+            .s100200{
+                
+                @include font-color-white;
+                
+                @include borders-top-round5;
+                
+                
+                
+            .s100202{
+                
+                @include background-color-two-normal;
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+
+                
+                .s100204{
+                
+                
+            }
+                
+            }
+            
+            
+            .s100206{
+                
+                
+                .s100207{
+                
+                @include cell-style;
+                
+                
+                .s100208{
+                
+                @include bold-text;
+                
+            }
+                
+            }
+                
+                .s100209{
+                
+                @include cell-style;
+                
+                
+                .s100210{
+                
+                @include bold-text;
+                
+            }
+                
+            }
+                
+                .s100211{
+                
+                @include cell-style;
+                
+                
+                .s100212{
+                
+                @include bold-text;
+                
+            }
+                
+            }
+                
+                .s100213{
+                
+                @include cell-style;
+                
+                
+                
+                
+            }
+                
+                .s100215{
+                
+                @include cell-style;
+                
+                
+                .s100216{
+                
+                @include bold-text;
+                
+            }
+                
+            }
+                
+                .s100217{
+                
+                @include cell-style;
+                
+                @include cell-right-style;
+                
+                
+                .s100218{
+                
+                @include bold-text;
+                
+            }
+                
+            }
+                
+                .s100219{
+                
+                @include text-align-center;
+                
+                
+                
+            .s100221 {
+              display: inline-block;
+              .button-container{
+                
+                .s100222{
+                    
+                    @include action-button;
+                    
+                    @include schedule-button-background;
+                    
+                    
+                    .schedule-page-edit-icon2-img-container{
+                    width:$schedule-page-edit-icon2-img-width;
+                    height:$schedule-page-edit-icon2-img-height;
+                    display:inline-flex;
+                    justify-content:center;
+                    align-items:center;
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                    
+                }
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .schedule-data-modal{
+                    
+                    
+                    .s100185{
+                      
+                      @include text-align-start;
+                      
+
+                      
+                      
+                      
+                      .schedule-input-time {
+                          display: flex;
+                          flex-direction: column;
+                          width: 100%;
+                          
+
+                          label {
+                            
+                            @include margin-b05;
+                            
+                            @include bold-text;
+                            
+                            @include font-size-medium;
+                            
+                          }
+
+                          .help {
+                            
+                          }
+
+                          .input-container{
+                            input {
+                              
+                              @include common-inputs-styles;
+                              
+                          
+                              &::placeholder {
+                                
+                              }
+                          
+                              &:focus {
+                                
+                              }
+                            }
+                          }  
+                        }
+                      
+                      .s100186{
+                            
+                            
+                        }
+                      
+                      .s100187{
+                            
+                            @include display-flex;
+                            
+                            @include flex-gap1;
+                            
+                            @include flex-direction-column;
+                            
+                            
+                            .s100188 {
+                          
+                          
+                          
+                          
+                          @include gray-background-link;
+                          
+                          @include background-color-two-normal;
+                          
+                          @include font-color-white;
+                          
+                          @include button-radius;
+                          
+                        }
+                            
+                        }
+                      
+                    }
+                    
+                }
+                
+              }
+            }
+
+                
+            }
+                
+            }
+
+            
+        }
+        
+    }
+    
+}
+    
+}
+    
+}
+

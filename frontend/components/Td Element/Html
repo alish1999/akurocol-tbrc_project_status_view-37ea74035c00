@@ -1,0 +1,9 @@
+<td 
+    class="{{s.p("Dash Name")}} {{s.p("Type Dash Name")}}" 
+    {%if l.colspan|count > 0 %}colspan="{{l.colspan[0].p('Data Getter')}}"{%endif%}
+    {%if l.rowspan|count > 0 %}rowspan="{{l.rowspan[0].p('Data Getter')}}"{%endif%}
+>
+    {%for p in l.parts%}
+    {{p.p("Html")|indent}}
+    {%endfor%}
+</td>

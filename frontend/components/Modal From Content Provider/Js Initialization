@@ -1,0 +1,32 @@
+{%for p in l.parts%}
+{{p.p("Js Initialization")}}
+{%endfor%}
+<script>
+    akuro.registerComponent("{{s.p('Type Dash Name')}}", [], (elm)=>{
+        let myModal = null;
+        let carousel = null;
+        let carousel_obj = null;
+        carousel = elm.querySelector(".modal-gallery .carousel");
+        
+
+        let images = elm.querySelectorAll("[data-big-image]");
+        for(let image_index = 0; image_index < images.length; image_index++){
+            let image = images[image_index];
+            console.log(image);
+            carousel.querySelector(".carousel-inner").innerHTML +=`<div class="carousel-item ${image_index==0?"active":""}">
+                  <img src="${image.dataset.bigImage}" class="d-block w-100" alt="..."/>
+            </div>`
+            image.addEventListener("click",()=>{
+                myModal.show();
+                carousel_obj.to(image_index);
+            })
+        }
+
+        myModal = new bootstrap.Modal(elm.querySelector(".modal-gallery"), {});
+        carousel_obj = new bootstrap.Carousel(carousel, {})
+
+        
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("{{s.p('Type Dash Name')}}", document.querySelectorAll(".{{s.p('Dash Name')}}"))
+</script>

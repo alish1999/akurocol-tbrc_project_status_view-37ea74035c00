@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>Upload an image</title>
+		<link href="/static/vendor/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<style>
+		/**
+         * FileUpload - a TinyMCE image upload plugin
+         * fileupload/css/dialog.css
+         *
+         * Author: Marius Gebhardt
+         *
+         * Version: 0.1
+         */
+         
+        body {
+        	padding: 10px;
+        }
+        
+        .fileinput-button {
+          position: relative;
+          overflow: hidden;
+        }
+        .fileinput-button input {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: 0;
+          opacity: 0;
+          -ms-filter: 'alpha(opacity=0)';
+          font-size: 200px;
+          direction: ltr;
+          cursor: pointer;
+        }
+        
+        /* Fixes for IE < 8 */
+        @media screen\9 {
+          .fileinput-button input {
+            filter: alpha(opacity=0);
+            font-size: 100%;
+            height: 100%;
+          }
+        }
+		</style>
+	</head>
+<body>
+
+	<form id="uploadForm" action="" method="POST" enctype="multipart/form-data" data-ng-app="demo">
+
+		<p>
+			<span class="btn btn-success fileinput-button">
+				<i class="glyphicon glyphicon-plus"></i>
+				<span>Seleccione Archivo...</span>
+				<input id="fileupload" type="file" name="files[]">
+			</span>
+		</p>
+
+		<div id="progress" class="progress">
+			<div class="progress-bar progress-bar-primary"></div>
+		</div>
+
+		<div id="files" class="files"></div>
+
+	</form>
+
+	<script src="/static/vendor/node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="/static/vendor/node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+	<script src="/static/vendor/node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+	<script src="/static/vendor/node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+	<script>
+	$(function () {
+	'use strict';
+    
+    	$('#fileupload').fileupload({
+    		url: $('#uploadForm').attr('action'),
+    		dataType: 'json',
+    		done: function (e, data) {
+    			$.each(data.result.files, function (index, file) {
+    				parent.tinymce.EditorManager.activeEditor.insertContent('<img src="' + file.url +'">');
+    			});
+    
+    			parent.tinymce.EditorManager.activeEditor.windowManager.close(window);
+    		},
+    		progressall: function (e, data) {
+    			var progress = parseInt(data.loaded / data.total * 100, 10);
+    			$('#progress .progress-bar').css(
+    				'width',
+    				progress + '%'
+    			);
+    		}
+    	}).prop('disabled', !$.support.fileInput)
+    	.parent().addClass($.support.fileInput ? undefined : 'disabled');
+    });
+	
+	
+	
+	</script>
+</body>
+</html>

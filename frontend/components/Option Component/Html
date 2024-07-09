@@ -1,0 +1,1 @@
+<option value="{{l.value[0].p("Data Getter")}}" {%if l.selected|count>0%}{{"{%if "+l.selected[0].p("Python Getter")+" %}"}}selected{{"{%endif%}"}}{%endif%}>{{l.label[0].p("Data Getter")}}</option>

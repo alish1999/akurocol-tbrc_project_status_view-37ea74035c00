@@ -1,0 +1,12 @@
+<div class="{{s.p('Dash Name')}} {{s.p('Type Dash Name')}}" {{s.p("Locator Tag")}}>
+  <div class="button-container">
+    {%for p in l.button_parts %}
+    {{p.p("Html")|indent}}
+    {%endfor%}
+  </div>
+  <div class="modal-container">
+    {%for p in l.modal_parts %}
+    {{p.p("Html")|indent}}
+    {%endfor%}
+  </div>
+</div>

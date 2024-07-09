@@ -1,0 +1,865 @@
+{% set files_page_data = files_page_data_collection(project_url) %}
+
+{% extends 'general_template.html' %}
+{% block css_dependencies_loaders%}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+{% endblock %}
+
+{% block html%}
+
+<div class="container s100603">
+    
+    <div class="row s100604">
+        
+        <div class="col s100605">
+            
+            <h1 class="s100606 h1-element">
+                
+                {{files_page_data['files_page_title']}}
+                
+            </h1>
+            
+        </div>
+        
+    </div>
+    
+    <div class="row s100608">
+        
+        <div class="col s100609">
+            
+            {{files_page_data['files_page_description']}}
+            
+        </div>
+        
+    </div>
+    
+    <div class="row s100611">
+        
+        <div class="col s100612">
+            
+            {% if general_data['edit_mode_on'] %}
+
+            <div class="s100614 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100614">
+              <div class="button-container">
+                
+                <button role="button" type="button" class="s100615 button-component"><div class="files-new-file-img-container">
+                    <img src="{{files_page_data['files_new_file_icon']}}"/>
+                </div>{{files_page_data['files_new_file_label']}}</button>
+                
+              </div>
+              <div class="modal-container">
+                
+                <div class="modal files-new-file-modal" data-open="0" tabindex="-1">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                        <div class="modal-body">
+                            
+                            <form action="{{files_page_data['files_new_file_action']}}" method="{{files_page_data['files_new_file_method']}}" class="akuro-form s100597 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100597">
+                              <!-- Form input components here. Labels will be visible -->
+                              
+                              
+                              <div class="new-file-name form-input" data-error-message="{{files_page_data['new_file_name_error']}}" data-akuro-ct="form-input" data-akuro-c="new-file-name">
+                                  <label for="new_file_name">{{files_page_data['new_file_name_label']}}</label>
+                                  
+                                  <div class="input-container">
+                                    <input 
+                                      type="text" 
+                                      name="new_file_name" 
+                                      id="new_file_name" 
+                                      placeholder="{{files_page_data['new_file_name_placeholder']}}"
+                                      
+                                      />
+                                  </div>
+                                </div>
+                              
+                              <div class="new-file-file form-input-file-upload" 
+                                data-controller="/ajax/orfiFileUpload" 
+                                data-error-message="{{files_page_data['new_file_upload_error']}}" 
+                                data-akuro-ct="form-input-file-upload" data-akuro-c="new-file-file"
+                                >
+                                  
+                                  
+                                  <div class="input-container">
+                                    <input type="file" class="file-upload">
+                                    <input type="hidden" class="real-value" name="new_file_file" id="new_file_file" >
+                                    <div class="drop-zone">
+                                      <div class="text-container">
+                                        <img src="{{files_page_data['new_file_upload_image_icon']}}" alt="">
+                                        <div>
+                                          <div class="title">{{files_page_data['new_file_upload_text']}}</div>
+                                          <div class="text">{{files_page_data['new_file_upload_upload_text']}}</div>
+                                        </div>  
+                                      </div>
+                                      <div class="image-preview"></div>
+                                      <div class="format-message"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              
+                              <div class="alert-space s100598 alert-space-element">
+                                    
+                                </div>
+                              
+                              <div class="s100599 div-element">
+                                    
+                                    <button class="s100600 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100600">
+                                      
+                                      {{files_page_data['new_file_button_label']}}
+                                      
+                                    </button>
+                                    
+                                </div>
+                              
+
+                            </form>
+                            
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+            {%endif%}
+            
+            {%for files_item_data in files_page_data.files_page_items %}
+
+            {% if general_data['edit_mode_on'] %}
+
+            <div class="s100619 div-element">
+                
+                <div class="s100620 div-element">
+                    
+                    <div class="files-page-folder-icon-elm-container">
+                        <img src="{{files_page_data['files_page_folder_icon']}}"/>
+                    </div>
+                    
+                    <div class="s100621 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100621">
+                      <div class="button-container">
+                        
+                        <button role="button" type="button" class="s100622 button-component"><div class="files-page-trash-icon-img-container">
+                            <img src="{{files_page_data['files_page_trash_icon']}}"/>
+                        </div></button>
+                        
+                      </div>
+                      <div class="modal-container">
+                        
+                        <div class="modal files-delete-modal" data-open="0" tabindex="-1">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                                <div class="modal-body">
+                                    
+                                    <div class="s100590 div-element">
+                                        
+                                        <div class="files-delete-title-icon-img-container">
+                                            <img src="{{files_page_data['files_delete_title_icon']}}"/>
+                                        </div>
+                                        
+                                        <div class="s100591 styled-label-getter">
+                                        {{files_page_data['files_delete_title']}}
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                    <div class="s100592 styled-label-getter">
+                                    {{files_page_data['files_delete_alert']}}
+                                    </div>
+                                    
+                                    <form action="{{files_page_data['files_delete_action']}}" method="{{files_page_data['files_delete_method']}}" class="akuro-form s100593 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100593">
+                                      <!-- Form input components here. Labels will be visible -->
+                                      
+                                      
+                                      <input 
+                                          type="hidden" 
+                                          
+                                          name="files_item_hidden_id" 
+                                          
+                                          
+                                          value="{{files_item_data['files_item_id']}}" 
+                                          
+                                          id="files_item_hidden_id" 
+                                          
+                                        />
+                                      
+                                      <button role="button" value="files_delete_button" name="files_delete_button" type="submit" class="files-delete-button submit-component">{{files_page_data['files_confirm_label']}}</button>
+                                      
+                                      <button role="button" type="button" class="s100595 bootstrap-dismiss-modal-button" data-bs-dismiss="modal">{{files_page_data['files_cancel_label']}}</button>
+                                      
+
+                                    </form>
+                                    
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    
+                </div>
+                
+                {% set simple_link = files_item_data.files_item_link %}
+
+                <form action="{{files_page_data['files_item_edition_action']}}" method="{{files_page_data['files_item_edition_method']}}" class="akuro-form s100624 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100624">
+                  <!-- Form input components here. Labels will be visible -->
+                  
+                  
+                  <input 
+                      type="hidden" 
+                      
+                      name="files_item_hidden_id" 
+                      
+                      
+                      value="{{files_item_data['files_item_id']}}" 
+                      
+                      id="files_item_hidden_id" 
+                      
+                    />
+                  
+                  <div class="files-item-file-name-input form-input" data-error-message="{{files_page_data['new_file_name_error']}}" data-akuro-ct="form-input" data-akuro-c="files-item-file-name-input">
+                      
+                      
+                      <div class="input-container">
+                        <input 
+                          type="text" 
+                          name="files_item_file_name_input" 
+                          id="files_item_file_name_input" 
+                          placeholder="{{files_page_data['new_file_name_placeholder']}}"
+                          value="{{files_item_data['files_item_name']}}"
+                          />
+                      </div>
+                    </div>
+                  
+                  <div class="files-item-new-file form-input-file-upload" 
+                    data-controller="/ajax/orfiFileUpload" 
+                    data-error-message="{{files_page_data['new_file_upload_error']}}" 
+                    data-akuro-ct="form-input-file-upload" data-akuro-c="files-item-new-file"
+                    >
+                      
+                      
+                      <div class="input-container">
+                        <input type="file" class="file-upload">
+                        <input type="hidden" class="real-value" name="files_item_new_file" id="files_item_new_file" value="{{simple_link['link_href']}}">
+                        <div class="drop-zone">
+                          <div class="text-container">
+                            <img src="{{files_page_data['new_file_upload_image_icon']}}" alt="">
+                            <div>
+                              <div class="title">{{files_page_data['new_file_upload_text']}}</div>
+                              <div class="text">{{files_page_data['new_file_upload_upload_text']}}</div>
+                            </div>  
+                          </div>
+                          <div class="image-preview"></div>
+                          <div class="format-message"></div>
+                        </div>
+                      </div>
+                    </div>
+                  
+                  <div class="alert-space s100625 alert-space-element">
+                        
+                    </div>
+                  
+                  <button class="s100626 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100626">
+                      
+                      {{files_page_data['update_file_button_label']}}
+                      
+                    </button>
+                  
+
+                </form>
+
+                
+            </div>
+
+            {%endif%}
+
+            {% if not general_data['edit_mode_on'] %}
+
+            <div class="s100629 div-element">
+                
+                <div class="files-page-folder-icon-elm-container">
+                    <img src="{{files_page_data['files_page_folder_icon']}}"/>
+                </div>
+                
+                <div class="s100630 styled-label-getter">
+                {{files_item_data['files_item_name']}}
+                </div>
+                
+                {% set simple_link = files_item_data.files_item_link %}
+
+                <a href="{{simple_link['link_href']}}" target="{{simple_link['link_target']}}" class="s100632 simple-anchor">{{simple_link['link_label']}}</a>
+
+                
+            </div>
+
+            {%endif%}
+
+            {%endfor%}
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+{% endblock %}
+
+{% block support_html%}
+
+<!-- s100603-->
+
+{% endblock %}
+
+{% block js_dependencies_loaders%}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block js_initialization%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".new-file-name"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-file-upload", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let controller = elm.dataset.controller;
+    let uploading = false;
+    
+    const dropZone = elm.querySelector(".drop-zone");
+    const dropZonebox = elm.querySelector(".drop-zone .text-container");
+    const fileInput = elm.querySelector("input.file-upload");
+    const realValue = elm.querySelector("input.real-value");
+
+
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('active');
+    });
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('active');
+    });
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('active');
+        dropZone.classList.add('ready');
+        
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            fileInput.files = files;
+            uploadFile(files[0]);
+        }
+    });
+    dropZone.addEventListener('click', () => {
+        fileInput.click();
+    });
+    fileInput.addEventListener('change', () => {
+        dropZone.classList.add('ready');
+        const files = fileInput.files;
+        if (files.length > 0) {
+            uploadFile(files[0]);
+        }
+    });
+    
+
+    function uploadFile(file_to_send) {
+        let xhrRequest = new XMLHttpRequest();
+        xhrRequest.open("POST", controller, true);
+        xhrRequest.upload.addEventListener("progress", ({ loaded, total }) => {
+            realValue.value = '';
+            dropZonebox.classList.add('loading');
+        });
+
+        xhrRequest.onreadystatechange = () => {
+            if (xhrRequest.readyState === 4) {
+                dropZonebox.classList.add('loaded');
+                dropZonebox.classList.remove('loading');
+                let data = JSON.parse(xhrRequest.response);
+                data = data["files"][0]
+                realValue.value = data.url;
+                fileInput.value = null;
+                uploading = false;
+            }else{
+                uploading =  true;
+            }
+        };
+        const formData = new FormData();
+        formData.append("file", file_to_send);
+        xhrRequest.send(formData);
+    }
+
+    class AkuroInputPicture{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            return realValue.value;
+        }
+        validate(){
+            console.log("adasasd", this.getValue());
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " " || uploading){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInputPicture(elm)
+  })
+  akuro.instantiate("form-input-file-upload", document.querySelectorAll(".new-file-file"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100600"))
+</script>
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100597"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".files-new-file-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100614"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-hidden", [], (elm)=>{
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-hidden", document.querySelectorAll(".files-item-hidden-id"))
+</script>
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100593"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".files-delete-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100621"))
+</script>
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-hidden", [], (elm)=>{
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-hidden", document.querySelectorAll(".files-item-hidden-id"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".files-item-file-name-input"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-file-upload", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let controller = elm.dataset.controller;
+    let uploading = false;
+    
+    const dropZone = elm.querySelector(".drop-zone");
+    const dropZonebox = elm.querySelector(".drop-zone .text-container");
+    const fileInput = elm.querySelector("input.file-upload");
+    const realValue = elm.querySelector("input.real-value");
+
+
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('active');
+    });
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('active');
+    });
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('active');
+        dropZone.classList.add('ready');
+        
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            fileInput.files = files;
+            uploadFile(files[0]);
+        }
+    });
+    dropZone.addEventListener('click', () => {
+        fileInput.click();
+    });
+    fileInput.addEventListener('change', () => {
+        dropZone.classList.add('ready');
+        const files = fileInput.files;
+        if (files.length > 0) {
+            uploadFile(files[0]);
+        }
+    });
+    
+
+    function uploadFile(file_to_send) {
+        let xhrRequest = new XMLHttpRequest();
+        xhrRequest.open("POST", controller, true);
+        xhrRequest.upload.addEventListener("progress", ({ loaded, total }) => {
+            realValue.value = '';
+            dropZonebox.classList.add('loading');
+        });
+
+        xhrRequest.onreadystatechange = () => {
+            if (xhrRequest.readyState === 4) {
+                dropZonebox.classList.add('loaded');
+                dropZonebox.classList.remove('loading');
+                let data = JSON.parse(xhrRequest.response);
+                data = data["files"][0]
+                realValue.value = data.url;
+                fileInput.value = null;
+                uploading = false;
+            }else{
+                uploading =  true;
+            }
+        };
+        const formData = new FormData();
+        formData.append("file", file_to_send);
+        xhrRequest.send(formData);
+    }
+
+    class AkuroInputPicture{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            return realValue.value;
+        }
+        validate(){
+            console.log("adasasd", this.getValue());
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " " || uploading){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInputPicture(elm)
+  })
+  akuro.instantiate("form-input-file-upload", document.querySelectorAll(".files-item-new-file"))
+</script>
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100626"))
+</script>
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100624"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,1515 @@
+{% set architect_page_data = architect_page_data_collection(project_url) %}
+
+{% extends 'general_template.html' %}
+{% block css_dependencies_loaders%}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+{% endblock %}
+
+{% block html%}
+
+<div class="s100322 div-element">
+    
+    <div class="container s100323">
+        
+        <div class="row s100324">
+            
+            <div class="col s100325">
+                
+                <h1 class="s100326 h1-element">
+                    
+                    {{architect_page_data['architect_page_title']}}
+                    
+                </h1>
+                
+                {% set simple_link = architect_page_data.architect_page_files_link %}
+
+                <a href="{{simple_link['link_href']}}" target="{{simple_link['link_target']}}" class="s100329 simple-anchor">{{simple_link['link_label']}}</a>
+
+                
+            </div>
+            
+        </div>
+        
+        <div class="row s100330">
+            
+            <div class="col s100331">
+                
+                <table class="architect-page-table table-element">
+                    
+                    <tr class="s100332 tr-element">
+                        
+                        {%for simple_info_data in architect_page_data.architect_page_columns %}
+
+                        <th class="s100334 th-element">
+                            
+                            {{simple_info_data['simple_title']}}
+                            
+                        </th>
+
+                        {%endfor%}
+                        
+                        <th class="s100336 th-element">
+                            
+                        </th>
+                        
+                        <th class="s100337 th-element">
+                            
+                        </th>
+                        
+                    </tr>
+                    
+                    {%for architect_item_data in architect_page_data.architect_page_items %}
+
+                    <tr class="s100339 tr-element">
+                        
+                        <td 
+                            class="s100340 td-element" 
+                            
+                            
+                        >
+                            
+                            <div class="s100341 styled-label-getter">
+                            {{architect_item_data['architect_item_vendor']}}
+                            </div>
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100342 td-element" 
+                            
+                            
+                        >
+                            
+                            {{architect_item_data['architect_item_due_date']}}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100344 td-element" 
+                            
+                            
+                        >
+                            
+                            {{architect_item_data['architect_item_code']}}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100346 td-element" 
+                            
+                            
+                        >
+                            
+                            {{architect_item_data['architect_item_total']}}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100348 td-element" 
+                            
+                            
+                        >
+                            
+                            {{architect_item_data['architect_item_paid']}}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100350 td-element" 
+                            
+                            
+                        >
+                            
+                            {{architect_item_data['architect_item_pending']}}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100352 td-element" 
+                            
+                            
+                        >
+                            
+                            {{architect_item_data['architect_item_percetage']}}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100354 td-element" 
+                            
+                            
+                        >
+                            
+                            {% if general_data['edit_mode_on'] %}
+
+                            <div class="s100356 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100356">
+                              <div class="button-container">
+                                
+                                <button role="button" type="button" class="s100357 button-component"><div class="architect-page-edit-icon-img-container">
+                                    <img src="{{architect_page_data['architect_page_edit_icon']}}"/>
+                                </div></button>
+                                
+                              </div>
+                              <div class="modal-container">
+                                
+                                <div class="modal bill-data-modal" data-open="0" tabindex="-1">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                        <div class="modal-body">
+                                            
+                                            <form action="{{architect_page_data['architect_modal_action']}}" method="{{architect_page_data['architect_modal_method']}}" class="akuro-form s100304 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100304">
+                                              <!-- Form input components here. Labels will be visible -->
+                                              
+                                              
+                                              <input 
+                                                  type="hidden" 
+                                                  
+                                                  name="current_bill_id" 
+                                                  
+                                                  
+                                                  value="{{architect_item_data['architect_item_id']}}" 
+                                                  
+                                                  id="current_bill_id" 
+                                                  
+                                                />
+                                              
+                                              <div class="bill-date form-input-date" data-error-message="{{architect_page_data['architect_date_error']}}" data-akuro-ct="form-input-date" data-akuro-c="bill-date">
+                                                  <label for="bill_date">{{architect_page_data['architect_date_label']}}</label>
+                                                  
+                                                  <div class="input-container">
+                                                    <input 
+                                                      type="date" 
+                                                      name="bill_date" 
+                                                      id="bill_date" 
+                                                      value="{{architect_item_data['architect_item_due_date_raw']}}"
+                                                      placeholder="{{architect_page_data['architect_date_placeholder']}}"
+                                                      >
+                                                  </div>
+                                                </div>
+                                              
+                                              <div class="bill-invoice form-input" data-error-message="{{architect_page_data['architect_invoice_error']}}" data-akuro-ct="form-input" data-akuro-c="bill-invoice">
+                                                  <label for="bill_invoice">{{architect_page_data['architect_invoice_label']}}</label>
+                                                  
+                                                  <div class="input-container">
+                                                    <input 
+                                                      type="text" 
+                                                      name="bill_invoice" 
+                                                      id="bill_invoice" 
+                                                      placeholder="{{architect_page_data['architect_invoice_placeholder']}}"
+                                                      value="{{architect_item_data['architect_item_code']}}"
+                                                      />
+                                                  </div>
+                                                </div>
+                                              
+                                              <div class="money bill-amount form-input-money-us" data-error-message="{{architect_page_data['architect_amount_error']}}" data-akuro-ct="form-input-money-us" data-akuro-c="bill-amount">
+                                                  <label for="bill_amount">{{architect_page_data['architect_amount_label']}}</label>
+                                                  
+                                                  <div class="input-container">
+                                                    <input 
+                                                      class="money-input" 
+                                                      type="text"
+                                                      name="bill_amount" 
+                                                      id="bill_amount"
+                                                      value="{{architect_item_data['architect_item_total_raw']}}"
+                                                      placeholder="{{architect_page_data['architect_amount_placeholder']}}"
+                                                      >
+                                                  </div>
+                                                </div>
+                                              
+                                              <div class="money bill-paid form-input-money-us" data-error-message="{{architect_page_data['architect_paid_error']}}" data-akuro-ct="form-input-money-us" data-akuro-c="bill-paid">
+                                                  <label for="bill_paid">{{architect_page_data['architect_paid_label']}}</label>
+                                                  
+                                                  <div class="input-container">
+                                                    <input 
+                                                      class="money-input" 
+                                                      type="text"
+                                                      name="bill_paid" 
+                                                      id="bill_paid"
+                                                      value="{{architect_item_data['architect_item_paid_raw']}}"
+                                                      placeholder="{{architect_page_data['architect_paid_placeholder']}}"
+                                                      >
+                                                  </div>
+                                                </div>
+                                              
+                                              <div class="alert-space s100305 alert-space-element">
+                                                    
+                                                </div>
+                                              
+                                              <div class="s100306 div-element">
+                                                    
+                                                    <button class="s100307 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100307">
+                                                      
+                                                      {{architect_page_data['architect_modal_save_label']}}
+                                                      
+                                                    </button>
+                                                    
+                                                </div>
+                                              
+
+                                            </form>
+                                            
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                              </div>
+                            </div>
+
+                            {%endif%}
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100358 td-element" 
+                            
+                            
+                        >
+                            
+                            {% if general_data['edit_mode_on'] %}
+
+                            <div class="s100360 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100360">
+                              <div class="button-container">
+                                
+                                <button role="button" type="button" class="s100361 button-component"><div class="architect-page-trash-icon-img-container">
+                                    <img src="{{architect_page_data['architect_page_trash_icon']}}"/>
+                                </div></button>
+                                
+                              </div>
+                              <div class="modal-container">
+                                
+                                <div class="modal architect-delete-modal" data-open="0" tabindex="-1">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                        <div class="modal-body">
+                                            
+                                            <div class="s100314 div-element">
+                                                
+                                                <div class="architect-delete-title-icon-img-container">
+                                                    <img src="{{architect_page_data['architect_delete_title_icon']}}"/>
+                                                </div>
+                                                
+                                                <div class="s100315 styled-label-getter">
+                                                {{architect_page_data['architect_delete_title']}}
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="s100316 styled-label-getter">
+                                            {{architect_page_data['architect_delete_alert']}}
+                                            </div>
+                                            
+                                            <form action="{{architect_page_data['architect_delete_action']}}" method="{{architect_page_data['architect_delete_method']}}" class="akuro-form s100317 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100317">
+                                              <!-- Form input components here. Labels will be visible -->
+                                              
+                                              
+                                              <input 
+                                                  type="hidden" 
+                                                  
+                                                  name="current_bill_id" 
+                                                  
+                                                  
+                                                  value="{{architect_item_data['architect_item_id']}}" 
+                                                  
+                                                  id="current_bill_id" 
+                                                  
+                                                />
+                                              
+                                              <button role="button" value="architect_delete_button" name="architect_delete_button" type="submit" class="architect-delete-button submit-component">{{architect_page_data['architect_confirm_label']}}</button>
+                                              
+                                              <button role="button" type="button" class="s100319 bootstrap-dismiss-modal-button" data-bs-dismiss="modal">{{architect_page_data['architect_cancel_label']}}</button>
+                                              
+
+                                            </form>
+                                            
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                              </div>
+                            </div>
+
+                            {%endif%}
+                            
+                        </td>
+                        
+                    </tr>
+
+                    {%endfor%}
+                    
+                    {% if general_data['edit_mode_on'] %}
+
+                    <tr class="s100363 tr-element">
+                        
+                        <td 
+                            class="s100364 td-element" 
+                            colspan="{{architect_page_data['architect_last_row_colspan']}}"
+                            
+                        >
+                            
+                            <div class="s100365 div-element">
+                                
+                                <div class="s100366 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100366">
+                                  <div class="button-container">
+                                    
+                                    <button role="button" type="button" class="s100367 button-component">{{architect_page_data['architect_page_add_label']}}</button>
+                                    
+                                  </div>
+                                  <div class="modal-container">
+                                    
+                                    <div class="modal new-bill-data-modal" data-open="0" tabindex="-1">
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                            <div class="modal-body">
+                                                
+                                                <form action="{{architect_page_data['architect_modal_action']}}" method="{{architect_page_data['architect_modal_method']}}" class="akuro-form s100309 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100309">
+                                                  <!-- Form input components here. Labels will be visible -->
+                                                  
+                                                  
+                                                  <div class="new-bill-date form-input-date" data-error-message="{{architect_page_data['architect_date_error']}}" data-akuro-ct="form-input-date" data-akuro-c="new-bill-date">
+                                                      <label for="new_bill_date">{{architect_page_data['architect_date_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="date" 
+                                                          name="new_bill_date" 
+                                                          id="new_bill_date" 
+                                                          
+                                                          placeholder="{{architect_page_data['architect_date_placeholder']}}"
+                                                          >
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="new-bill-invoice form-input" data-error-message="{{architect_page_data['architect_invoice_error']}}" data-akuro-ct="form-input" data-akuro-c="new-bill-invoice">
+                                                      <label for="new_bill_invoice">{{architect_page_data['architect_invoice_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="text" 
+                                                          name="new_bill_invoice" 
+                                                          id="new_bill_invoice" 
+                                                          placeholder="{{architect_page_data['architect_invoice_placeholder']}}"
+                                                          
+                                                          />
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="money new-bill-amount form-input-money-us" data-error-message="{{architect_page_data['architect_amount_error']}}" data-akuro-ct="form-input-money-us" data-akuro-c="new-bill-amount">
+                                                      <label for="new_bill_amount">{{architect_page_data['architect_amount_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          class="money-input" 
+                                                          type="text"
+                                                          name="new_bill_amount" 
+                                                          id="new_bill_amount"
+                                                          
+                                                          placeholder="{{architect_page_data['architect_amount_placeholder']}}"
+                                                          >
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="money new-bill-paid form-input-money-us" data-error-message="{{architect_page_data['architect_paid_error']}}" data-akuro-ct="form-input-money-us" data-akuro-c="new-bill-paid">
+                                                      <label for="new_bill_paid">{{architect_page_data['architect_paid_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          class="money-input" 
+                                                          type="text"
+                                                          name="new_bill_paid" 
+                                                          id="new_bill_paid"
+                                                          
+                                                          placeholder="{{architect_page_data['architect_paid_placeholder']}}"
+                                                          >
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="alert-space s100310 alert-space-element">
+                                                        
+                                                    </div>
+                                                  
+                                                  <div class="s100311 div-element">
+                                                        
+                                                        <button class="s100312 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100312">
+                                                          
+                                                          {{architect_page_data['architect_modal_save_label']}}
+                                                          
+                                                        </button>
+                                                        
+                                                    </div>
+                                                  
+
+                                                </form>
+                                                
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                </div>
+                                
+                                <div class="s100369 button-modal-pair" data-akuro-ct="button-modal-pair" data-akuro-c="s100369">
+                                  <div class="button-container">
+                                    
+                                    <button role="button" type="button" class="s100370 button-component">{{architect_page_data['architect_page_add_button_label']}}</button>
+                                    
+                                  </div>
+                                  <div class="modal-container">
+                                    
+                                    <div class="modal new-bill-data-modal" data-open="0" tabindex="-1">
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                            <div class="modal-body">
+                                                
+                                                <form action="{{architect_page_data['architect_modal_action']}}" method="{{architect_page_data['architect_modal_method']}}" class="akuro-form s100309 stable-form-container" data-akuro-ct="stable-form-container" data-akuro-c="s100309">
+                                                  <!-- Form input components here. Labels will be visible -->
+                                                  
+                                                  
+                                                  <div class="new-bill-date form-input-date" data-error-message="{{architect_page_data['architect_date_error']}}" data-akuro-ct="form-input-date" data-akuro-c="new-bill-date">
+                                                      <label for="new_bill_date">{{architect_page_data['architect_date_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="date" 
+                                                          name="new_bill_date" 
+                                                          id="new_bill_date" 
+                                                          
+                                                          placeholder="{{architect_page_data['architect_date_placeholder']}}"
+                                                          >
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="new-bill-invoice form-input" data-error-message="{{architect_page_data['architect_invoice_error']}}" data-akuro-ct="form-input" data-akuro-c="new-bill-invoice">
+                                                      <label for="new_bill_invoice">{{architect_page_data['architect_invoice_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          type="text" 
+                                                          name="new_bill_invoice" 
+                                                          id="new_bill_invoice" 
+                                                          placeholder="{{architect_page_data['architect_invoice_placeholder']}}"
+                                                          
+                                                          />
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="money new-bill-amount form-input-money-us" data-error-message="{{architect_page_data['architect_amount_error']}}" data-akuro-ct="form-input-money-us" data-akuro-c="new-bill-amount">
+                                                      <label for="new_bill_amount">{{architect_page_data['architect_amount_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          class="money-input" 
+                                                          type="text"
+                                                          name="new_bill_amount" 
+                                                          id="new_bill_amount"
+                                                          
+                                                          placeholder="{{architect_page_data['architect_amount_placeholder']}}"
+                                                          >
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="money new-bill-paid form-input-money-us" data-error-message="{{architect_page_data['architect_paid_error']}}" data-akuro-ct="form-input-money-us" data-akuro-c="new-bill-paid">
+                                                      <label for="new_bill_paid">{{architect_page_data['architect_paid_label']}}</label>
+                                                      
+                                                      <div class="input-container">
+                                                        <input 
+                                                          class="money-input" 
+                                                          type="text"
+                                                          name="new_bill_paid" 
+                                                          id="new_bill_paid"
+                                                          
+                                                          placeholder="{{architect_page_data['architect_paid_placeholder']}}"
+                                                          >
+                                                      </div>
+                                                    </div>
+                                                  
+                                                  <div class="alert-space s100310 alert-space-element">
+                                                        
+                                                    </div>
+                                                  
+                                                  <div class="s100311 div-element">
+                                                        
+                                                        <button class="s100312 form-submit-button" type="button" data-akuro-ct="form-submit-button" data-akuro-c="s100312">
+                                                          
+                                                          {{architect_page_data['architect_modal_save_label']}}
+                                                          
+                                                        </button>
+                                                        
+                                                    </div>
+                                                  
+
+                                                </form>
+                                                
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100372 td-element" 
+                            
+                            
+                        >
+                            
+                        </td>
+                        
+                        <td 
+                            class="s100373 td-element" 
+                            
+                            
+                        >
+                            
+                        </td>
+                        
+                    </tr>
+
+                    {%endif%}
+                    
+                </table>
+                
+            </div>
+            
+        </div>
+        
+        <div class="row s100374">
+            
+            <div class="col-12 col-md-12 s100375">
+                
+                <div class="pager s100376" data-akuro-ct="tbrc-paginator" data-akuro-c="s100376">
+                    {%if architect_page_data['architect_page_paginator_prev'] not in ['None','',' ', None] %} 
+                    <a class="page-link" href="{{architect_page_data['architect_page_paginator_prev']}}" aria-label="Previous">
+                      <span aria-hidden="true">&lt;</span>
+                    </a>
+                    {%endif%}
+                    <a class="page-link current" href="#" aria-label="Current">{{architect_page_data['architect_page_paginator_current']}}</a>
+                    <span>of {{architect_page_data['architect_page_paginator_total']}}</span>
+                    {%if architect_page_data['architect_page_paginator_next'] not in ['None','',' ', None] %} 
+                    <a class="page-link" href="{{architect_page_data['architect_page_paginator_next']}}" aria-label="Next">
+                      <span aria-hidden="true">&gt;</span>
+                    </a>
+                    {%endif%}
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+{% endblock %}
+
+{% block support_html%}
+
+<!-- s100322-->
+
+{% endblock %}
+
+{% block js_dependencies_loaders%}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block js_initialization%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-hidden", [], (elm)=>{
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-hidden", document.querySelectorAll(".current-bill-id"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-date", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+          let val = this.getValue();
+          if (val == null || val == undefined || val == "" || val == " " ){
+            return [text];
+          }else{
+            return [];
+          }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-date", document.querySelectorAll(".bill-date"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".bill-invoice"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-money-us", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let input = elm.querySelector(".money-input");
+    input.addEventListener('keyup', function(){
+      const numericValue = input.value.replace(/[^\d]/g, '');
+      let numericValueFormatted = Number(numericValue);
+      if (!isNaN(numericValueFormatted)) {
+        let moneyValue = numericValueFormatted.toLocaleString('en-US');
+        input.value = `$${moneyValue}`;
+      }else {
+        input.value = numericValueFormatted;
+      }
+    })
+
+    input.dispatchEvent(new Event('keyup'));
+    
+
+    class AkuroMoneyInput{
+        constructor(elm){
+            this.elm = elm;
+            this.hasValidation = true;
+        }
+        getValue(){
+            let input = this.elm.querySelector(".money-input");
+            return input.value;
+        }
+        validate(){
+            if ((this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " ") && this.hasValidation){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroMoneyInput(elm)
+  })
+  akuro.instantiate("form-input-money-us", document.querySelectorAll(".bill-amount"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-money-us", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let input = elm.querySelector(".money-input");
+    input.addEventListener('keyup', function(){
+      const numericValue = input.value.replace(/[^\d]/g, '');
+      let numericValueFormatted = Number(numericValue);
+      if (!isNaN(numericValueFormatted)) {
+        let moneyValue = numericValueFormatted.toLocaleString('en-US');
+        input.value = `$${moneyValue}`;
+      }else {
+        input.value = numericValueFormatted;
+      }
+    })
+
+    input.dispatchEvent(new Event('keyup'));
+    
+
+    class AkuroMoneyInput{
+        constructor(elm){
+            this.elm = elm;
+            this.hasValidation = true;
+        }
+        getValue(){
+            let input = this.elm.querySelector(".money-input");
+            return input.value;
+        }
+        validate(){
+            if ((this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " ") && this.hasValidation){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroMoneyInput(elm)
+  })
+  akuro.instantiate("form-input-money-us", document.querySelectorAll(".bill-paid"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100307"))
+</script>
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100304"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".bill-data-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100356"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-hidden", [], (elm)=>{
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            return [];
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-hidden", document.querySelectorAll(".current-bill-id"))
+</script>
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100317"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".architect-delete-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100360"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-date", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+          let val = this.getValue();
+          if (val == null || val == undefined || val == "" || val == " " ){
+            return [text];
+          }else{
+            return [];
+          }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-date", document.querySelectorAll(".new-bill-date"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".new-bill-invoice"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-money-us", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let input = elm.querySelector(".money-input");
+    input.addEventListener('keyup', function(){
+      const numericValue = input.value.replace(/[^\d]/g, '');
+      let numericValueFormatted = Number(numericValue);
+      if (!isNaN(numericValueFormatted)) {
+        let moneyValue = numericValueFormatted.toLocaleString('en-US');
+        input.value = `$${moneyValue}`;
+      }else {
+        input.value = numericValueFormatted;
+      }
+    })
+
+    input.dispatchEvent(new Event('keyup'));
+    
+
+    class AkuroMoneyInput{
+        constructor(elm){
+            this.elm = elm;
+            this.hasValidation = true;
+        }
+        getValue(){
+            let input = this.elm.querySelector(".money-input");
+            return input.value;
+        }
+        validate(){
+            if ((this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " ") && this.hasValidation){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroMoneyInput(elm)
+  })
+  akuro.instantiate("form-input-money-us", document.querySelectorAll(".new-bill-amount"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-money-us", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let input = elm.querySelector(".money-input");
+    input.addEventListener('keyup', function(){
+      const numericValue = input.value.replace(/[^\d]/g, '');
+      let numericValueFormatted = Number(numericValue);
+      if (!isNaN(numericValueFormatted)) {
+        let moneyValue = numericValueFormatted.toLocaleString('en-US');
+        input.value = `$${moneyValue}`;
+      }else {
+        input.value = numericValueFormatted;
+      }
+    })
+
+    input.dispatchEvent(new Event('keyup'));
+    
+
+    class AkuroMoneyInput{
+        constructor(elm){
+            this.elm = elm;
+            this.hasValidation = true;
+        }
+        getValue(){
+            let input = this.elm.querySelector(".money-input");
+            return input.value;
+        }
+        validate(){
+            if ((this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " ") && this.hasValidation){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroMoneyInput(elm)
+  })
+  akuro.instantiate("form-input-money-us", document.querySelectorAll(".new-bill-paid"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100312"))
+</script>
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100309"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".new-bill-data-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100366"))
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-input-date", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+          let val = this.getValue();
+          if (val == null || val == undefined || val == "" || val == " " ){
+            return [text];
+          }else{
+            return [];
+          }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input-date", document.querySelectorAll(".new-bill-date"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+
+    class AkuroInput{
+        constructor(elm){
+            this.elm = elm;
+        }
+        getValue(){
+            let input = this.elm.querySelector("input");
+            return input.value;
+        }
+        validate(){
+            if (this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " "){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-input", document.querySelectorAll(".new-bill-invoice"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-money-us", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let input = elm.querySelector(".money-input");
+    input.addEventListener('keyup', function(){
+      const numericValue = input.value.replace(/[^\d]/g, '');
+      let numericValueFormatted = Number(numericValue);
+      if (!isNaN(numericValueFormatted)) {
+        let moneyValue = numericValueFormatted.toLocaleString('en-US');
+        input.value = `$${moneyValue}`;
+      }else {
+        input.value = numericValueFormatted;
+      }
+    })
+
+    input.dispatchEvent(new Event('keyup'));
+    
+
+    class AkuroMoneyInput{
+        constructor(elm){
+            this.elm = elm;
+            this.hasValidation = true;
+        }
+        getValue(){
+            let input = this.elm.querySelector(".money-input");
+            return input.value;
+        }
+        validate(){
+            if ((this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " ") && this.hasValidation){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroMoneyInput(elm)
+  })
+  akuro.instantiate("form-input-money-us", document.querySelectorAll(".new-bill-amount"))
+</script>
+
+
+<script>
+  akuro.registerComponent("form-input-money-us", [], (elm)=>{
+    let text = elm.dataset.errorMessage;
+    let input = elm.querySelector(".money-input");
+    input.addEventListener('keyup', function(){
+      const numericValue = input.value.replace(/[^\d]/g, '');
+      let numericValueFormatted = Number(numericValue);
+      if (!isNaN(numericValueFormatted)) {
+        let moneyValue = numericValueFormatted.toLocaleString('en-US');
+        input.value = `$${moneyValue}`;
+      }else {
+        input.value = numericValueFormatted;
+      }
+    })
+
+    input.dispatchEvent(new Event('keyup'));
+    
+
+    class AkuroMoneyInput{
+        constructor(elm){
+            this.elm = elm;
+            this.hasValidation = true;
+        }
+        getValue(){
+            let input = this.elm.querySelector(".money-input");
+            return input.value;
+        }
+        validate(){
+            if ((this.getValue() == null || this.getValue() == undefined || this.getValue() == "" || this.getValue() == " ") && this.hasValidation){
+              return [text];
+            }else{
+              return [];
+            }
+        }
+    }
+    return new AkuroMoneyInput(elm)
+  })
+  akuro.instantiate("form-input-money-us", document.querySelectorAll(".new-bill-paid"))
+</script>
+
+
+
+
+
+
+
+
+<script>
+  akuro.registerComponent("form-submit-button", [], (elm)=>{
+
+    elm.addEventListener("click", (evt)=>{
+      akuro.getElm(elm.closest(".akuro-form")).validate();      
+    })
+
+    return new AkuroInput(elm)
+  })
+  akuro.instantiate("form-submit-button", document.querySelectorAll(".s100312"))
+</script>
+
+
+
+<script>
+  akuro.registerComponent("stable-form-container", [], (elm)=>{
+    let error_space = elm.querySelector(".alert-space");
+
+    class AkuroForm{
+      constructor(elm){
+          this.elm = elm;
+      }
+      validate(){
+        let errors = [];         
+        this.elm.querySelectorAll("[data-akuro_key]").forEach((input)=>{
+            try{
+                errors = errors.concat(akuro.getElm(input).validate());
+            }catch(e){console.log(e);}
+        });
+        
+        if (errors.length > 0) {
+          let join_errors = errors.join("<br>");
+          error_space.innerHTML = `<div class="alert alert-danger line" role="alert">${join_errors}</div>`;
+        } else {
+          this.elm.submit();
+        }
+      }
+  }
+
+    return new AkuroForm(elm)
+  })
+  akuro.instantiate("stable-form-container", document.querySelectorAll(".s100309"))
+</script>
+
+
+<script>
+    akuro.registerComponent("bootstrap-modal", [], (elm)=>{
+        const myModal = new bootstrap.Modal(elm, {backdrop:true})
+        let open =  (elm.dataset.open+"").toLowerCase();
+        open =  open == "yes" || open == "si" || open == "1" || open == "true"
+        if(open){
+            myModal.show()        
+        }
+        return new LoadedElm(elm, myModal);
+    })
+    akuro.instantiate("bootstrap-modal", document.querySelectorAll(".new-bill-data-modal"))
+</script>
+
+
+<script>
+  akuro.registerComponent("button-modal-pair", [], (elm)=>{
+    let button = elm.querySelector(".button-container").children[0];
+    let modal = elm.querySelector(".modal-container").children[0];
+    const myModalAlternative = new bootstrap.Modal(modal, {})
+    button.addEventListener("click", (evt)=>{
+      myModalAlternative.show();
+    })
+    return new LoadedElm(elm, "Name")
+  })
+  akuro.instantiate("button-modal-pair", document.querySelectorAll(".s100369"))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

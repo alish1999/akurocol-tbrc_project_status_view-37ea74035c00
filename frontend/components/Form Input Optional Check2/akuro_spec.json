@@ -1,0 +1,33 @@
+{
+    "generate_files": {},
+    "parent_type": "Form Input",
+    "links": {
+        "Label": [
+            "Data Field"
+        ],
+        "Name": [
+            "Data Field"
+        ],
+        "Label Styles": [
+            "Data Field"
+        ],
+        "Input Styles": [
+            "Data Field"
+        ],
+        "Error Message": [
+            "Data Field"
+        ],
+        "Mixins": [
+            "Mixin"
+        ],
+        "Value": [
+            "Data Field"
+        ],
+        "Active Image": [
+            "Data Field"
+        ],
+        "Inactive Image": [
+            "Data Field"
+        ]
+    }
+}

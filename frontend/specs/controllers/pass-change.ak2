@@ -1,0 +1,21 @@
+controller(pass-change){
+  component:[
+    (request-password-change);
+  ],
+};
+
+
+custom-return-post-controller(change-start){
+  component:[],
+};
+
+
+controller(set-new-pass){
+  component:[
+    (set-new-password);
+  ],
+};
+custom-return-post-controller(save-new-pass){
+  component:[],
+};
+

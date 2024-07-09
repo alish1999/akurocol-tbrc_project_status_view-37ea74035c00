@@ -1,0 +1,13 @@
+[Unit]
+Description=Tbrc Project Status View servicio
+After=network.target
+
+[Service]
+User=akuro
+Group=www-data
+WorkingDirectory=/var/www/html/tbrc_project_status_view
+Environment="PATH=/var/www/html/enviroment/bin:/usr/bin"
+ExecStart=/var/www/html/enviroment/bin/python backup.py
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,16 @@
+controller-with-params(architect){
+  params:[
+    (project-url);
+  ],
+  component:[
+    (architect-page);
+  ]
+};
+
+custom-return-post-controller(save-architect-data){
+  component:[],
+};
+
+custom-return-post-controller(delete-architect-action){
+  component:[],
+};

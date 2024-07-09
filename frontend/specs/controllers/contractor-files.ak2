@@ -1,0 +1,20 @@
+controller-with-params(contractor-files){
+  params:[
+    (project-url);
+  ],
+  component:[
+    (files-page);
+  ]
+};
+
+custom-return-post-controller(save-file-action){
+  component:[],
+};
+
+custom-return-post-controller(delete-file-action){
+  component:[],
+};
+
+custom-return-post-controller(edit-file-action){
+  component:[],
+};

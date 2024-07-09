@@ -1,0 +1,23 @@
+<div class="{{s.p('Dash Name')}} {{s.p('Type Dash Name')}}" 
+{%if l.controller|count>0 %}data-controller="{{l.controller[0].p('Url')}}"{% endif %} 
+{%if l.error_message|count>0 %}data-error-message="{{l.error_message[0].p('Data Getter')}}"{% endif %} 
+{{s.p("Locator Tag")}}
+>
+  {%if l.label|count>0 %}<label for="{{s.p("Var Name")}}">{{l.label[0].p('Data Getter')}}</label>{% endif %}
+  {%if l.help|count>0 %}<div class="help">{{l.help[0].p('Data Getter')}}</div>{% endif %}
+  <div class="input-container">
+    <input type="file" class="file-upload">
+    <input type="hidden" class="real-value" name="{{s.p("Var Name")}}" id="{{s.p("Var Name")}}" {%if l.value|count>0 %}value="{{l.value[0].p('Data Getter')}}"{% endif %}>
+    <div class="drop-zone">
+      <div class="text-container">
+        <img src="{{l.image_icon[0].p('Data Getter')}}" alt="">
+        <div>
+          {%if l.text|count>0 %}<div class="title">{{l.text[0].p('Data Getter')}}</div>{% endif %}
+          {%if l.upload_text|count>0 %}<div class="text">{{l.upload_text[0].p('Data Getter')}}</div>{% endif %}
+        </div>  
+      </div>
+      <div class="image-preview"></div>
+      <div class="format-message"></div>
+    </div>
+  </div>
+</div>

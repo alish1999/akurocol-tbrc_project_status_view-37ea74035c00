@@ -1,0 +1,17 @@
+.db
+*.log
+*.pyc
+*.bak
+temp/
+*.db
+static/uploads/*
+static/uploads
+static/vendor/package-lock.json
+static/vendor/node_modules/*
+static/vendor/node_modules
+.sass-cache
+frontend/ejected
+frontend/ejected/*
+priv_key.pem
+static/vendor/package-lock.json
+/components

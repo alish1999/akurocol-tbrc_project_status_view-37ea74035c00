@@ -1,0 +1,26 @@
+{
+    "schedule_page_title":"Project Name Schedule",
+    "schedule_page_columns":[
+        {
+            "simple_title":"Category"
+        },
+        {
+            "simple_title":"% Purchased"
+        },
+        {
+            "simple_title":"% Installed"
+        },
+        {
+            "simple_title":"% Overall Completion"
+        }
+    ],
+    "schedule_page_items":[
+        {
+            "schedule_item_name":"Architect",
+            "schedule_item_purchased":"10%",
+            "schedule_item_instaled":"10%",
+            "schedule_item_completion":"20%"
+        }
+    ]
+    
+}

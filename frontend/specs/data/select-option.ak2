@@ -1,0 +1,19 @@
+data-collection(option-data){
+  fields:[    
+    data-field(option-value){
+      collection:[
+        (option-data);
+      ]
+    };
+    data-field(option-label){
+      collection:[
+        (option-data);
+      ]
+    };
+    data-field(option-selected){
+      collection:[
+        (option-data);
+      ]
+    };
+  ]
+};

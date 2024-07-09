@@ -1,0 +1,5 @@
+<div class="col-12 col-md-11 {{s.p("Dash Name")}}">
+    {%for p in l.parts%}
+    {{p.p("Html")|indent}}
+    {%endfor%}
+</div>

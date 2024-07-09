@@ -1,0 +1,42 @@
+{
+    "generate_files": {},
+    "parent_type": "Form Input",
+    "links": {
+        "Label": [
+            "Data Field"
+        ],
+        "Placeholder": [
+            "Data Field"
+        ],
+        "Label2": [
+            "Data Field"
+        ],
+        "Placeholder2": [
+            "Data Field"
+        ],
+        "Help": [
+            "Data Field"
+        ],
+        "Error Message": [
+            "Data Field"
+        ],
+        "Group Style": [
+            "Mixin"
+        ],
+        "Label Style": [
+            "Mixin"
+        ],
+        "Help Style": [
+            "Mixin"
+        ],
+        "Input Style": [
+            "Mixin"
+        ],
+        "Placeholder Style": [
+            "Mixin"
+        ],
+        "Focus Style": [
+            "Mixin"
+        ]
+    }
+}

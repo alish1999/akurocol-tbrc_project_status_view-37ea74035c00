@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="google" content="notranslate">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{labels["pages"]["user_creation"]["title"]}}</title>
+
+        <!-- Bootstrap -->
+    <link href="/static/vendor/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/static/vendor/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/static/vendor/node_modules/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="/static/vendor/node_modules/icheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="/static/vendor/node_modules/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="/static/vendor/node_modules/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="/static/vendor/node_modules/switchery/dist/switchery.min.css" rel="stylesheet">
+    <!-- starrr -->
+    <link href="/static/vendor/node_modules/starrr/dist/starrr.css" rel="stylesheet">
+   
+
+    <!-- Custom Theme Style -->
+    <link href="/static/build/css/custom.min.css" rel="stylesheet">
+    
+    <!-- jQuery -->
+    <script src="/static/vendor/node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/static/vendor/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Select2 -->
+    <script src="/static/vendor/node_modules/select2/dist/js/select2.full.min.js"></script>
+    
+    <!-- PNotify -->
+    <link href="/static/vendor/node_modules/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/pnotify/src/pnotify.nonblock.css" rel="stylesheet">
+    
+    <!-- PNotify -->
+    <script src="/static/vendor/node_modules/pnotify/dist/pnotify.js"></script>
+    <script src="/static/vendor/node_modules/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="/static/vendor/node_modules/pnotify/dist/pnotify.nonblock.js"></script>
+    
+    
+    <script src="/static/vendor/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="/static/vendor/node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js"></script>
+    <link href="/static/vendor/node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+    
+    <link href="/static/vendor/node_modules/blueimp-file-upload/css/jquery.fileupload.css" rel="stylesheet">
+    
+    <link href="/static/vendor/node_modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+    
+    <script src="/static/vendor/node_modules/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+    
+    <link href="/static/vendor/node_modules/dropzone/dist/dropzone.css" rel="stylesheet">
+    
+     <!-- bootstrap-daterangepicker -->
+    <script src="/static/vendor/node_modules/moment/min/moment.min.js"></script>
+    <script src="/static/vendor/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <link href="/static/vendor/node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+    
+    
+    <link href="/static/vendor/node_modules/blueimp-file-upload/css/jquery.fileupload.css" rel="stylesheet">
+    
+    <script src="/static/vendor/node_modules/cleave.js/dist/cleave.min.js"></script>
+    
+    <link href="/static/vendor/node_modules/akuro-statics/jsexcel/jexcel.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/akuro-statics/jsexcel/jsuites.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/clockpicker/dist/jquery-clockpicker.min.css" rel="stylesheet">
+    <link href="/static/vendor/node_modules/bootstrap-duallistbox/dist/bootstrap-duallistbox.min.css" rel="stylesheet">
+    <script>CLEAVES = {}</script>
+  </head>
+  {% set label_path = labels['pages']['user_creation'] %}
+  <body class="akuro_body">
+    <script>VALIDATIONS ={};</script>
+<div class="container-fluid">
+<div class="page-title">
+  <div class="title_left">
+    <h3>{{labels["pages"]["user_creation"]["title"]}}</h3>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+    
+        {%set messages = flash_messages(with_categories=true)%}
+            {% for category, message in messages %}
+                <div class="alert alert-{{category}}">
+                  <strong>{{ message }}</strong> 
+                </div>
+            {% endfor %}
+        
+    </div>
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      
+      <div class="x_content">
+        <div>{{labels["pages"]["user_creation"]["intro"]}}</div>
+        <br>
+        <form action="" method='post' class="form-horizontal form-label-left" enctype='multipart/form-data'>
+            <!-- relations --> 
+
+<div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >
+            <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_User_roles_of_user">
+                <i class="fa fa-question-circle"></i>
+            </button> 
+            {{labels["domain_classes"]["user"]["roles_of_user"]["label"]}} 
+        </label>
+        <div class="col-md-9 col-sm-9 col-xs-12 RolesOfUser">
+            
+    {{user_form.roles_of_user(class="form-control",autocomplete="off")}}
+
+            <div class="collapse" data-akuropath="domain_classes,user,roles_of_user,description" id="Help_User_roles_of_user">
+                {{labels["domain_classes"]["user"]["roles_of_user"]["description"]}} 
+            </div>
+        </div>
+        <script>
+        let roles_of_user_config = {}
+
+
+
+
+    $("#User-roles_of_user").select2(roles_of_user_config);
+
+
+        </script>
+    </div>
+
+<div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >
+            <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_User_projects_of_user">
+                <i class="fa fa-question-circle"></i>
+            </button> 
+            {{labels["domain_classes"]["user"]["projects_of_user"]["label"]}} 
+        </label>
+        <div class="col-md-9 col-sm-9 col-xs-12 ProjectsOfUser">
+            
+    {{user_form.projects_of_user(class="form-control",autocomplete="off")}}
+
+            <div class="collapse" data-akuropath="domain_classes,user,projects_of_user,description" id="Help_User_projects_of_user">
+                {{labels["domain_classes"]["user"]["projects_of_user"]["description"]}} 
+            </div>
+        </div>
+        <script>
+        let projects_of_user_config = {}
+
+
+
+
+    $("#User-projects_of_user").select2(projects_of_user_config);
+
+
+        </script>
+    </div>
+
+<!--fields-->
+
+<div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >
+            <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_User_username">
+                <i class="fa fa-question-circle"></i>
+            </button> 
+            {{labels["domain_classes"]["user"]["username"]["label"]}} 
+        </label>
+        <div class="col-md-9 col-sm-9 col-xs-12">
+            <input type="text" id="User-username" name="User-username" class="form-control col-md-7 col-xs-12 Username"/>
+    <script>$User_username_isValid=true</script>
+            <div class="collapse" data-akuropath="domain_classes,user,username,description" id="Help_User_username">
+                {{labels["domain_classes"]["user"]["username"]["description"]}} 
+            </div>
+        </div>
+    </div>
+
+<div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >
+            <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_User_password">
+                <i class="fa fa-question-circle"></i>
+            </button> 
+            {{labels["domain_classes"]["user"]["password"]["label"]}} 
+        </label>
+        <div class="col-md-9 col-sm-9 col-xs-12">
+            <div>
+    {{labels["domain_classes"]["user"]["password"]["original_label"]}}
+    </div>
+    <input type="password" name="User-password" id="User-password" class="form-control Input Password"/>
+    <div>
+    {{labels["domain_classes"]["user"]["password"]["copy_label"]}}
+    </div>
+    <input type="password" name="User-password2" id="User-password2" class="form-control Input Password"/>
+    <script>$User_password = $('#User-password')
+    $User_password_parent = $User_password.parent()
+    $User_password2 = $('#User-password2')
+    $User_password_isValid = true;
+    VALIDATIONS["User-password"]= true;
+    function compare_password(){
+        var p1 = $User_password.val()
+        var p2 = $User_password2.val()
+        $User_password_help = $('#Help_User_password')
+        $User_password_help.collapse('show')
+        SpecialSym =['$', '@', '#', '%', '!' , "?", ":", ";", "_",  "&", "*", "\\\(", "\\\)", "\\+", "=", "\\\-", "\\\{", "\\\}", "\\\[", "\\\]", ";", ":", ",", "\\\."] 
+        let errors = [];
+        if (p1 != p2){
+            errors.push("Las contraseñas deben coincidir");
+        }
+        if (p1 == null || p1 == "" || p1 == " "|| p1 == "  " || p1 == "   "){
+            errors.push('Tu contraseña no puede estar vacía')
+        }
+        if (p1.length < 6){
+            errors.push('Debe Contener Mas de 6 carácteres')
+        }
+        
+        if (p1.length > 20){
+            errors.push('no debe exceder los 20 carácteres')
+        }
+        re = /[0-9]/;
+        if (!re.test(p1)){
+            errors.push('La contraseña debe tener almenos un número')
+        }
+        re = /[A-Z]/;
+        if (!re.test(p1)){
+            errors.push('La contraseña debe tener almenos una mayúscula') 
+        }
+        re = /[a-z]/;
+        if (!re.test(p1)){
+            errors.push('La contraseña debe tener almenos una minúscula')
+        }
+        re = new RegExp('['+SpecialSym.join("")+']');
+        if (!re.test(p1)){
+            errors.push('Debe tener almenos una instancia de alguno de estos carácteres '+SpecialSym.join(","))
+        }
+        $User_password_help.html(errors.join(", "))
+        if(errors.length == 0){
+            $User_password_parent.removeClass("has-error")
+            $User_password_parent.addClass("has-success")
+            $User_password_isValid = true;
+            VALIDATIONS["User-password"]= true;
+        }else{
+            if (!$User_password_parent.hasClass("has-error")){
+                $User_password_parent.addClass("has-error")
+                $User_password_isValid = false;
+                VALIDATIONS["User-password"]= false;
+            }
+        }
+    }
+    $User_password.keyup(compare_password);
+    $User_password2.keyup(compare_password);
+    $User_password.trigger('keyup');</script>
+            <div class="collapse" data-akuropath="domain_classes,user,password,description" id="Help_User_password">
+                {{labels["domain_classes"]["user"]["password"]["description"]}} 
+            </div>
+        </div>
+    </div>
+
+<div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >
+            <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_User_profile_picture">
+                <i class="fa fa-question-circle"></i>
+            </button> 
+            {{labels["domain_classes"]["user"]["profile_picture"]["label"]}} 
+        </label>
+        <div class="col-md-9 col-sm-9 col-xs-12">
+            <span class="btn btn-success fileinput-button">
+    				<i class="glyphicon glyphicon-plus"></i>
+    				<span>Seleccione Archivo...</span>
+                    <input type="hidden" id="User-profile_picture" name="User-profile_picture"/>
+                    <input type="file" id="User-profile_picture-File" name="User-profile_picture-File" class="form-control col-md-7 col-xs-12 ProfilePicture"/>
+    </span>
+    <div id="User-profile_picture_progress" class="progress">
+    	<div class="progress-bar progress-bar-primary"></div>
+    </div>
+
+    <button type="button" data-toggle="collapse" data-target="#User-profile_picture-Collapse">
+    ▼
+    </button>
+
+    <div id="User-profile_picture-Collapse" class="collapse">
+    <img src="" class="img-responsive" id="User-profile_picture-Image"/>
+    </div> 
+
+    <script>$User_profile_picture_isValid=true</script>
+    <script>
+    var f = function () {
+        $('#User-profile_picture-File').fileupload({
+            dataType: 'json',
+            url:"/page/imageUploads",
+            progressall: function (e, data) {
+        			var progress = parseInt(data.loaded / data.total * 100, 10);
+        			$('#User-profile_picture_progress .progress-bar').css(
+        				'width',
+        				progress + '%'
+        			);
+        		},
+            done: function (e, data) {
+                $.each(data.result.files, function (index, file) {
+                    if(file.error){
+                        alert(file.error)
+                    }else{
+            			$("#User-profile_picture").val(file.url);
+            			$("#User-profile_picture-Image").attr("src",file.url);
+            			$("#User-profile_picture-Collapse").collapse("show");
+        			}
+    			});
+            }
+        });
+    }
+
+    if(typeof $.fn.fileupload !== 'undefined') {
+        f();
+    }else{
+        $(f);
+    }
+
+    </script>
+            <div class="collapse" data-akuropath="domain_classes,user,profile_picture,description" id="Help_User_profile_picture">
+                {{labels["domain_classes"]["user"]["profile_picture"]["description"]}} 
+            </div>
+        </div>
+    </div>
+
+<div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >
+            <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#Help_User_user_full_name">
+                <i class="fa fa-question-circle"></i>
+            </button> 
+            {{labels["domain_classes"]["user"]["user_full_name"]["label"]}} 
+        </label>
+        <div class="col-md-9 col-sm-9 col-xs-12">
+            <input type="text" id="User-user_full_name" name="User-user_full_name" class="form-control col-md-7 col-xs-12 UserFullName"/>
+    <script>$User_user_full_name_isValid=true</script>
+            <div class="collapse" data-akuropath="domain_classes,user,user_full_name,description" id="Help_User_user_full_name">
+                {{labels["domain_classes"]["user"]["user_full_name"]["description"]}} 
+            </div>
+        </div>
+    </div>
+
+            <div class="ln_solid"></div>
+          <div class="form-group">
+            <div class="row">
+                <div class="col-xs-2">
+                </div>
+                <div class="col-xs-4">
+			        <button class="btn btn-block btn-primary" type="reset">Reset</button>
+			    </div>
+			    <div class="col-xs-4">
+                    <input type="submit" value="{{labels["pages"]["user_creation"]["createbtn"]}}" class="btn btn-block btn-success">
+                </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+    <!-- FastClick -->
+    <script src="/static/vendor/node_modules/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="/static/vendor/node_modules/nprogress/nprogress.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="/static/vendor/node_modules/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="/static/vendor/node_modules/icheck/icheck.min.js"></script>
+
+    <!-- bootstrap-wysiwyg -->
+    <script src="/static/vendor/node_modules/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="/static/vendor/node_modules/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="/static/vendor/node_modules/google-code-prettify/src/prettify.js"></script>
+    <!-- jQuery Tags Input -->
+    <script src="/static/vendor/node_modules/jquery-tags-input/dist/jquery.tagsinput.min.js"></script>
+    <!-- Switchery -->
+    <script src="/static/vendor/node_modules/switchery/dist/switchery.min.js"></script>
+
+    <!-- Parsley -->
+    <script src="/static/vendor/node_modules/parsleyjs/dist/parsley.min.js"></script>
+    <!-- Autosize -->
+    <script src="/static/vendor/node_modules/autosize/dist/autosize.min.js"></script>
+    <!-- jQuery autocomplete -->
+    <script src="/static/vendor/node_modules/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+    <!-- starrr -->
+    <script src="/static/vendor/node_modules/starrr/dist/starrr.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="/static/vendor/node_modules/akuro-statics/admin-pane/custom.js"></script>
+
+    <script src="/static/vendor/node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="/static/vendor/node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="/static/vendor/node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+
+    <script src="/static/vendor/node_modules/jquery-smart-wizard/js/jquery.smartWizard.js"></script>
+    <script src="/static/vendor/node_modules/dropzone/dist/dropzone.js"></script>
+    <script src="/static/vendor/node_modules/tinymce/tinymce.min.js"></script>
+    <script src="/static/vendor/node_modules/akuro-statics/jsexcel/jexcel.js"></script>
+    <script src="/static/vendor/node_modules/akuro-statics/jsexcel/jsuites.js"></script>
+    <script src="/static/vendor/node_modules/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <script src="/static/vendor/node_modules/bootstrap-duallistbox/dist/jquery.bootstrap-duallistbox.min.js"></script>
+
+    
+    <script>
+    
+    
+    
+    </script>
+</body>
+  <!--
+Desarrollo realizado por akuro SAS. Contactenos en http://akuro.co.
+Development made by akuro. contact Us at http://akuro.co
+  __    __    _______   ______    __    __     ______          _______    ______     _______                               
+ /" |  | "\  /"     "| /" _  "\  /" |  | "\   /    " \        |   __ "\  /    " \   /"      \                              
+(:  (__)  :)(: ______)(: ( \___)(:  (__)  :) // ____  \       (. |__) :)// ____  \ |:        |                             
+ \/      \/  \/    |   \/ \      \/      \/ /  /    ) :)      |:  ____//  /    ) :)|_____/   )                             
+ //  __  \\  // ___)_  //  \ _   //  __  \\(: (____/ //       (|  /   (: (____/ //  //      /                              
+(:  (  )  :)(:      "|(:   _) \ (:  (  )  :)\        /       /|__/ \   \        /  |:  __   \                              
+ \__|  |__/  \_______) \_______) \__|  |__/  \"_____/       (_______)   \"_____/   |__|  \___)                             
+                                                                                                                           
+      __       __   ___  ____  ____   _______     ______                                                                   
+     /""\     |/"| /  ")("  _||_ " | /"      \   /    " \                                                                  
+    /    \    (: |/   / |   (  ) : ||:        | // ____  \                                                                 
+   /' /\  \   |    __/  (:  |  | . )|_____/   )/  /    ) :)                                                                
+  //  __'  \  (// _  \   \\ \__/ //  //      /(: (____/ //                                                                 
+ /   /  \\  \ |: | \  \  /\\ __ //\ |:  __   \ \        /                                                                  
+(___/    \___)(__|  \__)(__________)|__|  \___) \"_____/                                                                   
+                                                                                                                           
+  ______    ______    _____  ___  ___________   __       ______  ___________  _______  _____  ___      ______    ________  
+ /" _  "\  /    " \  (\"   \|"  \("     _   ") /""\     /" _  "\("     _   ")/"     "|(\"   \|"  \    /    " \  /"       ) 
+(: ( \___)// ____  \ |.\\   \    |)__/  \\__/ /    \   (: ( \___))__/  \\__/(: ______)|.\\   \    |  // ____  \(:   \___/  
+ \/ \    /  /    ) :)|: \.   \\  |   \\_ /   /' /\  \   \/ \        \\_ /    \/    |  |: \.   \\  | /  /    ) :)\___  \    
+ //  \ _(: (____/ // |.  \    \. |   |.  |  //  __'  \  //  \ _     |.  |    // ___)_ |.  \    \. |(: (____/ //  __/  \\   
+(:   _) \\        /  |    \    \ |   \:  | /   /  \\  \(:   _) \    \:  |   (:      "||    \    \ | \        /  /" \   :)  
+ \_______)\"_____/    \___|\____\)    \__|(___/    \___)\_______)    \__|    \_______) \___|\____\)  \"_____/  (_______/   
+                                                                                                                           
+  ______    ______    _____  ___  ___________   __       ______  ___________      ____  ____   ________                    
+ /" _  "\  /    " \  (\"   \|"  \("     _   ") /""\     /" _  "\("     _   ")    ("  _||_ " | /"       )                   
+(: ( \___)// ____  \ |.\\   \    |)__/  \\__/ /    \   (: ( \___))__/  \\__/     |   (  ) : |(:   \___/                    
+ \/ \    /  /    ) :)|: \.   \\  |   \\_ /   /' /\  \   \/ \        \\_ /        (:  |  | . ) \___  \                      
+ //  \ _(: (____/ // |.  \    \. |   |.  |  //  __'  \  //  \ _     |.  |         \\ \__/ //   __/  \\                     
+(:   _) \\        /  |    \    \ |   \:  | /   /  \\  \(:   _) \    \:  |         /\\ __ //\  /" \   :)                    
+ \_______)\"_____/    \___|\____\)    \__|(___/    \___)\_______)    \__|        (__________)(_______/                     
+                                                                                                                           
+      __       __   ___  ____  ____   _______     ______          ______    ______                                         
+     /""\     |/"| /  ")("  _||_ " | /"      \   /    " \        /" _  "\  /    " \                                        
+    /    \    (: |/   / |   (  ) : ||:        | // ____  \      (: ( \___)// ____  \                                       
+   /' /\  \   |    __/  (:  |  | . )|_____/   )/  /    ) :)      \/ \    /  /    ) :)                                      
+  //  __'  \  (// _  \   \\ \__/ //  //      /(: (____/ //_____  //  \ _(: (____/ //                                       
+ /   /  \\  \ |: | \  \  /\\ __ //\ |:  __   \ \        /))_  ")(:   _) \\        /                                        
+(___/    \___)(__|  \__)(__________)|__|  \___) \"_____/(_____(  \_______)\"_____/                                         
+                                                                                                                           
+-->
+</html>

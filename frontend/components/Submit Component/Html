@@ -1,0 +1,1 @@
+<button role="button" value="{{s.p("Var Name")}}" name="{{s.p("Var Name")}}" type="submit" class="{{s.p("Dash Name")}} {{s.p("Type Dash Name")}}"{%for p in l.data_attrs%} {{p.p("Html")}}{%endfor%}>{%for p in l.parts%}{{p.p("Html")}}{%endfor%}</button>

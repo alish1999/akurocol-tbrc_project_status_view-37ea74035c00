@@ -1,0 +1,364 @@
+
+
+.s100480{
+    
+    @include background-color-three-lightest;
+    
+    @include padding-t4;
+    
+    @include full-height;
+    
+    
+    .s100481{
+    
+    
+    .s100482{
+    
+    @include margin-b2;
+    
+    
+    .s100483{
+        
+        
+        .s100484{
+            
+            @include font-size-xxxlarge;
+            
+            @include font-family-one;
+            
+            
+            
+            
+        }
+        
+    }
+    
+}
+    
+    .s100486{
+    
+    @include margin-b4;
+    
+    
+    .s100487{
+        
+        
+        .s100488{
+          
+          @include simple-card;
+          
+          @include padding-y4;
+          
+          @include padding-x4;
+          
+
+          
+          .proj-name {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              
+
+              label {
+                
+              }
+
+              .help {
+                
+              }
+
+              .input-container{
+                input {
+                  
+                  @include create-inputs-styles;
+                  
+              
+                  &::placeholder {
+                    
+                  }
+              
+                  &:focus {
+                    
+                  }
+                }
+              }  
+            }
+          
+          .proj-projects {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              
+
+              
+
+              label {
+                
+              }
+
+              .help {
+                
+              }
+
+              .input-container{
+                width: 100%;
+                .item {
+                    background: rgba($color4, 0.2) !important;
+                    color: $color4 !important;
+                    border: 1px solid $color4 !important;
+                    border-radius: 5px;
+                }
+                select {
+                  
+                  
+              
+                  &::placeholder {
+                    
+                  }
+              
+                  &:focus {
+                    
+                  }
+                }
+              }  
+            }
+          
+          .proj-description {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              
+
+              label {
+                
+              }
+
+              .help {
+                
+              }
+
+              .input-container{
+                input {
+                  
+                  @include create-inputs-styles;
+                  
+              
+                  &::placeholder {
+                    
+                  }
+              
+                  &:focus {
+                    
+                  }
+                }
+              }  
+            }
+          
+          .proj-address {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              
+
+              label {
+                
+              }
+
+              .help {
+                
+              }
+
+              .input-container{
+                input {
+                  
+                  @include create-inputs-styles;
+                  
+              
+                  &::placeholder {
+                    
+                  }
+              
+                  &:focus {
+                    
+                  }
+                }
+              }  
+            }
+          
+          .s100491{
+                
+                
+            }
+          
+          .s100492{
+                
+                @include display-flex;
+                
+                @include justify-content-between;
+                
+                @include align-items-center;
+                
+                
+                .s100493 {
+              
+              
+              
+              
+              @include black-background-link;
+              
+              @include font-color-white;
+              
+              @include padding-x4;
+              
+            }
+                
+                
+            .s100496 {
+              display: inline-block;
+              .button-container{
+                
+                .s100497{
+                    
+                    @include gray-background-link;
+                    
+                    @include padding-x4;
+                    
+                    @include display-flex;
+                    
+                    @include align-items-center;
+                    
+                    @include button-radius;
+                    
+                    
+                    .project-delete-icon-img-container{
+                    width:$project-delete-icon-img-width;
+                    height:$project-delete-icon-img-height;
+                    display:inline-flex;
+                    justify-content:center;
+                    align-items:center;
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                    
+                }
+                    
+                    .s100498{
+                    
+                    @include margin-l1;
+                    
+                }
+                    
+                }
+                
+              }
+              .modal-container{
+                
+                .s100499{
+                    
+                    
+                    .s100500{
+                        
+                        @include display-flex;
+                        
+                        @include align-items-center;
+                        
+                        @include justify-content-center;
+                        
+                        @include flex-gap1;
+                        
+                        
+                        .project-edit-delete-title-icon-img-container{
+                        width:$project-edit-delete-title-icon-img-width;
+                        height:$project-edit-delete-title-icon-img-height;
+                        display:inline-flex;
+                        justify-content:center;
+                        align-items:center;
+                        img{
+                            max-width:100%;
+                            max-height:100%;
+                        }
+                        
+                    }
+                        
+                        .s100501{
+                        
+                        @include bold-text;
+                        
+                        @include font-size-large;
+                        
+                    }
+                        
+                    }
+                    
+                    .s100502{
+                        
+                        @include text-align-center;
+                        
+                        @include margin-y2;
+                        
+                    }
+                    
+                    .s100503{
+                        
+                        @include display-flex;
+                        
+                        @include align-items-center;
+                        
+                        @include justify-content-center;
+                        
+                        @include flex-gap1;
+                        
+                        
+                        .project-edit-delete-button{
+                        
+                        @include gray-background-link;
+                        
+                        @include padding-x1;
+                        
+                        @include padding-y05;
+                        
+                        @include button-radius;
+                        
+                        
+                        
+                        
+                    }
+                        
+                        .s100505{
+                        
+                        @include gray-background-link;
+                        
+                        @include padding-x1;
+                        
+                        @include padding-y05;
+                        
+                        @include border-black;
+                        
+                        @include button-radius;
+                        
+                        
+                        
+                        
+                    }
+                        
+                    }
+                    
+                }
+                
+              }
+            }
+
+                
+            }
+          
+        }
+        
+    }
+    
+}
+    
+}
+    
+}
+

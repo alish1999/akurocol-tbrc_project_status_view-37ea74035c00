@@ -1,0 +1,22 @@
+{
+    "create_user_page_title":"",
+    "create_user_page_action":"",
+    "create_user_page_method":"",
+    "create_user_fullname_label":"",
+    "create_user_fullname_placeholder":"",
+    "create_user_fullname_error":"",
+    "create_user_email_label":"",
+    "create_user_email_placeholder":"",
+    "create_user_email_error":"",
+    "create_user_roles_label":"",
+    "create_user_roles_placeholder":"",
+    "create_user_roles_error":"",
+    "create_user_roles_value":"",
+    "create_user_password_label":"",
+    "create_user_password_placeholder":"",
+    "create_user_password_error":"",
+    "create_user_re_password_label":"",
+    "create_user_re_password_placeholder":"",
+    "create_user_submit_label":""
+    
+}

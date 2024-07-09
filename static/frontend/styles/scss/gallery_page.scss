@@ -1,0 +1,553 @@
+
+
+.s100446{
+    
+    @include padding-t4;
+    
+    
+    .s100447{
+    
+    @include margin-b1;
+    
+    
+    .s100448{
+        
+        
+        .s100449{
+            
+            @include font-size-xxxlarge;
+            
+            @include font-family-one;
+            
+            @include text-align-center;
+            
+            
+            
+            
+        }
+        
+    }
+    
+}
+    
+    .s100451{
+    
+    @include margin-b4;
+    
+    
+    .s100452{
+        
+        @include text-align-center;
+        
+        @include font-weight300;
+        
+        
+        
+        
+    }
+    
+}
+    
+    .s100454{
+    
+    
+    .s100455{
+        
+        @include three-columns-grid;
+        
+        
+        
+        .s100457 {
+          display: inline-block;
+          .button-container{
+            
+            .s100458{
+                
+                @include action-button;
+                
+                @include create-folder-button;
+                
+                @include font-family-two;
+                
+                @include font-size-xlarge;
+                
+                
+                .gallery-new-folder-img-container{
+                width:$gallery-new-folder-img-width;
+                height:$gallery-new-folder-img-height;
+                display:inline-flex;
+                justify-content:center;
+                align-items:center;
+                img{
+                    max-width:100%;
+                    max-height:100%;
+                }
+                
+            }
+                
+                
+                
+            }
+            
+          }
+          .modal-container{
+            
+            .gallery-new-folder-modal{
+                
+                
+                .s100440{
+                  
+
+                  
+                  .new-folder-name {
+                      display: flex;
+                      flex-direction: column;
+                      width: 100%;
+                      
+
+                      label {
+                        
+                        @include margin-b05;
+                        
+                        @include bold-text;
+                        
+                        @include font-size-medium;
+                        
+                      }
+
+                      .help {
+                        
+                      }
+
+                      .input-container{
+                        input {
+                          
+                          @include common-inputs-styles;
+                          
+                      
+                          &::placeholder {
+                            
+                          }
+                      
+                          &:focus {
+                            
+                          }
+                        }
+                      }  
+                    }
+                  
+                  .new-folder-description {
+                      display: flex;
+                      flex-direction: column;
+                      width: 100%;
+                      
+
+                      label {
+                        
+                        @include margin-b05;
+                        
+                        @include bold-text;
+                        
+                        @include font-size-medium;
+                        
+                      }
+
+                      .help {
+                        
+                      }
+
+                      .input-container{
+                        input {
+                          
+                          @include common-inputs-styles;
+                          
+                      
+                          &::placeholder {
+                            
+                          }
+                      
+                          &:focus {
+                            
+                          }
+                        }
+                      }  
+                    }
+                  
+                  .s100441{
+                        
+                        
+                    }
+                  
+                  .s100442{
+                        
+                        @include display-flex;
+                        
+                        @include flex-gap1;
+                        
+                        @include flex-direction-column;
+                        
+                        
+                        .s100443 {
+                      
+                      
+                      
+                      
+                      @include gray-background-link;
+                      
+                      @include background-color-one-normal;
+                      
+                      @include font-color-white;
+                      
+                      @include button-radius;
+                      
+                    }
+                        
+                    }
+                  
+                }
+                
+            }
+            
+          }
+        }
+
+        
+        
+
+        .s100462{
+            
+            @include simple-card;
+            
+            @include display-flex;
+            
+            @include flex-direction-column;
+            
+            @include flex-gap1;
+            
+            @include justify-content-start;
+            
+            
+            .s100463{
+            
+            @include display-flex;
+            
+            @include align-items-center;
+            
+            @include justify-content-between;
+            
+            
+            .gallery-page-folder-icon-elm-container{
+            width:$gallery-page-folder-icon-elm-width;
+            height:$gallery-page-folder-icon-elm-height;
+            display:inline-flex;
+            justify-content:center;
+            align-items:center;
+            img{
+                max-width:100%;
+                max-height:100%;
+            }
+            
+        }
+            
+            .s100464 {
+          display: inline-block;
+          .button-container{
+            
+            .s100465{
+                
+                @include action-button;
+                
+                @include background-color-white;
+                
+                
+                .gallery-page-trash-icon-img-container{
+                width:$gallery-page-trash-icon-img-width;
+                height:$gallery-page-trash-icon-img-height;
+                display:inline-flex;
+                justify-content:center;
+                align-items:center;
+                img{
+                    max-width:100%;
+                    max-height:100%;
+                }
+                
+            }
+                
+            }
+            
+          }
+          .modal-container{
+            
+            .gallery-delete-modal{
+                
+                
+                .s100433{
+                    
+                    @include display-flex;
+                    
+                    @include align-items-center;
+                    
+                    @include justify-content-center;
+                    
+                    @include flex-gap1;
+                    
+                    
+                    .gallery-delete-title-icon-img-container{
+                    width:$gallery-delete-title-icon-img-width;
+                    height:$gallery-delete-title-icon-img-height;
+                    display:inline-flex;
+                    justify-content:center;
+                    align-items:center;
+                    img{
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                    
+                }
+                    
+                    .s100434{
+                    
+                    @include bold-text;
+                    
+                    @include font-size-large;
+                    
+                }
+                    
+                }
+                
+                .s100435{
+                    
+                    @include text-align-center;
+                    
+                    @include margin-y2;
+                    
+                }
+                
+                .s100436{
+                  
+                  @include display-flex;
+                  
+                  @include align-items-center;
+                  
+                  @include justify-content-center;
+                  
+                  @include flex-gap1;
+                  
+
+                  
+                  
+                  
+                  .gallery-delete-button{
+                        
+                        @include gray-background-link;
+                        
+                        @include padding-x1;
+                        
+                        @include padding-y05;
+                        
+                        @include button-radius;
+                        
+                        
+                        
+                        
+                    }
+                  
+                  .s100438{
+                        
+                        @include gray-background-link;
+                        
+                        @include padding-x1;
+                        
+                        @include padding-y05;
+                        
+                        @include border-black;
+                        
+                        @include button-radius;
+                        
+                        
+                        
+                        
+                    }
+                  
+                }
+                
+            }
+            
+          }
+        }
+            
+        }
+            
+            .s100466{
+          
+
+          
+          
+          
+          .gallery-item-new-name {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              
+
+              label {
+                
+              }
+
+              .help {
+                
+              }
+
+              .input-container{
+                input {
+                  
+                  @include common2-inputs-styles;
+                  
+              
+                  &::placeholder {
+                    
+                  }
+              
+                  &:focus {
+                    
+                  }
+                }
+              }  
+            }
+          
+          .gallery-item-new-description {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              
+
+              label {
+                
+              }
+
+              .help {
+                
+              }
+
+              .input-container{
+                input {
+                  
+                  @include common2-inputs-styles;
+                  
+              
+                  &::placeholder {
+                    
+                  }
+              
+                  &:focus {
+                    
+                  }
+                }
+              }  
+            }
+          
+          
+            .s100468{
+                
+                @include black-text-link;
+                
+                @include margin-t1;
+                
+                
+            }
+
+          
+          .s100469{
+                
+                
+            }
+          
+          .s100470{
+                
+                @include display-flex;
+                
+                @include flex-gap1;
+                
+                @include flex-direction-column;
+                
+                @include margin-t1;
+                
+                
+                .s100471 {
+              
+              
+              
+              
+              @include gray-background-link;
+              
+              @include button-radius;
+              
+            }
+                
+            }
+          
+        }
+            
+        }
+
+
+
+        .s100474{
+            
+            @include simple-card;
+            
+            @include display-flex;
+            
+            @include flex-direction-column;
+            
+            @include flex-gap1;
+            
+            @include justify-content-start;
+            
+            
+            .gallery-page-folder-icon-elm-container{
+            width:$gallery-page-folder-icon-elm-width;
+            height:$gallery-page-folder-icon-elm-height;
+            display:inline-flex;
+            justify-content:center;
+            align-items:center;
+            img{
+                max-width:100%;
+                max-height:100%;
+            }
+            
+        }
+            
+            .s100475{
+            
+            @include font-size-large;
+            
+            @include font-weight500;
+            
+        }
+            
+            .s100476{
+            
+            @include font-color-gray-p80;
+            
+        }
+            
+            
+        .s100478{
+            
+            @include black-text-link;
+            
+            
+        }
+
+            
+        }
+
+
+        
+    }
+    
+}
+    
+}
+
